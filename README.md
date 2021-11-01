@@ -4,7 +4,21 @@
 [<img height="30" src = "https://img.shields.io/badge/Youtube-%23E4405F.svg?&style=for-the-badge&logo=Youtube&logoColor=white">][youtube]
 [<img height="30" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
 
+<a href="https://www.linkedin.com/in/shreejitverma/">
+  <img align="left" width="24px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg"  />
+</a>
+<a href="mailto:shreejitverma@gmail.com">
+  <img align="left" width="26px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg" />
+</a>
+
+<br />
+
+### About Me 🚀
+
 ## I'm a Software Engineer and YouTuber
+
+🎓 I did Bachelors in Computer Science & Engineering from Vellore Institute of Technology, Vellore. </br>
+👨‍💻 I am passionate about Finance, Data Science, Blockchain & I enjoy learning new things. </br>
 
 - Creator of the [Shreejit Verma][youtube] YouTube channel
 - I create free educational content about Programming and Finance
@@ -16,15 +30,15 @@ If you enjoy my content, I would be very happy if you [subscribe](https://www.yo
 
 ---
 
-
-
 ---
 
 ## My GitHub Stats 💻
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=shreejitverma&hide=html,css&theme=dracula)](https://github.com/shreejitverma/github-readme-stats)
 
-[![Catalin's GitHub stats](https://github-readme-stats.vercel.app/api?username=shreejitverma&theme=dracula)](https://github.com/shreejitverma/github-readme-stats)
+[![Shreejit's GitHub stats](https://github-readme-stats.vercel.app/api?username=shreejitverma&&show_icons=true&hide_border=true&theme=dracula)](https://github.com/shreejitverma/github-readme-stats)
+<br />
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=shreejitverma.shreejitverma)
 
 [twitter]: https://twitter.com/shreejitverma
 [youtube]: https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw
@@ -53,7 +67,6 @@ You can show support by starring my repos, liking and sharing my videos, and [su
 If you really, really, really enjoy my work, you can also support me on [Patreon](https://www.patreon.com/shreejitverma).
 
 Thank you all so much 🙏
-
 
 <!--
 **shreejitverma/shreejitverma** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
