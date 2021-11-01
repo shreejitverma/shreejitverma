@@ -1,4 +1,4 @@
-## Hi I'm <img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="30px">, [Shreejit][website]
+## Hi<img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="30px"> I'm , [Shreejit][website]
 
 [<img height="30" src="https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white" />][website]
 [<img height="30" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" />][twitter]
@@ -23,7 +23,8 @@
 - If you want to discuss more on Programming Finance, Data Science, Blockchain etc. you can join my [Discord server][discord]
 - For most tutorials the corresponding code is here on GitHub
 
-If you enjoy my content, I would be very happy if you [subscribe](https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw) to my channel 😊
+- If you enjoy my content, I would be very happy if you [subscribe](https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw) to my channel 😊
+
 [<img align="left" alt="codeSTACKr | YouTube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" />][youtube]
 
 ---
@@ -69,10 +70,7 @@ You can show support by starring my repos, liking and sharing my videos, and [su
 
 If you really, really, really enjoy my work, you can also support me on [Patreon][patreon].
 
-<br />
-
-[<img height="30" src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />][patreon]
-
+[<img height="30" src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" />][patreon]
 [<img height="30" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" />][paypal]
 
 Thank you all so much 🙏
