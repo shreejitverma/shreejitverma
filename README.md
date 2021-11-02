@@ -49,7 +49,7 @@
 [gmail]: mailto:shreejitverma@gmail.com
 [facebook]: https://facebook.com/shreejitverma
 [patreon]: https://www.patreon.com/shreejitverma
-[paypal]: https://www.paypal.com/shreejitverma
+[paypal]: https://paypal.me/shreejitverma?country.x=IN&locale.x=en_GB
 
 ## Connect With Me:
 
