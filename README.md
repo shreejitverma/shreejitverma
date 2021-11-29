@@ -23,7 +23,7 @@
 - I also post articles on my [Website][website]
 - If you want to discuss more on Programming Finance, Data Science, Blockchain etc. you can join my [Discord server][discord]
 - For most of my projects the corresponding code is here on GitHub.
-- I like learning languages. As of Now I am learning Chinese, Italian, Russian, Punjabi, Tamil (Beginner Level);
+- I like learning languages. As of Now I am learning Chinese, Spanish, Russian, Punjabi, Tamil (Beginner Level);
   French and Sanskrit (Intermediate Level). I am Fluent in Hindi, English, and Bhojpuri.
 - If you enjoy my content, I would be very happy if you [subscribe](https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw) to my channel 😊
 
