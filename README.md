@@ -13,7 +13,7 @@
 
 ## I'm a Senior Software Engineer
 
-🎓 I am currently pursuing my Masters in Financial Engineering from WorldQuant University, and was pursuing Masters of Science in Computational Finance from Carnegie Mellon University, New York.
+🎓 I am currently pursuing my Masters in Financial Engineering from WorldQuant University, and was pursuing Masters of Science in Computational Finance from Carnegie Mellon University, New York.</br>
 🎓 I did my Bachelors in Computer Science & Engineering from Vellore Institute of Technology, Vellore. </br>
 👨‍💻 I am passionate about Finance, Data Science, Blockchain & I enjoy learning new things. </br>
 
