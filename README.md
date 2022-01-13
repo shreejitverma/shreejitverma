@@ -13,11 +13,12 @@
 
 ## I'm a Senior Software Engineer
 
+🎓 I am currently pursuing my Masters in Financial Engineering from WorldQuant University, and was pursuing Masters of Science in Computational Finance from Carnegie Mellon University, New York.
 🎓 I did my Bachelors in Computer Science & Engineering from Vellore Institute of Technology, Vellore. </br>
 👨‍💻 I am passionate about Finance, Data Science, Blockchain & I enjoy learning new things. </br>
 
-- I worked as a Senior Software Engineer in the Fixed Income Currencies and Commodities Team of Bank of America for 1.5 years till 2021.
-- I worked as a Senior Tech Associate in Data Strategy, Solutions and Architect Team of Bank of America for 1.5 years till 2019.
+- I worked as a Senior Software Engineer in the Fixed Income Currencies and Commodities Team of Bank of America for 1.5 years till July 2021.
+- I worked as a Senior Tech Associate in Data Strategy, Solutions and Architect Team of Bank of America for 1.5 years till Dec 2019.
 - Creator of the [Shreejit Verma][youtube] YouTube channel
 - I create free educational content about Programming and Finance
 - I also post articles on my [Website][website]
