@@ -13,10 +13,11 @@
 
 ## I'm a Quantitative Developer working at a NY based Hedge Fund 
 
-🎓 I am currently pursuing my Masters in Financial Engineering from WorldQuant University, and was pursuing Masters of Science in Computational Finance from Carnegie Mellon University, New York. 
-🎓 I did my Bachelors in Computer Science & Engineering from Vellore Institute of Technology, Vellore. 
+🎓 I am currently pursuing my Masters in Financial Engineering from WorldQuant University, and was pursuing Masters of Science in Computational Finance from Carnegie Mellon University, New York. </br>
 
-👨‍💻 I am curious about Finance, Data Science, Blockchain, Languages, History, Philosophy, Psychology, Indian Classical Music, Indian Civilisation & I enjoy learning new things.
+🎓 I did my Bachelors in Computer Science & Engineering from Vellore Institute of Technology, Vellore.  </br>
+
+👨‍💻 I am curious about Finance, Data Science, Blockchain, Languages, History, Philosophy, Psychology, Indian Classical Music, Indian Civilisation & I enjoy learning new things. </br>
 
 - I worked as a Senior Software Engineer in the Fixed Income Currencies and Commodities Team of Bank of America for 1.5 years till July 2021.
 - I worked as a Senior Tech Associate in Data Strategy, Solutions and Architect Team of Bank of America for 1.5 years till Dec 2019.
