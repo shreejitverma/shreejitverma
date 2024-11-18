@@ -8,7 +8,6 @@
 [<img height="30" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />][gmail]
 
 <br />
----
 
 ## 👩‍💻 About Me 
 
@@ -96,20 +95,6 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 
 ---
 
-#### **Quantitative Finance**
-- **Derivative Pricing Models:** Black-Scholes, Heston, SABR, Hull-White, Monte Carlo Simulation  
-- **Portfolio Management:** Risk Management, Factor Modeling, Dynamic Optimization  
-- **Statistical Techniques:** Time Series Analysis, Statistical Arbitrage, Risk-Adjusted Return Modeling  
-
----
-
-#### **Mathematics and Statistics**
-- **Stochastic Calculus:** Brownian Motion, Geometric Brownian Motion, Ito’s Lemma  
-- **Numerical Methods:** PDEs, ODEs, Mean-Reverting Processes (Ornstein-Uhlenbeck)  
-- **Optimization:** Linear and Non-Linear Optimization  
-
----
-
 #### **Data Engineering**
 ![Hadoop](https://img.shields.io/badge/Hadoop-05122A?style=flat&logo=apache-hadoop)
 ![Spark](https://img.shields.io/badge/Spark-05122A?style=flat&logo=apache-spark)
@@ -126,6 +111,19 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 ![JIRA](https://img.shields.io/badge/JIRA-05122A?style=flat&logo=jira)
 ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-05122A?style=flat&logo=intellij-idea)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code)
+
+---
+#### **Quantitative Finance**
+- **Derivative Pricing Models:** Black-Scholes, Heston, SABR, Hull-White, Monte Carlo Simulation  
+- **Portfolio Management:** Risk Management, Factor Modeling, Dynamic Optimization  
+- **Statistical Techniques:** Time Series Analysis, Statistical Arbitrage, Risk-Adjusted Return Modeling  
+
+---
+
+#### **Mathematics and Statistics**
+- **Stochastic Calculus:** Brownian Motion, Geometric Brownian Motion, Ito’s Lemma  
+- **Numerical Methods:** PDEs, ODEs, Mean-Reverting Processes (Ornstein-Uhlenbeck)  
+- **Optimization:** Linear and Non-Linear Optimization  
 
 ---
 
