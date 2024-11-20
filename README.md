@@ -26,18 +26,18 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 
 ## 🏢 Professional Experience  
 
+### **LogiNext Solutions Inc.** — Senior Software Engineer (Head of Analytics)  
+*Mar 2023 – Jul 2024 | Mumbai, India*  
+- Designed and implemented **Map Construction and Routing Algorithms** to solve complex NP-hard problems.  
+- Built a **Large Language Model (LLM)** for internal development and bug query resolution, reducing issue resolution time by 80%.  
+- Led a team of 12 to develop a high-performance **geospatial mapping application** using PostGIS, MongoDB, and AWS.
+  
 ### **Versor Investments (QR Systems LLP)** — Quantitative Developer  
 *Feb 2022 – Oct 2022 | New York, USA*  
 - Developed ML-driven **Order and Execution Management Systems**, improving trade execution efficiency by 20%.  
 - Backtested and deployed **systematic merger arbitrage strategies**, increasing alpha capture by 15%.  
 - Engineered **risk-adjusted return models** for optimizing portfolio risk exposure and factor analysis.  
 - Managed a combined **AUM of $8.5 Billion** across merger arbitrage and stock selection portfolios.
-
-### **LogiNext Solutions Inc.** — Senior Software Engineer (Head of Analytics)  
-*Mar 2023 – Jul 2024 | Mumbai, India*  
-- Designed and implemented **Map Construction and Routing Algorithms** to solve complex NP-hard problems.  
-- Built a **Large Language Model (LLM)** for internal development and bug query resolution, reducing issue resolution time by 80%.  
-- Led a team of 12 to develop a high-performance **geospatial mapping application** using PostGIS, MongoDB, and AWS.  
 
 ### **Bank of America (BA Continuum)** — Senior Software Engineer  
 *Jan 2020 – Jul 2021 | Chennai, India*  
