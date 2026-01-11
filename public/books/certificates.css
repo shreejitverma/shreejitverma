@@ -1,0 +1,121 @@
+.profile-certificates {
+  list-style: none;
+  margin: 0 -2.1% 0 0;
+  padding: 0; }
+  .profile-certificates li.course {
+    list-style: none;
+    width: 31.33333%;
+    margin: 0 2% 20px 0;
+    box-shadow: none;
+    padding: 0;
+    float: left; }
+    .profile-certificates li.course .course-thumbnail {
+      border: 3px solid #DDD;
+      position: relative; }
+
+.single-certificate-content {
+  max-width: 90%;
+  margin: 0 auto;
+  min-height: 40px; }
+
+.certificate {
+  text-align: center; }
+
+.certificate-preview {
+  z-index: 0;
+  opacity: 0;
+  position: absolute;
+  max-width: 100px;
+  top: 0;
+  text-align: center; }
+  .certificate-preview .certificate-preview-inner {
+    position: relative; }
+  .certificate-preview img {
+    max-width: 100%;
+    line-height: 1;
+    vertical-align: top; }
+  .certificate-preview .canvas-container {
+    position: absolute !important;
+    top: 0;
+    left: 0; }
+
+.certificate-actions {
+  list-style: none;
+  text-align: center;
+  margin: 20px 0 0;
+  padding: 0; }
+  .certificate-actions li {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1; }
+    .certificate-actions li.download a {
+      font-family: fontawesome;
+      color: #777;
+      text-decoration: none;
+      display: inline-block;
+      background: #fff;
+      height: 20px;
+      line-height: 20px;
+      padding: 0 10px;
+      border: 1px solid #DDD;
+      border-radius: 3px;
+      font-size: 14px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .certificate-actions li.download a:after {
+        content: "\f019"; }
+    .certificate-actions li:hover ul {
+      display: block; }
+
+#certificate-popup {
+  height: 0;
+  overflow: hidden;
+  padding: 30px; }
+  #certificate-popup.ready {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: auto;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.65);
+    overflow: auto; }
+    #certificate-popup.ready .close-popup {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background: #FFF;
+      bottom: 20px;
+      right: 20px;
+      text-align: center; }
+      #certificate-popup.ready .close-popup:before {
+        content: attr(data-tooltip);
+        position: absolute;
+        right: 0;
+        top: -100%;
+        white-space: nowrap;
+        background: #000;
+        line-height: 1;
+        font-size: 12px;
+        padding: 5px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        color: #FFF; }
+      #certificate-popup.ready .close-popup:after {
+        content: "\f00d";
+        font-family: fontawesome;
+        font-size: 18px;
+        line-height: 30px; }
+      #certificate-popup.ready .close-popup:hover:after {
+        color: #14c4ff; }
+
+#profile-content-certificates .certificate-result {
+  max-width: 100%; }
+
+#profile-content-certificates .course {
+  width: 48%; }
+  #profile-content-certificates .course .course-title {
+    font-size: 1em; }

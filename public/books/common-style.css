@@ -1,0 +1,148 @@
+/* Menu Styling */
+#fep-menu {
+	/* color: #333; */
+	font-size: 14px;
+	font-weight: bold;
+	width: 100%;
+}
+
+#fep-menu .fep-button,
+.fep-button,
+.fep-button-active {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	/* background: #f0fcff; */
+	border-radius: 5px;
+	border: 1px solid #8FBFC9;
+	/* color: #000000 !important; */
+	cursor: pointer;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none !important;
+}
+
+#fep-menu .fep-button:hover,
+.fep-button-active {
+	/* background: #d3eef5; */
+	/* color: #333; */
+	font-size: 14px;
+}
+
+#fep-notification-bar {
+	-khtml-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-moz-box-sizing: border-box;
+	-webkit-border-radius: 3px;
+	-webkit-box-sizing: border-box;
+	background-color: #ffebe8;
+	border-color: #c00;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+	box-sizing: border-box;
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	z-index: 999999;
+}
+
+.fep-notification-bar p {
+	margin: 0;
+}
+.fep-notification-bar .fep-notice-dismiss {
+	background: none;
+	border: 0;
+	color: black;
+	cursor: pointer;
+	font-size: 24px;
+	padding: 12px;
+	position: absolute;
+	right: 10px;
+	top: 0;
+}
+
+.fep-font-red {
+	color: #ff0000;
+}
+
+/* Notify Styling */
+.fep-error,
+.fep-success,
+.fep-wp-error {
+	-khtml-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-moz-box-sizing: border-box;
+	-webkit-border-radius: 3px;
+	-webkit-box-sizing: border-box;
+	background-color: #ffebe8;
+	border-color: #c00;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+	box-sizing: border-box;
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 15px 0;
+	padding: 0.6em;
+	text-align: center;
+	width: 100%;
+}
+
+.fep-success {
+	background-color: #66ff99;
+	border-color: #00ff00;
+}
+
+.fep-wp-error {
+	text-align: left;
+}
+
+.fep-hide {
+	display: none;
+}
+
+.fep-form input[type="text"] {
+	width: 100%;
+}
+
+.fep-form textarea {
+	width: 100%;
+	height: 200px;
+}
+
+.fep-form label {
+	clear: both;
+	display: block;
+}
+
+.fep-form .description {
+	font-size: 90%;
+	font-style: italic;
+	font-weight: normal;
+}
+
+.fep-progress-bar {
+	width: 100%;
+	background-color: #ddd;
+	display: none;
+	margin: 10px 0;
+}
+
+.fep-progress-bar .fep-progress-bar-inner {
+	width: 0%;
+	height: 30px;
+	background-color: #4CAF50;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+}

@@ -1,0 +1,737 @@
+[2026-01-10 22:03:01.685407] Book: $100M Leads
+  - Added Publisher: Acquisition.com, LLC
+  - Updated Date: 2024-10-04
+  - Added Genre: Business & Economics
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:03.909514] Book: $100M Offers
+  - Added ISBN: 9781737475705
+  - Added Publisher: Acquisition.com, LLC
+  - Updated Date: 2021-07-13
+  - Added Genre: Business & Economics
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:06.201104] Book: $100M Offers_ How To Make Offers So Good People Feel Stupid Saying No
+  - Added ISBN: 1737475731
+  - Added Publisher: Acquisition.com
+  - Updated Date: 2021-07-13
+  - Added Genre: Entrepreneurship
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:10.351654] Book: - Oxford Advanced Learner's Dictionary_ International Student's Edition-Oxford University Press
+  - Added ISBN: 0194799514
+  - Updated Date: 2015-05
+  - Added Genre: English language
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:22.427357] Book: 1. Building Financial Models by John Tjia
+  - Added ISBN: 9780071736565
+  - Added Publisher: McGraw Hill Professional
+  - Updated Date: 2009-05-27
+  - Added Genre: Technology & Engineering
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:24.329610] Book: 1. Metric Graph Reconstruction from Noisy Data
+  - Updated Date: 2004
+
+[2026-01-10 22:03:28.425775] Book: 10 DAYS TO FASTER READING By The Princeton Language Institute and Abby Marks Beale
+  - Added Publisher: QuickRead.com
+  - Added Genre: Study Aids
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:30.186618] Book: 10 Judgements That Changed India
+  - Added ISBN: 0670086622
+  - Updated Date: 2013
+  - Added Genre: Judgments
+  - Updated Cover Image
+
+[2026-01-10 22:03:34.257084] Book: 10 Steps to Earning Awesome Grades by Thomas Frank
+  - Added ISBN: 1517004446
+  - Added Publisher: Createspace Independent Publishing Platform
+  - Updated Date: 2015-01-05
+  - Added Genre: College student orientation
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:36.205478] Book: 10% Happier
+  - Added ISBN: 9781444799064
+  - Added Publisher: Hachette UK
+  - Updated Date: 2014-06-19
+  - Added Genre: Body, Mind & Spirit
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:38.543461] Book: 10-Minute Toughness
+  - Added ISBN: 9780071600644
+  - Added Publisher: McGraw Hill Professional
+  - Updated Date: 2008-10-05
+  - Added Genre: Sports & Recreation
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:51.154769] Book: 100 Great Cities of World History
+  - Added ISBN: 9810075375
+  - Updated Date: 1996
+  - Added Genre: Cities and towns
+
+[2026-01-10 22:03:53.414740] Book: 100 Million Years Of Food by Stephen Le
+  - Added ISBN: 9781250050427
+  - Added Publisher: Macmillan + ORM
+  - Updated Date: 2016-02-02
+  - Added Genre: Health & Fitness
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:55.766658] Book: 1000 True Fans
+  - Added ISBN: 9781456669263
+  - Added Publisher: eBookIt.com
+  - Updated Date: 2025-06-03
+  - Added Genre: Business & Economics
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:58.045529] Book: 101 Business Analyst Interview question
+  - Added ISBN: 1791899706
+  - Added Publisher: Independently Published
+  - Updated Date: 2019-06-14
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:03:59.822292] Book: 101 Crucial Lessons They Dont Teach You in Business School
+  - Added ISBN: 1518830501
+  - Added Publisher: Createspace Independent Publishing Platform
+  - Updated Date: 2015-10-28
+  - Added Genre: BUSINESS & ECONOMICS
+  - Updated Cover Image
+
+[2026-01-10 22:04:01.675657] Book: 101 Crucial Lessons They Dont Teach You in Business School Forbes calls this book 1 of 6 books that all entrepreneurs must read right now along with the 7 Habits of Highly Effective People by Haroun,
+  - Added ISBN: 1518830501
+  - Added Publisher: Createspace Independent Publishing Platform
+  - Updated Date: 2015-10-28
+  - Added Genre: BUSINESS & ECONOMICS
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:03.540752] Book: 101 Interview Questions
+  - Added ISBN: 9781504055185
+  - Added Publisher: Open Road Media
+  - Updated Date: 2018-07-31
+  - Added Genre: Business & Economics
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:05.770409] Book: 101 Investment Tools for Buying Low and Selling High
+  - Added ISBN: 9781420033106
+  - Added Publisher: CRC Press
+  - Updated Date: 2000-12-12
+  - Added Genre: Business & Economics
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:08.007195] Book: 101 Option Trading Secrets
+  - Added ISBN: 0960491449
+  - Updated Date: 2007-10-05
+  - Added Genre: Options (Finance)
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:10.311061] Book: 101 Questions to Ask Before You Get Engaged by Wright, H. Norman
+  - Added ISBN: 9780736931038
+  - Added Publisher: Harvest House Publishers
+  - Updated Date: 2004-06-01
+  - Added Genre: Religion
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:12.453835] Book: 101 Questions to Ask Before You Get Engaged-Harvest House Publishers, Inc.
+  - Added ISBN: 9780736931038
+  - Added Publisher: Harvest House Publishers
+  - Updated Date: 2004-06-01
+  - Added Genre: Religion
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:14.301530] Book: 101 Ways to Build a Stronger, More Exciting Marriage-Harvest House Publishers
+  - Added ISBN: 9780736961288
+  - Added Publisher: Harvest House Publishers
+  - Updated Date: 2014-09-01
+  - Added Genre: Religion
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:20.547354] Book: 112 Upanishads 2 Volume Set by K.L. Joshi
+  - Title: '112 Upanishads  2 Volume Set by K.L. Joshi' -> '112 Upanishads 2 Volume Set by K.L. Joshi'
+  - Added ISBN: 0911206140
+  - Updated Date: 1949
+  - Added Genre: Philosophy, Asian
+
+[2026-01-10 22:04:22.868990] Book: 12 Pillars
+  - Added ISBN: 9781426951602
+  - Added Publisher: Trafford Publishing
+  - Updated Date: 2011-01-04
+  - Added Genre: Religion
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:25.242511] Book: 12 Rules For Life
+  - Added ISBN: 9780241351659
+  - Added Publisher: Penguin UK
+  - Updated Date: 2018-01-16
+  - Added Genre: Self-Help
+  - Updated Cover Image
+
+[2026-01-10 22:04:27.016806] Book: 12 Rules for Life_ An Antidote to Chaos-Random House Canada
+  - Added ISBN: 9781984833976
+  - Added Publisher: National Geographic Books
+  - Updated Date: 2018-05-08
+  - Added Genre: Philosophy
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:29.326388] Book: 12 Simple Technical Indicators
+  - Added ISBN: 9781118538456
+  - Added Publisher: John Wiley & Sons
+  - Updated Date: 2012-09-27
+  - Added Genre: Business & Economics
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:32.812499] Book: 12twenty Student Toolkit
+  - Title: '12twenty  Student Toolkit' -> '12twenty Student Toolkit'
+  - Added ISBN: 013113695X
+  - Added Publisher: Que Publishing
+  - Updated Date: 2003-04
+
+[2026-01-10 22:04:43.280997] Book: 15 SECRETS SUCCESSFUL PEOPLE KNOW ABOUT TIME MANAGEMENT By Kevin Kruse
+  - Added ISBN: 0985056436
+  - Updated Date: 2015-09
+  - Added Genre: Self-actualization (Psychology)
+  - Updated Cover Image
+  - Added Description
+
+[2026-01-10 22:04:43.283579] Book: 3 in 1 Bundle 40 Exciting French Short Stories to Easily Learn French Improve Your Vocabulary...
+  - Title: '3 in 1 Bundle 40 Exciting French Short Stories to Easily Learn French  Improve Your Vocabulary...' -> '3 in 1 Bundle 40 Exciting French Short Stories to Easily Learn French Improve Your Vocabulary...'
+
+[2026-01-10 22:04:43.285326] Book: 9 Steps to Transforming Your Relationship with Money and Achieving Financial Independence Revised and Updated for the 21st Century by Vicki Robin Joe Dominguez [Robin, Vicki
+  - Title: '9 Steps to Transforming Your Relationship with Money and Achieving Financial Independence Revised and Updated for the 21st Century by Vicki Robin  Joe Dominguez [Robin, Vicki' -> '9 Steps to Transforming Your Relationship with Money and Achieving Financial Independence Revised and Updated for the 21st Century by Vicki Robin Joe Dominguez [Robin, Vicki'
+
+[2026-01-10 22:04:43.289064] Book: A Song of Ice and Fire by George R.R. Martin
+  - Title: 'A Song of Ice and Fire  by George R.R. Martin' -> 'A Song of Ice and Fire by George R.R. Martin'
+
+[2026-01-10 22:04:43.289454] Book: A billion wicked thoughts what the worlds largest experiment reveals about human desire
+  - Title: 'A billion wicked thoughts  what the worlds largest experiment reveals about human desire' -> 'A billion wicked thoughts what the worlds largest experiment reveals about human desire'
+
+[2026-01-10 22:04:43.293718] Book: An Introduction to Trading in the Financial Markets_ Trading, Markets, Instruments, and Processes-Academic Press
+  - Title: 'An Introduction to Trading in the Financial Markets_  Trading, Markets, Instruments, and Processes-Academic Press' -> 'An Introduction to Trading in the Financial Markets_ Trading, Markets, Instruments, and Processes-Academic Press'
+
+[2026-01-10 22:04:43.295065] Book: Angels & Demons -Simon & Schuster
+  - Title: 'Angels & Demons  -Simon & Schuster' -> 'Angels & Demons -Simon & Schuster'
+
+[2026-01-10 22:04:43.295239] Book: Antima । अंतिमा by Manav Kaul
+  - Title: 'Antima । अंतिमा  by Manav Kaul' -> 'Antima । अंतिमा by Manav Kaul'
+
+[2026-01-10 22:04:43.299183] Book: Beyond Good and Evil  -Penguin Books
+  - Title: 'Beyond Good and Evil   -Penguin Books' -> 'Beyond Good and Evil  -Penguin Books'
+
+[2026-01-10 22:04:43.300182] Book: Big Money, Little Effort
+  - Title: 'Big Money,  Little Effort' -> 'Big Money, Little Effort'
+
+[2026-01-10 22:04:43.300823] Book: Blink_ The Power of Thinking Without Thinking Malcolm Gladwell
+  - Title: 'Blink_ The Power of Thinking Without Thinking  Malcolm Gladwell' -> 'Blink_ The Power of Thinking Without Thinking Malcolm Gladwell'
+
+[2026-01-10 22:04:43.301532] Book: Blue Ocean Strategy by W. Chan Kim Harvard Business School Press 2005 True {SPirate}
+  - Title: 'Blue Ocean Strategy by W. Chan Kim Harvard Business School Press 2005 True PDF {SPirate}' -> 'Blue Ocean Strategy by W. Chan Kim Harvard Business School Press 2005 True {SPirate}'
+
+[2026-01-10 22:04:43.303302] Book: Bulls Bears and Other Beasts
+  - Author: 'Santosh  Nair' -> 'Santosh Nair'
+
+[2026-01-10 22:04:43.306037] Book: Caste and World Conference against Racism, Durban, 2001_ Dr. B.R. Ambedkar's Annihilation of Caste -Cedar Publications
+  - Title: 'Caste and World Conference against Racism, Durban, 2001_ Dr. B.R. Ambedkar's Annihilation of Caste  -Cedar Publications' -> 'Caste and World Conference against Racism, Durban, 2001_ Dr. B.R. Ambedkar's Annihilation of Caste -Cedar Publications'
+
+[2026-01-10 22:04:43.306465] Book: Celtic mythology tales of gods, goddesses, and heroes
+  - Title: 'Celtic mythology  tales of gods, goddesses, and heroes' -> 'Celtic mythology tales of gods, goddesses, and heroes'
+
+[2026-01-10 22:04:43.308873] Book: Collected Works of Karl Marx by Karl Marx, Friedrich Engels
+  - Title: 'Collected Works of Karl Marx  by Karl Marx, Friedrich Engels' -> 'Collected Works of Karl Marx by Karl Marx, Friedrich Engels'
+
+[2026-01-10 22:04:43.309782] Book: Complete Works of Charles Dickens by Dickens Charles
+  - Title: 'Complete Works of Charles Dickens  by Dickens Charles' -> 'Complete Works of Charles Dickens by Dickens Charles'
+
+[2026-01-10 22:04:43.314127] Book: DHARAMPAL • COLLECTED WRITINGS Volume II -Sarva Seva Sangh Prakashan, Varanasi
+  - Title: 'DHARAMPAL • COLLECTED WRITINGS  Volume II -Sarva Seva Sangh Prakashan, Varanasi' -> 'DHARAMPAL • COLLECTED WRITINGS Volume II -Sarva Seva Sangh Prakashan, Varanasi'
+
+[2026-01-10 22:04:43.314229] Book: DHARAMPAL • COLLECTED WRITINGS Volume V -Sujit Patwardhan for Other India Press
+  - Title: 'DHARAMPAL • COLLECTED WRITINGS  Volume V -Sujit Patwardhan for Other India Press' -> 'DHARAMPAL • COLLECTED WRITINGS Volume V -Sujit Patwardhan for Other India Press'
+
+[2026-01-10 22:04:43.316173] Book: Dark Psychology Super ADVANCED Techniques to PERSUADE ANYONE, Secretly MANIPULATE People and INFLUENCE Their Behaviour Without Them Noticing by Richa
+  - Title: 'Dark Psychology Super ADVANCED Techniques to PERSUADE ANYONE, Secretly MANIPULATE People and INFLUENCE Their Behaviour Without Them Noticing  by Richa' -> 'Dark Psychology Super ADVANCED Techniques to PERSUADE ANYONE, Secretly MANIPULATE People and INFLUENCE Their Behaviour Without Them Noticing by Richa'
+
+[2026-01-10 22:04:43.316882] Book: Delhi Anti-Hindu Riots 2020, The Macabre Dance of Violence Since December 2019_ An OpIndia Report
+  - Author: 'Nupur  J Sharma, Kalpojyoti Kashyap' -> 'Nupur J Sharma, Kalpojyoti Kashyap'
+
+[2026-01-10 22:04:43.317374] Book: Delphi Complete Works of Friedrich Nietzsche  by Friedrich Nietzsche
+  - Title: 'Delphi Complete Works of Friedrich Nietzsche   by Friedrich Nietzsche' -> 'Delphi Complete Works of Friedrich Nietzsche  by Friedrich Nietzsche'
+
+[2026-01-10 22:04:43.317420] Book: Delphi Complete Works of Plato  by Plato
+  - Title: 'Delphi Complete Works of Plato   by Plato' -> 'Delphi Complete Works of Plato  by Plato'
+
+[2026-01-10 22:04:43.317540] Book: Delphi Masterworks of Ludwig van Beethoven by Ludwig van Beethoven
+  - Title: 'Delphi Masterworks of Ludwig van Beethoven  by Ludwig van Beethoven' -> 'Delphi Masterworks of Ludwig van Beethoven by Ludwig van Beethoven'
+
+[2026-01-10 22:04:43.317572] Book: Delphi Masterworks of Wolfgang Amadeus Mozart by Peter Russell
+  - Title: 'Delphi Masterworks of Wolfgang Amadeus Mozart  by Peter Russell' -> 'Delphi Masterworks of Wolfgang Amadeus Mozart by Peter Russell'
+
+[2026-01-10 22:04:43.317936] Book: Designing distributed systems_ patterns and paradigms for scalable, reliable services-O'Reilly Media Burns, Brendan
+  - Title: 'Designing distributed systems_ patterns and paradigms for scalable, reliable services-O'Reilly Media  Burns, Brendan' -> 'Designing distributed systems_ patterns and paradigms for scalable, reliable services-O'Reilly Media Burns, Brendan'
+
+[2026-01-10 22:04:43.319388] Book: Equity research report on SIS LTD
+  - Title: 'Equity research report  on SIS LTD' -> 'Equity research report on SIS LTD'
+
+[2026-01-10 22:04:43.320510] Book: Fantastic Beasts and Where to Find Them by J. K. Rowling Newt Scamander
+  - Title: 'Fantastic Beasts and Where to Find Them by J. K. Rowling  Newt Scamander' -> 'Fantastic Beasts and Where to Find Them by J. K. Rowling Newt Scamander'
+
+[2026-01-10 22:04:43.321001] Book: Financial Modelling in Python by Shayne Fletcher, Christopher Gardner
+  - Title: 'Financial Modelling in Python  by Shayne Fletcher, Christopher Gardner' -> 'Financial Modelling in Python by Shayne Fletcher, Christopher Gardner'
+
+[2026-01-10 22:04:43.321156] Book: Financial Shenanigans How to Detect Accounting Gimmicks and Fraud in Financial Reports by Howard M. Schilit, Jeremy Perler, Yoni Engelhart
+  - Title: 'Financial Shenanigans  How to Detect Accounting Gimmicks and Fraud in Financial Reports by Howard M. Schilit, Jeremy Perler, Yoni Engelhart' -> 'Financial Shenanigans How to Detect Accounting Gimmicks and Fraud in Financial Reports by Howard M. Schilit, Jeremy Perler, Yoni Engelhart'
+
+[2026-01-10 22:04:43.321455] Book: Fire Blood 300 Years Before A Game of Thrones by George R. R. Martin
+  - Title: 'Fire  Blood 300 Years Before A Game of Thrones  by George R. R. Martin' -> 'Fire Blood 300 Years Before A Game of Thrones by George R. R. Martin'
+
+[2026-01-10 22:04:43.321851] Book: Fooling Some of the People All of the Time, a Long Short Story, Updated with New Epilogue by Allied CapitalEinhorn, David
+  - Title: 'Fooling Some of the People All of the Time, a Long Short  Story, Updated with New Epilogue by Allied CapitalEinhorn, David' -> 'Fooling Some of the People All of the Time, a Long Short Story, Updated with New Epilogue by Allied CapitalEinhorn, David'
+
+[2026-01-10 22:04:43.322130] Book: Frequently Asked Questions in Quantitative Finance by Paul Wilmott
+  - Title: 'Frequently Asked Questions in Quantitative Finance  by Paul Wilmott' -> 'Frequently Asked Questions in Quantitative Finance by Paul Wilmott'
+
+[2026-01-10 22:04:43.322435] Book: Fundamentals of Physics Extended  Edition 8-Wiley
+  - Title: 'Fundamentals of Physics Extended   Edition 8-Wiley' -> 'Fundamentals of Physics Extended  Edition 8-Wiley'
+
+[2026-01-10 22:04:43.322508] Book: Futures, Options and Swaps-Wiley-Blackwell 2
+  - Title: 'Futures, Options and Swaps-Wiley-Blackwell  2' -> 'Futures, Options and Swaps-Wiley-Blackwell 2'
+
+[2026-01-10 22:04:43.323923] Book: HBR Emotional Intelligence Ultimate Boxed Set (HBR Emotional Intelligen
+  - Title: 'HBR Emotional Intelligence Ultimate Boxed Set  (HBR Emotional Intelligen' -> 'HBR Emotional Intelligence Ultimate Boxed Set (HBR Emotional Intelligen'
+  - Author: 'Harvard Business Review,  Daniel Goleman,  Annie McKee,  Bill George,  Herminia Ibarra' -> 'Harvard Business Review, Daniel Goleman, Annie McKee, Bill George, Herminia Ibarra'
+
+[2026-01-10 22:04:43.325256] Book: Hind Swaraj by MAHATMA GANDHI
+  - Title: 'Hind Swaraj  by MAHATMA GANDHI' -> 'Hind Swaraj by MAHATMA GANDHI'
+
+[2026-01-10 22:04:43.325337] Book: Hooked
+  - Author: 'Nir   Eyal' -> 'Nir  Eyal'
+
+[2026-01-10 22:04:43.325482] Book: How I Made 2,000,000 in the Stock Market Now Revised Updated for the 21st Century by Steve Burns, Nicolas Darvas
+  - Title: 'How I Made 2,000,000 in the Stock Market Now Revised  Updated for the 21st Century by Steve Burns, Nicolas Darvas' -> 'How I Made 2,000,000 in the Stock Market Now Revised Updated for the 21st Century by Steve Burns, Nicolas Darvas'
+
+[2026-01-10 22:04:43.326514] Book: How to Make Money in Stocks_ A Winning System in Good Times and Bad, Fourth Edition-McGraw-Hill
+  - Title: 'How to Make Money in Stocks_  A Winning System in Good Times and Bad, Fourth Edition-McGraw-Hill' -> 'How to Make Money in Stocks_ A Winning System in Good Times and Bad, Fourth Edition-McGraw-Hill'
+
+[2026-01-10 22:04:43.326983] Book: How to Win Friends and Influence People  -Simon & Schuster Adult Publishing Group
+  - Title: 'How to Win Friends and Influence People   -Simon & Schuster Adult Publishing Group' -> 'How to Win Friends and Influence People  -Simon & Schuster Adult Publishing Group'
+
+[2026-01-10 22:04:43.327929] Book: Incerto 4-book bundle fooled by randomness the black swan the bed of procrustes antifragile by Taleb, Nassim Nicholas
+  - Title: 'Incerto 4-book bundle  fooled by randomness the black swan the bed of procrustes antifragile by Taleb, Nassim Nicholas' -> 'Incerto 4-book bundle fooled by randomness the black swan the bed of procrustes antifragile by Taleb, Nassim Nicholas'
+
+[2026-01-10 22:04:43.328035] Book: India _ what can it teach us_ _ a course of lectures delivered before the University of CambridgeleRead_Kaveri Books
+  - Title: 'India _ what can it teach us_ _ a course of lectures delivered before the University of Cambridge-MobileRead_Kaveri Books' -> 'India _ what can it teach us_ _ a course of lectures delivered before the University of CambridgeleRead_Kaveri Books'
+
+[2026-01-10 22:04:43.328118] Book: Indistractable
+  - Author: 'Nir   Eyal' -> 'Nir  Eyal'
+
+[2026-01-10 22:04:43.328387] Book: Integration of Constraint Programming, Artificial Intelligence, and Operations Research_ 19th International Conference, CPAIOR 2022 Los Angel Pierre Schaus -
+  - Title: 'Integration of Constraint Programming, Artificial Intelligence, and Operations Research_ 19th International Conference, CPAIOR 2022 Los Angel  Pierre Schaus -' -> 'Integration of Constraint Programming, Artificial Intelligence, and Operations Research_ 19th International Conference, CPAIOR 2022 Los Angel Pierre Schaus -'
+
+[2026-01-10 22:04:43.330258] Book: Kuchh Ishq Kiya Kuchh Kaam Kiya by Mishra, Piyush
+  - Title: 'Kuchh Ishq Kiya Kuchh Kaam Kiya  by Mishra, Piyush' -> 'Kuchh Ishq Kiya Kuchh Kaam Kiya by Mishra, Piyush'
+
+[2026-01-10 22:04:43.330799] Book: Learn French Accelerated Learning for Beginners. Includes Grammar, Common Phrases, Vocabulary, Conversations Short Stories...
+  - Title: 'Learn French Accelerated Learning for Beginners. Includes Grammar, Common Phrases, Vocabulary, Conversations  Short Stories...' -> 'Learn French Accelerated Learning for Beginners. Includes Grammar, Common Phrases, Vocabulary, Conversations Short Stories...'
+
+[2026-01-10 22:04:43.331857] Book: Ljubljana, Slovenia, September 10-12, 2012
+  - Author: 'Algorithms – ESA 2012_ 20th Annual European Symposium  Yossi Matias , Leah Epstein, Paolo Ferragina' -> 'Algorithms – ESA 2012_ 20th Annual European Symposium Yossi Matias , Leah Epstein, Paolo Ferragina'
+
+[2026-01-10 22:04:43.332843] Book: Mahabharata vol 02 by Debroy tr Bibek
+  - Title: 'Mahabharata vol 02  by Debroy tr Bibek' -> 'Mahabharata vol 02 by Debroy tr Bibek'
+
+[2026-01-10 22:04:43.332864] Book: Mahabharata vol 05 by Debroy tr Bibek
+  - Title: 'Mahabharata vol 05  by Debroy tr Bibek' -> 'Mahabharata vol 05 by Debroy tr Bibek'
+
+[2026-01-10 22:04:43.333234] Book: Many Globalizations _ Cultural Diversity in the Contemporary World Peter L. Berger, Samuel P. Huntington
+  - Title: 'Many Globalizations _ Cultural Diversity in the Contemporary World  Peter L. Berger, Samuel P. Huntington' -> 'Many Globalizations _ Cultural Diversity in the Contemporary World Peter L. Berger, Samuel P. Huntington'
+
+[2026-01-10 22:04:43.333290] Book: Map Construction Algorithms-Springer International Publishing 2023-03-27 06_39_18
+  - Title: 'Map Construction Algorithms-Springer International Publishing  2023-03-27 06_39_18' -> 'Map Construction Algorithms-Springer International Publishing 2023-03-27 06_39_18'
+
+[2026-01-10 22:04:43.333909] Book: Maun Muskaan Ki Maar by ASHUTOSH RANA
+  - Title: 'Maun Muskaan Ki Maar  by ASHUTOSH RANA' -> 'Maun Muskaan Ki Maar by ASHUTOSH RANA'
+
+[2026-01-10 22:04:43.334470] Book: Midas Touch_ Why Some Entrepreneurs Get Rich-And Why Most Don't -Plata Publishing
+  - Title: 'Midas Touch_ Why Some Entrepreneurs Get Rich-And Why Most Don't  -Plata Publishing' -> 'Midas Touch_ Why Some Entrepreneurs Get Rich-And Why Most Don't -Plata Publishing'
+
+[2026-01-10 22:04:43.335264] Book: My Life as a Quant- Reflections on Physics and Finance by Emanuel Derman
+  - Title: 'My Life as a Quant- Reflections on Physics and Finance  by Emanuel Derman' -> 'My Life as a Quant- Reflections on Physics and Finance by Emanuel Derman'
+
+[2026-01-10 22:04:43.335325] Book: Mythology Timeless Tales of Gods and Heroes, Deluxe Illustrated Edition.
+  - Title: 'Mythology  Timeless Tales of Gods and Heroes, Deluxe Illustrated Edition.' -> 'Mythology Timeless Tales of Gods and Heroes, Deluxe Illustrated Edition.'
+
+[2026-01-10 22:04:43.335730] Book: Networking to Get Customers, a Job or Anything You Want Also includes over 2 hours of video lessons and 15 downloadable networking templates exercises to take your career to the next level by Haroun,
+  - Title: 'Networking to Get Customers, a Job or Anything You Want Also includes over 2 hours of video lessons and 15 downloadable networking templates  exercises to take your career to the next level by Haroun,' -> 'Networking to Get Customers, a Job or Anything You Want Also includes over 2 hours of video lessons and 15 downloadable networking templates exercises to take your career to the next level by Haroun,'
+
+[2026-01-10 22:04:43.336311] Book: Nudge by Cass, Richard 2009 {SPirate}
+  - Title: 'Nudge by Cass, Richard 2009 PDF {SPirate}' -> 'Nudge by Cass, Richard 2009 {SPirate}'
+
+[2026-01-10 22:04:43.337769] Book: Outliers_ The Story of Success Malcolm Gladwell
+  - Title: 'Outliers_ The Story of Success  Malcolm Gladwell' -> 'Outliers_ The Story of Success Malcolm Gladwell'
+
+[2026-01-10 22:04:43.338297] Book: Peak
+  - Title: 'Peak PDF' -> 'Peak'
+
+[2026-01-10 22:04:43.338753] Book: Planet Rothschild The Forbidden History of the New World Order by M S King, Jeff Rense
+  - Title: 'Planet Rothschild The Forbidden History of the New World Order  by M S King, Jeff Rense' -> 'Planet Rothschild The Forbidden History of the New World Order by M S King, Jeff Rense'
+
+[2026-01-10 22:04:43.338817] Book: Planet Rothschild. Volume 1 the forbidden history of the new world order, 1763-1939 by King, M Rense, Jeff
+  - Title: 'Planet Rothschild. Volume 1  the forbidden history of the new world order, 1763-1939 by King, M Rense, Jeff' -> 'Planet Rothschild. Volume 1 the forbidden history of the new world order, 1763-1939 by King, M Rense, Jeff'
+
+[2026-01-10 22:04:43.339432] Book: Prem Kabootar by Manav Kaul
+  - Title: 'Prem Kabootar  by Manav Kaul' -> 'Prem Kabootar by Manav Kaul'
+
+[2026-01-10 22:04:43.339740] Book: Principles and Practice of Constraint Programming_ 26th International Conference, CP 2020, Louvain-la-Neuve, Belgium, September 7–11, 2020, Helmut Simonis
+  - Title: 'Principles and Practice of Constraint Programming_ 26th International Conference, CP 2020, Louvain-la-Neuve, Belgium, September 7–11, 2020,  Helmut Simonis' -> 'Principles and Practice of Constraint Programming_ 26th International Conference, CP 2020, Louvain-la-Neuve, Belgium, September 7–11, 2020, Helmut Simonis'
+
+[2026-01-10 22:04:43.342908] Book: Sales Growth Five Proven Strategies from the World’s Sales Leaders by McKinsey Company Inc., Thomas Baumgartner, Homayoun Hatami, Maria Valdivieso de Uster, Marc Benioff
+  - Title: 'Sales Growth Five Proven Strategies from the World’s Sales Leaders by McKinsey  Company Inc., Thomas Baumgartner, Homayoun Hatami, Maria Valdivieso de Uster, Marc Benioff' -> 'Sales Growth Five Proven Strategies from the World’s Sales Leaders by McKinsey Company Inc., Thomas Baumgartner, Homayoun Hatami, Maria Valdivieso de Uster, Marc Benioff'
+
+[2026-01-10 22:04:43.343168] Book: Savarkar A Contested Legacy, 1924-1966
+  - Title: 'Savarkar  A Contested Legacy, 1924-1966' -> 'Savarkar A Contested Legacy, 1924-1966'
+
+[2026-01-10 22:04:43.344046] Book: Shri Ramcharitmanas  by Goswami Tulsidas
+  - Title: 'Shri Ramcharitmanas   by Goswami Tulsidas' -> 'Shri Ramcharitmanas  by Goswami Tulsidas'
+
+[2026-01-10 22:04:43.344503] Book: Spark_ The Definitive Guide_ Big Data Processing Made Simple-O'Reilly Media, OReilly
+  - Author: 'Bill  Chambers, Matei  Zaharia' -> 'Bill Chambers, Matei Zaharia'
+
+[2026-01-10 22:04:43.344750] Book: Srimad Bhagavatam Bhagavata Purana by A. C. Bhaktivedanta Swami Prabhupada, Veda Vyasa, वेदव्यास, व्यास
+  - Title: 'Srimad Bhagavatam  Bhagavata Purana by A. C. Bhaktivedanta Swami Prabhupada, Veda Vyasa, वेदव्यास, व्यास' -> 'Srimad Bhagavatam Bhagavata Purana by A. C. Bhaktivedanta Swami Prabhupada, Veda Vyasa, वेदव्यास, व्यास'
+
+[2026-01-10 22:04:43.345070] Book: Steve Jobs -Simon & Schuster
+  - Title: 'Steve Jobs  -Simon & Schuster' -> 'Steve Jobs -Simon & Schuster'
+
+[2026-01-10 22:04:43.345137] Book: Stochastic Calculus for Finance I The Binomial Asset Pricing Model by Steven E. Shreve
+  - Title: 'Stochastic Calculus for Finance I The Binomial Asset Pricing Model  by Steven E. Shreve' -> 'Stochastic Calculus for Finance I The Binomial Asset Pricing Model by Steven E. Shreve'
+
+[2026-01-10 22:04:43.345173] Book: Stochastic Calculus for Finance II Continuous-Time Models  by Steven E. Shreve
+  - Title: 'Stochastic Calculus for Finance II Continuous-Time Models   by Steven E. Shreve' -> 'Stochastic Calculus for Finance II Continuous-Time Models  by Steven E. Shreve'
+
+[2026-01-10 22:04:43.345869] Book: Super Freakonomics  Steven D Levitt
+  - Title: 'Super Freakonomics   Steven D Levitt' -> 'Super Freakonomics  Steven D Levitt'
+
+[2026-01-10 22:04:43.345961] Book: Super memory it can be yours by Devi, Shakuntala
+  - Title: 'Super memory  it can be yours by Devi, Shakuntala' -> 'Super memory it can be yours by Devi, Shakuntala'
+
+[2026-01-10 22:04:43.348490] Book: The Big Nine
+  - Author: 'Amy   Webb' -> 'Amy  Webb'
+
+[2026-01-10 22:04:43.348644] Book: The Black Book of Forex Trading_ A Proven Method to Become a Profitable Forex Trader in Four Months and Reach Your Financial Freedom by Doing it
+  - Title: 'The Black Book of Forex Trading_  A Proven Method to Become a Profitable Forex Trader in Four Months and Reach Your Financial Freedom by Doing it' -> 'The Black Book of Forex Trading_ A Proven Method to Become a Profitable Forex Trader in Four Months and Reach Your Financial Freedom by Doing it'
+
+[2026-01-10 22:04:43.348951] Book: The Box_ How the Shipping Container Made the World Smaller and the World Economy Bigger -Princeton University Press
+  - Title: 'The Box_ How the Shipping Container Made the World Smaller and the World Economy Bigger  -Princeton University Press' -> 'The Box_ How the Shipping Container Made the World Smaller and the World Economy Bigger -Princeton University Press'
+
+[2026-01-10 22:04:43.349525] Book: The Chronicles of Narnia Box Set by C. S. Lewis
+  - Title: 'The Chronicles of Narnia Box Set  by C. S. Lewis' -> 'The Chronicles of Narnia Box Set by C. S. Lewis'
+
+[2026-01-10 22:04:43.349798] Book: The Complete Harvard Classics by Benjamin Franklin Plato William Shakespeare Ralph Waldo Emerson Charles Darwin
+  - Title: 'The Complete Harvard Classics by Benjamin Franklin  Plato  William Shakespeare  Ralph Waldo Emerson  Charles Darwin' -> 'The Complete Harvard Classics by Benjamin Franklin Plato William Shakespeare Ralph Waldo Emerson Charles Darwin'
+
+[2026-01-10 22:04:43.350009] Book: The Complete Works of Aristotle by Aristotle
+  - Title: 'The Complete Works of Aristotle  by Aristotle' -> 'The Complete Works of Aristotle by Aristotle'
+
+[2026-01-10 22:04:43.350109] Book: The Complete Works of Swami Vivekananda by Swami Vivekananda
+  - Title: 'The Complete Works of Swami Vivekananda  by Swami Vivekananda' -> 'The Complete Works of Swami Vivekananda by Swami Vivekananda'
+
+[2026-01-10 22:04:43.350179] Book: The Complete Works of Swami Vivekananda for Kindle-Advaita Ashrama
+  - Title: 'The Complete Works of Swami Vivekananda  for Kindle-Advaita Ashrama' -> 'The Complete Works of Swami Vivekananda for Kindle-Advaita Ashrama'
+
+[2026-01-10 22:04:43.350341] Book: The Count of Monte Cristo by Alexandre Dumas pere
+  - Title: 'The Count of Monte Cristo  by Alexandre Dumas pere' -> 'The Count of Monte Cristo by Alexandre Dumas pere'
+
+[2026-01-10 22:04:43.350446] Book: The Da Vinci Code  -Knopf Doubleday Publishing Group
+  - Title: 'The Da Vinci Code   -Knopf Doubleday Publishing Group' -> 'The Da Vinci Code  -Knopf Doubleday Publishing Group'
+
+[2026-01-10 22:04:43.350502] Book: The Dark Side of Valuation Valuing Young, Distressed, and Complex Businesses by Aswath Damodaran
+  - Title: 'The Dark Side of Valuation Valuing Young, Distressed, and Complex Businesses  by Aswath Damodaran' -> 'The Dark Side of Valuation Valuing Young, Distressed, and Complex Businesses by Aswath Damodaran'
+
+[2026-01-10 22:04:43.352910] Book: The Hobbit by Tolkien J.R.R.
+  - Title: 'The Hobbit  by Tolkien J.R.R.' -> 'The Hobbit by Tolkien J.R.R.'
+
+[2026-01-10 22:04:43.353119] Book: The Hypomanic Edge_ The Link Between Craziness nd Success in America-Simon & Schuster
+  - Title: 'The Hypomanic Edge_ The Link Between  Craziness nd  Success in America-Simon & Schuster' -> 'The Hypomanic Edge_ The Link Between Craziness nd Success in America-Simon & Schuster'
+
+[2026-01-10 22:04:43.353619] Book: The Kite Runner by Khaled Hosseini
+  - Title: 'The Kite Runner  by Khaled Hosseini' -> 'The Kite Runner by Khaled Hosseini'
+
+[2026-01-10 22:04:43.354011] Book: The Lost Symbol
+  - Author: 'Dan    Brown' -> 'Dan  Brown'
+
+[2026-01-10 22:04:43.354099] Book: The Mahabharata by Bibek Debroy, Veda Vyasa, Vyasa, Veda Vyas
+  - Title: 'The Mahabharata  by Bibek Debroy, Veda Vyasa, Vyasa, Veda Vyas' -> 'The Mahabharata by Bibek Debroy, Veda Vyasa, Vyasa, Veda Vyas'
+
+[2026-01-10 22:04:43.354856] Book: The New Encyclopedia of Modern Bodybuilding The Bible of Bodybuilding, Fully Updated and Revised by Arnold Schwarzenegger, Bill Dobbins
+  - Title: 'The New Encyclopedia of Modern Bodybuilding  The Bible of Bodybuilding, Fully Updated and Revised by Arnold Schwarzenegger, Bill Dobbins' -> 'The New Encyclopedia of Modern Bodybuilding The Bible of Bodybuilding, Fully Updated and Revised by Arnold Schwarzenegger, Bill Dobbins'
+
+[2026-01-10 22:04:43.354914] Book: The New Jim Crow_ Mass Incarceration in the Age of Colorblindness -New Press, The
+  - Title: 'The New Jim Crow_ Mass Incarceration in the Age of Colorblindness  -New Press, The' -> 'The New Jim Crow_ Mass Incarceration in the Age of Colorblindness -New Press, The'
+
+[2026-01-10 22:04:43.355510] Book: The Oxford Handbook of Evolutionary Psychology by Robin Dunbar, Louise Barrett
+  - Title: 'The Oxford Handbook of Evolutionary Psychology  by Robin Dunbar, Louise Barrett' -> 'The Oxford Handbook of Evolutionary Psychology by Robin Dunbar, Louise Barrett'
+
+[2026-01-10 22:04:43.355603] Book: The Pathless Path
+  - Author: 'Paul  Millerd' -> 'Paul Millerd'
+
+[2026-01-10 22:04:43.355674] Book: The Pilgrimage by Paulo Coelho
+  - Title: 'The Pilgrimage  by Paulo Coelho' -> 'The Pilgrimage by Paulo Coelho'
+
+[2026-01-10 22:04:43.356010] Book: The Pragmatic Programmer
+  - Author: 'Dave         Thomas' -> 'Dave     Thomas'
+
+[2026-01-10 22:04:43.356426] Book: The Return of the King by Tolkien J.R.R.
+  - Title: 'The Return of the King  by Tolkien J.R.R.' -> 'The Return of the King by Tolkien J.R.R.'
+
+[2026-01-10 22:04:43.356572] Book: The Rigveda The Earliest Religious Poetry of India. 3-Volume Set by Brereton, Joel P. Jamison, Stephanie W.
+  - Title: 'The Rigveda The Earliest Religious Poetry of India.  3-Volume Set by Brereton, Joel P. Jamison, Stephanie W.' -> 'The Rigveda The Earliest Religious Poetry of India. 3-Volume Set by Brereton, Joel P. Jamison, Stephanie W.'
+
+[2026-01-10 22:04:43.357096] Book: The Spirit of Zen by Sam van Schaik
+  - Title: 'The Spirit of Zen  by Sam van Schaik' -> 'The Spirit of Zen by Sam van Schaik'
+
+[2026-01-10 22:04:43.357911] Book: The Thirteen Books of the Elements, Vol. 2_ Books 3-9 -Cambridge University Press
+  - Title: 'The Thirteen Books of the Elements, Vol. 2_ Books 3-9  -Cambridge University Press' -> 'The Thirteen Books of the Elements, Vol. 2_ Books 3-9 -Cambridge University Press'
+
+[2026-01-10 22:04:43.357955] Book: The Thirteen Books of the Elements, Vol. 3_ Books 10-13 -Cambridge University Press
+  - Title: 'The Thirteen Books of the Elements, Vol. 3_ Books 10-13  -Cambridge University Press' -> 'The Thirteen Books of the Elements, Vol. 3_ Books 10-13 -Cambridge University Press'
+
+[2026-01-10 22:04:43.358266] Book: The Two Towers by Tolkien J.R.R.
+  - Title: 'The Two Towers  by Tolkien J.R.R.' -> 'The Two Towers by Tolkien J.R.R.'
+
+[2026-01-10 22:04:43.359195] Book: The World of Ice Fire by George R. R. Martin,Elio Garcia,Linda Antonsson
+  - Title: 'The World of Ice  Fire by George R. R. Martin,Elio Garcia,Linda Antonsson' -> 'The World of Ice Fire by George R. R. Martin,Elio Garcia,Linda Antonsson'
+
+[2026-01-10 22:04:43.359716] Book: The collected dialogues of Plato, including the letters by PlatoHamilton, Edith, 1867-1963. edtCairns, Huntington, 1904- edt Hamilton, Edith, 1867-1963. edt Cairns, Huntington, 1904- edt [PlatoHamil
+  - Title: 'The collected dialogues of Plato, including the letters by PlatoHamilton, Edith, 1867-1963. edtCairns, Huntington, 1904- edt  Hamilton, Edith, 1867-1963. edt  Cairns, Huntington, 1904- edt [PlatoHamil' -> 'The collected dialogues of Plato, including the letters by PlatoHamilton, Edith, 1867-1963. edtCairns, Huntington, 1904- edt Hamilton, Edith, 1867-1963. edt Cairns, Huntington, 1904- edt [PlatoHamil'
+
+[2026-01-10 22:04:43.360064] Book: The mathematics of derivatives_ tools for designing numerical algorithms-Wiley 2
+  - Title: 'The mathematics of derivatives_ tools for designing numerical algorithms-Wiley  2' -> 'The mathematics of derivatives_ tools for designing numerical algorithms-Wiley 2'
+
+[2026-01-10 22:04:43.360444] Book: The thirteen books of Euclid's Elements, Vol 1 Books 1-2 -Cambridge University Press
+  - Title: 'The thirteen books of Euclid's Elements, Vol 1 Books 1-2  -Cambridge University Press' -> 'The thirteen books of Euclid's Elements, Vol 1 Books 1-2 -Cambridge University Press'
+
+[2026-01-10 22:04:43.362373] Book: Unconscious Branding_ How Neuroscience Can Empower Marketing-St. Martin’s Press
+  - Title: 'Unconscious Branding_ How Neuroscience Can Empower  Marketing-St. Martin’s Press' -> 'Unconscious Branding_ How Neuroscience Can Empower Marketing-St. Martin’s Press'
+
+[2026-01-10 22:04:43.362700] Book: Unlimited Power The New Science Of Personal Achievement by Anthony Robbins
+  - Title: 'Unlimited Power  The New Science Of Personal Achievement by Anthony Robbins' -> 'Unlimited Power The New Science Of Personal Achievement by Anthony Robbins'
+
+[2026-01-10 22:04:43.362901] Book: Valmiki Ramayana by Valmiki
+  - Title: 'Valmiki Ramayana  by Valmiki' -> 'Valmiki Ramayana by Valmiki'
+
+[2026-01-10 22:04:43.363268] Book: Vault Guide to Advanced Finance Quantitative Interviews by Jennifer Voitle
+  - Title: 'Vault Guide to Advanced Finance  Quantitative Interviews  by Jennifer Voitle' -> 'Vault Guide to Advanced Finance Quantitative Interviews by Jennifer Voitle'
+
+[2026-01-10 22:04:43.363416] Book: Vedic Mathematics Vedic or Mathematics A Fuzzy and Neutrosophic Analysis by W. B. Vasantha Kandasamy, Florentin Smarandache, Meena Kandasamy
+  - Title: 'Vedic Mathematics Vedic  or Mathematics A Fuzzy and Neutrosophic Analysis by W. B. Vasantha Kandasamy, Florentin Smarandache, Meena Kandasamy' -> 'Vedic Mathematics Vedic or Mathematics A Fuzzy and Neutrosophic Analysis by W. B. Vasantha Kandasamy, Florentin Smarandache, Meena Kandasamy'
+
+[2026-01-10 22:04:43.363668] Book: Vijnana Bhirava Tantra, Sanskrit Text with English Translation विज्ञान भैरव तन्त्रम
+  - Title: 'Vijnana Bhirava Tantra, Sanskrit Text with English Translation  विज्ञान भैरव तन्त्रम' -> 'Vijnana Bhirava Tantra, Sanskrit Text with English Translation विज्ञान भैरव तन्त्रम'
+
+[2026-01-10 22:04:43.364215] Book: What Congress and Gandhi have done to the untouchables -Gautambookcentre
+  - Title: 'What Congress and Gandhi have done to the untouchables  -Gautambookcentre' -> 'What Congress and Gandhi have done to the untouchables -Gautambookcentre'
+
+[2026-01-10 22:04:43.364747] Book: When genius failed by Roger Lowenstein
+  - Title: 'When genius failed by Roger  Lowenstein' -> 'When genius failed by Roger Lowenstein'
+
+[2026-01-10 22:04:43.365530] Book: World Classics Library Homer The Illiad and The Odyssey
+  - Title: 'World Classics Library Homer  The Illiad and The Odyssey' -> 'World Classics Library Homer The Illiad and The Odyssey'
+
+[2026-01-10 22:04:43.366106] Book: You can Heal your Life
+  - Author: 'www.pdfofbooks.com' -> 'wwwofbooks.com'
+
+[2026-01-10 22:04:43.366770] Book: _Oceano.com_DAMODARN_ON_VALUATION_-_Aswath_Damodaran
+  - Title: '_OceanofPDF.com_DAMODARN_ON_VALUATION_-_Aswath_Damodaran' -> '_Oceano.com_DAMODARN_ON_VALUATION_-_Aswath_Damodaran'
+
+[2026-01-10 22:04:43.367713] Book: doku.pub_charles-i-jones-macroeconomics-third-edition-w-w-norton-company-201
+  - Title: 'doku.pub_charles-i-jones-macroeconomics-third-edition-w-w-norton-company-2013pdf' -> 'doku.pub_charles-i-jones-macroeconomics-third-edition-w-w-norton-company-201'
+
+[2026-01-10 22:04:43.368296] Book: rf-v2017-n4-1
+  - Title: 'rf-v2017-n4-1-pdf' -> 'rf-v2017-n4-1'
+
+[2026-01-10 22:04:43.368347] Book: roflcopter2110
+  - Author: 'The Richest Man in Babylon  pdf' -> 'The Richest Man in Babylon'[2026-01-10 22:17:37.970076] Book: Incerto 4-book bundle fooled -> Score: 28
+[2026-01-10 22:17:39.838192] Book: Security Analysis -> Score: 42
+[2026-01-10 22:17:42.168161] Book: Warren Buffett and the Interpretation of Financial Statements_ The Search for the Company with a Durable Competitive Advantage-Scribner -> Score: 33
+[2026-01-10 22:17:43.872324] Book: KahnemanThinkingFast&Slow -> Score: 28
+[2026-01-10 22:17:46.261756] Book: The millionaire fastlane_ crack the code to wealth and live rich for a lifetime -> Score: 37
+[2026-01-10 22:17:48.558806] Book: Hedge Fund Market Wizards -> Score: 34
+[2026-01-10 22:17:50.755790] Book: The Intelligent Investor -> Score: 40
+[2026-01-10 22:17:52.959574] Book: Automatic_Generation_of_Road_Maps_from_Low_Quality_GPS_Trajectory_Data_via_Structure_Learning -> Score: 28
+[2026-01-10 22:17:54.816204] Book: Learning Spark_ Lightning-Fast Big Data Analysis-O'Reilly Media -> Score: 40
+[2026-01-10 22:17:57.118947] Book: Security Analysis Part III -> Score: 28
+[2026-01-10 22:17:58.832499] Book: Security Analysis Part I -> Score: 28
+[2026-01-10 22:18:01.022453] Book: Security Analysis Part VI -> Score: 28
+[2026-01-10 22:18:03.471010] Book: An Inquiry into the Nature and Causes of the Wealth of Nations -> Score: 20
+[2026-01-10 22:18:05.283076] Book: The Wealth of Nations Books 1-3 -> Score: 38
+[2026-01-10 22:18:07.052398] Book: Security Analysis Part VII -> Score: 28
+[2026-01-10 22:18:08.856654] Book: Security Analysis Part V -> Score: 28
+[2026-01-10 22:18:11.151275] Book: Security Analysis Part II -> Score: 28
+[2026-01-10 22:18:13.493568] Book: Security Analysis Part IV -> Score: 28
+[2026-01-10 22:18:15.451242] Book: When genius failed_ the rise and fall of Long-Term Capital Management-Random House Publishing Group -> Score: 35
+[2026-01-10 22:18:17.371778] Book: Advances in Active Portfolio Management_ New Developments in Quantitative Investing-McGraw-Hill Education -> Score: 37
+[2026-01-10 22:18:19.239367] Book: Advanced Portfolio Management_ A Quant′s Guide for Fundamental Investors-Wiley -> Score: 38
+[2026-01-10 22:18:21.080824] Book: benjamin_graham_-_security_analysis_6th_edition -> Score: 28
+[2026-01-10 22:18:23.026548] Book: Advances in Active Portfolio Management-McGraw-Hill Education -> Score: 37
+[2026-01-10 22:18:24.872867] Book: My Life as a Quant- Reflections on Physics and Finance -> Score: 34
+[2026-01-10 22:18:27.103357] Book: The Five Rules for Successful Stock Investing_ Morningstar's Guide to Building Wealth and Winning in the Market -> Score: 35
+[2026-01-10 22:18:28.980066] Book: Philosophy 101 From Plato and Socrates to Ethics and Metaphysics, an Essential Primer on the History of Thought -> Score: 28
+[2026-01-10 22:18:31.319134] Book: The Wealth of Nations - An Inquiry Into the Nature and Causes of the Wealth of Nations -> Score: 33
+[2026-01-10 22:18:33.621288] Book: Capital in the Twenty-First Century -> Score: 42
+[2026-01-10 22:18:35.418616] Book: The Almanack of Naval Ravikant A Guide to Wealth and Happiness -> Score: 42
+[2026-01-10 22:18:37.731643] Book: The Choose Yourself Guide to Wealth Summary -> Score: 38
+[2026-01-10 22:18:40.231802] Book: The Definitive Guide to Point and Figure -> Score: 34
+[2026-01-10 22:18:42.004435] Book: Moving Average Formula and Strategy Guide -> Score: 32
+[2026-01-10 22:18:43.825276] Book: Security Analysis and Business Valuation on Wall Street -> Score: 33
+[2026-01-10 22:18:46.274267] Book: Investment Analysis and Portfolio Management -> Score: 37
+[2026-01-10 22:18:48.367878] Book: Martin J. Whitman -> Score: 28
+[2026-01-10 22:18:50.674362] Book: Guide to Using the Financial Pages -> Score: 32
+[2026-01-10 22:18:53.165398] Book: Financial Risk Manager Handbook Plus Test Bank FRM Part I and II Sixth Edition -> Score: 33
+[2026-01-10 22:18:55.385217] Book: Benjamin-Graham_-David-Dodd-Security-Analysis-Sixth-Edition_-Foreword-by-War -> Score: 28
+[2026-01-10 22:18:57.587090] Book: Complete Guide to Capital Markets for Quantitative Professionals-McGraw-Hill Global Education -> Score: 31
+[2026-01-10 22:18:59.466451] Book: Security Analysis 6th ed copy -> Score: 42
+[2026-01-10 22:19:01.692444] Book: An Introduction to International Capital Markets_ Products, Strategies, Participants -Wiley -> Score: 32
+[2026-01-10 22:19:03.989567] Book: When Genius Failed_ The Rise and Fall of Long-Term Capital Management-Random House Trade Paperbacks -> Score: 35
+[2026-01-10 22:19:06.344521] Book: Financial Markets and Trading_ An Introduction to Market Microstructure and Trading Strategies -> Score: 33
+[2026-01-10 22:19:08.186724] Book: Complete Guide to Capital Markets for Quantitative Professionals -> Score: 41
+[2026-01-10 22:19:10.426316] Book: The Handbook of Portfolio Mathematics_ Formulas for Optimal Allocation & Leverage -Wiley -> Score: 32
+[2026-01-10 22:19:12.283284] Book: behavioral-finance-the-second-generation -> Score: 37
+[2026-01-10 22:19:14.330523] Book: Learning How to Fly_ Life Lessons for the Youth-Rupa & Co -> Score: 36
+[2026-01-10 22:19:16.379033] Book: Spark_ The Definitive Guide_ Big Data Processing Made Simple-O'Reilly Media, OReilly -> Score: 41
+[2026-01-10 22:19:18.202545] Book: Mastering geospatial development with QGIS 3. x _ an in-depth guide to becoming proficient in spatial data analysis using QGIS 3.4 and 3.6 with Python-Packt Publishing Ltd -> Score: 37
+[2026-01-10 22:19:20.270121] Book: The New Market Wizards -> Score: 42
+KEPT (API Fail but looks valid): Benjamin Graham
+KEPT (API Fail but looks valid): William J. Bernstein
+KEPT (API Fail but looks valid): Alton Swanson
+KEPT (API Fail but looks valid): Steve Burns
+KEPT (API Fail but looks valid): Thinking Outsi
+KEPT (API Fail but looks valid): Nations, Scott
+KEPT (API Fail but looks valid): Anna Coulling
+KEPT (API Fail but looks valid): Julie R. Dahlquist
+KEPT (API Fail but looks valid): Coulling, Anna
+KEPT (API Fail but looks valid): Tony Loton
+KEPT (API Fail but looks valid): Hague, Debra
+KEPT (API Fail but looks valid): Benjamin Graham; Jason Zweig
+KEPT (API Fail but looks valid): Tony Robbins
+KEPT (API Fail but looks valid): Jason Kelly
+KEPT (API Fail but looks valid): Bellafiore, Mike
+KEPT (API Fail but looks valid): Mitch Zacks
+KEPT (API Fail but looks valid): Ilmanen, Antti
+KEPT (API Fail but looks valid): 3 Proven Strate
+KEPT (API Fail but looks valid): John Stephenson
+KEPT (API Fail but looks valid): Amine Bouchentouf
+KEPT (API Fail but looks valid): Alexander Elder
+KEPT (API Fail but looks valid): Thomas K. Carr
+KEPT (API Fail but looks valid): Gil Morales
+KEPT (API Fail but looks valid): John F. Carter
+KEPT (API Fail but looks valid): L.R. Thomas
+KEPT (API Fail but looks valid): Gleadall, Simon
+KEPT (API Fail but looks valid): James, Keith
+KEPT (API Fail but looks valid): Zhou, Ping
+KEPT (API Fail but looks valid): Wolfinger, Mark D
+KEPT (API Fail but looks valid): Place, Steven
+DELETED (API Fail + Suspicious): Chen, Dennis A
+KEPT (API Fail but looks valid): Sheldon Natenberg
+KEPT (API Fail but looks valid): Izraylevich Ph.D., Sergey
+KEPT (API Fail but looks valid): Wolfinger, Mark
+DELETED (API Fail + Suspicious): Izraylevich, Sergey, Ph.D
+DELETED (Garbage Name): Unknown
+KEPT (API Fail but looks valid): Mark Larson
+KEPT (API Fail but looks valid): Harmon, Greg
+KEPT (API Fail but looks valid): Alwin Ng
+KEPT (API Fail but looks valid): Brian Kim
+DELETED (API Fail + Suspicious): Volatil
+KEPT (API Fail but looks valid): Briones, Raymundo
+KEPT (API Fail but looks valid): Russell Rhoads
+KEPT (API Fail but looks valid): John Connors
+KEPT (API Fail but looks valid): Kathryn F. Staley
+KEPT (API Fail but looks valid): William J. O'Neil
+KEPT (API Fail but looks valid): Carl Futia
+KEPT (API Fail but looks valid): Michael Sincere
+KEPT (API Fail but looks valid): Matt LeRouge
+KEPT (API Fail but looks valid): Robbie Burns
+KEPT (API Fail but looks valid): Joel Greenblatt
+KEPT (API Fail but looks valid): Frank Marshall
+KEPT (API Fail but looks valid): John Heins
+KEPT (API Fail but looks valid): Bruce C. N. Greenwald;Judd Kahn
+KEPT (API Fail but looks valid): Michael Shearn
+KEPT (API Fail but looks valid): Neely, J. Lukas
+KEPT (API Fail but looks valid): John Robertson
+KEPT (API Fail but looks valid): Jeeva Ramaswamy
+KEPT (API Fail but looks valid): Becket, Michael
+KEPT (API Fail but looks valid): Dennis A. Chen
+KEPT (API Fail but looks valid): Hedge Strategies An Investing N
+KEPT (API Fail but looks valid): Carley Garner
+KEPT (API Fail but looks valid): Scott Meyers
+DELETED (Garbage Name): AShortHistoryofNearlyEverything
+KEPT (API Fail but looks valid): You can Heal your Life
+KEPT (API Fail but looks valid): Satish K Gupta
+KEPT (API Fail but looks valid): Rising through the Wreckage on Wall Street
+KEPT (API Fail but looks valid): Malcolm Gladwell
+DELETED (Garbage Name): TheBusinessofthe21stCenturyBook
+DELETED (Garbage Name): PatanjaliYogaSutraSwamiVivekanandaSanEng
+KEPT (API Fail but looks valid): Chip Heath
+KEPT (API Fail but looks valid): Samuel P. Huntington
+DELETED (API Fail + Suspicious): 01.Aatmakathaa
+DELETED (Garbage Name): doku.pub_charles-i-jones-macroeconomics-third-edition-w-w-norton-company-2013pdf
+KEPT (API Fail but looks valid): Charles T. Munger
+KEPT (API Fail but looks valid): Change the Way You Work Forever
+DELETED (Garbage Name): FinancialModelersManifesto
+KEPT (API Fail but looks valid): Robert Greene
+DELETED (Garbage Name): stat110harvarditunesusyllabus
+KEPT (API Fail but looks valid): Clem Chambers
+KEPT (API Fail but looks valid): Adam Grimes
+KEPT (API Fail but looks valid): John F. Ehlers
+DELETED (Garbage Name): 6001021032312180008
+KEPT (API Fail but looks valid): James O'Shaughnessy
+DELETED (Garbage Name): 1489588035
+KEPT (API Fail but looks valid): Alex Nekritin
+DELETED (Garbage Name): 1118467450
+DELETED (Garbage Name): 1118443926
+KEPT (API Fail but looks valid): Simon Gleadall
+DELETED (API Fail + Suspicious): B00B8L2U4Y
+KEPT (API Fail but looks valid): Boxer, Harry
+DELETED (API Fail + Suspicious): 53TAIWB
+KEPT (API Fail but looks valid): Jamie McIntyre
+KEPT (API Fail but looks valid): Gregory L. Morris
+KEPT (API Fail but looks valid): ayn rand
+DELETED (API Fail + Suspicious): 41-Rajendra-01-11 04 18 48
+DELETED (API Fail + Suspicious): 41-Rajendra
+KEPT (API Fail but looks valid): Power vs. Force-Hay House
+DELETED (API Fail + Suspicious): 02.Saahity-Shiqs-aa
+DELETED (Garbage Name): wzX0Frqn51Lr4QuQZsl7Mo61CYSBmU
+DELETED (API Fail + Suspicious): 47.Rajendar-Parshad
+DELETED (API Fail + Suspicious): lemh2ps
+DELETED (API Fail + Suspicious): lemh2sm
+DELETED (API Fail + Suspicious): lemh202
+DELETED (API Fail + Suspicious): lemh206
+DELETED (API Fail + Suspicious): lemh204
+DELETED (API Fail + Suspicious): lemh203
+DELETED (API Fail + Suspicious): lemh201
+DELETED (API Fail + Suspicious): lemh205
+DELETED (API Fail + Suspicious): lemh207
+KEPT (API Fail but looks valid): Hawkins, David R
+DELETED (Garbage Name): C264547189
+DELETED (Garbage Name): 220001318997
+DELETED (API Fail + Suspicious): ProposalFor2
