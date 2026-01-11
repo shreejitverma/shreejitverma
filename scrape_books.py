@@ -11,6 +11,16 @@ DIRECTORIES = [
         "type": "file"
     },
     {
+        "path": "/Users/shreejitverma/Library/CloudStorage/OneDrive-vit.ac.in/Books/Porgramming/C++",
+        "link_prefix": "/library/Porgramming/C++",
+        "type": "file"
+    },
+    {
+        "path": "/Users/shreejitverma/Library/CloudStorage/OneDrive-vit.ac.in/Books/Computer Science",
+        "link_prefix": "/library/Computer Science",
+        "type": "file"
+    },
+    {
         "path": "/Users/shreejitverma/Library/CloudStorage/OneDrive-vit.ac.in/shreejit_verma.gitlab.io/content/Books",
         "link_prefix": "/content_library",
         "type": "metadata"
@@ -60,7 +70,8 @@ IMPORTANT_AUTHORS = [
     "ding", "wang", "zhang", "huang", "zheng", "su", "yang", "liu", "chen", "li", "zhou", "wu", "xu",
     "sun", "guo", "jiang", "he", "lin", "gao", "hu", "zhao", "zhu", "ma", "lu", "tang", "fan", "jin",
     "gu", "deng", "cai", "ye", "tian", "ren", "pan", "yuan", "peng", "luo", "xiao", "cheng", "du",
-    "dai", "yao", "zhong", "shen", "song", "xie", "han", "tang", "feng", "yu", "dong", "liang", "tsai"
+    "dai", "yao", "zhong", "shen", "song", "xie", "han", "tang", "feng", "yu", "dong", "liang", "tsai",
+    "stroustrup", "meyers", "sutter", "alexandrescu", "richard", "stevens", "kernighan", "ritchie", "gosling"
 ]
 
 IMPORTANT_KEYWORDS = [
@@ -72,7 +83,8 @@ IMPORTANT_KEYWORDS = [
     "categories", "interpretation", "analytics", "sophistical", "refutations", "topics", "meteorology",
     "universe", "heavens", "generation", "corruption", "soul", "memory", "reminiscence", "sleep",
     "sleeplessness", "dreams", "prophesying", "length", "shortness", "life", "youth", "old", "age",
-    "respiration", "breath", "history", "animals", "parts", "movement", "progression", "generation"
+    "respiration", "breath", "history", "animals", "parts", "movement", "progression", "generation",
+    "c++", "algorithm", "design", "patterns"
 ]
 
 def clean_junk(text):
@@ -146,10 +158,17 @@ def parse_filename(filename):
         if len(parts) >= 2:
             p0 = parts[0].strip()
             p1 = parts[1].strip()
+            
             if filename.lower().endswith(".md"):
                 return p1, p0, year 
-            else:
-                return p0, p1, year 
+            
+            # Heuristic check for Title vs Author
+            # If p0 contains common title keywords (like "C++", "Guide", "Programming"), treat it as Title (swap)
+            title_indicators = ["c++", "programming", "guide", "introduction", "handbook", "manual", "edition", "learn", "effective", "clean code", "tour"]
+            if any(ind in p0.lower() for ind in title_indicators):
+                 return p1, p0, year # Author, Title
+            
+            return p0, p1, year 
             
     return "Unknown Author", clean_name, year
 

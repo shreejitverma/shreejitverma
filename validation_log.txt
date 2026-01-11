@@ -735,3 +735,41 @@ KEPT (API Fail but looks valid): Hawkins, David R
 DELETED (Garbage Name): C264547189
 DELETED (Garbage Name): 220001318997
 DELETED (API Fail + Suspicious): ProposalFor2
+KEPT (API Fail but looks valid): Tour of C++, A -Addison-Wesley Professional
+KEPT (API Fail but looks valid): C++ Lambda Story
+KEPT (API Fail but looks valid): Daily C++ Interview
+DELETED (API Fail + Suspicious): Chen, Dennis A
+DELETED (API Fail + Suspicious): Izraylevich, Sergey, Ph.D
+DELETED (Garbage Name): Unknown
+DELETED (API Fail + Suspicious): Volatil
+DELETED (Garbage Name): AShortHistoryofNearlyEverything
+DELETED (Garbage Name): TheBusinessofthe21stCenturyBook
+DELETED (Garbage Name): PatanjaliYogaSutraSwamiVivekanandaSanEng
+DELETED (API Fail + Suspicious): 01.Aatmakathaa
+DELETED (Garbage Name): doku.pub_charles-i-jones-macroeconomics-third-edition-w-w-norton-company-2013pdf
+DELETED (Garbage Name): FinancialModelersManifesto
+DELETED (Garbage Name): stat110harvarditunesusyllabus
+KEPT (API Fail but looks valid): Clem Chambers
+DELETED (Garbage Name): 6001021032312180008
+DELETED (Garbage Name): 1489588035
+DELETED (Garbage Name): 1118467450
+DELETED (Garbage Name): 1118443926
+DELETED (API Fail + Suspicious): B00B8L2U4Y
+DELETED (API Fail + Suspicious): 53TAIWB
+DELETED (API Fail + Suspicious): 41-Rajendra-01-11 04 18 48
+DELETED (API Fail + Suspicious): 41-Rajendra
+DELETED (API Fail + Suspicious): 02.Saahity-Shiqs-aa
+DELETED (Garbage Name): wzX0Frqn51Lr4QuQZsl7Mo61CYSBmU
+DELETED (API Fail + Suspicious): 47.Rajendar-Parshad
+DELETED (API Fail + Suspicious): lemh2ps
+DELETED (API Fail + Suspicious): lemh2sm
+DELETED (API Fail + Suspicious): lemh202
+DELETED (API Fail + Suspicious): lemh206
+DELETED (API Fail + Suspicious): lemh204
+DELETED (API Fail + Suspicious): lemh203
+DELETED (API Fail + Suspicious): lemh201
+DELETED (API Fail + Suspicious): lemh205
+DELETED (API Fail + Suspicious): lemh207
+DELETED (Garbage Name): C264547189
+DELETED (Garbage Name): 220001318997
+DELETED (API Fail + Suspicious): ProposalFor2

@@ -11,7 +11,7 @@ from datetime import datetime
 INPUT_FILE = "public/books_data.json"
 OUTPUT_FILE = "public/books_data_validated.json"
 LOG_FILE = "validation_log.txt"
-BATCH_SIZE = 200  # Increased batch size for broader cleanup
+BATCH_SIZE = 5000  # Increased batch size for broader cleanup
 DELAY = 0.5 # Faster processing
 
 # Regex for cleaning artifacts
@@ -81,17 +81,22 @@ def fetch_google_books_metadata(title, author):
     params = urllib.parse.urlencode({'q': query, 'maxResults': 1})
     url = f"https://www.googleapis.com/books/v1/volumes?{params}"
     
-    try:
-        with urllib.request.urlopen(url) as response:
-            if response.status == 200:
-                data = json.loads(response.read().decode())
-                if "items" in data and len(data["items"]) > 0:
-                    return data["items"][0]["volumeInfo"]
-    except Exception as e:
-        # 429 Too Many Requests -> Wait and retry once
-        if "429" in str(e):
-            time.sleep(2)
-            return None 
+    retries = 3
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(url) as response:
+                if response.status == 200:
+                    data = json.loads(response.read().decode())
+                    if "items" in data and len(data["items"]) > 0:
+                        return data["items"][0]["volumeInfo"]
+                    else:
+                        return None
+        except Exception as e:
+            if "429" in str(e) or "503" in str(e):
+                time.sleep(2 * (attempt + 1))
+                continue
+            else:
+                return None
     return None
 
 def calculate_weighted_score(book, metadata):
@@ -222,20 +227,8 @@ def validate_and_enrich():
             
         else:
             # NOT FOUND in API
-            # Heuristic: If it looks like a clean, real book title, keep it.
-            # If it looks messy (underscores, dots, camelCase), delete it.
-            
-            if re.search(r'(_|\.pdf|\.epub)', original_title, re.IGNORECASE) or len(clean_title.split()) < 2:
-                # Likely a filename that didn't clean well
-                log_entries.append(f"DELETED (API Fail + Suspicious): {clean_title}")
-                deleted_count += 1
-            else:
-                # Keep it, likely a niche book or just API miss
-                # Add default score
-                book["importance"] = 10
-                final_books.append(book)
-                log_entries.append(f"KEPT (API Fail but looks valid): {clean_title}")
-                processed_count += 1
+            log_entries.append(f"DELETED (Not found on Google Books): {clean_title}")
+            deleted_count += 1
 
     # Sort
     final_books.sort(key=lambda x: x.get('importance', 0), reverse=True)

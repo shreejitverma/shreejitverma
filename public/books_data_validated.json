@@ -1,5 +1,170 @@
 [
   {
+    "title": "Programming Principles and Practice Using C++",
+    "author": "Bjarne Stroustrup",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C++/Programming%20Principles%20and%20Practice%20Using%20C%2B%2B%20-%20Bjarne%20Stroustrup.pdf",
+    "filename": "Programming Principles and Practice Using C++ - Bjarne Stroustrup.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 75
+  },
+  {
+    "title": "Show Me Your Options! The Guide",
+    "author": "Steve Burns",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Options%20Trading%20Collection/Show%20Me%20Your%20Options%20%282012%29/Show%20Me%20Your%20Options%21%20The%20Guide%20-%20Steve%20Burns.mobi",
+    "filename": "Show Me Your Options! The Guide - Steve Burns.mobi",
+    "format": "MOBI",
+    "review": "",
+    "importance": 70
+  },
+  {
+    "title": "Introduction to Options_ The Ba",
+    "author": "Wolfinger, Mark D",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Options%20Trading%20Collection/Introduction%20to%20Options%20%282014%29/Introduction%20to%20Options_%20The%20Ba%20-%20Wolfinger%2C%20Mark%20D.mobi",
+    "filename": "Introduction to Options_ The Ba - Wolfinger, Mark D.mobi",
+    "format": "MOBI",
+    "review": "",
+    "importance": 70
+  },
+  {
+    "title": "Technical Analysis of the Financial Markets",
+    "author": "Unknown Author",
+    "year": "1999",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Technical%20Analysis%20of%20the%20Financial%20Markets%20%281999%29.pdf",
+    "filename": "Technical Analysis of the Financial Markets (1999).pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 70
+  },
+  {
+    "title": "ADVFN Guide_ A Beginner's Guide",
+    "author": "Clem Chambers",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Long%20Term%20Investing%20Collection/A%20Beginners%20Guide%20to%20Value%20Investing%20%282012%29/ADVFN%20Guide_%20A%20Beginner%27s%20Guide%20-%20Clem%20Chambers.epub",
+    "filename": "ADVFN Guide_ A Beginner's Guide - Clem Chambers.epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 70
+  },
+  {
+    "title": "C++17 In Detail_ Learn the Exciting Features of The New C++ Standard",
+    "author": "Bart\u0142omiej Filipek",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C++/C%2B%2B17%20In%20Detail_%20Learn%20the%20Exciting%20Features%20of%20The%20New%20C%2B%2B%20Standard%20-%20Bart%C5%82omiej%20Filipek.pdf",
+    "filename": "C++17 In Detail_ Learn the Exciting Features of The New C++ Standard - Bart\u0142omiej Filipek.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 65
+  },
+  {
+    "title": "A Tour of C++",
+    "author": "Bjarne Stroustrup",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C++/A%20Tour%20of%20C%2B%2B%20-%20Bjarne%20Stroustrup.pdf",
+    "filename": "A Tour of C++ - Bjarne Stroustrup.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 65
+  },
+  {
+    "title": "Effective Modern C++",
+    "author": "Scott Meyers",
+    "year": "2022",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C++/Effective%20Modern%20C%2B%2B%20%282022%29%20-%20Scott%20Meyers.epub",
+    "filename": "Effective Modern C++ (2022) - Scott Meyers.epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 65
+  },
+  {
+    "title": "Chen, Dennis A_",
+    "author": "The Option Trader's Hedge Fund_",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Options%20Trading%20Collection/The%20Option%20Trader%27s%20Hedge%20Fund%20%20%282012%29/The%20Option%20Trader%27s%20Hedge%20Fund_%20-%20Chen%2C%20Dennis%20A_.epub",
+    "filename": "The Option Trader's Hedge Fund_ - Chen, Dennis A_.epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 60
+  },
+  {
+    "title": "Izraylevich, Sergey, Ph.D_",
+    "author": "Systematic Options Trading_ Eva",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Options%20Trading%20Collection/Systematic%20Options%20Trading%20%20%282011%29/Systematic%20Options%20Trading_%20Eva%20-%20Izraylevich%2C%20Sergey%2C%20Ph.D_.epub",
+    "filename": "Systematic Options Trading_ Eva - Izraylevich, Sergey, Ph.D_.epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 60
+  },
+  {
+    "title": "Unknown",
+    "author": "Online Trading_ How To Make Ser",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Financial%20Management%20Collection/Bitcoin%20for%20the%20Befuddled%20%282015%29/Bitcoin%20for%20the%20Befuddled%20-%20Unknown.epub",
+    "filename": "Bitcoin for the Befuddled - Unknown.epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 60
+  },
+  {
+    "title": "Volatil",
+    "author": "The New Option Secret",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Volatility%20and%20VIX%20Collection/The%20New%20Option%20Secret%20-%20Volatility%20%281996%29/The%20New%20Option%20Secret%20-%20Volatil%20-%20David%20L.%20Caplan.epub",
+    "filename": "The New Option Secret - Volatil - David L. Caplan.epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 60
+  },
+  {
+    "title": "Adam Warner",
+    "author": "Options Volatility Trading_ Str",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Volatility%20and%20VIX%20Collection/Options%20Volatility%20Trading%20%282010%29/Options%20Volatility%20Trading_%20Str%20-%20Adam%20Warner.mobi",
+    "filename": "Options Volatility Trading_ Str - Adam Warner.mobi",
+    "format": "MOBI",
+    "review": "",
+    "importance": 60
+  },
+  {
+    "title": "AShortHistoryofNearlyEverything",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "History & Geopolitics",
+    "downloadLink": "/library/Apple%20Books/AShortHistoryofNearlyEverything.pdf",
+    "filename": "AShortHistoryofNearlyEverything.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 50
+  },
+  {
+    "title": "introduction to objectivist epistemology",
+    "author": "ayn rand",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/ayn%20rand/introduction%20to%20objectivist%20epistemology%20-%20ayn%20rand.epub",
+    "filename": "introduction to objectivist epistemology - ayn rand.epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 50
+  },
+  {
     "title": "Catch-22",
     "author": "Joseph Heller",
     "year": "1999",
@@ -15,6 +180,17 @@
     "coverImage": "https://books.google.com/books/content?id=Xfze51E7TEoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "description": "The story of a group of fliers in the Mediterranean during World War II.",
     "salesCount": 85
+  },
+  {
+    "title": "Traction",
+    "author": "Gabriel Weinberg",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "",
+    "filename": "Traction - Gabriel Weinberg.md",
+    "format": "INFO",
+    "review": "---\ntag: Book\ntitle: \"Traction\"\nauthor: [Gabriel Weinberg]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Traction",
+    "importance": 45
   },
   {
     "title": "System Design Interview - An Insider's Guide",
@@ -253,6 +429,116 @@
     "salesCount": 1
   },
   {
+    "title": "TheBusinessofthe21stCenturyBook",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Business & Leadership",
+    "downloadLink": "/library/TheBusinessofthe21stCenturyBook.pdf",
+    "filename": "TheBusinessofthe21stCenturyBook.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 40
+  },
+  {
+    "title": "PatanjaliYogaSutraSwamiVivekanandaSanEng",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Philosophy & Spirituality",
+    "downloadLink": "/library/Downloads/PatanjaliYogaSutraSwamiVivekanandaSanEng.pdf",
+    "filename": "PatanjaliYogaSutraSwamiVivekanandaSanEng.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 40
+  },
+  {
+    "title": "2015.489801.Aatmakathaa",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Apple%20Books/2015.489801.Aatmakathaa.pdf",
+    "filename": "2015.489801.Aatmakathaa.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 40
+  },
+  {
+    "title": "doku.pub_charles-i-jones-macroeconomics-third-edition-w-w-norton-company-2013pdf",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Business & Leadership",
+    "downloadLink": "/library/Apple%20Books/doku.pub_charles-i-jones-macroeconomics-third-edition-w-w-norton-company-2013pdf.pdf",
+    "filename": "doku.pub_charles-i-jones-macroeconomics-third-edition-w-w-norton-company-2013pdf.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 40
+  },
+  {
+    "title": "Poor Charlies Almanack_ The Wit and Wisdom of Charles T. Munger, Expanded Third Edition",
+    "author": "Charles T. Munger",
+    "year": "Unknown",
+    "category": "Philosophy & Spirituality",
+    "downloadLink": "/library/Apple%20Books/poor%20charlie%20s%20almanack%20the%20wit%20and%20wisdom%20of%20charles%20t%20munger%20expanded%20third%20edition%20charles%20t%20munger/Poor%20Charlies%20Almanack_%20The%20Wit%20and%20Wisdom%20of%20Charles%20T.%20Munger%2C%20Expanded%20Third%20Edition%20-%20Charles%20T.%20Munger.pdf",
+    "filename": "Poor Charlies Almanack_ The Wit and Wisdom of Charles T. Munger, Expanded Third Edition - Charles T. Munger.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 40
+  },
+  {
+    "title": "Objective Mathematics By RD Sharma Volume 2",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Science & Math",
+    "downloadLink": "/library/High%20School/Mathematics/Objective%20Mathematics%20By%20RD%20Sharma%20Volume%202.pdf",
+    "filename": "Objective Mathematics By RD Sharma Volume 2.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 40
+  },
+  {
+    "title": "FinancialModelersManifesto",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/General/FinancialModelersManifesto.pdf",
+    "filename": "FinancialModelersManifesto.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 40
+  },
+  {
+    "title": "The Way of The Superior Man",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Book%20Summaries/The%20Way%20of%20The%20Superior%20Man.pdf",
+    "filename": "The Way of The Superior Man.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 40
+  },
+  {
+    "title": "stat110harvarditunesusyllabus",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Maths%20%26%20Stats/Statistics%20110%20-%20Probability/stat110harvarditunesusyllabus.pdf",
+    "filename": "stat110harvarditunesusyllabus.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 40
+  },
+  {
+    "title": "Clem Chambers",
+    "author": "Letters to my Broker",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Long%20Term%20Investing%20Collection/How%20to%20Make%2025%25%20A%20Year%20Sensibly%20Investing%20%282014%29/ADVFN%27S%20Be%20Rich_%20How%20to%20Make%2025%20-%20Clem%20Chambers.mobi",
+    "filename": "ADVFN'S Be Rich_ How to Make 25 - Clem Chambers.mobi",
+    "format": "MOBI",
+    "review": "",
+    "importance": 40
+  },
+  {
     "title": "War and Peace",
     "author": "Leo Tolstoy",
     "year": "2011",
@@ -337,6 +623,23 @@
     "salesCount": 0
   },
   {
+    "title": "Professional C++",
+    "author": "Marc Gregoire, Nicholas A. Solter, Scott J. Kleper",
+    "year": "2011",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C%2B%2B/The%20C%2B%2B%20Programming%20Language%20-%20Bjarne%20Stroustrup.pdf",
+    "filename": "The C++ Programming Language - Bjarne Stroustrup.pdf",
+    "format": "PDF",
+    "review": "Essential reading for experienced developers who are determined to master the latest release of C++ Although C++ is often the language of choice from game programming to major commercial software applications, it is also one of the most difficult to master. With this no-nonsense book, you will learn...",
+    "importance": 38,
+    "isbn": "9781118169933",
+    "publisher": "John Wiley & Sons",
+    "genre": "Computers",
+    "coverImage": "https://books.google.com/books/content?id=sN_0ovp_yv4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "description": "Essential reading for experienced developers who are determined to master the latest release of C++ Although C++ is often the language of choice from game programming to major commercial software applications, it is also one of the most difficult to master. With this no-nonsense book, you will learn to conquer the latest release of C++. The author deciphers little-known features of C++, shares detailed code examples that you can then plug into your own code, and reveals the significant changes to C++ that accompany the latest release. You'll discover how to design and build applications that solve real-world problems and then implement the solution using the full capabilities of the language. Appeals to experienced developers who are looking for a higher level of learning Drills down the extensive changes to the latest C++ standard, C++11, including enhancements made to run-time performance, standard library, language usability, and core language Zeroes in on explaining the more poorly understood elements of the C++ feature set and addresses common pitfalls to avoid Includes case studies that feature extensive, working code that has been tested on Windows and Linux platforms Intertwines text with useful tips, tricks, and workarounds Packed with best practices for programming, testing, and debugging applications, this book is vital for taking your C++ skills to the next level.",
+    "salesCount": 1
+  },
+  {
     "title": "Warren Buffett Invests Like a Girl",
     "author": "Louann Lofton",
     "year": "2011",
@@ -368,23 +671,6 @@
     "genre": "Business & Economics",
     "coverImage": "https://books.google.com/books/content?id=EipvTMo-YaYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "description": "If you want to gain an edge in today\u2019s competitive markets, adding the candlestick methodology to your repertoire of technical analysis skills is essential. Getting Started in Candlestick Charting can help you achieve this goal, whether you\u2019re new to chart analysis or looking to enhance your understanding of the approach. This reliable resource covers thirty of the most widely recognized candlestick patterns and includes real-world charting examples backed by informative commentary.",
-    "salesCount": 1
-  },
-  {
-    "title": "Professional C++",
-    "author": "Marc Gregoire, Nicholas A. Solter, Scott J. Kleper",
-    "year": "2011",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/C%2B%2B/The%20C%2B%2B%20Programming%20Language%20-%20Bjarne%20Stroustrup.pdf",
-    "filename": "The C++ Programming Language - Bjarne Stroustrup.pdf",
-    "format": "PDF",
-    "review": "Essential reading for experienced developers who are determined to master the latest release of C++ Although C++ is often the language of choice from game programming to major commercial software applications, it is also one of the most difficult to master. With this no-nonsense book, you will learn...",
-    "importance": 38,
-    "isbn": "9781118169933",
-    "publisher": "John Wiley & Sons",
-    "genre": "Computers",
-    "coverImage": "https://books.google.com/books/content?id=sN_0ovp_yv4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    "description": "Essential reading for experienced developers who are determined to master the latest release of C++ Although C++ is often the language of choice from game programming to major commercial software applications, it is also one of the most difficult to master. With this no-nonsense book, you will learn to conquer the latest release of C++. The author deciphers little-known features of C++, shares detailed code examples that you can then plug into your own code, and reveals the significant changes to C++ that accompany the latest release. You'll discover how to design and build applications that solve real-world problems and then implement the solution using the full capabilities of the language. Appeals to experienced developers who are looking for a higher level of learning Drills down the extensive changes to the latest C++ standard, C++11, including enhancements made to run-time performance, standard library, language usability, and core language Zeroes in on explaining the more poorly understood elements of the C++ feature set and addresses common pitfalls to avoid Includes case studies that feature extensive, working code that has been tested on Windows and Linux platforms Intertwines text with useful tips, tricks, and workarounds Packed with best practices for programming, testing, and debugging applications, this book is vital for taking your C++ skills to the next level.",
     "salesCount": 1
   },
   {
@@ -1280,6 +1566,72 @@
     "salesCount": 1
   },
   {
+    "title": "6001021032312180008",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/6001021032312180008.pdf",
+    "filename": "6001021032312180008.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 30
+  },
+  {
+    "title": "1489588035",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Futures%20and%20Forex%20Collection/The%20Holy%20Grail%20Trading%20System%20%282013%29/1489588035.mobi",
+    "filename": "1489588035.mobi",
+    "format": "MOBI",
+    "review": "",
+    "importance": 30
+  },
+  {
+    "title": "1118467450",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Swing%20Trading%20Collection/Trading%20for%20a%20Living%20Collection%20-%20Dr%20Elder/Trading%20for%20a%20Living%20Study%20-%20Study%20Guide%20%20%282014%29/1118467450.mobi",
+    "filename": "1118467450.mobi",
+    "format": "MOBI",
+    "review": "",
+    "importance": 30
+  },
+  {
+    "title": "1118443926",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Swing%20Trading%20Collection/Trading%20for%20a%20Living%20Collection%20-%20Dr%20Elder/Trading%20for%20a%20Living%20%282014%29/1118443926.mobi",
+    "filename": "1118443926.mobi",
+    "format": "MOBI",
+    "review": "",
+    "importance": 30
+  },
+  {
+    "title": "B00B8L2U4Y",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Technical%20Analysis%20Explained%20%282012%29/B00B8L2U4Y.epub",
+    "filename": "B00B8L2U4Y.epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 30
+  },
+  {
+    "title": "0071809953TAIWB",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Long%20Term%20Investing%20Collection/Think%2C%20Act%20and%20Invest%20Like%20Warren%20Buffett%20%282013%29/0071809953TAIWB.epub",
+    "filename": "0071809953TAIWB.epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 30
+  },
+  {
     "title": "Technical Analysis and Globally Diversified Investment",
     "author": "International Federation of Technical Analysts. Annual Conference, Nippon Technical Analysts Association",
     "year": "2001",
@@ -1957,17 +2309,6 @@
     "importance": 10
   },
   {
-    "title": "Steve Burns",
-    "author": "Show Me Your Options! The Guide",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Master%20Traders%20Collection/New%20Trader%2C%20Rich%20Trader%20%282011%29/New%20Trader%2C%20Rich%20Trader_%20How%20to%20-%20Steve%20Burns.mobi",
-    "filename": "New Trader, Rich Trader_ How to - Steve Burns.mobi",
-    "format": "MOBI",
-    "review": "",
-    "importance": 10
-  },
-  {
     "title": "Thinking Outsi",
     "author": "Option Trading",
     "year": "Unknown",
@@ -1990,13 +2331,13 @@
     "importance": 10
   },
   {
-    "title": "Anna Coulling",
+    "title": "Coulling, Anna",
     "author": "A Complete Guide To Volume Pric",
     "year": "Unknown",
     "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/A%20Complete%20Guide%20To%20Volume%20Price%20Analysis%20%282013%29/A%20Complete%20Guide%20To%20Volume%20Pric%20-%20Anna%20Coulling.mobi",
-    "filename": "A Complete Guide To Volume Pric - Anna Coulling.mobi",
-    "format": "MOBI",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Volume%20Price%20Analysis%20%20%282013%29/A%20Complete%20Guide%20To%20Volume%20Pric%20-%20Coulling%2C%20Anna.epub",
+    "filename": "A Complete Guide To Volume Pric - Coulling, Anna.epub",
+    "format": "EPUB",
     "review": "",
     "importance": 10
   },
@@ -2008,17 +2349,6 @@
     "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Technical%20Analysis%20of%20Gaps%20%20%282012%29/Technical%20Analysis%20of%20Gaps_%20Ide%20-%20Julie%20R.%20Dahlquist.mobi",
     "filename": "Technical Analysis of Gaps_ Ide - Julie R. Dahlquist.mobi",
     "format": "MOBI",
-    "review": "",
-    "importance": 10
-  },
-  {
-    "title": "Coulling, Anna",
-    "author": "A Complete Guide To Volume Pric",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Volume%20Price%20Analysis%20%20%282013%29/A%20Complete%20Guide%20To%20Volume%20Pric%20-%20Coulling%2C%20Anna.epub",
-    "filename": "A Complete Guide To Volume Pric - Coulling, Anna.epub",
-    "format": "EPUB",
     "review": "",
     "importance": 10
   },
@@ -2056,6 +2386,17 @@
     "importance": 10
   },
   {
+    "title": "Clem Chambers",
+    "author": "Letters to my Broker",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Financial%20Management%20Collection/101%20Ways%20to%20Pick%20Stock%20Market%20Winners%20%282011%29/ADVFN%20Guide_%20101%20Ways%20to%20Pick%20S%20-%20Clem%20Chambers.mobi",
+    "filename": "ADVFN Guide_ 101 Ways to Pick S - Clem Chambers.mobi",
+    "format": "MOBI",
+    "review": "",
+    "importance": 10
+  },
+  {
     "title": "Tony Robbins",
     "author": "MONEY Master the Game 7 Simple",
     "year": "Unknown",
@@ -2074,6 +2415,17 @@
     "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Financial%20Management%20Collection/The%20Guide%20to%20Stock%20Market%20Investing%20%282010%29/The%20Neatest%20Little%20Guide%20to%20Sto%20-%20Jason%20Kelly.epub",
     "filename": "The Neatest Little Guide to Sto - Jason Kelly.epub",
     "format": "EPUB",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "Scott Meyers",
+    "author": "Effective Modern C++",
+    "year": "2022",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C%2B%2B/Effective%20C%2B%2B%20-%20Scott%20Meyers.pdf",
+    "filename": "Effective C++ - Scott Meyers.pdf",
+    "format": "PDF",
     "review": "",
     "importance": 10
   },
@@ -2562,17 +2914,6 @@
     "importance": 10
   },
   {
-    "title": "Scott Meyers",
-    "author": "Effective Modern C++",
-    "year": "2022",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/C%2B%2B/Effective%20C%2B%2B%20-%20Scott%20Meyers.pdf",
-    "filename": "Effective C++ - Scott Meyers.pdf",
-    "format": "PDF",
-    "review": "",
-    "importance": 10
-  },
-  {
     "title": "You can Heal your Life",
     "author": "wwwofbooks.com",
     "year": "Unknown",
@@ -2672,17 +3013,6 @@
     "importance": 10
   },
   {
-    "title": "Clem Chambers",
-    "author": "Letters to my Broker",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Financial%20Management%20Collection/101%20Ways%20to%20Pick%20Stock%20Market%20Winners%20%282011%29/ADVFN%20Guide_%20101%20Ways%20to%20Pick%20S%20-%20Clem%20Chambers.mobi",
-    "filename": "ADVFN Guide_ 101 Ways to Pick S - Clem Chambers.mobi",
-    "format": "MOBI",
-    "review": "",
-    "importance": 10
-  },
-  {
     "title": "Adam Grimes",
     "author": "The Art & Science of Technical",
     "year": "Unknown",
@@ -2749,6 +3079,17 @@
     "importance": 10
   },
   {
+    "title": "Steve Burns",
+    "author": "Show Me Your Options! The Guide",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Master%20Traders%20Collection/New%20Trader%2C%20Rich%20Trader%20%282011%29/New%20Trader%2C%20Rich%20Trader_%20How%20to%20-%20Steve%20Burns.mobi",
+    "filename": "New Trader, Rich Trader_ How to - Steve Burns.mobi",
+    "format": "MOBI",
+    "review": "",
+    "importance": 10
+  },
+  {
     "title": "Jamie McIntyre",
     "author": "Investment Lessons Learnt From",
     "year": "Unknown",
@@ -2782,6 +3123,28 @@
     "importance": 10
   },
   {
+    "title": "2015.342641.1036-Rajendra 2024-01-11 04_18_48",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/2015.342641.1036-Rajendra%202024-01-11%2004_18_48.pdf",
+    "filename": "2015.342641.1036-Rajendra 2024-01-11 04_18_48.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "2015.342641.1036-Rajendra",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/2015.342641.1036-Rajendra.pdf",
+    "filename": "2015.342641.1036-Rajendra.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
     "title": "Power vs. Force-Hay House",
     "author": "David R. Hawkins",
     "year": "2012",
@@ -2789,6 +3152,138 @@
     "downloadLink": "/library/David%20R.%20Hawkins%20-%20Power%20vs.%20Force-Hay%20House%20%282012%29.epub",
     "filename": "David R. Hawkins - Power vs. Force-Hay House (2012).epub",
     "format": "EPUB",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "2015.494502.Saahity-Shiqs-aa",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Apple%20Books/2015.494502.Saahity-Shiqs-aa.pdf",
+    "filename": "2015.494502.Saahity-Shiqs-aa.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "wzX0Frqn51Lr4QuQZsl7Mo61CYSBmU",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Apple%20Books/wzX0Frqn51Lr4QuQZsl7Mo61CYSBmU.pdf",
+    "filename": "wzX0Frqn51Lr4QuQZsl7Mo61CYSBmU.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "2015.347547.Rajendar-Parshad",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Apple%20Books/2015.347547.Rajendar-Parshad.pdf",
+    "filename": "2015.347547.Rajendar-Parshad.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "lemh2ps",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/High%20School/NCERT/Class%2012/Mathematics/Part%202/lemh2ps.pdf",
+    "filename": "lemh2ps.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "lemh2sm",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/High%20School/NCERT/Class%2012/Mathematics/Part%202/lemh2sm.pdf",
+    "filename": "lemh2sm.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "lemh202",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/High%20School/NCERT/Class%2012/Mathematics/Part%202/lemh202.pdf",
+    "filename": "lemh202.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "lemh206",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/High%20School/NCERT/Class%2012/Mathematics/Part%202/lemh206.pdf",
+    "filename": "lemh206.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "lemh204",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/High%20School/NCERT/Class%2012/Mathematics/Part%202/lemh204.pdf",
+    "filename": "lemh204.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "lemh203",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/High%20School/NCERT/Class%2012/Mathematics/Part%202/lemh203%281%29.pdf",
+    "filename": "lemh203(1).pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "lemh201",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/High%20School/NCERT/Class%2012/Mathematics/Part%202/lemh201%281%29.pdf",
+    "filename": "lemh201(1).pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "lemh205",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/High%20School/NCERT/Class%2012/Mathematics/Part%202/lemh205%281%29.pdf",
+    "filename": "lemh205(1).pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "lemh207",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/High%20School/NCERT/Class%2012/Mathematics/Part%202/lemh207%281%29.pdf",
+    "filename": "lemh207(1).pdf",
+    "format": "PDF",
     "review": "",
     "importance": 10
   },
@@ -2802,6 +3297,214 @@
     "format": "EPUB",
     "review": "",
     "importance": 10
+  },
+  {
+    "title": "Daring Greatly",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Book%20Summaries/Daring%20Greatly.pdf",
+    "filename": "Daring Greatly.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "C264547189",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/LogiNext/Docs/Life/C264547189.pdf",
+    "filename": "C264547189.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "220001318997",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/LogiNext/Docs/Health/220001318997.pdf",
+    "filename": "220001318997.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "ProposalForm389463852",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/LogiNext/Docs/Health/ProposalForm389463852.pdf",
+    "filename": "ProposalForm389463852.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 10
+  },
+  {
+    "title": "Python Architecture Patterns_ Master API design, event-driven structures, and package management in Python-Packt Publishing",
+    "author": "Jaime Buelta",
+    "year": "2022",
+    "category": "Business & Leadership",
+    "downloadLink": "/library/System%20Design/Jaime%20Buelta%20-%20Python%20Architecture%20Patterns_%20Master%20API%20design%2C%20event-driven%20structures%2C%20and%20package%20management%20in%20Python-Packt%20Publishing%20%282022%29.epub",
+    "filename": "Jaime Buelta - Python Architecture Patterns_ Master API design, event-driven structures, and package management in Python-Packt Publishing (2022).epub",
+    "format": "EPUB",
+    "review": ""
+  },
+  {
+    "title": "C++ Design Patterns and Derivatives Pricing",
+    "author": "Joshi Mark.",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Financial%20Engineering/Joshi%20Mark.%20-%20C%2B%2B%20Design%20Patterns%20and%20Derivatives%20Pricing%20%28Mathematics%2C%20Finance%20and%20Risk%29.pdf",
+    "filename": "Joshi Mark. - C++ Design Patterns and Derivatives Pricing (Mathematics, Finance and Risk).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Software Design Patterns_ The Ultimate Guide-CRC Press",
+    "author": "Sufyan bin Uzayr",
+    "year": "2023",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Sufyan%20bin%20Uzayr%20-%20Software%20Design%20Patterns_%20The%20Ultimate%20Guide-CRC%20Press%20%282023%29.pdf",
+    "filename": "Sufyan bin Uzayr - Software Design Patterns_ The Ultimate Guide-CRC Press (2023).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Designing data-intensive applications",
+    "author": "Kleppmann, Martin",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computer%20Science/Designing%20data-intensive%20applications%20by%20Kleppmann%2C%20Martin.pdf",
+    "filename": "Designing data-intensive applications by Kleppmann, Martin.pdf",
+    "format": "PDF",
+    "review": "---\ntag: Book\ntitle: \"Designing Data-Intensive Applications\"\nauthor: [Martin Kleppmann]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Designing Data-Intensive Applications",
+    "importance": 0,
+    "salesCount": 0
+  },
+  {
+    "title": "Visual Guide to Chart Patterns",
+    "author": "Unknown Author",
+    "year": "2013",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Visual%20Guide%20to%20Chart%20Patterns%20%282013%29.pdf",
+    "filename": "Visual Guide to Chart Patterns (2013).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "The mathematics of derivatives_ tools for designing numerical algorithms-Wiley  2",
+    "author": "Robert L. Navin",
+    "year": "2007",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Financial%20Engineering/%28Wiley%20finance%20series%29%20Robert%20L.%20Navin%20-%20The%20mathematics%20of%20derivatives_%20tools%20for%20designing%20numerical%20algorithms-Wiley%20%282007%29%202.pdf",
+    "filename": "(Wiley finance series) Robert L. Navin - The mathematics of derivatives_ tools for designing numerical algorithms-Wiley (2007) 2.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 0,
+    "salesCount": 0
+  },
+  {
+    "title": "Algorithmic Trading and DMA_ An introduction to direct access trading strategies",
+    "author": "Unknown Author",
+    "year": "2010",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Financial%20Engineering/Algorithmic%20Trading%20and%20DMA_%20An%20introduction%20to%20direct%20access%20trading%20strategies%20%282010%29.pdf",
+    "filename": "Algorithmic Trading and DMA_ An introduction to direct access trading strategies (2010).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "High-frequency trading_ a practical guide to algorithmic strategies and trading systems",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Financial%20Engineering/High-frequency%20trading_%20a%20practical%20guide%20to%20algorithmic%20strategies%20and%20trading%20systems.pdf",
+    "filename": "High-frequency trading_ a practical guide to algorithmic strategies and trading systems.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "The mathematics of derivatives_ tools for designing numerical algorithms-Wiley",
+    "author": "Robert L. Navin",
+    "year": "2007",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Financial%20Engineering/%28Wiley%20finance%20series%29%20Robert%20L.%20Navin%20-%20The%20mathematics%20of%20derivatives_%20tools%20for%20designing%20numerical%20algorithms-Wiley%20%282007%29.pdf",
+    "filename": "(Wiley finance series) Robert L. Navin - The mathematics of derivatives_ tools for designing numerical algorithms-Wiley (2007).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Algorithmic-Trading-A-Rough-And-Ready-Guide",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Financial%20Engineering/Algorithmic-Trading-A-Rough-And-Ready-Guide.pdf",
+    "filename": "Algorithmic-Trading-A-Rough-And-Ready-Guide.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Dive Into Design Patterns",
+    "author": "Alexander Shvets",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "",
+    "filename": "Dive Into Design Patterns - Alexander Shvets.md",
+    "format": "INFO",
+    "review": "---\nid: '43125355'\nshelves:\n  - currently-reading\ntitle: Dive Into Design Patterns\nauthor: Alexander Shvets\ndateAdded: '2022-02-18'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1543945452l/43125355._SY475_.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Dive Into Design Patterns\"\nauthor: [Alexander Shvets]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Dive Into Design Patterns"
+  },
+  {
+    "title": "Introduction to Algorithms",
+    "author": "Charles E. Leiserson",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "",
+    "filename": "Introduction to Algorithms - Charles E. Leiserson.md",
+    "format": "INFO",
+    "review": "---\nid: '108986'\nshelves:\n  - read\ntitle: Introduction to Algorithms\nauthor: Thomas H. Cormen\ndateAdded: '2020-10-27'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387741681l/108986.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Introduction to Algorithms\"\nauthor: [Thomas H. Cormen]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Introduction to Algorithms"
+  },
+  {
+    "title": "Eric Freeman, Elisabeth Robson",
+    "author": "Head First Design Patterns_ Building Extensible and Maintainable Object-Oriented Software-O\u2019Reilly Media",
+    "year": "2021",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Head%20First%20Design%20Patterns_%20Building%20Extensible%20and%20Maintainable%20Object-Oriented%20Software-O%E2%80%99Reilly%20Media%20%282021%29%20%28Head%20First%20Series%29%20-%20Eric%20Freeman%2C%20Elisabeth%20Robson%20.epub",
+    "filename": "Head First Design Patterns_ Building Extensible and Maintainable Object-Oriented Software-O\u2019Reilly Media (2021) (Head First Series) - Eric Freeman, Elisabeth Robson .epub",
+    "format": "EPUB",
+    "review": ""
+  },
+  {
+    "title": "C++ Templates_The Complete Guide",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C%2B%2B/C%2B%2B%20Templates_The%20Complete%20Guide.pdf",
+    "filename": "C++ Templates_The Complete Guide.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Herbert Schildt",
+    "author": "_C++ A Beginner's Guide",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C%2B%2B/_C%2B%2B%20A%20Beginner%27s%20Guide%20-%20Herbert%20Schildt.pdf",
+    "filename": "_C++ A Beginner's Guide - Herbert Schildt.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Beautiful C++ 30 Core Guidelines for Writing Clean, Safe",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C%2B%2B/Beautiful%20C%2B%2B%2030%20Core%20Guidelines%20for%20Writing%20Clean%2C%20Safe.pdf",
+    "filename": "Beautiful C++ 30 Core Guidelines for Writing Clean, Safe.pdf",
+    "format": "PDF",
+    "review": ""
   },
   {
     "title": "Beating the Street",
@@ -2828,6 +3531,16 @@
     "salesCount": 0
   },
   {
+    "title": "Advanced Python Programming_ Accelerate your Python programs using proven techniques and design patterns, 2nd Edition-Packt",
+    "author": "Quan Nguyen",
+    "year": "2022",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Python/Quan%20Nguyen%20-%20Advanced%20Python%20Programming_%20Accelerate%20your%20Python%20programs%20using%20proven%20techniques%20and%20design%20patterns%2C%202nd%20Edition-Packt%20%282022%29.pdf",
+    "filename": "Quan Nguyen - Advanced Python Programming_ Accelerate your Python programs using proven techniques and design patterns, 2nd Edition-Packt (2022).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
     "title": "Computational Geometry, Topology and Physics of Digital Images with Applications_ Shape Complexes, Optical Vortex Nerves and Proximities-S",
     "author": "James F. Peters",
     "year": "Unknown",
@@ -2838,13 +3551,75 @@
     "review": ""
   },
   {
-    "title": "Python Architecture Patterns_ Master API design, event-driven structures, and package management in Python-Packt Publishing",
-    "author": "Jaime Buelta",
-    "year": "2022",
-    "category": "Business & Leadership",
-    "downloadLink": "/library/System%20Design/Jaime%20Buelta%20-%20Python%20Architecture%20Patterns_%20Master%20API%20design%2C%20event-driven%20structures%2C%20and%20package%20management%20in%20Python-Packt%20Publishing%20%282022%29.epub",
-    "filename": "Jaime Buelta - Python Architecture Patterns_ Master API design, event-driven structures, and package management in Python-Packt Publishing (2022).epub",
-    "format": "EPUB",
+    "title": "JJ Geewax",
+    "author": "API Design Patterns-Manning Publications",
+    "year": "2021",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/System%20Design/API%20Design%20Patterns-Manning%20Publications%20%282021%29%20-%20JJ%20Geewax.pdf",
+    "filename": "API Design Patterns-Manning Publications (2021) - JJ Geewax.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Harry Percival, Bob Gregory -",
+    "author": "Architecture Patterns with Python_ Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices-O'Reilly Media",
+    "year": "2020",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/System%20Design/Architecture%20Patterns%20with%20Python_%20Enabling%20Test-Driven%20Development%2C%20Domain-Driven%20Design%2C%20and%20Event-Driven%20Microservices-O%27Reilly%20Media%20%282020%29%20-%20Harry%20Percival%2C%20Bob%20Gregory%20-%20.pdf",
+    "filename": "Architecture Patterns with Python_ Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices-O'Reilly Media (2020) - Harry Percival, Bob Gregory - .pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Gamma, Erich_Helm, Richard_Johnson, Ralph E._Vlissides, John",
+    "author": "Design patterns_ elements of reusable object-oriented software",
+    "year": "2016",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/System%20Design/Design%20patterns_%20elements%20of%20reusable%20object-oriented%20software%20-%20Gamma%2C%20Erich_Helm%2C%20Richard_Johnson%2C%20Ralph%20E._Vlissides%2C%20John%20-%20Pearson%20Education%20%282016%29.pdf",
+    "filename": "Design patterns_ elements of reusable object-oriented software - Gamma, Erich_Helm, Richard_Johnson, Ralph E._Vlissides, John - Pearson Education (2016).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Head First Design Patterns_ Building Extensible and Maintainable Object-Oriented Software-O'Reilly Media",
+    "author": "Eric Freeman, Elisabeth Robson",
+    "year": "2020",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computer%20Science/Eric%20Freeman%2C%20Elisabeth%20Robson%20-%20Head%20First%20Design%20Patterns_%20Building%20Extensible%20and%20Maintainable%20Object-Oriented%20Software-O%27Reilly%20Media%20%282020%29.pdf",
+    "filename": "Eric Freeman, Elisabeth Robson - Head First Design Patterns_ Building Extensible and Maintainable Object-Oriented Software-O'Reilly Media (2020).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Cloud Native Infrastructure_ Patterns for Scalable Infrastructure and Applications in a Dynamic Environment-O\u2019Reilly Media",
+    "author": "Justin Garrison, Kris Nova",
+    "year": "2018",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Distributed%20Systems/Justin%20Garrison%2C%20Kris%20Nova%20-%20Cloud%20Native%20Infrastructure_%20Patterns%20for%20Scalable%20Infrastructure%20and%20Applications%20in%20a%20Dynamic%20Environment-O%E2%80%99Reilly%20Media%20%282018%29.pdf",
+    "filename": "Justin Garrison, Kris Nova - Cloud Native Infrastructure_ Patterns for Scalable Infrastructure and Applications in a Dynamic Environment-O\u2019Reilly Media (2018).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Designing distributed systems_ patterns and paradigms for scalable, reliable services-O'Reilly Media  Burns, Brendan",
+    "author": "Unknown Author",
+    "year": "2018",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Distributed%20Systems/Designing%20distributed%20systems_%20patterns%20and%20paradigms%20for%20scalable%2C%20reliable%20services-O%27Reilly%20Media%20%282018%29%20Burns%2C%20Brendan.pdf",
+    "filename": "Designing distributed systems_ patterns and paradigms for scalable, reliable services-O'Reilly Media (2018) Burns, Brendan.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 0,
+    "salesCount": 0
+  },
+  {
+    "title": "Algorithms Illuminated _ Graph Algorithms and Data Structures-Soundlikeyourself Publishing, LLC",
+    "author": "Tim Roughgarden",
+    "year": "2018",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computer%20Science/Tim%20Roughgarden%20-%20Algorithms%20Illuminated%20%28Part%202%29_%20Graph%20Algorithms%20and%20Data%20Structures-Soundlikeyourself%20Publishing%2C%20LLC%20%282018%29.pdf",
+    "filename": "Tim Roughgarden - Algorithms Illuminated (Part 2)_ Graph Algorithms and Data Structures-Soundlikeyourself Publishing, LLC (2018).pdf",
+    "format": "PDF",
     "review": ""
   },
   {
@@ -2874,6 +3649,16 @@
     "category": "Computer Science & Data",
     "downloadLink": "/library/Research%20Papers/Scalable%2C%20Distributed%2C%20Real-Time%20Map%20Generation%20.pdf",
     "filename": "Scalable, Distributed, Real-Time Map Generation .pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Performance Analysis of K-Means and Bisecting K-Means Algorithms in Weblog Data",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Research%20Papers/K%20Means/Performance%20Analysis%20of%20K-Means%20and%20Bisecting%20K-Means%20Algorithms%20in%20Weblog%20Data.pdf",
+    "filename": "Performance Analysis of K-Means and Bisecting K-Means Algorithms in Weblog Data.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -2925,6 +3710,16 @@
     "downloadLink": "/library/Shane%20Parrish%20-%20Clear%20Thinking_%20Turning%20Ordinary%20Moments%20into%20Extraordinary%20Results-Portfolio%20%282023%29.epub",
     "filename": "Shane Parrish - Clear Thinking_ Turning Ordinary Moments into Extraordinary Results-Portfolio (2023).epub",
     "format": "EPUB",
+    "review": ""
+  },
+  {
+    "title": "Kevin J. Davey",
+    "author": "Building Winning Algorithmic Trading Systems",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Building%20Winning%20Algorithmic%20Trading%20Systems%20-%20Kevin%20J.%20Davey.pdf",
+    "filename": "Building Winning Algorithmic Trading Systems - Kevin J. Davey.pdf",
+    "format": "PDF",
     "review": ""
   },
   {
@@ -3002,6 +3797,18 @@
     "salesCount": 0
   },
   {
+    "title": "Algorithmic and High-Frequency Trading",
+    "author": "A\u0301lvaro Cartea, Sebastian Jaimungal, Jose\u0301 Penalva",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Apple%20Books/Algorithmic%20and%20High-Frequency%20Trading%20by%20A%CC%81lvaro%20Cartea%2C%20Sebastian%20Jaimungal%2C%20Jose%CC%81%20Penalva%20%28z-lib.org%29.pdf",
+    "filename": "Algorithmic and High-Frequency Trading by A\u0301lvaro Cartea, Sebastian Jaimungal, Jose\u0301 Penalva (z-lib.org).pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 0,
+    "salesCount": 0
+  },
+  {
     "title": "Options 101_ A Beginner\u2019s Guide to Trading Options in the Stock Market-Stolly Media, LLC",
     "author": "Steve Burns, Holly Burns",
     "year": "2016",
@@ -3034,6 +3841,26 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
+  },
+  {
+    "title": "Successful Algorithmic Trading",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Financial%20Engineering/Successful%20Algorithmic%20Trading.pdf",
+    "filename": "Successful Algorithmic Trading.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "trading-chart-patterns",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Apple%20Books/trading-chart-patterns.pdf",
+    "filename": "trading-chart-patterns.pdf",
+    "format": "PDF",
+    "review": ""
   },
   {
     "title": "Stowell_-_An_Introduction_to_Investment_Banks,_Hedge_Funds___Private_Equity_",
@@ -3180,18 +4007,6 @@
     "filename": "23 THINGS THEY DON\u2019T TELL YOU ABOUT CAPITALISM.pdf",
     "format": "PDF",
     "review": ""
-  },
-  {
-    "title": "Designing data-intensive applications",
-    "author": "Kleppmann, Martin",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/Designing%20data-intensive%20applications%20by%20Kleppmann%2C%20Martin.pdf",
-    "filename": "Designing data-intensive applications by Kleppmann, Martin.pdf",
-    "format": "PDF",
-    "review": "---\ntag: Book\ntitle: \"Designing Data-Intensive Applications\"\nauthor: [Martin Kleppmann]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Designing Data-Intensive Applications",
-    "importance": 0,
-    "salesCount": 0
   },
   {
     "title": "ultimate-day-trading-guide",
@@ -3430,16 +4245,6 @@
     "category": "Finance & Trading",
     "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/A%20Beginners%20Guide%20to%20Charting%20Financial%20Markets%20%282007%29.pdf",
     "filename": "A Beginners Guide to Charting Financial Markets (2007).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Visual Guide to Chart Patterns",
-    "author": "Unknown Author",
-    "year": "2013",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Visual%20Guide%20to%20Chart%20Patterns%20%282013%29.pdf",
-    "filename": "Visual Guide to Chart Patterns (2013).pdf",
     "format": "PDF",
     "review": ""
   },
@@ -3794,22 +4599,12 @@
     "salesCount": 0
   },
   {
-    "title": "Algorithmic Trading and DMA_ An introduction to direct access trading strategies",
+    "title": "Systematic Trading_ A unique new method for designing trading and investing systems-Harriman House",
     "author": "Unknown Author",
-    "year": "2010",
+    "year": "2015",
     "category": "Finance & Trading",
-    "downloadLink": "/library/Financial%20Engineering/Algorithmic%20Trading%20and%20DMA_%20An%20introduction%20to%20direct%20access%20trading%20strategies%20%282010%29.pdf",
-    "filename": "Algorithmic Trading and DMA_ An introduction to direct access trading strategies (2010).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "High-frequency trading_ a practical guide to algorithmic strategies and trading systems",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Financial%20Engineering/High-frequency%20trading_%20a%20practical%20guide%20to%20algorithmic%20strategies%20and%20trading%20systems.pdf",
-    "filename": "High-frequency trading_ a practical guide to algorithmic strategies and trading systems.pdf",
+    "downloadLink": "/library/Financial%20Engineering/Systematic%20Trading_%20A%20unique%20new%20method%20for%20designing%20trading%20and%20investing%20systems-Harriman%20House%20%282015%29.pdf",
+    "filename": "Systematic Trading_ A unique new method for designing trading and investing systems-Harriman House (2015).pdf",
     "format": "PDF",
     "review": ""
   },
@@ -3900,16 +4695,6 @@
     "salesCount": 0
   },
   {
-    "title": "Algorithmic-Trading-A-Rough-And-Ready-Guide",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Financial%20Engineering/Algorithmic-Trading-A-Rough-And-Ready-Guide.pdf",
-    "filename": "Algorithmic-Trading-A-Rough-And-Ready-Guide.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "An Introduction to Trading in the Financial Markets_ Technology_ Systems, Data, and Networks-Academic Press",
     "author": "R. Tee Williams",
     "year": "2011",
@@ -3948,16 +4733,6 @@
     "filename": "The Age of Voltaire - Will Durant.md",
     "format": "INFO",
     "review": "---\nid: '78164'\nshelves:\n  - to-read\ntitle: The Age of Voltaire\nauthor: Will Durant\ndateAdded: '2024-11-14'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388383081l/78164.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"The Age of Voltaire\"\nauthor: [Will Durant]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# The Age of Voltaire"
-  },
-  {
-    "title": "Introduction to Algorithms",
-    "author": "Charles E. Leiserson",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "",
-    "filename": "Introduction to Algorithms - Charles E. Leiserson.md",
-    "format": "INFO",
-    "review": "---\nid: '108986'\nshelves:\n  - read\ntitle: Introduction to Algorithms\nauthor: Thomas H. Cormen\ndateAdded: '2020-10-27'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387741681l/108986.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Introduction to Algorithms\"\nauthor: [Thomas H. Cormen]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Introduction to Algorithms"
   },
   {
     "title": "The Age of Faith",
@@ -4026,6 +4801,16 @@
     "category": "Computer Science & Data",
     "downloadLink": "/library/%28Robert%20C.%20Martin%20series%29%20Feathers%2C%20Michael%20C._%20Langr%2C%20Jeffrey%20J._%20Martin%2C%20Robert%20C._%20Ottinger%2C%20Timothy%20R.%20-%20Clean%20code%20a%20handbook%20of%20agile%20software%20craftsmanship-Prentice%20Hall%20%282016%29.epub",
     "filename": "(Robert C. Martin series) Feathers, Michael C._ Langr, Jeffrey J._ Martin, Robert C._ Ottinger, Timothy R. - Clean code a handbook of agile software craftsmanship-Prentice Hall (2016).epub",
+    "format": "EPUB",
+    "review": ""
+  },
+  {
+    "title": "Machine Learning for Algorithmic Trading_ Predictive models to extract signals from market and alternative data for systematic trading strategies with Python, 2nd Edition-Packt Publish",
+    "author": "Stefan Jansen",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Stefan%20Jansen%20-%20Machine%20Learning%20for%20Algorithmic%20Trading_%20Predictive%20models%20to%20extract%20signals%20from%20market%20and%20alternative%20data%20for%20systematic%20trading%20strategies%20with%20Python%2C%202nd%20Edition-Packt%20Publish.epub",
+    "filename": "Stefan Jansen - Machine Learning for Algorithmic Trading_ Predictive models to extract signals from market and alternative data for systematic trading strategies with Python, 2nd Edition-Packt Publish.epub",
     "format": "EPUB",
     "review": ""
   },
@@ -4120,22 +4905,24 @@
     "review": ""
   },
   {
+    "title": "Map Construction Algorithms-Springer International Publishing  2023-03-27 06_39_18",
+    "author": "Mahmuda Ahmed, Sophia Karagiorgou, Dieter Pfoser, Carola Wenk",
+    "year": "2015",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/LogiNext/Mahmuda%20Ahmed%2C%20Sophia%20Karagiorgou%2C%20Dieter%20Pfoser%2C%20Carola%20Wenk%20%28auth.%29%20-%20Map%20Construction%20Algorithms-Springer%20International%20Publishing%20%282015%29%202023-03-27%2006_39_18.pdf",
+    "filename": "Mahmuda Ahmed, Sophia Karagiorgou, Dieter Pfoser, Carola Wenk (auth.) - Map Construction Algorithms-Springer International Publishing (2015) 2023-03-27 06_39_18.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 0,
+    "salesCount": 0
+  },
+  {
     "title": "Learning Geospatial Analysis with Python_ Understand GIS fundamentals and perform remote sensing data analysis using Python 3.7-Packt Publishing",
     "author": "Joel Lawhead",
     "year": "2019",
     "category": "Computer Science & Data",
     "downloadLink": "/library/LogiNext/Joel%20Lawhead%20-%20Learning%20Geospatial%20Analysis%20with%20Python_%20Understand%20GIS%20fundamentals%20and%20perform%20remote%20sensing%20data%20analysis%20using%20Python%203.7-Packt%20Publishing%20%282019%29.pdf",
     "filename": "Joel Lawhead - Learning Geospatial Analysis with Python_ Understand GIS fundamentals and perform remote sensing data analysis using Python 3.7-Packt Publishing (2019).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Software Design Patterns_ The Ultimate Guide-CRC Press",
-    "author": "Sufyan bin Uzayr",
-    "year": "2023",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Sufyan%20bin%20Uzayr%20-%20Software%20Design%20Patterns_%20The%20Ultimate%20Guide-CRC%20Press%20%282023%29.pdf",
-    "filename": "Sufyan bin Uzayr - Software Design Patterns_ The Ultimate Guide-CRC Press (2023).pdf",
     "format": "PDF",
     "review": ""
   },
@@ -4150,6 +4937,46 @@
     "review": ""
   },
   {
+    "title": "The Art of Computer Programming, Volume 4A Combinatorial Algorithms, Part 1 z",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/The%20Art%20of%20Computer%20Programming%2C%20Volume%204A%20Combinatorial%20Algorithms%2C%20Part%201%20%28Donald%20E.%20Knuth%29z.pdf",
+    "filename": "The Art of Computer Programming, Volume 4A Combinatorial Algorithms, Part 1 (Donald E. Knuth)z.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "The art of computer programming. Vol.2. Seminumerical algorithms",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/The%20art%20of%20computer%20programming.%20Vol.2.%20Seminumerical%20algorithms%20%28Knuth%2C%20Donald%20E%29.pdf",
+    "filename": "The art of computer programming. Vol.2. Seminumerical algorithms (Knuth, Donald E).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "The Art of Computer Programming, Volume 4A Combinatorial Algorithms, Part 1",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/The%20Art%20of%20Computer%20Programming%2C%20Volume%204A%20Combinatorial%20Algorithms%2C%20Part%201%20%28Donald%20E.%20Knuth%29.pdf",
+    "filename": "The Art of Computer Programming, Volume 4A Combinatorial Algorithms, Part 1 (Donald E. Knuth).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "The Art of Computer Programming, Vol. 1 Fundamental Algorithms, 3rd Edition",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/The%20Art%20of%20Computer%20Programming%2C%20Vol.%201%20Fundamental%20Algorithms%2C%203rd%20Edition%20%28Donald%20E.%20Knuth%29.pdf",
+    "filename": "The Art of Computer Programming, Vol. 1 Fundamental Algorithms, 3rd Edition (Donald E. Knuth).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
     "title": "Coding Interview Python Language Essentials",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -4160,33 +4987,33 @@
     "review": ""
   },
   {
-    "title": "C++ Templates_The Complete Guide",
-    "author": "Unknown Author",
+    "title": "Bjo\u0308rn Andrist, Viktor Sehr",
+    "author": "C++ High Performance",
     "year": "Unknown",
     "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/C%2B%2B/C%2B%2B%20Templates_The%20Complete%20Guide.pdf",
-    "filename": "C++ Templates_The Complete Guide.pdf",
+    "downloadLink": "/library/Porgramming/C%2B%2B/C%2B%2B%20High%20Performance%20-%20Bjo%CC%88rn%20Andrist%2C%20Viktor%20Sehr.pdf",
+    "filename": "C++ High Performance - Bjo\u0308rn Andrist, Viktor Sehr.pdf",
     "format": "PDF",
     "review": ""
   },
   {
-    "title": "Herbert Schildt",
-    "author": "_C++ A Beginner's Guide",
-    "year": "Unknown",
+    "title": "Tour of C++, A -Addison-Wesley Professional",
+    "author": "Bjarne Stroustrup",
+    "year": "2022",
     "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/C%2B%2B/_C%2B%2B%20A%20Beginner%27s%20Guide%20-%20Herbert%20Schildt.pdf",
-    "filename": "_C++ A Beginner's Guide - Herbert Schildt.pdf",
+    "downloadLink": "/library/Porgramming/C%2B%2B/Bjarne%20Stroustrup%20-%20Tour%20of%20C%2B%2B%2C%20A%20%28C%2B%2B%20In-Depth%20Series%29-Addison-Wesley%20Professional%20%282022%29.pdf",
+    "filename": "Bjarne Stroustrup - Tour of C++, A (C++ In-Depth Series)-Addison-Wesley Professional (2022).pdf",
     "format": "PDF",
     "review": ""
   },
   {
-    "title": "Beautiful C++ 30 Core Guidelines for Writing Clean, Safe",
-    "author": "Unknown Author",
+    "title": "Sandor Dargo",
+    "author": "Daily C++ Interview",
     "year": "Unknown",
     "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/C%2B%2B/Beautiful%20C%2B%2B%2030%20Core%20Guidelines%20for%20Writing%20Clean%2C%20Safe.pdf",
-    "filename": "Beautiful C++ 30 Core Guidelines for Writing Clean, Safe.pdf",
-    "format": "PDF",
+    "downloadLink": "/library/Porgramming/C%2B%2B/Daily%20C%2B%2B%20Interview%20-%20Sandor%20Dargo.epub",
+    "filename": "Daily C++ Interview - Sandor Dargo.epub",
+    "format": "EPUB",
     "review": ""
   },
   {
@@ -4298,12 +5125,42 @@
     "salesCount": 0
   },
   {
+    "title": "Computational geometry_ algorithms and applications-World Publishing Corporation 2013",
+    "author": "Berg Mark de",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computational%20Geometry/Berg%20Mark%20de%20-%20Computational%20geometry_%20algorithms%20and%20applications-World%20Publishing%20Corporation%202013.pdf",
+    "filename": "Berg Mark de - Computational geometry_ algorithms and applications-World Publishing Corporation 2013.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Computational geometry_ algorithms and applications-World Publishing Corporation",
+    "author": "Berg, Mark de",
+    "year": "2013",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computational%20Geometry/Berg%2C%20Mark%20de%20-%20Computational%20geometry_%20algorithms%20and%20applications-World%20Publishing%20Corporation%20%282013%29.pdf",
+    "filename": "Berg, Mark de - Computational geometry_ algorithms and applications-World Publishing Corporation (2013).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
     "title": "Handbook of Discrete and Computational Geometry, Third Edition-Chapman and Hall_CRC_C",
     "author": "Csaba D. Toth, Joseph O'Rourke, Jacob E. Goodman",
     "year": "Unknown",
     "category": "Science & Math",
     "downloadLink": "/library/Computational%20Geometry/%28CRC%20Press%20series%20on%20discrete%20mathematics%20and%20its%20applications%29%20Csaba%20D.%20Toth%2C%20Joseph%20O%27Rourke%2C%20Jacob%20E.%20Goodman%20-%20Handbook%20of%20Discrete%20and%20Computational%20Geometry%2C%20Third%20Edition-Chapman%20and%20Hall_CRC_C.pdf",
     "filename": "(CRC Press series on discrete mathematics and its applications) Csaba D. Toth, Joseph O'Rourke, Jacob E. Goodman - Handbook of Discrete and Computational Geometry, Third Edition-Chapman and Hall_CRC_C.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Computational Algorithms and Engineering Applications",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computational%20Geometry/Computational%20Algorithms%20and%20Engineering%20Applications.pdf",
+    "filename": "Computational Algorithms and Engineering Applications.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -4328,12 +5185,42 @@
     "review": ""
   },
   {
-    "title": "Cloud Native Infrastructure_ Patterns for Scalable Infrastructure and Applications in a Dynamic Environment-O\u2019Reilly Media",
-    "author": "Justin Garrison, Kris Nova",
+    "title": "Kleppmann, Martin",
+    "author": "Designing data-intensive applications_ the big ideas behind reliable, scalable, and maintainable systems-O'Reilly Media",
     "year": "2018",
     "category": "Computer Science & Data",
-    "downloadLink": "/library/Distributed%20Systems/Justin%20Garrison%2C%20Kris%20Nova%20-%20Cloud%20Native%20Infrastructure_%20Patterns%20for%20Scalable%20Infrastructure%20and%20Applications%20in%20a%20Dynamic%20Environment-O%E2%80%99Reilly%20Media%20%282018%29.pdf",
-    "filename": "Justin Garrison, Kris Nova - Cloud Native Infrastructure_ Patterns for Scalable Infrastructure and Applications in a Dynamic Environment-O\u2019Reilly Media (2018).pdf",
+    "downloadLink": "/library/Distributed%20Systems/Designing%20data-intensive%20applications_%20the%20big%20ideas%20behind%20reliable%2C%20scalable%2C%20and%20maintainable%20systems-O%27Reilly%20Media%20%282018%29%20-%20Kleppmann%2C%20Martin.pdf",
+    "filename": "Designing data-intensive applications_ the big ideas behind reliable, scalable, and maintainable systems-O'Reilly Media (2018) - Kleppmann, Martin.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Qingguo Lu\u0308, Xiaofeng Liao, Huaqing Li, Shaojiang Deng, Shanfu Gao",
+    "author": "Distributed Optimization in Networked Systems_ Algorithms and Applications-Springer",
+    "year": "2023",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Distributed%20Systems/Distributed%20Optimization%20in%20Networked%20Systems_%20Algorithms%20and%20Applications-Springer%20%282023%29%20-%20%28Wireless%20Networks%29%20Qingguo%20Lu%CC%88%2C%20Xiaofeng%20Liao%2C%20Huaqing%20Li%2C%20Shaojiang%20Deng%2C%20Shanfu%20Gao.pdf",
+    "filename": "Distributed Optimization in Networked Systems_ Algorithms and Applications-Springer (2023) - (Wireless Networks) Qingguo Lu\u0308, Xiaofeng Liao, Huaqing Li, Shaojiang Deng, Shanfu Gao.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Role of Data-Intensive Distributed Computing Systems in Designing Data Solutions",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Distributed%20Systems/Role%20of%20Data-Intensive%20Distributed%20Computing%20Systems%20in%20Designing%20Data%20Solutions.pdf",
+    "filename": "Role of Data-Intensive Distributed Computing Systems in Designing Data Solutions.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Distributed Machine Learning Patterns -Manning Publications",
+    "author": "Yuan Tang",
+    "year": "2023",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Distributed%20Systems/Yuan%20Tang%20-%20Distributed%20Machine%20Learning%20Patterns%20%28MEAP%20V07%29-Manning%20Publications%20%282023%29.pdf",
+    "filename": "Yuan Tang - Distributed Machine Learning Patterns (MEAP V07)-Manning Publications (2023).pdf",
     "format": "PDF",
     "review": ""
   },
@@ -4423,22 +5310,52 @@
     "review": ""
   },
   {
-    "title": "Algorithms Illuminated _ Graph Algorithms and Data Structures-Soundlikeyourself Publishing, LLC",
-    "author": "Tim Roughgarden",
-    "year": "2018",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/Tim%20Roughgarden%20-%20Algorithms%20Illuminated%20%28Part%202%29_%20Graph%20Algorithms%20and%20Data%20Structures-Soundlikeyourself%20Publishing%2C%20LLC%20%282018%29.pdf",
-    "filename": "Tim Roughgarden - Algorithms Illuminated (Part 2)_ Graph Algorithms and Data Structures-Soundlikeyourself Publishing, LLC (2018).pdf",
+    "title": "Kleppmann Martin copy",
+    "author": "Designing data-intensive applications_ the big ideas behind reliable scalable and maintainable systems-OReilly Media 2018",
+    "year": "Unknown",
+    "category": "Science & Math",
+    "downloadLink": "/library/Maths%20%26%20Stats/Designing%20data-intensive%20applications_%20the%20big%20ideas%20behind%20reliable%20scalable%20and%20maintainable%20systems-OReilly%20Media%202018%20-%20Kleppmann%20Martin%20copy.pdf",
+    "filename": "Designing data-intensive applications_ the big ideas behind reliable scalable and maintainable systems-OReilly Media 2018 - Kleppmann Martin copy.pdf",
     "format": "PDF",
     "review": ""
   },
   {
-    "title": "An Introduction to Statistical Learning",
-    "author": "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani",
+    "title": "Effective Pandas_ Patterns for Data Manipulation -_Independently published",
+    "author": "Matt Harrison",
     "year": "2021",
     "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/%28Springer%20Texts%20in%20Statistics%29%20Gareth%20James%2C%20Daniela%20Witten%2C%20Trevor%20Hastie%2C%20Robert%20Tibshirani%20-%20An%20Introduction%20to%20Statistical%20Learning%20-%20with%20Applications%20in%20R-Springer%20Science%2BBusiness%20Media%20%282021%29.pdf",
-    "filename": "(Springer Texts in Statistics) Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani - An Introduction to Statistical Learning - with Applications in R-Springer Science+Business Media (2021).pdf",
+    "downloadLink": "/library/Computer%20Science/Matt%20Harrison%20-%20Effective%20Pandas_%20Patterns%20for%20Data%20Manipulation%20%28Treading%20on%20Python%29-_Independently%20published%20%282021%29.pdf",
+    "filename": "Matt Harrison - Effective Pandas_ Patterns for Data Manipulation (Treading on Python)-_Independently published (2021).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Algorithms Illuminated_ Part 1_ The Basics-Soundlikeyourself Publishing",
+    "author": "Tim Roughgarden",
+    "year": "2017",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computer%20Science/Tim%20Roughgarden%20-%20Algorithms%20Illuminated_%20Part%201_%20The%20Basics-Soundlikeyourself%20Publishing%20%282017%29.pdf",
+    "filename": "Tim Roughgarden - Algorithms Illuminated_ Part 1_ The Basics-Soundlikeyourself Publishing (2017).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Algorithms Illuminated _ Greedy Algorithms and Dynamic Programming-Soundlikeyourself Publishing, LLC",
+    "author": "Tim Roughgarden",
+    "year": "2019",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computer%20Science/Tim%20Roughgarden%20-%20Algorithms%20Illuminated%20%28Part%203%29_%20Greedy%20Algorithms%20and%20Dynamic%20Programming-Soundlikeyourself%20Publishing%2C%20LLC%20%282019%29.pdf",
+    "filename": "Tim Roughgarden - Algorithms Illuminated (Part 3)_ Greedy Algorithms and Dynamic Programming-Soundlikeyourself Publishing, LLC (2019).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Designing_Event-Driven_Systems-Ben_Stopford",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computer%20Science/Designing_Event-Driven_Systems-Ben_Stopford.pdf",
+    "filename": "Designing_Event-Driven_Systems-Ben_Stopford.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -4463,6 +5380,16 @@
     "review": ""
   },
   {
+    "title": "Algorithms Illuminated _ Algorithms for NP-Hard Problems. 4-Soundlikeyourself Publishing, LLC",
+    "author": "Tim Roughgarden",
+    "year": "2020",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computer%20Science/Tim%20Roughgarden%20-%20Algorithms%20Illuminated%20%28Part%204%29_%20Algorithms%20for%20NP-Hard%20Problems.%204-Soundlikeyourself%20Publishing%2C%20LLC%20%282020%29.pdf",
+    "filename": "Tim Roughgarden - Algorithms Illuminated (Part 4)_ Algorithms for NP-Hard Problems. 4-Soundlikeyourself Publishing, LLC (2020).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
     "title": "Linux Command Line and Shell Scripting Bible",
     "author": "Richard Blum, Christine Bresnahan",
     "year": "Unknown",
@@ -4475,6 +5402,26 @@
     "salesCount": 0
   },
   {
+    "title": "Building Microservices_ Designing Fine-Grained Systems-O'Reilly Media",
+    "author": "Sam Newman",
+    "year": "2021",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computer%20Science/Sam%20Newman%20-%20Building%20Microservices_%20Designing%20Fine-Grained%20Systems-O%27Reilly%20Media%20%282021%29.pdf",
+    "filename": "Sam Newman - Building Microservices_ Designing Fine-Grained Systems-O'Reilly Media (2021).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "A Comparison and Evaluation of Map Construction Algorithms Using Vehicle Tracking Data Mahmuda Ahmed Sophia Karagiorgou Dieter Pfoser Carola Wenk",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Research%20Papers/A%20Comparison%20and%20Evaluation%20of%20Map%20Construction%20Algorithms%20Using%20Vehicle%20Tracking%20Data%20Mahmuda%20Ahmed%20Sophia%20Karagiorgou%20Dieter%20Pfoser%20Carola%20Wenk.pdf",
+    "filename": "A Comparison and Evaluation of Map Construction Algorithms Using Vehicle Tracking Data Mahmuda Ahmed Sophia Karagiorgou Dieter Pfoser Carola Wenk.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
     "title": "18. Citizens as Voluntary Sensors Spatial Data Infrastructure in the World of Web 2 Michael F Goodchild",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -4485,12 +5432,42 @@
     "review": ""
   },
   {
-    "title": "Performance Analysis of K-Means and Bisecting K-Means Algorithms in Weblog Data",
+    "title": "Detecting Road Intersections from GPS Traces Using Longest Common Subsequence Algorithm",
     "author": "Unknown Author",
     "year": "Unknown",
     "category": "Computer Science & Data",
-    "downloadLink": "/library/Research%20Papers/K%20Means/Performance%20Analysis%20of%20K-Means%20and%20Bisecting%20K-Means%20Algorithms%20in%20Weblog%20Data.pdf",
-    "filename": "Performance Analysis of K-Means and Bisecting K-Means Algorithms in Weblog Data.pdf",
+    "downloadLink": "/library/Research%20Papers/Detecting%20Road%20Intersections%20from%20GPS%20Traces%20Using%20Longest%20Common%20Subsequence%20Algorithm.pdf",
+    "filename": "Detecting Road Intersections from GPS Traces Using Longest Common Subsequence Algorithm.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "24. Learning and Design of Principal Curves Bala \u0301zs Ke \u0301gl Adam Krzyz \u0307ak Tama \u0301s Linder Kenneth Zeger",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Research%20Papers/24.%20Learning%20and%20Design%20of%20Principal%20Curves%20Bala%20%CC%81zs%20Ke%20%CC%81gl%20Adam%20Krzyz%20%CC%87ak%20Tama%20%CC%81s%20Linder%20Kenneth%20Zeger.pdf",
+    "filename": "24. Learning and Design of Principal Curves Bala \u0301zs Ke \u0301gl Adam Krzyz \u0307ak Tama \u0301s Linder Kenneth Zeger.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Bisecting K-means Algorithm Based on K-valued Selfdetermining and Clustering Center Optimization",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Research%20Papers/K%20Means/Bisecting%20K-means%20Algorithm%20Based%20on%20K-valued%20Selfdetermining%20and%20Clustering%20Center%20Optimization.pdf",
+    "filename": "Bisecting K-means Algorithm Based on K-valued Selfdetermining and Clustering Center Optimization.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Algorithms_for_the_Reduction_of_the_Numb",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Research%20Papers/Trace%20Compression%20Algorithms/Algorithms_for_the_Reduction_of_the_Numb.pdf",
+    "filename": "Algorithms_for_the_Reduction_of_the_Numb.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -4744,16 +5721,6 @@
     "downloadLink": "/library/Roland%20Ve%CC%81gso%CC%8B%20-%20The%20Naked%20Communist_%20Cold%20War%20Modernism%20and%20the%20Politics%20of%20Popular%20Culture-Fordham%20University%20Press%20%282012%29.epub",
     "filename": "Roland Ve\u0301gso\u030b - The Naked Communist_ Cold War Modernism and the Politics of Popular Culture-Fordham University Press (2012).epub",
     "format": "EPUB",
-    "review": ""
-  },
-  {
-    "title": "Kevin J. Davey",
-    "author": "Building Winning Algorithmic Trading Systems",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Building%20Winning%20Algorithmic%20Trading%20Systems%20-%20Kevin%20J.%20Davey.pdf",
-    "filename": "Building Winning Algorithmic Trading Systems - Kevin J. Davey.pdf",
-    "format": "PDF",
     "review": ""
   },
   {
@@ -5035,6 +6002,18 @@
     "salesCount": 0
   },
   {
+    "title": "Words That Change Minds The 14 Patterns for Mastering the Language of Influence",
+    "author": "Shelle Rose Charvet",
+    "year": "Unknown",
+    "category": "Self-Help & Psychology",
+    "downloadLink": "/library/Apple%20Books/Words%20That%20Change%20Minds%20The%2014%20Patterns%20for%20Mastering%20the%20Language%20of%20Influence%20by%20Shelle%20Rose%20Charvet%20%28z-lib.org%29.epub",
+    "filename": "Words That Change Minds The 14 Patterns for Mastering the Language of Influence by Shelle Rose Charvet (z-lib.org).epub",
+    "format": "EPUB",
+    "review": "",
+    "importance": 0,
+    "salesCount": 0
+  },
+  {
     "title": "The Warren Buffett Way-Wiley",
     "author": "Robert G. Hagstrom, Bill Miller, Kenneth L. Fisher, Ken Fisher, Bill Miller",
     "year": "2004",
@@ -5105,18 +6084,6 @@
     "filename": "Joel Greenblatt - You can be a stock market genius_ (even if you're not too smart)_ uncover the secret hiding places of stock market profits-Simon & Schuster (1997).epub",
     "format": "EPUB",
     "review": ""
-  },
-  {
-    "title": "Algorithmic and High-Frequency Trading",
-    "author": "A\u0301lvaro Cartea, Sebastian Jaimungal, Jose\u0301 Penalva",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Apple%20Books/Algorithmic%20and%20High-Frequency%20Trading%20by%20A%CC%81lvaro%20Cartea%2C%20Sebastian%20Jaimungal%2C%20Jose%CC%81%20Penalva%20%28z-lib.org%29.pdf",
-    "filename": "Algorithmic and High-Frequency Trading by A\u0301lvaro Cartea, Sebastian Jaimungal, Jose\u0301 Penalva (z-lib.org).pdf",
-    "format": "PDF",
-    "review": "",
-    "importance": 0,
-    "salesCount": 0
   },
   {
     "title": "The Box_ How the Shipping Container Made the World Smaller and the World Economy Bigger  -Princeton University Press",
@@ -5279,16 +6246,6 @@
     "review": ""
   },
   {
-    "title": "Successful Algorithmic Trading",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Financial%20Engineering/Successful%20Algorithmic%20Trading.pdf",
-    "filename": "Successful Algorithmic Trading.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "How I Made 2,000,000 in the Stock Market Now Revised  Updated for the 21st Century",
     "author": "Steve Burns, Nicolas Darvas",
     "year": "Unknown",
@@ -5367,16 +6324,6 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
-  },
-  {
-    "title": "trading-chart-patterns",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Apple%20Books/trading-chart-patterns.pdf",
-    "filename": "trading-chart-patterns.pdf",
-    "format": "PDF",
-    "review": ""
   },
   {
     "title": "Startup valuation",
@@ -5687,6 +6634,16 @@
     "category": "Finance & Trading",
     "downloadLink": "/library/Finance/Setharaman%20Sir/Big%20Mistakes_%20The%20Best%20Investors%20and%20Their%20Worst%20Investments%20%28Bloomberg%29.pdf",
     "filename": "Big Mistakes_ The Best Investors and Their Worst Investments (Bloomberg).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "dive-into-design-patterns",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/System%20Design/dive-into-design-patterns.pdf",
+    "filename": "dive-into-design-patterns.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -7742,18 +8699,6 @@
     "review": ""
   },
   {
-    "title": "The mathematics of derivatives_ tools for designing numerical algorithms-Wiley  2",
-    "author": "Robert L. Navin",
-    "year": "2007",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Financial%20Engineering/%28Wiley%20finance%20series%29%20Robert%20L.%20Navin%20-%20The%20mathematics%20of%20derivatives_%20tools%20for%20designing%20numerical%20algorithms-Wiley%20%282007%29%202.pdf",
-    "filename": "(Wiley finance series) Robert L. Navin - The mathematics of derivatives_ tools for designing numerical algorithms-Wiley (2007) 2.pdf",
-    "format": "PDF",
-    "review": "",
-    "importance": 0,
-    "salesCount": 0
-  },
-  {
     "title": "The Man Who Solved the Market How Jim Simons Launched the Quant Revolution",
     "author": "Gregory Zuckerman",
     "year": "Unknown",
@@ -7808,16 +8753,6 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
-  },
-  {
-    "title": "Systematic Trading_ A unique new method for designing trading and investing systems-Harriman House",
-    "author": "Unknown Author",
-    "year": "2015",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Financial%20Engineering/Systematic%20Trading_%20A%20unique%20new%20method%20for%20designing%20trading%20and%20investing%20systems-Harriman%20House%20%282015%29.pdf",
-    "filename": "Systematic Trading_ A unique new method for designing trading and investing systems-Harriman House (2015).pdf",
-    "format": "PDF",
-    "review": ""
   },
   {
     "title": "The Evaluation and Optimization of Trading Strategies-Wiley",
@@ -7962,26 +8897,6 @@
     "review": ""
   },
   {
-    "title": "The mathematics of derivatives_ tools for designing numerical algorithms-Wiley",
-    "author": "Robert L. Navin",
-    "year": "2007",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Financial%20Engineering/%28Wiley%20finance%20series%29%20Robert%20L.%20Navin%20-%20The%20mathematics%20of%20derivatives_%20tools%20for%20designing%20numerical%20algorithms-Wiley%20%282007%29.pdf",
-    "filename": "(Wiley finance series) Robert L. Navin - The mathematics of derivatives_ tools for designing numerical algorithms-Wiley (2007).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "C++ Design Patterns and Derivatives Pricing",
-    "author": "Joshi Mark.",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Financial%20Engineering/Joshi%20Mark.%20-%20C%2B%2B%20Design%20Patterns%20and%20Derivatives%20Pricing%20%28Mathematics%2C%20Finance%20and%20Risk%29.pdf",
-    "filename": "Joshi Mark. - C++ Design Patterns and Derivatives Pricing (Mathematics, Finance and Risk).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "Trading Evolved_ Anyone Can Build Killer Trading Strategies in Python",
     "author": "Unknown Author",
     "year": "2019",
@@ -8114,16 +9029,6 @@
     "filename": "Mahabharat Hindi Anuwad Sahit Bhag-4 Code 0035 Sanskrit Hindi Gita Press Gorakhpur Official Hindi Edition - Vedvyas (Gita Press Gorakhpur).md",
     "format": "INFO",
     "review": "---\nid: '41442271'\nshelves:\n  - currently-reading\ntitle: >-\n  Mahabharat Hindi Anuwad Sahit Bhag-4 Code 0035 Sanskrit Hindi Gita Press\n  Gorakhpur Official Hindi Edition\nauthor: Vedvyas (Gita Press Gorakhpur)\ndateAdded: '2022-08-18'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1535049120l/41442271._SY475_.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Mahabharat Hindi Anuwad Sahit Bhag-4 Code 0035 Sanskrit Hindi Gita Press Gorakhpur Official Hindi Edition\"\nauthor:..."
-  },
-  {
-    "title": "Dive Into Design Patterns",
-    "author": "Alexander Shvets",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "",
-    "filename": "Dive Into Design Patterns - Alexander Shvets.md",
-    "format": "INFO",
-    "review": "---\nid: '43125355'\nshelves:\n  - currently-reading\ntitle: Dive Into Design Patterns\nauthor: Alexander Shvets\ndateAdded: '2022-02-18'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1543945452l/43125355._SY475_.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Dive Into Design Patterns\"\nauthor: [Alexander Shvets]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Dive Into Design Patterns"
   },
   {
     "title": "The Renaissance",
@@ -8366,16 +9271,6 @@
     "review": "---\nid: '54540444'\nshelves:\n  - to-read\ntitle: The Idiot\nauthor: Fyodor Dostoevsky\ndateAdded: '2021-06-06'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1594808269l/54540444._SY475_.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"The Idiot\"\nauthor: [Fyodor Dostoevsky]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# The Idiot"
   },
   {
-    "title": "Machine Learning for Algorithmic Trading_ Predictive models to extract signals from market and alternative data for systematic trading strategies with Python, 2nd Edition-Packt Publish",
-    "author": "Stefan Jansen",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Stefan%20Jansen%20-%20Machine%20Learning%20for%20Algorithmic%20Trading_%20Predictive%20models%20to%20extract%20signals%20from%20market%20and%20alternative%20data%20for%20systematic%20trading%20strategies%20with%20Python%2C%202nd%20Edition-Packt%20Publish.epub",
-    "filename": "Stefan Jansen - Machine Learning for Algorithmic Trading_ Predictive models to extract signals from market and alternative data for systematic trading strategies with Python, 2nd Edition-Packt Publish.epub",
-    "format": "EPUB",
-    "review": ""
-  },
-  {
     "title": "-Advaita Ashrama",
     "author": "Unknown Author",
     "year": "2020",
@@ -8602,44 +9497,12 @@
     "review": ""
   },
   {
-    "title": "Map Construction Algorithms-Springer International Publishing  2023-03-27 06_39_18",
-    "author": "Mahmuda Ahmed, Sophia Karagiorgou, Dieter Pfoser, Carola Wenk",
-    "year": "2015",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/LogiNext/Mahmuda%20Ahmed%2C%20Sophia%20Karagiorgou%2C%20Dieter%20Pfoser%2C%20Carola%20Wenk%20%28auth.%29%20-%20Map%20Construction%20Algorithms-Springer%20International%20Publishing%20%282015%29%202023-03-27%2006_39_18.pdf",
-    "filename": "Mahmuda Ahmed, Sophia Karagiorgou, Dieter Pfoser, Carola Wenk (auth.) - Map Construction Algorithms-Springer International Publishing (2015) 2023-03-27 06_39_18.pdf",
-    "format": "PDF",
-    "review": "",
-    "importance": 0,
-    "salesCount": 0
-  },
-  {
     "title": "The Network State_ How To Start A New Country",
     "author": "Balaji Srinivasan",
     "year": "2022",
     "category": "Computer Science & Data",
     "downloadLink": "/library/Balaji%20Srinivasan%20-%20The%20Network%20State_%20How%20To%20Start%20A%20New%20Country%20%282022%29.pdf",
     "filename": "Balaji Srinivasan - The Network State_ How To Start A New Country (2022).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Eric Freeman, Elisabeth Robson",
-    "author": "Head First Design Patterns_ Building Extensible and Maintainable Object-Oriented Software-O\u2019Reilly Media",
-    "year": "2021",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Head%20First%20Design%20Patterns_%20Building%20Extensible%20and%20Maintainable%20Object-Oriented%20Software-O%E2%80%99Reilly%20Media%20%282021%29%20%28Head%20First%20Series%29%20-%20Eric%20Freeman%2C%20Elisabeth%20Robson%20.epub",
-    "filename": "Head First Design Patterns_ Building Extensible and Maintainable Object-Oriented Software-O\u2019Reilly Media (2021) (Head First Series) - Eric Freeman, Elisabeth Robson .epub",
-    "format": "EPUB",
-    "review": ""
-  },
-  {
-    "title": "The Art of Computer Programming, Volume 4A Combinatorial Algorithms, Part 1 z",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/The%20Art%20of%20Computer%20Programming%2C%20Volume%204A%20Combinatorial%20Algorithms%2C%20Part%201%20%28Donald%20E.%20Knuth%29z.pdf",
-    "filename": "The Art of Computer Programming, Volume 4A Combinatorial Algorithms, Part 1 (Donald E. Knuth)z.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -8664,26 +9527,6 @@
     "review": ""
   },
   {
-    "title": "The art of computer programming. Vol.2. Seminumerical algorithms",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/The%20art%20of%20computer%20programming.%20Vol.2.%20Seminumerical%20algorithms%20%28Knuth%2C%20Donald%20E%29.pdf",
-    "filename": "The art of computer programming. Vol.2. Seminumerical algorithms (Knuth, Donald E).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "The Art of Computer Programming, Volume 4A Combinatorial Algorithms, Part 1",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/The%20Art%20of%20Computer%20Programming%2C%20Volume%204A%20Combinatorial%20Algorithms%2C%20Part%201%20%28Donald%20E.%20Knuth%29.pdf",
-    "filename": "The Art of Computer Programming, Volume 4A Combinatorial Algorithms, Part 1 (Donald E. Knuth).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "Coding Interview Questions",
     "author": "Narasimha Karumanchi",
     "year": "Unknown",
@@ -8694,36 +9537,6 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
-  },
-  {
-    "title": "The Art of Computer Programming, Vol. 1 Fundamental Algorithms, 3rd Edition",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/The%20Art%20of%20Computer%20Programming%2C%20Vol.%201%20Fundamental%20Algorithms%2C%203rd%20Edition%20%28Donald%20E.%20Knuth%29.pdf",
-    "filename": "The Art of Computer Programming, Vol. 1 Fundamental Algorithms, 3rd Edition (Donald E. Knuth).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Bjo\u0308rn Andrist, Viktor Sehr",
-    "author": "C++ High Performance",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/C%2B%2B/C%2B%2B%20High%20Performance%20-%20Bjo%CC%88rn%20Andrist%2C%20Viktor%20Sehr.pdf",
-    "filename": "C++ High Performance - Bjo\u0308rn Andrist, Viktor Sehr.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Sandor Dargo",
-    "author": "Daily C++ Interview",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/C%2B%2B/Daily%20C%2B%2B%20Interview%20-%20Sandor%20Dargo.epub",
-    "filename": "Daily C++ Interview - Sandor Dargo.epub",
-    "format": "EPUB",
-    "review": ""
   },
   {
     "title": "The Art Book Big Ideas Simply Explained",
@@ -9050,16 +9863,6 @@
     "review": ""
   },
   {
-    "title": "Advanced Python Programming_ Accelerate your Python programs using proven techniques and design patterns, 2nd Edition-Packt",
-    "author": "Quan Nguyen",
-    "year": "2022",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Python/Quan%20Nguyen%20-%20Advanced%20Python%20Programming_%20Accelerate%20your%20Python%20programs%20using%20proven%20techniques%20and%20design%20patterns%2C%202nd%20Edition-Packt%20%282022%29.pdf",
-    "filename": "Quan Nguyen - Advanced Python Programming_ Accelerate your Python programs using proven techniques and design patterns, 2nd Edition-Packt (2022).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "Networking to Get Customers, a Job or Anything You Want Also includes over 2 hours of video lessons and 15 downloadable networking templates  exercises to take your career to the next level",
     "author": "Haroun",
     "year": "Unknown",
@@ -9096,36 +9899,6 @@
     "salesCount": 0
   },
   {
-    "title": "Computational geometry_ algorithms and applications-World Publishing Corporation 2013",
-    "author": "Berg Mark de",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computational%20Geometry/Berg%20Mark%20de%20-%20Computational%20geometry_%20algorithms%20and%20applications-World%20Publishing%20Corporation%202013.pdf",
-    "filename": "Berg Mark de - Computational geometry_ algorithms and applications-World Publishing Corporation 2013.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Computational geometry_ algorithms and applications-World Publishing Corporation",
-    "author": "Berg, Mark de",
-    "year": "2013",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computational%20Geometry/Berg%2C%20Mark%20de%20-%20Computational%20geometry_%20algorithms%20and%20applications-World%20Publishing%20Corporation%20%282013%29.pdf",
-    "filename": "Berg, Mark de - Computational geometry_ algorithms and applications-World Publishing Corporation (2013).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Computational Algorithms and Engineering Applications",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computational%20Geometry/Computational%20Algorithms%20and%20Engineering%20Applications.pdf",
-    "filename": "Computational Algorithms and Engineering Applications.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "for Kindle-Advaita Ashrama",
     "author": "Unknown Author",
     "year": "2020",
@@ -9136,66 +9909,6 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
-  },
-  {
-    "title": "JJ Geewax",
-    "author": "API Design Patterns-Manning Publications",
-    "year": "2021",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/System%20Design/API%20Design%20Patterns-Manning%20Publications%20%282021%29%20-%20JJ%20Geewax.pdf",
-    "filename": "API Design Patterns-Manning Publications (2021) - JJ Geewax.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Harry Percival, Bob Gregory -",
-    "author": "Architecture Patterns with Python_ Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices-O'Reilly Media",
-    "year": "2020",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/System%20Design/Architecture%20Patterns%20with%20Python_%20Enabling%20Test-Driven%20Development%2C%20Domain-Driven%20Design%2C%20and%20Event-Driven%20Microservices-O%27Reilly%20Media%20%282020%29%20-%20Harry%20Percival%2C%20Bob%20Gregory%20-%20.pdf",
-    "filename": "Architecture Patterns with Python_ Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices-O'Reilly Media (2020) - Harry Percival, Bob Gregory - .pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Gamma, Erich_Helm, Richard_Johnson, Ralph E._Vlissides, John",
-    "author": "Design patterns_ elements of reusable object-oriented software",
-    "year": "2016",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/System%20Design/Design%20patterns_%20elements%20of%20reusable%20object-oriented%20software%20-%20Gamma%2C%20Erich_Helm%2C%20Richard_Johnson%2C%20Ralph%20E._Vlissides%2C%20John%20-%20Pearson%20Education%20%282016%29.pdf",
-    "filename": "Design patterns_ elements of reusable object-oriented software - Gamma, Erich_Helm, Richard_Johnson, Ralph E._Vlissides, John - Pearson Education (2016).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Head First Design Patterns_ Building Extensible and Maintainable Object-Oriented Software-O'Reilly Media",
-    "author": "Eric Freeman, Elisabeth Robson",
-    "year": "2020",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/Eric%20Freeman%2C%20Elisabeth%20Robson%20-%20Head%20First%20Design%20Patterns_%20Building%20Extensible%20and%20Maintainable%20Object-Oriented%20Software-O%27Reilly%20Media%20%282020%29.pdf",
-    "filename": "Eric Freeman, Elisabeth Robson - Head First Design Patterns_ Building Extensible and Maintainable Object-Oriented Software-O'Reilly Media (2020).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Kleppmann, Martin",
-    "author": "Designing data-intensive applications_ the big ideas behind reliable, scalable, and maintainable systems-O'Reilly Media",
-    "year": "2018",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Distributed%20Systems/Designing%20data-intensive%20applications_%20the%20big%20ideas%20behind%20reliable%2C%20scalable%2C%20and%20maintainable%20systems-O%27Reilly%20Media%20%282018%29%20-%20Kleppmann%2C%20Martin.pdf",
-    "filename": "Designing data-intensive applications_ the big ideas behind reliable, scalable, and maintainable systems-O'Reilly Media (2018) - Kleppmann, Martin.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Qingguo Lu\u0308, Xiaofeng Liao, Huaqing Li, Shaojiang Deng, Shanfu Gao",
-    "author": "Distributed Optimization in Networked Systems_ Algorithms and Applications-Springer",
-    "year": "2023",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Distributed%20Systems/Distributed%20Optimization%20in%20Networked%20Systems_%20Algorithms%20and%20Applications-Springer%20%282023%29%20-%20%28Wireless%20Networks%29%20Qingguo%20Lu%CC%88%2C%20Xiaofeng%20Liao%2C%20Huaqing%20Li%2C%20Shaojiang%20Deng%2C%20Shanfu%20Gao.pdf",
-    "filename": "Distributed Optimization in Networked Systems_ Algorithms and Applications-Springer (2023) - (Wireless Networks) Qingguo Lu\u0308, Xiaofeng Liao, Huaqing Li, Shaojiang Deng, Shanfu Gao.pdf",
-    "format": "PDF",
-    "review": ""
   },
   {
     "title": "G. Wang",
@@ -9228,26 +9941,6 @@
     "review": ""
   },
   {
-    "title": "Role of Data-Intensive Distributed Computing Systems in Designing Data Solutions",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Distributed%20Systems/Role%20of%20Data-Intensive%20Distributed%20Computing%20Systems%20in%20Designing%20Data%20Solutions.pdf",
-    "filename": "Role of Data-Intensive Distributed Computing Systems in Designing Data Solutions.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Distributed Machine Learning Patterns -Manning Publications",
-    "author": "Yuan Tang",
-    "year": "2023",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Distributed%20Systems/Yuan%20Tang%20-%20Distributed%20Machine%20Learning%20Patterns%20%28MEAP%20V07%29-Manning%20Publications%20%282023%29.pdf",
-    "filename": "Yuan Tang - Distributed Machine Learning Patterns (MEAP V07)-Manning Publications (2023).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "The Art of Multiprocessor Programming-Morgan Kaufmann",
     "author": "Maurice Herlihy, Nir Shavit, Victor Luchangco, Michael Spear",
     "year": "2020",
@@ -9256,18 +9949,6 @@
     "filename": "Maurice Herlihy, Nir Shavit, Victor Luchangco, Michael Spear - The Art of Multiprocessor Programming-Morgan Kaufmann (2020).pdf",
     "format": "PDF",
     "review": ""
-  },
-  {
-    "title": "Designing distributed systems_ patterns and paradigms for scalable, reliable services-O'Reilly Media  Burns, Brendan",
-    "author": "Unknown Author",
-    "year": "2018",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Distributed%20Systems/Designing%20distributed%20systems_%20patterns%20and%20paradigms%20for%20scalable%2C%20reliable%20services-O%27Reilly%20Media%20%282018%29%20Burns%2C%20Brendan.pdf",
-    "filename": "Designing distributed systems_ patterns and paradigms for scalable, reliable services-O'Reilly Media (2018) Burns, Brendan.pdf",
-    "format": "PDF",
-    "review": "",
-    "importance": 0,
-    "salesCount": 0
   },
   {
     "title": "The Art of Learning",
@@ -9480,16 +10161,6 @@
     "review": ""
   },
   {
-    "title": "Kleppmann Martin copy",
-    "author": "Designing data-intensive applications_ the big ideas behind reliable scalable and maintainable systems-OReilly Media 2018",
-    "year": "Unknown",
-    "category": "Science & Math",
-    "downloadLink": "/library/Maths%20%26%20Stats/Designing%20data-intensive%20applications_%20the%20big%20ideas%20behind%20reliable%20scalable%20and%20maintainable%20systems-OReilly%20Media%202018%20-%20Kleppmann%20Martin%20copy.pdf",
-    "filename": "Designing data-intensive applications_ the big ideas behind reliable scalable and maintainable systems-OReilly Media 2018 - Kleppmann Martin copy.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "markov_chains_handout",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -9532,16 +10203,6 @@
     "review": ""
   },
   {
-    "title": "Effective Pandas_ Patterns for Data Manipulation -_Independently published",
-    "author": "Matt Harrison",
-    "year": "2021",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/Matt%20Harrison%20-%20Effective%20Pandas_%20Patterns%20for%20Data%20Manipulation%20%28Treading%20on%20Python%29-_Independently%20published%20%282021%29.pdf",
-    "filename": "Matt Harrison - Effective Pandas_ Patterns for Data Manipulation (Treading on Python)-_Independently published (2021).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "Automate the Boring Stuff with Python_ Practical Programming for Total Beginners-No Starch Press",
     "author": "Sweigart, Albert",
     "year": "Unknown",
@@ -9549,16 +10210,6 @@
     "downloadLink": "/library/Computer%20Science/Sweigart%2C%20Albert%20-%20Automate%20the%20Boring%20Stuff%20with%20Python_%20Practical%20Programming%20for%20Total%20Beginners-No%20Starch%20Press%20%282020_2015%29.epub",
     "filename": "Sweigart, Albert - Automate the Boring Stuff with Python_ Practical Programming for Total Beginners-No Starch Press (2020_2015).epub",
     "format": "EPUB",
-    "review": ""
-  },
-  {
-    "title": "Algorithms Illuminated_ Part 1_ The Basics-Soundlikeyourself Publishing",
-    "author": "Tim Roughgarden",
-    "year": "2017",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/Tim%20Roughgarden%20-%20Algorithms%20Illuminated_%20Part%201_%20The%20Basics-Soundlikeyourself%20Publishing%20%282017%29.pdf",
-    "filename": "Tim Roughgarden - Algorithms Illuminated_ Part 1_ The Basics-Soundlikeyourself Publishing (2017).pdf",
-    "format": "PDF",
     "review": ""
   },
   {
@@ -9572,26 +10223,6 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
-  },
-  {
-    "title": "Algorithms Illuminated _ Greedy Algorithms and Dynamic Programming-Soundlikeyourself Publishing, LLC",
-    "author": "Tim Roughgarden",
-    "year": "2019",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/Tim%20Roughgarden%20-%20Algorithms%20Illuminated%20%28Part%203%29_%20Greedy%20Algorithms%20and%20Dynamic%20Programming-Soundlikeyourself%20Publishing%2C%20LLC%20%282019%29.pdf",
-    "filename": "Tim Roughgarden - Algorithms Illuminated (Part 3)_ Greedy Algorithms and Dynamic Programming-Soundlikeyourself Publishing, LLC (2019).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Designing_Event-Driven_Systems-Ben_Stopford",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/Designing_Event-Driven_Systems-Ben_Stopford.pdf",
-    "filename": "Designing_Event-Driven_Systems-Ben_Stopford.pdf",
-    "format": "PDF",
-    "review": ""
   },
   {
     "title": "Gary R. Wright, W. Richard Stevens",
@@ -9680,42 +10311,12 @@
     "salesCount": 0
   },
   {
-    "title": "Algorithms Illuminated _ Algorithms for NP-Hard Problems. 4-Soundlikeyourself Publishing, LLC",
-    "author": "Tim Roughgarden",
-    "year": "2020",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/Tim%20Roughgarden%20-%20Algorithms%20Illuminated%20%28Part%204%29_%20Algorithms%20for%20NP-Hard%20Problems.%204-Soundlikeyourself%20Publishing%2C%20LLC%20%282020%29.pdf",
-    "filename": "Tim Roughgarden - Algorithms Illuminated (Part 4)_ Algorithms for NP-Hard Problems. 4-Soundlikeyourself Publishing, LLC (2020).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Building Microservices_ Designing Fine-Grained Systems-O'Reilly Media",
-    "author": "Sam Newman",
-    "year": "2021",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Computer%20Science/Sam%20Newman%20-%20Building%20Microservices_%20Designing%20Fine-Grained%20Systems-O%27Reilly%20Media%20%282021%29.pdf",
-    "filename": "Sam Newman - Building Microservices_ Designing Fine-Grained Systems-O'Reilly Media (2021).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "The Fine Art of Small Talk How To Start a Conversation, Keep It Going, Build Networking Skills",
     "author": "Unknown Author",
     "year": "Unknown",
     "category": "Computer Science & Data",
     "downloadLink": "/library/The%20Fine%20Art%20of%20Small%20Talk%20How%20To%20Start%20a%20Conversation%2C%20Keep%20It%20Going%20-Mantesh/The%20Fine%20Art%20of%20Small%20Talk%20How%20To%20Start%20a%20Conversation%2C%20Keep%20It%20Going%2C%20Build%20Networking%20Skills.pdf",
     "filename": "The Fine Art of Small Talk How To Start a Conversation, Keep It Going, Build Networking Skills.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "A Comparison and Evaluation of Map Construction Algorithms Using Vehicle Tracking Data Mahmuda Ahmed Sophia Karagiorgou Dieter Pfoser Carola Wenk",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Research%20Papers/A%20Comparison%20and%20Evaluation%20of%20Map%20Construction%20Algorithms%20Using%20Vehicle%20Tracking%20Data%20Mahmuda%20Ahmed%20Sophia%20Karagiorgou%20Dieter%20Pfoser%20Carola%20Wenk.pdf",
-    "filename": "A Comparison and Evaluation of Map Construction Algorithms Using Vehicle Tracking Data Mahmuda Ahmed Sophia Karagiorgou Dieter Pfoser Carola Wenk.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -9760,16 +10361,6 @@
     "review": ""
   },
   {
-    "title": "Detecting Road Intersections from GPS Traces Using Longest Common Subsequence Algorithm",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Research%20Papers/Detecting%20Road%20Intersections%20from%20GPS%20Traces%20Using%20Longest%20Common%20Subsequence%20Algorithm.pdf",
-    "filename": "Detecting Road Intersections from GPS Traces Using Longest Common Subsequence Algorithm.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "Inferring Directed Road Networks from GPS Traces",
     "author": "Track Alignment",
     "year": "Unknown",
@@ -9782,32 +10373,12 @@
     "salesCount": 0
   },
   {
-    "title": "24. Learning and Design of Principal Curves Bala \u0301zs Ke \u0301gl Adam Krzyz \u0307ak Tama \u0301s Linder Kenneth Zeger",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Research%20Papers/24.%20Learning%20and%20Design%20of%20Principal%20Curves%20Bala%20%CC%81zs%20Ke%20%CC%81gl%20Adam%20Krzyz%20%CC%87ak%20Tama%20%CC%81s%20Linder%20Kenneth%20Zeger.pdf",
-    "filename": "24. Learning and Design of Principal Curves Bala \u0301zs Ke \u0301gl Adam Krzyz \u0307ak Tama \u0301s Linder Kenneth Zeger.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "1. Metric graph reconstruction from noisy data Mridul Aanjaneya, Fre\u0301de\u0301ric Chazal, Daniel Chen, Marc Glisse, Leonidas J. Guibas, Dmitriy Morozov",
     "author": "Unknown Author",
     "year": "Unknown",
     "category": "Computer Science & Data",
     "downloadLink": "/library/Research%20Papers/1.%20Metric%20graph%20reconstruction%20from%20noisy%20data%20Mridul%20Aanjaneya%2C%20Fre%CC%81de%CC%81ric%20Chazal%2C%20Daniel%20Chen%2C%20Marc%20Glisse%2C%20Leonidas%20J.%20Guibas%2C%20Dmitriy%20Morozov.pdf",
     "filename": "1. Metric graph reconstruction from noisy data Mridul Aanjaneya, Fre\u0301de\u0301ric Chazal, Daniel Chen, Marc Glisse, Leonidas J. Guibas, Dmitriy Morozov.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Bisecting K-means Algorithm Based on K-valued Selfdetermining and Clustering Center Optimization",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Research%20Papers/K%20Means/Bisecting%20K-means%20Algorithm%20Based%20on%20K-valued%20Selfdetermining%20and%20Clustering%20Center%20Optimization.pdf",
-    "filename": "Bisecting K-means Algorithm Based on K-valued Selfdetermining and Clustering Center Optimization.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -9822,16 +10393,6 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
-  },
-  {
-    "title": "Algorithms_for_the_Reduction_of_the_Numb",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Research%20Papers/Trace%20Compression%20Algorithms/Algorithms_for_the_Reduction_of_the_Numb.pdf",
-    "filename": "Algorithms_for_the_Reduction_of_the_Numb.pdf",
-    "format": "PDF",
-    "review": ""
   },
   {
     "title": "Financial Modelling Code",
@@ -9976,6 +10537,16 @@
     "review": "---\nid: '40180113'\nshelves:\n  - to-read\ntitle: The 10 Rules of Successful Nations\nauthor: Ruchir Sharma\ndateAdded: '2022-08-18'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1581114291l/40180113.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"The 10 Rules of Successful Nations\"\nauthor: [Ruchir Sharma]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# The 10 Rules of Successful Nations"
   },
   {
+    "title": "Confidence Game",
+    "author": "Christine S. Richard",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "",
+    "filename": "Confidence Game - Christine S. Richard.md",
+    "format": "INFO",
+    "review": "---\nid: '8103503'\nshelves:\n  - currently-reading\ntitle: Confidence Game\nauthor: Christine S. Richard\ndateAdded: '2022-02-18'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1272477134l/8103503.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Confidence Game\"\nauthor: [Christine S. Richard]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Confidence Game"
+  },
+  {
     "title": "Management Tips",
     "author": "Harvard Business Publishing",
     "year": "Unknown",
@@ -10084,6 +10655,16 @@
     "filename": "Another Mans Wife and a Husband Under the Bed - Fyodor Dostoevsky.md",
     "format": "INFO",
     "review": "---\nid: '55097310'\nshelves:\n  - to-read\ntitle: Another Mans Wife and a Husband Under the Bed\nauthor: Fyodor Dostoevsky\ndateAdded: '2021-12-29'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1598265289l/55097310._SX318_.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Another Mans Wife and a Husband Under the Bed\"\nauthor: [Fyodor Dostoevsky]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Another Mans Wife and a H..."
+  },
+  {
+    "title": "The Grand Design",
+    "author": "Stephen Hawking",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "",
+    "filename": "The Grand Design - Stephen Hawking.md",
+    "format": "INFO",
+    "review": "---\nid: '8520362'\nshelves:\n  - read\ntitle: The Grand Design\nauthor: Stephen Hawking\ndateAdded: '2013-10-17'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320558363l/8520362.jpg\nrating: '5'\n---\n---\ntag: Book\ntitle: \"The Grand Design\"\nauthor: [Stephen Hawking]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# The Grand Design"
   },
   {
     "title": "High Output Management",
@@ -11064,18 +11645,6 @@
     "review": ""
   },
   {
-    "title": "Words That Change Minds The 14 Patterns for Mastering the Language of Influence",
-    "author": "Shelle Rose Charvet",
-    "year": "Unknown",
-    "category": "Self-Help & Psychology",
-    "downloadLink": "/library/Apple%20Books/Words%20That%20Change%20Minds%20The%2014%20Patterns%20for%20Mastering%20the%20Language%20of%20Influence%20by%20Shelle%20Rose%20Charvet%20%28z-lib.org%29.epub",
-    "filename": "Words That Change Minds The 14 Patterns for Mastering the Language of Influence by Shelle Rose Charvet (z-lib.org).epub",
-    "format": "EPUB",
-    "review": "",
-    "importance": 0,
-    "salesCount": 0
-  },
-  {
     "title": "The Oxford Handbook of Evolutionary Psychology",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -11725,6 +12294,16 @@
     "downloadLink": "/library/Apple%20Books/Robert%20T.%20Kiyosaki%20-%20Unfair%20Advantage_%20The%20Power%20of%20Financial%20Education-Plata%20Publishing%20%282011%29.epub",
     "filename": "Robert T. Kiyosaki - Unfair Advantage_ The Power of Financial Education-Plata Publishing (2011).epub",
     "format": "EPUB",
+    "review": ""
+  },
+  {
+    "title": "Trade_Chart_Patterns_Like_the_Pros_Suri",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Apple%20Books/Trade_Chart_Patterns_Like_the_Pros_Suri.pdf",
+    "filename": "Trade_Chart_Patterns_Like_the_Pros_Suri.pdf",
+    "format": "PDF",
     "review": ""
   },
   {
@@ -12539,12 +13118,12 @@
     "review": ""
   },
   {
-    "title": "with Applications in R-Springer Science+Business Media",
-    "author": "An Introduction to Statistical Learning",
+    "title": "An Introduction to Statistical Learning",
+    "author": "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani",
     "year": "2021",
-    "category": "Science & Math",
-    "downloadLink": "/library/Maths%20%26%20Stats/An%20Introduction%20to%20Statistical%20Learning%20-%20with%20Applications%20in%20R-Springer%20Science%2BBusiness%20Media%20%282021%29.pdf",
-    "filename": "An Introduction to Statistical Learning - with Applications in R-Springer Science+Business Media (2021).pdf",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Computer%20Science/%28Springer%20Texts%20in%20Statistics%29%20Gareth%20James%2C%20Daniela%20Witten%2C%20Trevor%20Hastie%2C%20Robert%20Tibshirani%20-%20An%20Introduction%20to%20Statistical%20Learning%20-%20with%20Applications%20in%20R-Springer%20Science%2BBusiness%20Media%20%282021%29.pdf",
+    "filename": "(Springer Texts in Statistics) Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani - An Introduction to Statistical Learning - with Applications in R-Springer Science+Business Media (2021).pdf",
     "format": "PDF",
     "review": ""
   },
@@ -12735,12 +13314,34 @@
     "review": ""
   },
   {
+    "title": "Proof Patterns",
+    "author": "Mark Joshi",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Downloads/Proof%20Patterns%20by%20Mark%20Joshi%20%28z-lib.org%29.pdf",
+    "filename": "Proof Patterns by Mark Joshi (z-lib.org).pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 0,
+    "salesCount": 0
+  },
+  {
     "title": "Mergers and Inquistions Guide additions",
     "author": "Unknown Author",
     "year": "Unknown",
     "category": "General",
     "downloadLink": "/library/Interviews/Mergers%20and%20Inquistions%20Guide%20additions.pdf",
     "filename": "Mergers and Inquistions Guide additions.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Quantitative trading _ how to build your own algorithmic trading business",
+    "author": "Unknown Author",
+    "year": "2021",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Financial%20Engineering/Quantitative%20trading%20_%20how%20to%20build%20your%20own%20algorithmic%20trading%20business%282021%29.pdf",
+    "filename": "Quantitative trading _ how to build your own algorithmic trading business(2021).pdf",
     "format": "PDF",
     "review": ""
   },
@@ -12791,6 +13392,26 @@
     "category": "History & Geopolitics",
     "downloadLink": "/library/Reports/Cryptocurrency%20in%20India-%20Brief%20History%20%20.pdf",
     "filename": "Cryptocurrency in India- Brief History  .pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "James Cooper",
+    "author": "Python Programming with Design Patterns-Addison-Wesley Professional",
+    "year": "2021",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Python%20Programming%20with%20Design%20Patterns-Addison-Wesley%20Professional%20%282021%29%20-%20James%20Cooper.epub",
+    "filename": "Python Programming with Design Patterns-Addison-Wesley Professional (2021) - James Cooper.epub",
+    "format": "EPUB",
+    "review": ""
+  },
+  {
+    "title": "Klaus Iglberger",
+    "author": "C++ Software Design",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Porgramming/C%2B%2B/C%2B%2B%20Software%20Design%20-%20Klaus%20Iglberger.pdf",
+    "filename": "C++ Software Design - Klaus Iglberger.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -13640,16 +14261,6 @@
     "filename": "One Hundred Years of Solitude - Gabriel Garci\u0301a Ma\u0301rquez.md",
     "format": "INFO",
     "review": "---\nid: '320'\nshelves:\n  - to-read\ntitle: One Hundred Years of Solitude\nauthor: Gabriel Garc\u00eda M\u00e1rquez\ndateAdded: '2022-11-18'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327881361l/320.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"One Hundred Years of Solitude\"\nauthor: [Gabriel Garc\u00eda M\u00e1rquez]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# One Hundred Years of Solitude"
-  },
-  {
-    "title": "The Grand Design",
-    "author": "Stephen Hawking",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "",
-    "filename": "The Grand Design - Stephen Hawking.md",
-    "format": "INFO",
-    "review": "---\nid: '8520362'\nshelves:\n  - read\ntitle: The Grand Design\nauthor: Stephen Hawking\ndateAdded: '2013-10-17'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320558363l/8520362.jpg\nrating: '5'\n---\n---\ntag: Book\ntitle: \"The Grand Design\"\nauthor: [Stephen Hawking]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# The Grand Design"
   },
   {
     "title": "Persuasive Technology",
@@ -18308,6 +18919,18 @@
     "salesCount": 0
   },
   {
+    "title": "Teach yourself Sanskrit",
+    "author": "Benson, James W. Coulson, Michael Gombrich, Richard Francis",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Apple%20Books/Teach%20yourself%20Sanskrit%20by%20Benson%2C%20James%20W.%20Coulson%2C%20Michael%20Gombrich%2C%20Richard%20Francis%20%28z-lib.org%29.pdf",
+    "filename": "Teach yourself Sanskrit by Benson, James W. Coulson, Michael Gombrich, Richard Francis (z-lib.org).pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 0,
+    "salesCount": 0
+  },
+  {
     "title": "When_ The Scientific Secrets of Perfect Timing-Canongate Books",
     "author": "Daniel H. Pink",
     "year": "Unknown",
@@ -18656,16 +19279,6 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
-  },
-  {
-    "title": "Trade_Chart_Patterns_Like_the_Pros_Suri",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/Apple%20Books/Trade_Chart_Patterns_Like_the_Pros_Suri.pdf",
-    "filename": "Trade_Chart_Patterns_Like_the_Pros_Suri.pdf",
-    "format": "PDF",
-    "review": ""
   },
   {
     "title": "The Science of Self-Discipline The Willpower, Mental Toughness, and Self-Control to Resist Temptation and Achieve Your Goals",
@@ -20438,12 +21051,32 @@
     "review": ""
   },
   {
+    "title": "Charts and patterns",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Setharaman%20Sir/Charts%20and%20patterns.pdf",
+    "filename": "Charts and patterns.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
     "title": "Economics Times_ET Wealth Mumbai_2019-01-07",
     "author": "Unknown Author",
     "year": "Unknown",
     "category": "Finance & Trading",
     "downloadLink": "/library/Finance/Setharaman%20Sir/Economics%20Times_ET%20Wealth%20Mumbai_2019-01-07.pdf",
     "filename": "Economics Times_ET Wealth Mumbai_2019-01-07.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Candle stick patterns",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Setharaman%20Sir/Candle%20stick%20patterns.pdf",
+    "filename": "Candle stick patterns.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -20680,16 +21313,6 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
-  },
-  {
-    "title": "dive-into-design-patterns",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/System%20Design/dive-into-design-patterns.pdf",
-    "filename": "dive-into-design-patterns.pdf",
-    "format": "PDF",
-    "review": ""
   },
   {
     "title": "Liar's Poker",
@@ -23723,6 +24346,18 @@
     "review": ""
   },
   {
+    "title": "Nudge",
+    "author": "Cass, Richard 2009 PDF {SPirate}",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Nudge%20by%20Cass%2C%20Richard%202009/Nudge%20by%20Cass%2C%20Richard%202009%20PDF%20%7BSPirate%7D.pdf",
+    "filename": "Nudge by Cass, Richard 2009 PDF {SPirate}.pdf",
+    "format": "PDF",
+    "review": "",
+    "importance": 0,
+    "salesCount": 0
+  },
+  {
     "title": "Invisible Influence",
     "author": "Jonah Berger",
     "year": "Unknown",
@@ -23815,6 +24450,16 @@
     "category": "Finance & Trading",
     "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Technical%20Analysis%20From%20A%20To%20Z%20%20%282003%29.pdf",
     "filename": "Technical Analysis From A To Z  (2003).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Getting Started in Chart Patterns",
+    "author": "Unknown Author",
+    "year": "2006",
+    "category": "Finance & Trading",
+    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Getting%20Started%20in%20Chart%20Patterns%20%282006%29.pdf",
+    "filename": "Getting Started in Chart Patterns (2006).pdf",
     "format": "PDF",
     "review": ""
   },
@@ -24465,18 +25110,6 @@
     "review": ""
   },
   {
-    "title": "Proof Patterns",
-    "author": "Mark Joshi",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/Downloads/Proof%20Patterns%20by%20Mark%20Joshi%20%28z-lib.org%29.pdf",
-    "filename": "Proof Patterns by Mark Joshi (z-lib.org).pdf",
-    "format": "PDF",
-    "review": "",
-    "importance": 0,
-    "salesCount": 0
-  },
-  {
     "title": "Shreejit Verma_LinkedIn-1",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -24701,16 +25334,6 @@
     "review": "",
     "importance": 0,
     "salesCount": 0
-  },
-  {
-    "title": "Quantitative trading _ how to build your own algorithmic trading business",
-    "author": "Unknown Author",
-    "year": "2021",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Financial%20Engineering/Quantitative%20trading%20_%20how%20to%20build%20your%20own%20algorithmic%20trading%20business%282021%29.pdf",
-    "filename": "Quantitative trading _ how to build your own algorithmic trading business(2021).pdf",
-    "format": "PDF",
-    "review": ""
   },
   {
     "title": "Soros on Soros_ Staying Ahead of the Curve-Wiley",
@@ -25103,6 +25726,16 @@
     "review": "---\nid: '44882'\nshelves:\n  - to-read\ntitle: Code\nauthor: Charles Petzold\ndateAdded: '2023-06-29'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1709792682l/44882._SY475_.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Code\"\nauthor: [Charles Petzold]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Code"
   },
   {
+    "title": "Foundations of Scalable Systems_ Designing Distributed Architectures-O'Reilly Media",
+    "author": "Ian Gorton",
+    "year": "2022",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Ian%20Gorton%20-%20Foundations%20of%20Scalable%20Systems_%20Designing%20Distributed%20Architectures-O%27Reilly%20Media%20%282022%29.epub",
+    "filename": "Ian Gorton - Foundations of Scalable Systems_ Designing Distributed Architectures-O'Reilly Media (2022).epub",
+    "format": "EPUB",
+    "review": ""
+  },
+  {
     "title": "Python for Geospatial Data Analysis-O'Reilly Media, Inc.",
     "author": "Bonny P. McClain",
     "year": "2022",
@@ -25145,12 +25778,32 @@
     "salesCount": 0
   },
   {
+    "title": "Coulouris, George F",
+    "author": "_Distributed systems_ concepts and design-Addison-Wesley",
+    "year": "2012",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Distributed%20Systems/_Distributed%20systems_%20concepts%20and%20design-Addison-Wesley%20%282012%29%20-%20Coulouris%2C%20George%20F.pdf",
+    "filename": "_Distributed systems_ concepts and design-Addison-Wesley (2012) - Coulouris, George F.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
     "title": "A_long_short-term_memory_neural_network_model_for_",
     "author": "Unknown Author",
     "year": "Unknown",
     "category": "Computer Science & Data",
     "downloadLink": "/library/Computer%20Science/A_long_short-term_memory_neural_network_model_for_.pdf",
     "filename": "A_long_short-term_memory_neural_network_model_for_.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Ljubljana, Slovenia, September 10-12, 2012",
+    "author": "Algorithms \u2013 ESA 2012_ 20th Annual European Symposium Yossi Matias , Leah Epstein, Paolo Ferragina",
+    "year": "Unknown",
+    "category": "Computer Science & Data",
+    "downloadLink": "/library/Research%20Papers/Algorithms%20%E2%80%93%20ESA%202012_%2020th%20Annual%20European%20Symposium%20%28Lecture%20Notes%20in%20Computer%20Science%207501%29%20Yossi%20Matias%20%28auth.%29%2C%20Leah%20Epstein%2C%20Paolo%20Ferragina%20%28eds.%29%20-%20Ljubljana%2C%20Slovenia%2C%20September%2010-12%2C%202012.pdf",
+    "filename": "Algorithms \u2013 ESA 2012_ 20th Annual European Symposium (Lecture Notes in Computer Science 7501) Yossi Matias (auth.), Leah Epstein, Paolo Ferragina (eds.) - Ljubljana, Slovenia, September 10-12, 2012.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -25201,26 +25854,6 @@
     "category": "Finance & Trading",
     "downloadLink": "/library/PE%20VC%20HF/Private%20Equity%20Model.pdf",
     "filename": "Private Equity Model.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Charts and patterns",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Setharaman%20Sir/Charts%20and%20patterns.pdf",
-    "filename": "Charts and patterns.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Candle stick patterns",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Setharaman%20Sir/Candle%20stick%20patterns.pdf",
-    "filename": "Candle stick patterns.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -25281,6 +25914,16 @@
     "category": "Finance & Trading",
     "downloadLink": "/library/Finance/Setharaman%20Sir/Futures.pdf",
     "filename": "Futures.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Design_Patterns",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/System%20Design/Design_Patterns.pdf",
+    "filename": "Design_Patterns.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -25499,16 +26142,6 @@
     "genre": "Business & Economics",
     "coverImage": "https://books.google.com/books/content?id=yCONkAhTNpoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "description": "With over 200 indicators available to traders, it is impossible to pick the ones that will make money over and over again...until now. A two-time, best-selling author and writer of a weekly commentary at www.incometrader.com, Mark Larson is an expert trader willing to share the secrets of his favorite technical tools. To maximize the power of this guide, you'll also receive the full 90-minute DVD and access to an interactive online review tool at Traders' Library's Education Corner, including self-tests that make sure you absorb every valuable strategy. Inside this coursebook, you will learn how to: Leverage parameters to make your indicators profitable in both bear and bull markets; Combine the most powerful indicators on one chart to create a winning trading system; Optimize your entries and exits with specific indicators; Use ATR for setting stop losses; Utilize stock scans for a competitive edge. From standards like the MACD to newer tools like Time Segmented Volume and Inertia, Larson will teach you how each indicator works, how to use it effectively, and how to adopt it to your own unique trading style."
-  },
-  {
-    "title": "Getting Started in Chart Patterns",
-    "author": "Unknown Author",
-    "year": "2006",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Getting%20Started%20in%20Chart%20Patterns%20%282006%29.pdf",
-    "filename": "Getting Started in Chart Patterns (2006).pdf",
-    "format": "PDF",
-    "review": ""
   },
   {
     "title": "A Bull for all Seasons",
@@ -25975,16 +26608,6 @@
     "review": ""
   },
   {
-    "title": "Foundations of Scalable Systems_ Designing Distributed Architectures-O'Reilly Media",
-    "author": "Ian Gorton",
-    "year": "2022",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Ian%20Gorton%20-%20Foundations%20of%20Scalable%20Systems_%20Designing%20Distributed%20Architectures-O%27Reilly%20Media%20%282022%29.epub",
-    "filename": "Ian Gorton - Foundations of Scalable Systems_ Designing Distributed Architectures-O'Reilly Media (2022).epub",
-    "format": "EPUB",
-    "review": ""
-  },
-  {
     "title": "Shri Bapulal Anjana",
     "author": "Vijnana Bhairava",
     "year": "Unknown",
@@ -26001,36 +26624,6 @@
     "category": "Computer Science & Data",
     "downloadLink": "/library/Reinforcement%20Learning.pdf",
     "filename": "Reinforcement Learning.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "James Cooper",
-    "author": "Python Programming with Design Patterns-Addison-Wesley Professional",
-    "year": "2021",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Python%20Programming%20with%20Design%20Patterns-Addison-Wesley%20Professional%20%282021%29%20-%20James%20Cooper.epub",
-    "filename": "Python Programming with Design Patterns-Addison-Wesley Professional (2021) - James Cooper.epub",
-    "format": "EPUB",
-    "review": ""
-  },
-  {
-    "title": "Klaus Iglberger",
-    "author": "C++ Software Design",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/C%2B%2B/C%2B%2B%20Software%20Design%20-%20Klaus%20Iglberger.pdf",
-    "filename": "C++ Software Design - Klaus Iglberger.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Tour of C++, A -Addison-Wesley Professional",
-    "author": "Bjarne Stroustrup",
-    "year": "2022",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Porgramming/C%2B%2B/Bjarne%20Stroustrup%20-%20Tour%20of%20C%2B%2B%2C%20A%20%28C%2B%2B%20In-Depth%20Series%29-Addison-Wesley%20Professional%20%282022%29.pdf",
-    "filename": "Bjarne Stroustrup - Tour of C++, A (C++ In-Depth Series)-Addison-Wesley Professional (2022).pdf",
     "format": "PDF",
     "review": ""
   },
@@ -26111,16 +26704,6 @@
     "category": "Computer Science & Data",
     "downloadLink": "/library/General/Ved%20Puran/vaivtpuran.pdf",
     "filename": "vaivtpuran.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Coulouris, George F",
-    "author": "_Distributed systems_ concepts and design-Addison-Wesley",
-    "year": "2012",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Distributed%20Systems/_Distributed%20systems_%20concepts%20and%20design-Addison-Wesley%20%282012%29%20-%20Coulouris%2C%20George%20F.pdf",
-    "filename": "_Distributed systems_ concepts and design-Addison-Wesley (2012) - Coulouris, George F.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -26286,16 +26869,6 @@
     "review": ""
   },
   {
-    "title": "Ljubljana, Slovenia, September 10-12, 2012",
-    "author": "Algorithms \u2013 ESA 2012_ 20th Annual European Symposium Yossi Matias , Leah Epstein, Paolo Ferragina",
-    "year": "Unknown",
-    "category": "Computer Science & Data",
-    "downloadLink": "/library/Research%20Papers/Algorithms%20%E2%80%93%20ESA%202012_%2020th%20Annual%20European%20Symposium%20%28Lecture%20Notes%20in%20Computer%20Science%207501%29%20Yossi%20Matias%20%28auth.%29%2C%20Leah%20Epstein%2C%20Paolo%20Ferragina%20%28eds.%29%20-%20Ljubljana%2C%20Slovenia%2C%20September%2010-12%2C%202012.pdf",
-    "filename": "Algorithms \u2013 ESA 2012_ 20th Annual European Symposium (Lecture Notes in Computer Science 7501) Yossi Matias (auth.), Leah Epstein, Paolo Ferragina (eds.) - Ljubljana, Slovenia, September 10-12, 2012.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "17. Data_Skeletonization_via_Reeb_Graphs",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -26370,16 +26943,6 @@
     "filename": "Letters to Milena - Franz Kafka.md",
     "format": "INFO",
     "review": "---\nid: '88340'\nshelves:\n  - to-read\ntitle: Letters to Milena\nauthor: Franz Kafka\ndateAdded: '2024-02-08'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1519679516l/88340.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Letters to Milena\"\nauthor: [Franz Kafka]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Letters to Milena"
-  },
-  {
-    "title": "Confidence Game",
-    "author": "Christine S. Richard",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "",
-    "filename": "Confidence Game - Christine S. Richard.md",
-    "format": "INFO",
-    "review": "---\nid: '8103503'\nshelves:\n  - currently-reading\ntitle: Confidence Game\nauthor: Christine S. Richard\ndateAdded: '2022-02-18'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1272477134l/8103503.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Confidence Game\"\nauthor: [Christine S. Richard]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Confidence Game"
   },
   {
     "title": "Games People Play",
@@ -26663,6 +27226,16 @@
     "review": ""
   },
   {
+    "title": "Chart Patterns",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Setharaman%20Sir/Chart%20Patterns.pdf",
+    "filename": "Chart Patterns.pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
     "title": "Finite and Infinite Games",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -26765,6 +27338,16 @@
     "category": "Finance & Trading",
     "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Financial%20Management%20Collection/Using%20Excel%20for%20Business%20Analysis%20%282012%29.pdf",
     "filename": "Using Excel for Business Analysis (2012).pdf",
+    "format": "PDF",
+    "review": ""
+  },
+  {
+    "title": "Candlestick patterns",
+    "author": "Unknown Author",
+    "year": "Unknown",
+    "category": "General",
+    "downloadLink": "/library/Financial%20Analysis/Candlestick%20patterns.pdf",
+    "filename": "Candlestick patterns.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -27520,18 +28103,6 @@
     "filename": "rflrv11n11.pdf",
     "format": "PDF",
     "review": ""
-  },
-  {
-    "title": "Teach yourself Sanskrit",
-    "author": "Benson, James W. Coulson, Michael Gombrich, Richard Francis",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/Apple%20Books/Teach%20yourself%20Sanskrit%20by%20Benson%2C%20James%20W.%20Coulson%2C%20Michael%20Gombrich%2C%20Richard%20Francis%20%28z-lib.org%29.pdf",
-    "filename": "Teach yourself Sanskrit by Benson, James W. Coulson, Michael Gombrich, Richard Francis (z-lib.org).pdf",
-    "format": "PDF",
-    "review": "",
-    "importance": 0,
-    "salesCount": 0
   },
   {
     "title": "Deception Point-Washington Square Press",
@@ -28932,16 +29503,6 @@
     "review": ""
   },
   {
-    "title": "Chart Patterns",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/Setharaman%20Sir/Chart%20Patterns.pdf",
-    "filename": "Chart Patterns.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "Investors india",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -29228,16 +29789,6 @@
     "category": "General",
     "downloadLink": "/library/Algorithms/Advanced%20Algorithms%20CS%20224%20Harvard/Lecture%208.pdf",
     "filename": "Lecture 8.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Design_Patterns",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/System%20Design/Design_Patterns.pdf",
-    "filename": "Design_Patterns.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -30768,18 +31319,6 @@
     "review": ""
   },
   {
-    "title": "Nudge",
-    "author": "Cass, Richard 2009 PDF {SPirate}",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/Nudge%20by%20Cass%2C%20Richard%202009/Nudge%20by%20Cass%2C%20Richard%202009%20PDF%20%7BSPirate%7D.pdf",
-    "filename": "Nudge by Cass, Richard 2009 PDF {SPirate}.pdf",
-    "format": "PDF",
-    "review": "",
-    "importance": 0,
-    "salesCount": 0
-  },
-  {
     "title": "Spatiotemporal_Compression_Techniques_for_Moving_P",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -30806,16 +31345,6 @@
     "category": "General",
     "downloadLink": "/library/Financial%20Analysis/Best%20fund%20for%20G%2CI.pdf",
     "filename": "Best fund for G,I.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Candlestick patterns",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/Financial%20Analysis/Candlestick%20patterns.pdf",
-    "filename": "Candlestick patterns.pdf",
     "format": "PDF",
     "review": ""
   },
