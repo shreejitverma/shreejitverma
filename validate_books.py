@@ -41,7 +41,10 @@ GARBAGE_PATTERNS = [
     r'^slide\d+', # PPT slides
     r'^img_\d+',
     r'^scan',
-    r'^untitled'
+    r'^untitled',
+    r'^lemh\d+',
+    r'^\d+-Rajendra',
+    r'^\d+(\.\d+)+$'
 ]
 
 # Genre Popularity Scores
@@ -68,9 +71,22 @@ def clean_text(text):
 def is_garbage(title):
     if not title or len(title) < 3:
         return True
+        
+    # Keyword check
+    if re.search(r'\bncert\b', title, re.IGNORECASE):
+        return True
+        
     for pattern in GARBAGE_PATTERNS:
         if re.search(pattern, title, flags=re.IGNORECASE):
             return True
+            
+    # Alphanumeric code check
+    if re.match(r'^[a-z0-9]+$', title, re.IGNORECASE):
+        if len(title) >= 5:
+            if re.search(r'\d', title):
+                 return True
+            # Note: We already have ^[a-zA-Z0-9]{20,}$ in GARBAGE_PATTERNS which handles long strings
+                 
     return False
 
 def fetch_google_books_metadata(title, author):
