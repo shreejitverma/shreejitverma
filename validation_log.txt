@@ -773,3 +773,97 @@ DELETED (API Fail + Suspicious): lemh207
 DELETED (Garbage Name): C264547189
 DELETED (Garbage Name): 220001318997
 DELETED (API Fail + Suspicious): ProposalFor2
+DELETED (Not found): Incerto 4-book bundle fooled
+DELETED (Not found): KahnemanThinkingFast&Slow
+DELETED (Not found): Security Analysis Part III
+DELETED (Not found): Security Analysis Part I
+DELETED (Not found): Security Analysis Part VI
+DELETED (Not found): Security Analysis Part VII
+DELETED (Not found): Security Analysis Part V
+DELETED (Not found): Security Analysis Part II
+DELETED (Not found): Security Analysis Part IV
+DELETED (Not found): Martin J. Whitman
+DELETED (Not found): Benjamin-Graham -David-Dodd-Security-Analysis-Sixth-Edition -Foreword-by-War
+DELETED (Not found): The mathematics of derivatives tools for designing numerical algorithms-Wiley 2
+DELETED (Not found): An Introduction to International Capital Markets Products, Strategies, Participants -Wiley
+DELETED (Not found): Algorithmic-Trading-A-Rough-And-Ready-Guide
+DELETED (Not found): The Handbook of Portfolio Mathematics Formulas for Optimal Allocation & Leverage -Wiley
+DELETED (Not found): Dive Into Design Patterns
+DELETED (Not found): Eric Freeman, Elisabeth Robson
+DELETED (Not found): JJ Geewax
+DELETED (Not found): Harry Percival, Bob Gregory -
+DELETED (Not found): Gamma, Erich Helm, Richard Johnson, Ralph E. Vlissides, John
+DELETED (Not found): 13. Scalable, Distributed, Real-Time Map Generation Jonathan J. Davies, Alastair R. Beresford, and Andy Hopper
+DELETED (Not found): Scalable, Distributed, Real-Time Map Generation
+DELETED (Not found): Clear Thinking Turning Ordinary Moments into Extraordinary Results-Portfolio
+DELETED (Not found): Kevin J. Davey
+DELETED (Not found): I Love Capitalism! An American Story-Portfolio
+DELETED (Not found): Fooling Some of the People All of the Time, a Long Short Story, Updated with New Epilogue
+DELETED (Not found): Benjamin Graham
+DELETED (Not found): Peaceful-Investing-–-A-Simple-Guide-to-Hassle-free-Stock-Investing
+DELETED (Garbage): Unknown
+DELETED (Garbage): AShortHistoryofNearlyEverything
+DELETED (Garbage): TheBusinessofthe21stCenturyBook
+DELETED (Garbage): PatanjaliYogaSutraSwamiVivekanandaSanEng
+DELETED (Garbage): doku.pub_charles-i-jones-macroeconomics-third-edition-w-w-norton-company-2013pdf
+DELETED (Garbage): FinancialModelersManifesto
+DELETED (Garbage): stat110harvarditunesusyllabus
+DELETED (Garbage): 0132699060Analysis
+DELETED (Garbage): PolicyWording_455645657
+DELETED (Garbage): PolicySoftCopy_455645657
+DELETED (Garbage): PolicySoftCopy_456055488
+DELETED (Garbage): 5_6172345226758193263
+DELETED (Garbage): 5_6163688522604609600
+DELETED (Garbage): 6001021032312180008
+DELETED (Garbage): 1489588035
+DELETED (Garbage): 1118467450
+DELETED (Garbage): 1118443926
+DELETED (Garbage): B00B8L2U4Y
+DELETED (Garbage): 0071809953TAIWB
+DELETED (Garbage): 10.1.1.15.8
+DELETED (Garbage): 10.1.1.71.4891
+DELETED (Garbage): 10.1.1.226.1739
+DELETED (Garbage): 10.1.1.46.8740
+DELETED (Garbage): 2015.342641.1036-Rajendra 2024-01-11 04_18_48
+DELETED (Garbage): 2015.342641.1036-Rajendra
+DELETED (Garbage): wzX0Frqn51Lr4QuQZsl7Mo61CYSBmU
+DELETED (Garbage): rflrv11n11
+DELETED (Garbage): lemh2ps
+DELETED (Garbage): lemh2sm
+DELETED (Garbage): lemh2an
+DELETED (Garbage): lemh202
+DELETED (Garbage): lemh206
+DELETED (Garbage): lemh204
+DELETED (Garbage): lemh203
+DELETED (Garbage): lemh201
+DELETED (Garbage): lemh205
+DELETED (Garbage): lemh207
+DELETED (Garbage): lemh1ps
+DELETED (Garbage): lemh1an
+DELETED (Garbage): lemh1a2
+DELETED (Garbage): lemh1a1
+DELETED (Garbage): lemh103
+DELETED (Garbage): lemh102
+DELETED (Garbage): lemh101
+DELETED (Garbage): lemh105
+DELETED (Garbage): lemh104
+DELETED (Garbage): lemh106
+DELETED (Garbage): NCERT-Class-6-Civics
+DELETED (Garbage): NCERT-Class-8-Civics
+DELETED (Garbage): NCERT-Class-9-Civics
+DELETED (Garbage): NCERT-Class-7-Civics
+DELETED (Garbage): garuda1
+DELETED (Garbage): kalkipuranhindi1
+DELETED (Garbage): 5_6060087825456431665
+DELETED (Garbage): 5_6100563631613673968
+DELETED (Garbage): 5_6163590769148953344
+DELETED (Garbage): 5_6141086098295620359
+DELETED (Garbage): 5_6120804326421037573
+DELETED (Garbage): 5_6183448524672205575
+DELETED (Garbage): 5_6204269572640473737
+DELETED (Garbage): 131inversetrig
+DELETED (Garbage): C264547189
+DELETED (Garbage): 220001318997
+DELETED (Garbage): 20426489_85_20220508
+DELETED (Garbage): ProposalForm389463852
+DELETED (Garbage): 2022_apr_221090

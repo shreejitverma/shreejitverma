@@ -11,8 +11,8 @@ from datetime import datetime
 INPUT_FILE = "public/books_data.json"
 OUTPUT_FILE = "public/books_data_validated.json"
 LOG_FILE = "validation_log.txt"
-BATCH_SIZE = 5000  # Increased batch size for broader cleanup
-DELAY = 0.5 # Faster processing
+BATCH_SIZE = 5000 
+DELAY = 0.5 
 
 # Regex for cleaning artifacts
 CLEAN_PATTERNS = [
@@ -62,7 +62,6 @@ GENRE_SCORES = {
 
 def clean_text(text):
     if not text: return ""
-    # Replace underscores with spaces first
     text = text.replace('_', ' ')
     for pattern in CLEAN_PATTERNS:
         text = re.sub(pattern, '', text, flags=re.IGNORECASE)
@@ -71,23 +70,45 @@ def clean_text(text):
 def is_garbage(title):
     if not title or len(title) < 3:
         return True
-        
-    # Keyword check
     if re.search(r'\bncert\b', title, re.IGNORECASE):
         return True
-        
     for pattern in GARBAGE_PATTERNS:
         if re.search(pattern, title, flags=re.IGNORECASE):
             return True
-            
-    # Alphanumeric code check
     if re.match(r'^[a-z0-9]+$', title, re.IGNORECASE):
         if len(title) >= 5:
-            if re.search(r'\d', title):
-                 return True
-            # Note: We already have ^[a-zA-Z0-9]{20,}$ in GARBAGE_PATTERNS which handles long strings
-                 
+            if re.search(r'\d', title): return True
+            if len(title) > 20: return True
     return False
+
+def check_amazon_cover(isbn):
+    # Try ISBN-10 first. If ISBN-13, convert or use as is (Amazon often accepts ISBN-13 in URL)
+    # URL: https://images-na.ssl-images-amazon.com/images/P/{isbn}.01.LZZZZZZZ.jpg
+    # We verify validity by checking content length or header. 
+    # Actually, Amazon returns a 1x1 gif if not found. We should check that.
+    
+    url = f"https://images-na.ssl-images-amazon.com/images/P/{isbn}.01.LZZZZZZZ.jpg"
+    try:
+        req = urllib.request.Request(url, method='HEAD')
+        with urllib.request.urlopen(req) as response:
+            if response.status == 200:
+                # Need to check content length or fetch small part to ensure it's not the 1x1 error image.
+                # The 1x1 gif is very small (< 100 bytes). Real covers are > 2KB usually.
+                length = response.getheader('Content-Length')
+                if length and int(length) > 100:
+                    return url
+    except:
+        pass
+    return None
+
+def generate_summary(description):
+    if not description: return ""
+    # Split by sentences (simple heuristic)
+    sentences = re.split(r'(?<=[.!?]) +', description)
+    summary = " ".join(sentences[:3])
+    if len(summary) > 500:
+        summary = summary[:497] + "..."
+    return summary
 
 def fetch_google_books_metadata(title, author):
     query = f"intitle:{title}"
@@ -121,38 +142,27 @@ def calculate_weighted_score(book, metadata):
         sales_score = min(100, (math.log10(ratings_count + 1) / 4) * 100)
     else:
         sales_score = 0
-        
     year = 2000 
     if metadata and "publishedDate" in metadata:
-        try:
-            year = int(metadata["publishedDate"][:4])
-        except:
-            pass
+        try: year = int(metadata["publishedDate"][:4])
+        except: pass
     elif book.get("year") and book["year"] != "Unknown":
-        try:
-            year = int(book["year"])
-        except:
-            pass
-            
+        try: year = int(book["year"])
+        except: pass
     recency_score = max(0, min(100, (year - 1980) / 45 * 100))
     genre = book.get("category", "General")
     genre_score = GENRE_SCORES.get(genre, 50)
-    
     final_score = (sales_score * 0.6) + (recency_score * 0.2) + (genre_score * 0.2)
     return int(final_score), ratings_count
 
 def validate_and_enrich():
-    # Always load from the main scraped list (or previous validated list if we want to chain)
-    # To do a full clean, let's load from the scraped books_data.json but also check if we have better data in validated.
-    
     validated_map = {}
     if os.path.exists(OUTPUT_FILE):
         try:
             with open(OUTPUT_FILE, 'r') as f:
                 for b in json.load(f):
-                    validated_map[b['filename']] = b # Map by filename to persist validation
-        except:
-            pass
+                    validated_map[b['filename']] = b
+        except: pass
 
     try:
         with open(INPUT_FILE, 'r') as f:
@@ -166,90 +176,101 @@ def validate_and_enrich():
     processed_count = 0
     deleted_count = 0
     
-    print(f"Starting validation for {len(books)} books (Batch limit: {BATCH_SIZE})...")
+    print(f"Starting validation for {len(books)} books...")
     
     for book in books:
-        # Pre-cleaning
         original_title = book.get("title", "")
-        # If we have a validated version, check if we should keep it or re-validate?
-        # Let's keep validated versions but ensure they aren't garbage.
+        clean_title_val = clean_text(original_title)
         
-        if book['filename'] in validated_map:
-            v_book = validated_map[book['filename']]
-            # Only keep if not garbage (double check)
-            if not is_garbage(v_book['title']):
-                final_books.append(v_book)
-                continue
-        
-        # New or unvalidated book
-        if processed_count >= BATCH_SIZE:
-            # Append remaining books without API check, BUT apply local garbage filter
-            clean_t = clean_text(original_title)
-            if not is_garbage(clean_t):
-                book['title'] = clean_t
-                final_books.append(book)
-            else:
-                deleted_count += 1
-            continue
-
-        # Active Processing
-        clean_title = clean_text(original_title)
-        clean_author = clean_text(book.get("author", ""))
-        
-        # 1. Immediate Garbage Check
-        if is_garbage(clean_title):
-            log_entries.append(f"DELETED (Garbage Name): {original_title}")
+        # Immediate Garbage Check
+        if is_garbage(clean_title_val):
+            log_entries.append(f"DELETED (Garbage): {original_title}")
             deleted_count += 1
             continue
-            
-        book["title"] = clean_title
-        book["author"] = clean_author
+
+        book_to_process = book
+        needs_enrichment = True
         
-        # 2. API Validation
-        print(f"Validating: {clean_title}")
-        metadata = fetch_google_books_metadata(clean_title, clean_author)
+        # Check if we have a validated version
+        if book['filename'] in validated_map:
+            v_book = validated_map[book['filename']]
+            # Use validated version, but check if it needs update
+            # Needs update if: No Cover OR No Description OR Description is "A valuable addition..."
+            has_cover = bool(v_book.get('coverImage'))
+            has_good_review = bool(v_book.get('review') and not v_book.get('review').startswith("A valuable addition"))
+            
+            if has_cover and has_good_review:
+                final_books.append(v_book)
+                needs_enrichment = False
+            else:
+                book_to_process = v_book # Start with what we have
+                needs_enrichment = True
+        
+        if not needs_enrichment:
+            continue
+            
+        if processed_count >= BATCH_SIZE:
+             # Just keep what we have if we hit limit (prevents total loss)
+             final_books.append(book_to_process)
+             continue
+
+        # Enrich
+        print(f"Enriching: {clean_title_val}")
+        metadata = fetch_google_books_metadata(clean_title_val, clean_text(book.get("author", "")))
         
         if metadata:
-            # FOUND! Update with canonical data
-            book["title"] = metadata.get("title", clean_title)
+            book_to_process["title"] = metadata.get("title", clean_title_val)
             if "authors" in metadata:
-                book["author"] = ", ".join(metadata["authors"])
+                book_to_process["author"] = ", ".join(metadata["authors"])
             
-            # Enrich fields
+            isbn = None
             identifiers = metadata.get("industryIdentifiers", [])
-            isbn = next((i["identifier"] for i in identifiers if i["type"] in ["ISBN_13", "ISBN_10"]), None)
-            if isbn: book["isbn"] = isbn
-            if "publisher" in metadata: book["publisher"] = metadata["publisher"]
-            if "publishedDate" in metadata: book["year"] = metadata["publishedDate"][:4]
-            if "categories" in metadata and metadata["categories"]: book["genre"] = metadata["categories"][0]
+            # Try to get ISBN-10 first for Amazon
+            isbn_10 = next((i["identifier"] for i in identifiers if i["type"] == "ISBN_10"), None)
+            isbn_13 = next((i["identifier"] for i in identifiers if i["type"] == "ISBN_13"), None)
             
-            image_links = metadata.get("imageLinks", {})
-            img = image_links.get("thumbnail") or image_links.get("smallThumbnail")
-            if img: book["coverImage"] = img.replace("http://", "https://")
+            if isbn_10: isbn = isbn_10
+            elif isbn_13: isbn = isbn_13
             
-            if "description" in metadata:
-                book["description"] = metadata["description"]
-                if not book.get("review") or book.get("review").startswith("A valuable addition"):
-                    book["review"] = metadata["description"][:300] + "..."
+            if isbn: book_to_process["isbn"] = isbn
+            if "publisher" in metadata: book_to_process["publisher"] = metadata["publisher"]
+            if "publishedDate" in metadata: book_to_process["year"] = metadata["publishedDate"][:4]
+            if "categories" in metadata and metadata["categories"]: book_to_process["genre"] = metadata["categories"][0]
             
-            # Calculate Score
-            score, sales_count = calculate_weighted_score(book, metadata)
-            book["importance"] = score
-            book["salesCount"] = sales_count
+            # Cover Logic: Amazon > Google
+            cover_url = None
+            if isbn:
+                cover_url = check_amazon_cover(isbn)
             
-            final_books.append(book)
+            if not cover_url:
+                image_links = metadata.get("imageLinks", {})
+                img = image_links.get("thumbnail") or image_links.get("smallThumbnail")
+                if img: cover_url = img.replace("http://", "https://")
+            
+            if cover_url:
+                book_to_process["coverImage"] = cover_url
+                
+            # Description/Review Logic
+            description = metadata.get("description", "")
+            if description:
+                book_to_process["description"] = description
+                book_to_process["review"] = generate_summary(description)
+            
+            score, sales_count = calculate_weighted_score(book_to_process, metadata)
+            book_to_process["importance"] = score
+            book_to_process["salesCount"] = sales_count
+            
+            final_books.append(book_to_process)
             processed_count += 1
             time.sleep(DELAY)
             
         else:
-            # NOT FOUND in API
-            log_entries.append(f"DELETED (Not found on Google Books): {clean_title}")
-            deleted_count += 1
+             # Not found in API. Delete.
+             log_entries.append(f"DELETED (Not found): {clean_title_val}")
+             deleted_count += 1
 
-    # Sort
     final_books.sort(key=lambda x: x.get('importance', 0), reverse=True)
 
-    # Save
     with open(OUTPUT_FILE, 'w') as f:
         json.dump(final_books, f, indent=2)
         
@@ -258,7 +279,7 @@ def validate_and_enrich():
             f.write("\n".join(log_entries) + "\n")
 
     print(f"Cleanup complete.")
-    print(f"Processed via API: {processed_count}")
+    print(f"Processed/Enriched: {processed_count}")
     print(f"Deleted Books: {deleted_count}")
     print(f"Total Valid Books: {len(final_books)}")
 
