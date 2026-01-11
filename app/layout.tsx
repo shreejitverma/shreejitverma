@@ -62,12 +62,17 @@ export const metadata: Metadata = {
   },
 };
 
+import BackgroundCanvas from './components/BackgroundCanvas';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const jsonLd = {
+    // ... existing jsonLd ...
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Shreejit Verma',
@@ -122,7 +127,10 @@ export default function RootLayout({
         />
       </head>
       <body className={clsx(inter.variable, jetbrainsMono.variable, 'bg-slate-950 text-slate-300 antialiased selection:bg-cyan-500/30 selection:text-cyan-200 font-sans')}>
+        <BackgroundCanvas />
         {children}
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
