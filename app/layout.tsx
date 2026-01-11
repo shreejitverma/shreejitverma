@@ -62,9 +62,9 @@ export const metadata: Metadata = {
   },
 };
 
-import BackgroundCanvas from './components/BackgroundCanvas';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
+import BackgroundCanvas from '@/app/components/BackgroundCanvas';
 
 export default function RootLayout({
   children,

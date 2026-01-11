@@ -1714,7 +1714,8 @@
     "genre": "Business & Economics",
     "coverImage": "https://books.google.com/books/content?id=w68sAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
     "description": "This authoritative guide offers an easy-to-understand, fundamental explanation of the goals and objectives of each player involved in the options trade. Along with this tactical information, traders will gain insight into trading strategies and options concepts. Includes coverage of EAPs, CAPs, and industry indexes.",
-    "salesCount": 0
+    "salesCount": 0,
+    "publisher": "Irwin Professional Publishing"
   },
   {
     "title": "Kshitiz Par Savere Milenge",
@@ -1780,22 +1781,6 @@
     "genre": "Computers",
     "coverImage": "https://books.google.com/books/content?id=DTozEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "description": "Summary PostGIS in Action, Second Edition teaches readers of all levels to write spatial queries that solve real-world problems. It first gives you a background in vector-, raster-, and topology-based GIS and then quickly moves into analyzing, viewing, and mapping data. This second edition covers PostGIS 2.0 and 2.1 series, PostgreSQL 9.1, 9.2, and 9.3 features, and shows you how to integrate with other GIS tools. Foreword by Paul Ramsey. Purchase of the print book includes a free eBook in PDF, Kindle, and ePub formats from Manning Publications. About the Book Processing data tied to location and topology requires specialized know-how. PostGIS is a free spatial database extender for PostgreSQL, every bit as good as proprietary software. With it, you can easily create location-aware queries in just a few lines of SQL code and build the back end for a mapping, raster analysis, or routing application with minimal effort. PostGIS in Action, Second Edition teaches you to solve real-world geodata problems. It first gives you a background in vector-, raster-, and topology-based GIS and then quickly moves into analyzing, viewing, and mapping data. You'll learn how to optimize queries for maximum speed, simplify geometries for greater efficiency, and create custom functions for your own applications. You'll also learn how to apply your existing GIS knowledge to PostGIS and integrate with other GIS tools. Familiarity with relational database and GIS concepts is helpful but not required. What's Inside An introduction to spatial databases Geometry, geography, raster, and topology spatial types, functions, and queries Applying PostGIS to real-world problems Extending PostGIS to web and desktop applications Updated for PostGIS 2.x and PostgreSQL 9.x About the Authors Regina Obe and Leo Hsu are database consultants and authors. Regina is a member of the PostGIS core development team and the Project Steering Committee. Table of Contents What is a spatial database? Spatial data types Spatial reference system considerations Working with real data Using PostGIS on the desktop Geometry and geography functions Raster functions PostGIS TIGER geocoder Geometry relationships Proximity analysis Geometry and geography processing Raster processing Building and using topologies Organizing spatial data Query performance tuning Extending PostGIS with pgRouting and procedural languages Using PostGIS in web applications PART 1 INTRODUCTION TO POSTGIS PART 2 PUTTING POSTGIS TO WORK PART 3 USING POSTGIS WITH OTHER TOOLS",
-    "salesCount": 0
-  },
-  {
-    "title": "Options",
-    "author": "Options Institute (Chicago Board Options Exchange)",
-    "year": "1990",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Volatility%20and%20VIX%20Collection/Options%20Volatility%20Trading%20%282010%29/Options%20Volatility%20Trading_%20Str%20-%20Adam%20Warner.mobi",
-    "filename": "Options Volatility Trading_ Str - Adam Warner.mobi",
-    "format": "MOBI",
-    "review": "Coauthored by a dozen industry professionals, each of whom contributes a chapter in their area of expertise, which focuses on a different essential area of options trading Many options books concentrate on only one aspects of options trading; this onc, in contract is exceptionally comprehensive and ...",
-    "importance": 24,
-    "publisher": "Irwin Professional Publishing",
-    "genre": "Business & Economics",
-    "coverImage": "https://books.google.com/books/content?id=43WKzZ69yKsC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    "description": "Coauthored by a dozen industry professionals, each of whom contributes a chapter in their area of expertise, which focuses on a different essential area of options trading Many options books concentrate on only one aspects of options trading; this onc, in contract is exceptionally comprehensive and packed with information on all aspects of options. Concentrates on stock and index options.",
     "salesCount": 0
   },
   {
@@ -3445,16 +3430,6 @@
     "category": "Finance & Trading",
     "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/A%20Beginners%20Guide%20to%20Charting%20Financial%20Markets%20%282007%29.pdf",
     "filename": "A Beginners Guide to Charting Financial Markets (2007).pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Technical Analysis of the Financial Markets",
-    "author": "Unknown Author",
-    "year": "1999",
-    "category": "Finance & Trading",
-    "downloadLink": "/library/Finance/Books%20-%20Investing%20and%20Options/Technical%20Analysis%20Collection/Technical%20Analysis%20of%20the%20Financial%20Markets%20%281999%29.pdf",
-    "filename": "Technical Analysis of the Financial Markets (1999).pdf",
     "format": "PDF",
     "review": ""
   },
@@ -12950,16 +12925,6 @@
     "review": "---\nid: '22874559'\nshelves:\n  - read\ntitle: Half Girlfriend\nauthor: Chetan Bhagat\ndateAdded: '2020-10-27'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1407223058l/22874559.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Half Girlfriend\"\nauthor: [Chetan Bhagat]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Half Girlfriend"
   },
   {
-    "title": "Traction",
-    "author": "Gabriel Weinberg",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "",
-    "filename": "Traction - Gabriel Weinberg.md",
-    "format": "INFO",
-    "review": "---\nid: '22091581'\nshelves:\n  - to-read\ntitle: Traction\nauthor: Gabriel Weinberg\ndateAdded: '2022-08-18'\ncover: >-\n  https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1400128208l/22091581.jpg\nrating: '0'\n---\n---\ntag: Book\ntitle: \"Traction\"\nauthor: [Gabriel Weinberg]\npublisher: \npublish: \ntotal: \nisbn:  \ncover: \nstatus: unread\ncreated: \nupdated: \n---\n\n![cover|150]()\n\n# Traction"
-  },
-  {
     "title": "The Difficulty of Being Good",
     "author": "Gurcharan Das",
     "year": "Unknown",
@@ -19329,16 +19294,6 @@
     "review": ""
   },
   {
-    "title": "Objective Mathematics By RD Sharma Volume 2",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "Science & Math",
-    "downloadLink": "/library/High%20School/Mathematics/Objective%20Mathematics%20By%20RD%20Sharma%20Volume%202.pdf",
-    "filename": "Objective Mathematics By RD Sharma Volume 2.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
     "title": "SKILLS_IN_MATHEMATICS_Differential Calculus",
     "author": "Unknown Author",
     "year": "Unknown",
@@ -21899,16 +21854,6 @@
     "category": "General",
     "downloadLink": "/library/Book%20Summaries/The%20%24100%20Start%20Up.pdf",
     "filename": "The $100 Start Up.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "The Way of The Superior Man",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/Book%20Summaries/The%20Way%20of%20The%20Superior%20Man.pdf",
-    "filename": "The Way of The Superior Man.pdf",
     "format": "PDF",
     "review": ""
   },
@@ -29947,16 +29892,6 @@
     "category": "General",
     "downloadLink": "/library/Book%20Summaries/Crush%20It.pdf",
     "filename": "Crush It.pdf",
-    "format": "PDF",
-    "review": ""
-  },
-  {
-    "title": "Daring Greatly",
-    "author": "Unknown Author",
-    "year": "Unknown",
-    "category": "General",
-    "downloadLink": "/library/Book%20Summaries/Daring%20Greatly.pdf",
-    "filename": "Daring Greatly.pdf",
     "format": "PDF",
     "review": ""
   },

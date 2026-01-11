@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect } from 'react';
-import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProfileImage from './components/ProfileImage';
@@ -12,33 +11,8 @@ import {
 } from 'lucide-react';
 
 export default function Home() {
-  useEffect(() => {
-    // Initialize canvas if script is already loaded
-    if (typeof window !== 'undefined' && (window as any).initCanvas) {
-      (window as any).initCanvas();
-    }
-  }, []);
-
   return (
-    <div className='relative min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 overflow-hidden'>
-      {/* Background Scripts */}
-      <Script src="/js/TweenLite.min.js" strategy="beforeInteractive" />
-      <Script src="/js/EasePack.min.js" strategy="beforeInteractive" />
-      <Script 
-        src="/js/demo.js" 
-        strategy="afterInteractive" 
-        onLoad={() => {
-          if (typeof window !== 'undefined' && (window as any).initCanvas) {
-            (window as any).initCanvas();
-          }
-        }}
-      />
-
-      {/* Background Canvas */}
-      <div id="large-header" className="fixed inset-0 z-0 pointer-events-none">
-         <canvas id="demo-canvas" className="w-full h-full"></canvas>
-      </div>
-
+    <div className='relative min-h-screen bg-transparent text-slate-300 font-sans selection:bg-cyan-500/30 overflow-hidden'>
       {/* Navigation */}
       <nav className='fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-slate-800/50 bg-slate-950/80'>
         <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
