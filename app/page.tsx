@@ -1,13 +1,12 @@
 'use client';
 
-import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProfileImage from './components/ProfileImage';
 import Section from './components/Section';
 import { 
-  Github, Linkedin, Mail, Terminal, TrendingUp, BookOpen, Briefcase, Code2, 
-  GraduationCap, Award, Cpu, Database, Server, Globe 
+  Github, Linkedin, Mail, Terminal, BookOpen, Briefcase, Code2, 
+  GraduationCap, Award, Cpu 
 } from 'lucide-react';
 
 export default function Home() {
@@ -240,26 +239,39 @@ export default function Home() {
               {
                 title: 'AI-Integrated FPGA for Market Making',
                 desc: 'Engineering a sub-10µs trading platform with custom-built limit order book, FPGA market data handlers, and kernel bypass (DPDK) for deterministic execution.',
-                tech: ['FPGA', 'C++', 'Verilog', 'HFT']
+                tech: ['FPGA', 'C++', 'Verilog', 'HFT'],
+                link: 'https://github.com/shreejitverma/trishul-ultra-hft-project'
               },
               {
                 title: 'Adaptive Volatility Regime Execution',
                 desc: 'Developed a regime-switching framework dynamically selecting between passive, TWAP, and aggressive strategies. Achieved 20% increase in Sharpe Ratio.',
-                tech: ['Python', 'ML', 'Algo Trading']
+                tech: ['Python', 'ML', 'Algo Trading'],
+                link: 'https://github.com/shreejitverma/Adaptive-Volatility-Regime-Based-Execution-and-Risk-Framework'
               },
               {
                 title: 'Statistical Arbitrage Reversal Strategies',
                 desc: 'Designed volume-momentum-based crypto portfolio strategy yielding 155.76% annualized return and 1.94 Sharpe Ratio.',
-                tech: ['Quant Research', 'Python', 'Crypto']
+                tech: ['Quant Research', 'Python', 'Crypto'],
+                link: 'https://github.com/shreejitverma/Statistical-Arbitrage-Reversal-and-Momentum-Strategies'
               },
               {
                 title: 'Dynamic Portfolio Optimization',
                 desc: 'Built real-time portfolio optimization system using convex/non-convex methods, enhancing risk-adjusted returns via adaptive asset rebalancing.',
-                tech: ['Optimization', 'Python', 'Risk Mgmt']
+                tech: ['Optimization', 'Python', 'Risk Mgmt'],
+                link: 'https://github.com/shreejitverma/Dynamic-Portfolio-Optimization'
               }
             ].map((project, i) => (
-              <div key={i} className='group p-8 rounded-2xl bg-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10'>
-                <h3 className='text-xl font-bold text-slate-100 mb-3 group-hover:text-cyan-400 transition-colors'>{project.title}</h3>
+              <a 
+                key={i} 
+                href={project.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='group p-8 rounded-2xl bg-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10 block'
+              >
+                <div className='flex justify-between items-start mb-3'>
+                  <h3 className='text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors'>{project.title}</h3>
+                  <Github className='w-5 h-5 text-slate-500 group-hover:text-cyan-400 transition-colors opacity-0 group-hover:opacity-100' />
+                </div>
                 <p className='text-slate-400 mb-6 text-sm leading-relaxed'>{project.desc}</p>
                 <div className='flex flex-wrap gap-2'>
                   {project.tech.map((t, j) => (
@@ -268,7 +280,7 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </Section>
