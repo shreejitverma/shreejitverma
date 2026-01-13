@@ -46,9 +46,3 @@ jobs:
           plugin_languages_details: lines, percentage
           plugin_languages_limit: 8
           plugin_languages_aliases: Jupyter Notebook:Python
-          
-          # 5. Trophies (Bonus)
-          plugin_trophies: yes
-          plugin_trophies_title: Yes
-          plugin_trophies_icons: 'bf4800, b31b1b, 053344, 155d00, 003b6d'
-          plugin_trophies_display: compact
