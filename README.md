@@ -140,22 +140,7 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=shreejitverma&theme=radical&no-frame=true&row=1&column=7)](https://github.com/ryo-ma/github-profile-trophy)
-
-<br/>
-
-<a href="https://github.com/ashutosh00710/github-readme-activity-graph">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=shreejitverma&bg_color=0d1117&color=5bcdec&line=5bcdec&point=FFFFFF&hide_border=true&area=true" alt="Shreejit's Activity Graph" />
-</a>
-
-<br/>
-
-<img src="https://github-readme-stats.vercel.app/api?username=shreejitverma&show_icons=true&hide_border=true&theme=dracula&bg_color=000000&icon_color=4fff67&text_color=ffffff" alt="Shreejit's GitHub stats" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shreejitverma&layout=compact&hide=html,css&theme=dracula&bg_color=000000&hide_border=true" alt="Top Languages" />
-
-<br/>
-
-<img src="https://streak-stats.demolab.com?user=shreejitverma&theme=highcontrast&hide_border=true&background=000000" alt="GitHub Streak" />
+<img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/main/github-metrics.svg" alt="Shreejit's GitHub Metrics" />
 
 <br/>
 
@@ -170,7 +155,6 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 ![visitors](https://komarev.com/ghpvc/?username=shreejitverma&label=Profile%20Views&color=blue&style=flat)
 
 </div>
-<br />
 
 [twitter]: https://twitter.com/shreejitverma
 [youtube]: https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw
