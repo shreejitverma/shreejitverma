@@ -140,15 +140,33 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 
 <div align="center">
 
-<!-- 
-NOTE: The GitHub Metrics image below requires the 'METRICS_TOKEN' secret to be set in your repository settings. 
-Once set, the '.github/workflows/metrics.yml' workflow must run successfully for this image to appear.
--->
-<img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/github-metrics.svg" alt="Shreejit's GitHub Metrics" />
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api?username=shreejitverma&show_icons=true&count_private=true&theme=dracula&hide_border=true&bg_color=000000&icon_color=4fff67&text_color=ffffff" alt="Shreejit's GitHub Stats" />
+    </td>
+    <td align="center" width="50%">
+      <img src="https://streak-stats.demolab.com?user=shreejitverma&theme=dracula&hide_border=true&background=000000&ring=4fff67&currStreakLabel=4fff67" alt="GitHub Streak" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shreejitverma&layout=compact&hide=jupyter%20notebook,html,css,shell&theme=dracula&hide_border=true&bg_color=000000&text_color=ffffff" alt="Top Languages" />
+    </td>
+    <td align="center" width="50%">
+      <!-- Requires the Metrics workflow to run successfully -->
+      <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/github-metrics-advanced.svg" alt="Advanced Metrics" />
+    </td>
+  </tr>
+</table>
 
 <br/>
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=shreejitverma&theme=dracula&hide_border=true&background=000000&ring=4fff67&currStreakLabel=4fff67)](https://git.io/streak-stats)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/github-contribution-grid-snake.svg" width="100%">
+</picture>
 
 <br/>
 
