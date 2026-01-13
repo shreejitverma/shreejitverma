@@ -138,12 +138,12 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 
 ## My GitHub Stats 💻
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=shreejitverma&hide=html,css&theme=dark)](https://github.com/shreejitverma/github-readme-stats)
-[![Shreejit's GitHub stats](https://github-readme-stats.vercel.app/api?username=shreejitverma&bg_color=000000&color=4fff67&line=4fff67&point=ffffff&area=true&hide_border=true&theme=dracula)](https://github.com/shreejitverma/github-readme-stats)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=shreejitverma&layout=compact&hide=html,css&theme=dark)](https://github.com/shreejitverma/github-readme-stats)
+[![Shreejit's GitHub stats](https://github-readme-stats.vercel.app/api?username=shreejitverma&show_icons=true&hide_border=true&theme=dracula&bg_color=000000&icon_color=4fff67&text_color=ffffff)](https://github.com/shreejitverma/github-readme-stats)
 
-![GitHub Streak Graph](https://github-readme-streak-stats.herokuapp.com/?user=shreejitverma&theme=highcontrast)
+![GitHub Streak Graph](https://streak-stats.demolab.com?user=shreejitverma&theme=highcontrast)
 
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=shreejitverma)
+![visitors](https://komarev.com/ghpvc/?username=shreejitverma&label=Profile%20Views&color=blue&style=flat)
 <br />
 
 [twitter]: https://twitter.com/shreejitverma
