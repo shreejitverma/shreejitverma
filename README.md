@@ -140,8 +140,11 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 
 <div align="center">
 
-[![Shreejit's GitHub Stats](https://github-readme-stats.vercel.app/api?username=shreejitverma&show_icons=true&count_private=true&theme=dracula&hide_border=true&bg_color=000000&icon_color=4fff67&text_color=ffffff)](https://github.com/shreejitverma/github-readme-stats)
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=shreejitverma&layout=compact&hide=jupyter%20notebook,html,css&theme=dracula&hide_border=true&bg_color=000000&text_color=ffffff)](https://github.com/shreejitverma/github-readme-stats)
+<!-- 
+NOTE: The GitHub Metrics image below requires the 'METRICS_TOKEN' secret to be set in your repository settings. 
+Once set, the '.github/workflows/metrics.yml' workflow must run successfully for this image to appear.
+-->
+<img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/github-metrics.svg" alt="Shreejit's GitHub Metrics" />
 
 <br/>
 
