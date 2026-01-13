@@ -140,19 +140,16 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/main/github-metrics.svg" alt="Shreejit's GitHub Metrics" />
+[![Shreejit's GitHub Stats](https://github-readme-stats.vercel.app/api?username=shreejitverma&show_icons=true&count_private=true&theme=dracula&hide_border=true&bg_color=000000&icon_color=4fff67&text_color=ffffff)](https://github.com/shreejitverma/github-readme-stats)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=shreejitverma&layout=compact&hide=jupyter%20notebook,html,css&theme=dracula&hide_border=true&bg_color=000000&text_color=ffffff)](https://github.com/shreejitverma/github-readme-stats)
 
 <br/>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/github-contribution-grid-snake.svg">
-  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/github-contribution-grid-snake.svg">
-</picture>
+[![GitHub Streak](https://streak-stats.demolab.com?user=shreejitverma&theme=dracula&hide_border=true&background=000000&ring=4fff67&currStreakLabel=4fff67)](https://git.io/streak-stats)
 
 <br/>
 
-![visitors](https://komarev.com/ghpvc/?username=shreejitverma&label=Profile%20Views&color=blue&style=flat)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=shreejitverma)
 
 </div>
 
