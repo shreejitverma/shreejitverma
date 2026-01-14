@@ -23,6 +23,10 @@ jobs:
           plugin_languages_details: lines, percentage
           plugin_languages_limit: 8
           plugin_languages_aliases: Jupyter Notebook:Python
+          # Explicit Output Config
+          output_action: commit
+          committer_branch: metrics
+          committer_message: "Update metrics.main"
 
       - name: Activity & Commit Frequency
         uses: lowlighter/metrics@latest
@@ -35,6 +39,10 @@ jobs:
           config_timezone: America/New_York
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
+          # Explicit Output Config
+          output_action: commit
+          committer_branch: metrics
+          committer_message: "Update metrics.activity"
 
       - name: Advanced Metrics & Engagement
         uses: lowlighter/metrics@latest
@@ -51,3 +59,7 @@ jobs:
           plugin_people_limit: 28
           plugin_people_size: 28
           plugin_people_types: followers, following
+          # Explicit Output Config
+          output_action: commit
+          committer_branch: metrics
+          committer_message: "Update metrics.advanced"
