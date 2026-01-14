@@ -144,6 +144,10 @@ I am a **Quantitative Developer** with experience in designing and implementing 
 
 <br/>
 
+<img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.habits.svg" alt="Coding Habits" width="100%" />
+
+<br/>
+
 <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.activity.svg" alt="Commit Activity" width="100%" />
 
 <br/>
