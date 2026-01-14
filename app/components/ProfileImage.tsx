@@ -10,20 +10,15 @@ interface ProfileImageProps {
 }
 
 export default function ProfileImage({ src, alt, className }: ProfileImageProps) {
-  const [imgSrc, setImgSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
   
   // Fallback image using the configured placeholder service
   const fallbackSrc = 'https://placehold.co/400x400/1e293b/22d3ee?text=SV';
 
-  useEffect(() => {
-    setImgSrc(src);
-    setHasError(false);
-  }, [src]);
-
   return (
     <Image
-      src={hasError ? fallbackSrc : imgSrc}
+      key={src}
+      src={hasError ? fallbackSrc : src}
       alt={alt}
       fill
       className={className}

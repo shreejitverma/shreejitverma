@@ -22,6 +22,7 @@ export default function Home() {
             <a href='#about' className='hover:text-cyan-400 transition-colors'>About</a>
             <a href='#experience' className='hover:text-cyan-400 transition-colors'>Experience</a>
             <a href='#projects' className='hover:text-cyan-400 transition-colors'>Projects</a>
+            <a href='#impact' className='hover:text-cyan-400 transition-colors'>Impact</a>
             <Link href='/books' className='hover:text-cyan-400 transition-colors'>Reading List</Link>
           </div>
           <div className='flex items-center gap-4'>
@@ -354,6 +355,48 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* GitHub Impact Section */}
+        <Section id='impact' title='GitHub Impact' icon={<Github className='w-6 h-6' />}>
+          <div className='space-y-8'>
+            <div className='grid lg:grid-cols-2 gap-6'>
+              <div className='p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+                <img 
+                  src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.main.svg" 
+                  alt="GitHub Overview" 
+                  className='max-w-full h-auto rounded-lg'
+                  loading="lazy"
+                />
+              </div>
+              <div className='p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+                <img 
+                  src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.habits.svg" 
+                  alt="Coding Habits" 
+                  className='max-w-full h-auto rounded-lg'
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div className='grid lg:grid-cols-2 gap-6'>
+              <div className='p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+                <img 
+                  src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.activity.svg" 
+                  alt="Commit Activity" 
+                  className='max-w-full h-auto rounded-lg'
+                  loading="lazy"
+                />
+              </div>
+              <div className='p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+                <img 
+                  src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.advanced.svg" 
+                  alt="Advanced Metrics" 
+                  className='max-w-full h-auto rounded-lg'
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </Section>
 
         {/* Contact */}
         <footer className='py-12 border-t border-slate-800 bg-slate-950/80 backdrop-blur-sm'>
