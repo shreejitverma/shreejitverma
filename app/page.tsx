@@ -395,6 +395,24 @@ export default function Home() {
                 />
               </div>
             </div>
+            <div className='grid lg:grid-cols-2 gap-6'>
+              <div className='p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+                <img 
+                  src="https://streak-stats.demolab.com?user=shreejitverma&theme=dracula&hide_border=true&background=000000&ring=4fff67&currStreakLabel=4fff67" 
+                  alt="GitHub Streak" 
+                  className='max-w-full h-auto rounded-lg'
+                  loading="lazy"
+                />
+              </div>
+              <div className='p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+                <img 
+                  src="https://visitor-badge.laobi.icu/badge?page_id=shreejitverma" 
+                  alt="Visitor Badge" 
+                  className='max-w-full h-auto rounded-lg'
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
         </Section>
 
