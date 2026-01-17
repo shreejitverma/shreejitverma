@@ -26,18 +26,16 @@ jobs:
           output_action: commit
           committer_branch: metrics
 
-      - name: Streak Metrics
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: shreejitverma
-          template: classic
-          base: ""
-          filename: metrics.streak.svg
-          config_timezone: America/New_York
-          plugin_streak: yes
-          output_action: commit
-          committer_branch: metrics
+      - name: Download Streak Metrics
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin metrics
+          git checkout metrics || git checkout -b metrics
+          curl -L "https://streak-stats.demolab.com?user=shreejitverma&theme=dracula&hide_border=true&background=000000&ring=4fff67&currStreakLabel=4fff67" -o metrics.streak.svg
+          git add metrics.streak.svg
+          git commit -m "Update streak metrics" || echo "No changes to commit"
+          git push origin metrics
 
       - name: Coding Habits
         uses: lowlighter/metrics@latest

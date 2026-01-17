@@ -406,7 +406,7 @@ export default function Home() {
               </div>
               <div className='p-4 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
-                  src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fshreejitverma%2Fshreejitverma&label=VISITORS&countColor=%232ccce4&style=flat-square" 
+                  src="https://visitor-badge.laobi.icu/badge?page_id=shreejitverma" 
                   alt="Visitor Badge" 
                   className='max-w-full h-auto rounded-lg'
                   loading="lazy"
