@@ -20,7 +20,8 @@ export const metadata: Metadata = {
     'Ultra Low Latency', 'Deterministic Execution', 'FPGA Market Data', 'Kernel Bypass', 'DPDK',
     'Algorithmic Trading', 'C++23', 'Python', 'Stochastic Calculus', 'Market Microstructure',
     'Financial Engineering', 'Prop Trading', 'Hedge Funds', 'Alpha Generation',
-    'Statistical Arbitrage', 'Machine Learning in Finance', 'Order Execution', 'Market Making'
+    'FPGA', 'DPDK', 'Low Latency', 'Statistical Arbitrage', 'Machine Learning in Finance', 
+    'Order Execution', 'Market Making', 'Execution Algorithms'
   ],
   authors: [{ name: 'Shreejit Verma', url: 'https://www.shreejitverma.com' }],
   creator: 'Shreejit Verma',
