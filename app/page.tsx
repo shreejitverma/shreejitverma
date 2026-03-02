@@ -15,11 +15,22 @@ export default function Home() {
       {/* Navigation */}
       <nav className='fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-slate-800/50 bg-slate-950/80'>
         <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
-          <div className='font-mono text-xl font-bold text-cyan-400 tracking-tighter'>
-            SV<span className='text-slate-500'>.quant</span>
+          <div className='flex items-center gap-3'>
+            <div className='relative w-10 h-10 rounded-full overflow-hidden border border-slate-700 shadow-lg'>
+              <Image 
+                src="/Shreejit_Verma_profile_pic.jpg" 
+                alt="Shreejit Verma" 
+                fill
+                className='object-cover'
+              />
+            </div>
+            <div className='font-mono text-xl font-bold text-cyan-400 tracking-tighter'>
+              SV<span className='text-slate-500'>.quant</span>
+            </div>
           </div>
           <div className='hidden md:flex gap-8 text-sm font-medium'>
             <a href='#about' className='hover:text-cyan-400 transition-colors'>About</a>
+            <a href='#research' className='hover:text-cyan-400 transition-colors'>Research</a>
             <a href='#experience' className='hover:text-cyan-400 transition-colors'>Experience</a>
             <a href='#projects' className='hover:text-cyan-400 transition-colors'>Projects</a>
             <a href='#impact' className='hover:text-cyan-400 transition-colors'>Impact</a>
@@ -32,7 +43,7 @@ export default function Home() {
             <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-400 transition-colors'>
               <Linkedin className='w-5 h-5' />
             </a>
-            <a href='/Shreejit_Verma_Resume.pdf' target='_blank' rel="noopener noreferrer" className='px-4 py-2 text-xs font-bold text-slate-950 bg-cyan-400 rounded hover:bg-cyan-300 transition-colors'>
+            <a href='/Shreejit Verma Resume.pdf' target='_blank' rel="noopener noreferrer" className='px-4 py-2 text-xs font-bold text-slate-950 bg-cyan-400 rounded hover:bg-cyan-300 transition-colors'>
               RESUME
             </a>
           </div>
@@ -91,7 +102,7 @@ export default function Home() {
               {
                 school: "Georgia Institute of Technology",
                 degree: "Master of Science in Computer Science",
-                date: "Aug 2024 – Dec 2025",
+                date: "Aug 2024 – Expected Dec 2026",
                 gpa: "",
                 details: "Specialization in Computing Systems. Coursework: High-Performance Computing, Distributed Computing, DBMS, Bayesian Statistics."
               },
@@ -101,6 +112,13 @@ export default function Home() {
                 date: "Dec 2021 – May 2024",
                 gpa: "GPA: 86%",
                 details: "Coursework: Deep Learning for Finance, Financial Econometrics, Fixed Income, Portfolio Management, Risk Management."
+              },
+              {
+                school: "Carnegie Mellon University, Tepper School of Business",
+                degree: "Master of Science in Computational Finance",
+                date: "Aug 2021 – Oct 2021",
+                gpa: "",
+                details: "Coursework: Investments, Statistical Machine Learning, Simulation Methods, Financial Computing, Algorithmic Optimization. (Program withdrawn due to father's illness)"
               },
               {
                 school: "Vellore Institute of Technology",
@@ -123,33 +141,69 @@ export default function Home() {
           </div>
         </Section>
 
+        {/* Research Section */}
+        <Section id='research' title='Research' icon={<BookOpen className='w-6 h-6' />}>
+          <div className='grid md:grid-cols-2 gap-6'>
+            {[
+              {
+                title: "AI-Integrated FPGA for Market Making",
+                subtitle: "Master's Thesis",
+                date: "Oct 2024 – Dec 2025",
+                details: "Engineering a sub-10µs trading platform with a custom-built limit order book, FPGA market data handlers, kernel bypass (DPDK), and lock-free data structures for deterministic execution.",
+                link: "https://github.com/shreejitverma/trishul-ultra-hft-project"
+              },
+              {
+                title: "Dynamic Portfolio Optimization",
+                subtitle: "Master's Thesis (WorldQuant University)",
+                date: "Mar 2024 – June 2024",
+                details: "Built a real-time portfolio optimization system using convex and non-convex methods, enhancing risk-adjusted returns via adaptive asset rebalancing and multi-factor modeling.",
+                link: "https://github.com/shreejitverma/Dynamic-Portfolio-Optimization"
+              }
+            ].map((res, i) => (
+              <div key={i} className='p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
+                <div className='flex justify-between items-start mb-2'>
+                  <h3 className='font-bold text-slate-100'>{res.title}</h3>
+                  <span className='text-xs font-mono text-cyan-400 whitespace-nowrap ml-2'>{res.date}</span>
+                </div>
+                <div className='text-sm text-slate-300 font-medium mb-3'>{res.subtitle}</div>
+                <p className='text-sm text-slate-400 mb-4'>{res.details}</p>
+                {res.link && (
+                  <a href={res.link} target='_blank' rel='noopener noreferrer' className='text-xs font-mono text-cyan-500 hover:underline'>
+                    VIEW_ON_GITHUB
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </Section>
+
         {/* Skills Section - Categorized */}
         <Section id='skills' title='Technical Arsenal' icon={<Cpu className='w-6 h-6' />}>
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {[
               {
                 category: "Quantitative Finance",
-                skills: "Stochastic Calculus, Derivative Pricing, Time Series Analysis, Factor Modeling, Greeks, Risk Management"
+                skills: "Stochastic Calculus, Derivative Pricing, Time Series Analysis, Factor Modeling, Greeks, Risk Management, Market Microstructure"
               },
               {
                 category: "Mathematics & Stats",
-                skills: "Probability, PDE, Linear Algebra, Markov Chains, Bayesian Statistics, Numerical Methods"
+                skills: "Probability, PDE, Linear Algebra, Markov Chains, Bayesian Statistics, Numerical Methods, Differential Equations"
               },
               {
                 category: "Programming",
-                skills: "Python, C++, C, Java, R, MATLAB, KDB+/Q, JavaScript, Verilog, VHDL"
+                skills: "Python, C++, C, Java, R, MATLAB, KDB+/Q, JavaScript, Verilog, VHDL, Bash, Linux"
               },
               {
                 category: "Machine Learning",
-                skills: "TensorFlow, PyTorch, Scikit-learn, XGBoost, RNN, LSTM, Random Forest, Clustering"
+                skills: "TensorFlow, PyTorch, Scikit-learn, XGBoost, RNN, LSTM, Random Forest, Clustering, NLP, Deep Learning, Neural Networks"
               },
               {
                 category: "Data Engineering",
-                skills: "Spark, Hadoop, Kafka, Airflow, PostgreSQL, MongoDB, Redis, ZeroMQ"
+                skills: "Spark, Hadoop, Kafka, Airflow, PostgreSQL, MongoDB, Redis, ZeroMQ, Cassandra, Dask, PySpark, FastAPI, REST APIs, InfluxDB, SQL, BQL"
               },
               {
                 category: "Systems & DevOps",
-                skills: "Docker, Kubernetes, AWS, GCP, Linux, Git, Jenkins, Ansible, CI/CD"
+                skills: "Docker, Kubernetes, AWS, GCP, Linux, Git, Jenkins, Ansible, CI/CD, Serverless Architecture"
               }
             ].map((group, i) => (
               <div key={i} className='p-6 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500/30 transition-all'>
@@ -170,10 +224,28 @@ export default function Home() {
         <Section id='experience' title='Professional Experience' icon={<Briefcase className='w-6 h-6' />}>
           <div className='space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent'>
             
-            {/* LogiNext */}
+            {/* BNP Paribas */}
             <div className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
               <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
                 <div className='w-3 h-3 bg-cyan-500 rounded-full animate-pulse'></div>
+              </div>
+              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
+                <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
+                  <h3 className='font-bold text-slate-100'>BNP Paribas CIB</h3>
+                  <span className='text-xs font-mono text-cyan-400'>Feb 2026 – Present</span>
+                </div>
+                <div className='text-sm text-slate-400 mb-4 font-medium'>C++ Quantitative Developer (Automated Market Making)</div>
+                <ul className='list-disc list-outside ml-4 text-sm text-slate-400 space-y-2 marker:text-slate-600'>
+                  <li>Developing high-performance C++ trading systems with FPGA for Automated Market Making strategies at BNP Paribas CIB.</li>
+                  <li>Collaborating with front-office to optimize latency and enhance execution performance in a hybrid on-site trading environment.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* LogiNext */}
+            <div className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
+              <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
+                <div className='w-3 h-3 bg-slate-600 rounded-full'></div>
               </div>
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
@@ -182,10 +254,9 @@ export default function Home() {
                 </div>
                 <div className='text-sm text-slate-400 mb-4 font-medium'>Senior Software Engineer Analytics</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-400 space-y-2 marker:text-slate-600'>
-                  <li>Architected Map Construction & Routing Algorithms solving nested NP-Hard problems using Constraint Programming (PostGIS, MongoDB).</li>
-                  <li>Led a team of 12 to develop a high-performance geospatial mapping application.</li>
-                  <li>Built a Large Language Model (LLM) for internal query resolution, improving efficiency by <strong className="text-slate-300">80%</strong>.</li>
-                  <li>Engineered ELK stack pipeline for proactive error detection and log analysis.</li>
+                  <li>Designed and implemented **Map Construction and Routing Algorithms** to solve complex NP-hard problems.</li>
+                  <li>Built a **Large Language Model (LLM)** for internal development and bug query resolution, reducing issue resolution time by 80%.</li>
+                  <li>Led a team of 12 to develop a high-performance **geospatial mapping application** using PostGIS, MongoDB, and AWS.</li>
                 </ul>
               </div>
             </div>
@@ -202,15 +273,15 @@ export default function Home() {
                 </div>
                 <div className='text-sm text-slate-400 mb-4 font-medium'>Quantitative Developer</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-400 space-y-2 marker:text-slate-600'>
-                  <li>Managed <strong className="text-slate-300">$8.5 Billion AUM</strong> across Merger Arbitrage and Stock Selection portfolios.</li>
-                  <li>Backtested systematic strategies yielding a <strong className="text-slate-300">15% improvement</strong> in alpha capture.</li>
-                  <li>Deployed scalable ML pipelines increasing trade execution efficiency by <strong className="text-slate-300">29%</strong>.</li>
-                  <li>Built ESG-focused portfolio strategies capitalizing on arbitrage opportunities.</li>
+                  <li>Developed ML-driven **Order and Execution Management Systems**, improving trade execution efficiency by 20%.</li>
+                  <li>Backtested and deployed **systematic merger arbitrage strategies**, increasing alpha capture by 15%.</li>
+                  <li>Engineered **risk-adjusted return models** for optimizing portfolio risk exposure and factor analysis.</li>
+                  <li>Managed a combined **AUM of $8.5 Billion** across merger arbitrage and stock selection portfolios.</li>
                 </ul>
               </div>
             </div>
 
-            {/* BoA */}
+            {/* BoA 1 */}
             <div className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
               <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
                 <div className='w-3 h-3 bg-slate-600 rounded-full'></div>
@@ -218,14 +289,31 @@ export default function Home() {
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-slate-100'>Bank of America</h3>
-                  <span className='text-xs font-mono text-slate-500'>Jun 2018 – Jul 2021</span>
+                  <span className='text-xs font-mono text-slate-500'>Jan 2020 – Jul 2021</span>
                 </div>
                 <div className='text-sm text-slate-400 mb-4 font-medium'>Senior Software Engineer (FICC)</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-400 space-y-2 marker:text-slate-600'>
-                  <li>Engineered Python services for QUARTZ trade processing.</li>
-                  <li>Integrated C++ pipelines in SANDRA, reducing trade processing latency by <strong className="text-slate-300">50%</strong>.</li>
-                  <li>Led migration of 1M+ lines of code to Python 3.8, boosting efficiency by <strong className="text-slate-300">40%</strong>.</li>
-                  <li>Architected ML/AI platform increasing decision-making accuracy by <strong className="text-slate-300">67%</strong>.</li>
+                  <li>Engineered Python-based trading services to enhance the storage, processing, matching, and execution of trades on QUARTZ.</li>
+                  <li>Integrated C++ pipelines to store trades in the object-oriented database SANDRA, reducing trade processing latency by <strong className="text-slate-300">50%</strong>.</li>
+                  <li>Led migration of 1 million+ lines of code to Python 3.8, enhancing system scalability and execution efficiency by <strong className="text-slate-300">40%</strong>.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* BoA 2 */}
+            <div className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
+              <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
+                <div className='w-3 h-3 bg-slate-600 rounded-full'></div>
+              </div>
+              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
+                <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
+                  <h3 className='font-bold text-slate-100'>Bank of America</h3>
+                  <span className='text-xs font-mono text-slate-500'>Jun 2018 – Dec 2019</span>
+                </div>
+                <div className='text-sm text-slate-400 mb-4 font-medium'>Senior Tech Associate (Data Analysis and Insight Technology)</div>
+                <ul className='list-disc list-outside ml-4 text-sm text-slate-400 space-y-2 marker:text-slate-600'>
+                  <li>Architected and developed an ML/AI platform to deploy predictive models, increasing decision-making accuracy by <strong className="text-slate-300">67%</strong>.</li>
+                  <li>Designed machine learning models for data validation rules prediction, reducing close to <strong className="text-slate-300">36 Full-Time Equivalents (FTEs)</strong>.</li>
                 </ul>
               </div>
             </div>
@@ -260,6 +348,30 @@ export default function Home() {
                 desc: 'Built real-time portfolio optimization system using convex/non-convex methods, enhancing risk-adjusted returns via adaptive asset rebalancing.',
                 tech: ['Optimization', 'Python', 'Risk Mgmt'],
                 link: 'https://github.com/shreejitverma/Dynamic-Portfolio-Optimization'
+              },
+              {
+                title: 'Financial Modelling: Stochastic Calculus',
+                desc: 'Modeled asset prices and derivative strategies using Brownian Motion, GBM, Ito\'s Lemma, and SDEs for volatility and interest rate modeling.',
+                tech: ['Stochastic Calculus', 'Python', 'Quant Finance'],
+                link: '#'
+              },
+              {
+                title: 'ESG Merger Arbitrage Strategy',
+                desc: 'Developed ESG-focused strategy for merger arbitrage, analyzing the effect of ESG scores on target and acquirer pre- and post-merger statistics.',
+                tech: ['Merger Arbitrage', 'ESG', 'Strategy'],
+                link: '#'
+              },
+              {
+                title: 'Blockchain In Retail',
+                desc: 'Decentralized e-commerce platform with smart contracts, currency conversion, and matching algorithms using Ethereum/Solidity.',
+                tech: ['Blockchain', 'Solidity', 'Web3'],
+                link: '#'
+              },
+              {
+                title: 'QS Rank Predictor',
+                desc: 'Machine learning model consisting of multiple deep neural networks to predict QS World Ranking, achieving top global ranking in VIT CS 2020.',
+                tech: ['Machine Learning', 'Deep Learning', 'Python'],
+                link: '#'
               }
             ].map((project, i) => (
               <a 
@@ -294,23 +406,41 @@ export default function Home() {
                 <Award className='w-5 h-5 text-yellow-500' /> Awards
               </h3>
               <ul className='space-y-3 text-sm text-slate-400'>
-                <li><strong className="text-slate-200">Global Recognition Gold Award</strong> (Bank of America) - Led enterprise-wide AI/ML campaign.</li>
-                <li><strong className="text-slate-200">Global Recognition Silver Award</strong> (Bank of America, 2x) - For Total Return Swap Bonds contributions.</li>
-                <li><strong className="text-slate-200">1st Place</strong> - Vanguard ETF Trading Challenge.</li>
+                <li><strong className="text-slate-200">Global Recognition Gold Award</strong> (Bank of America) - Led enterprise-wide AI/ML campaign identifying 64 high-impact use cases.</li>
+                <li><strong className="text-slate-200">Global Recognition Silver Award</strong> (Bank of America, 2x) - For Total Return Swap Bonds contributions and AI/ML framework.</li>
+                <li><strong className="text-slate-200">1st Place</strong> - Vanguard ETF Trading Challenge (Personal Portfolio).</li>
                 <li><strong className="text-slate-200">State Rank Holder</strong> - International Science Olympiad & Math Olympiad.</li>
+                <li><strong className="text-slate-200">President</strong> - Stevens Graduate Financial Association.</li>
               </ul>
             </div>
             <div className='p-6 rounded-2xl bg-slate-900/30 border border-slate-800'>
               <h3 className='text-lg font-bold text-slate-100 mb-4 flex items-center gap-2'>
                 <BookOpen className='w-5 h-5 text-cyan-500' /> Certifications
               </h3>
-              <ul className='space-y-3 text-sm text-slate-400'>
-                <li>CFA Level 1</li>
-                <li>Bloomberg Market Certification</li>
-                <li>Financial Engineering & Risk Management (Columbia/Coursera)</li>
-                <li>Machine Learning for Trading Specialization (Google Cloud/NY Institute of Finance)</li>
-                <li>Deep Learning Specialization (Andrew Ng/Coursera)</li>
-              </ul>
+              <div className='grid grid-cols-1 gap-4 text-sm text-slate-400'>
+                <div>
+                  <h4 className='text-xs font-bold text-slate-500 uppercase tracking-wider mb-2'>Finance</h4>
+                  <ul className='space-y-1'>
+                    <li>CFA Level 1</li>
+                    <li>Bloomberg Market Certification</li>
+                    <li>Financial Engineering & Risk Mgmt (Columbia)</li>
+                    <li>Investment Management Specialization (Geneva/UBS)</li>
+                    <li>Corporate Finance and Valuation (NYU Stern/Damodaran)</li>
+                    <li>ML for Trading Specialization (Google Cloud/NYIF)</li>
+                    <li>Finance & Quant Modeling Specialization (Wharton)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className='text-xs font-bold text-slate-500 uppercase tracking-wider mb-2'>Computer Science</h4>
+                  <ul className='space-y-1'>
+                    <li>Deep Learning Specialization (Andrew Ng)</li>
+                    <li>Applied Data Science with Python (Michigan)</li>
+                    <li>Data Science Foundations using R (Johns Hopkins)</li>
+                    <li>Big Data Specialization (UC San Diego)</li>
+                    <li>Data Structures and Algorithms Specialization</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </Section>

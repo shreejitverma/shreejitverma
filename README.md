@@ -1,253 +1,186 @@
-## Hi<img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="30px"> I'm , [Shreejit][website]
+# Shreejit Verma | Quantitative Developer & Researcher
+### HFT · Low-Latency Systems · Statistical Arbitrage · Machine Learning
 
-[<img height="30" src="https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white" />][website]
-[<img height="30" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" />][twitter]
-[<img height="30" src = "https://img.shields.io/badge/Youtube-%23E4405F.svg?&style=for-the-badge&logo=Youtube&logoColor=white">][youtube]
-[<img height="30" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />][linkedin]
-[<img height="30" src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev" />][devto]
-[<img height="30" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />][gmail]
-
-<br />
-
-## 👩‍💻 About Me 
-
-I am a **Quantitative Developer** with experience in designing and implementing high-performance trading systems, statistical models, and algorithmic trading strategies. With a strong foundation in **financial engineering, computer science, and applied mathematics**, I thrive at the intersection of **technology and finance**.
-
-🎓 **Education**  
-- **Master of Science in Financial Engineering**, Stevens Institute of Technology (Ongoing, Dec 2025)  
-  Coursework: Market Microstructure, Algorithmic Trading Strategies, Quantitative Hedge Fund Strategies  
-- **Master of Science in Computer Science**, Georgia Tech (Ongoing, Dec 2025)  
-  Coursework: High-Performance Computing, Distributed Systems, Advanced Internet Computing Systems  
-- **Master’s in Financial Engineering**, WorldQuant University (2021-2024, 86%)  
-  Coursework: Financial Econometrics, Fixed Income, Portfolio Management, Risk Management  
-- **B.Tech in Computer Science and Engineering**, VIT, India (2014-2018, GPA: 8.78/10)  
+[![Website](https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://www.shreejitverma.com/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shreejitverma/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shreejitverma)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shreejitverma@gmail.com)
 
 ---
 
-## 🏢 Professional Experience  
+## 🏛️ Professional Summary
 
-### **LogiNext Solutions Inc.** — Senior Software Engineer (Head of Analytics)  
-*Mar 2023 – Jul 2024 | Mumbai, India*  
-- Designed and implemented **Map Construction and Routing Algorithms** to solve complex NP-hard problems.  
-- Built a **Large Language Model (LLM)** for internal development and bug query resolution, reducing issue resolution time by 80%.  
-- Led a team of 12 to develop a high-performance **geospatial mapping application** using PostGIS, MongoDB, and AWS.
-  
-### **Versor Investments (QR Systems LLP)** — Quantitative Developer  
-*Feb 2022 – Oct 2022 | New York, USA*  
-- Developed ML-driven **Order and Execution Management Systems**, improving trade execution efficiency by 20%.  
-- Backtested and deployed **systematic merger arbitrage strategies**, increasing alpha capture by 15%.  
-- Engineered **risk-adjusted return models** for optimizing portfolio risk exposure and factor analysis.  
-- Managed a combined **AUM of $8.5 Billion** across merger arbitrage and stock selection portfolios.
-
-### **Bank of America (BA Continuum)** — Senior Software Engineer  
-*Jan 2020 – Jul 2021 | Chennai, India*  
-- Migrated 1M+ lines of code to **Python 3.8**, improving efficiency by 80%.  
-- Developed trading services for **bonds, futures, and options** within the FICC post-trade processing team.  
-- Reduced **trade processing latency by 50%** through Python and C++ integration on the QUARTZ platform.  
+Senior Quantitative Developer and Researcher with over 7 years of experience engineering high-performance trading infrastructure and sophisticated alpha-generating strategies. Proven track record in managing **$8.5 Billion AUM**, reducing trade processing latency by **50%**, and increasing decision-making accuracy by **67%**. Expertise spans the full stack of modern quantitative finance: from **FPGA-accelerated market data handlers** and **low-latency C++ execution engines** to **stochastic calculus-based derivative pricing** and **ML-driven risk frameworks**. Currently focused on sub-microsecond trading systems and adaptive volatility regime execution.
 
 ---
 
-## 🚀 Key Projects  
+## 🛠️ Skills
 
-- **Dynamic Portfolio Optimization (Master's Thesis):**  
-  Leveraged **stochastic calculus** for real-time portfolio risk mitigation and adjustment.  
-
-- **Financial Modeling Using Stochastic Calculus:**  
-  Applied advanced models (e.g., GBM, Ito’s Lemma, Mean-Reverting Processes) for option pricing and derivative strategies.  
-
-- **Real-Time Market Anomaly Detection:**  
-  Developed low-latency algorithms for HFT applications using advanced signal processing and optimization techniques.  
-
-- **Advanced Derivatives Modeling:**  
-  Implemented **Monte Carlo, SABR, Heston, and Hull-White models** for derivative pricing and robust risk management.  
-
----
-
-### 🛠 Skills
-
-#### **Programming Languages**
-![Python](https://img.shields.io/badge/Python-05122A?style=flat&logo=python&logoColor=2C2255)
-![C++](https://img.shields.io/badge/C%2B%2B-05122A?style=flat&logo=c%2B%2B&logoColor=2C2255)
-![Java](https://img.shields.io/badge/Java-05122A?style=flat&logo=java&logoColor=FFA518)
-![R](https://img.shields.io/badge/R-05122A?style=flat&logo=r&logoColor=2C2255)
-![SQL](https://img.shields.io/badge/SQL-05122A?style=flat&logo=postgresql)
-![JavaScript](https://img.shields.io/badge/JavaScript-05122A?style=flat&logo=javascript)
-![Node.js](https://img.shields.io/badge/Node.js-05122A?style=flat&logo=node.js)
-![MATLAB](https://img.shields.io/badge/MATLAB-05122A?style=flat&logo=mathworks)
-![KDB+/Q](https://img.shields.io/badge/KDB%2B-Q-05122A?style=flat&logo=kdb)
-![OCaml](https://img.shields.io/badge/OCaml-05122A?style=flat&logo=ocaml)
-![Bash](https://img.shields.io/badge/Bash-05122A?style=flat&logo=gnu-bash)
+### **Programming Languages**
+![C++](https://img.shields.io/badge/C%2B%2B-05122A?style=flat&logo=c%2B%2B&logoColor=white)
+![Python](https://img.shields.io/badge/Python-05122A?style=flat&logo=python&logoColor=white)
+![C](https://img.shields.io/badge/C-05122A?style=flat&logo=c&logoColor=white)
+![Java](https://img.shields.io/badge/Java-05122A?style=flat&logo=java&logoColor=white)
+![R](https://img.shields.io/badge/R-05122A?style=flat&logo=r&logoColor=white)
+![MATLAB](https://img.shields.io/badge/MATLAB-05122A?style=flat&logo=mathworks&logoColor=white)
+![KDB+/Q](https://img.shields.io/badge/KDB%2B-Q-05122A?style=flat&logo=kdb&logoColor=white)
+![OCaml](https://img.shields.io/badge/OCaml-05122A?style=flat&logo=ocaml&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-05122A?style=flat&logo=gnu-bash&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-05122A?style=flat&logo=postgresql&logoColor=white)
+![Verilog](https://img.shields.io/badge/Verilog-05122A?style=flat&logo=verilog&logoColor=white)
+![VHDL](https://img.shields.io/badge/VHDL-05122A?style=flat&logo=vhdl&logoColor=white)
 
 ---
 
-#### **Technologies and Frameworks**
-![TensorFlow](https://img.shields.io/badge/TensorFlow-05122A?style=flat&logo=tensorflow)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-05122A?style=flat&logo=scikit-learn)
-![React](https://img.shields.io/badge/React-05122A?style=flat&logo=react)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-05122A?style=flat&logo=postgresql)
-![Hadoop](https://img.shields.io/badge/Hadoop-05122A?style=flat&logo=apache-hadoop)
-![Spark](https://img.shields.io/badge/Spark-05122A?style=flat&logo=apache-spark)
-![Airflow](https://img.shields.io/badge/Airflow-05122A?style=flat&logo=apache-airflow)
-![Docker](https://img.shields.io/badge/Docker-05122A?style=flat&logo=docker)
-![Redis](https://img.shields.io/badge/Redis-05122A?style=flat&logo=redis)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-05122A?style=flat&logo=kubernetes)
-![AWS](https://img.shields.io/badge/AWS-05122A?style=flat&logo=amazon-aws)
+### **Systems & Low-Latency**
+![FPGA](https://img.shields.io/badge/FPGA-05122A?style=flat&logo=xilinx&logoColor=white)
+![DPDK](https://img.shields.io/badge/DPDK-05122A?style=flat&logo=linux&logoColor=white)
+![ZeroMQ](https://img.shields.io/badge/ZeroMQ-05122A?style=flat&logo=zeromq&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-05122A?style=flat&logo=linux&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-05122A?style=flat&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-05122A?style=flat&logo=kubernetes&logoColor=white)
+![Git](https://img.shields.io/badge/Git-05122A?style=flat&logo=git&logoColor=white)
+![Jenkins](https://img.shields.io/badge/Jenkins-05122A?style=flat&logo=jenkins&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-05122A?style=flat&logo=ansible&logoColor=white)
 
 ---
 
-#### **Data Engineering**
-![Hadoop](https://img.shields.io/badge/Hadoop-05122A?style=flat&logo=apache-hadoop)
-![Spark](https://img.shields.io/badge/Spark-05122A?style=flat&logo=apache-spark)
-![Airflow](https://img.shields.io/badge/Airflow-05122A?style=flat&logo=apache-airflow)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-05122A?style=flat&logo=postgresql)
-![Redis](https://img.shields.io/badge/Redis-05122A?style=flat&logo=redis)
-![Cassandra](https://img.shields.io/badge/Cassandra-05122A?style=flat&logo=apache-cassandra)
+### **Machine Learning & Quantitative Finance**
+![TensorFlow](https://img.shields.io/badge/TensorFlow-05122A?style=flat&logo=tensorflow&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-05122A?style=flat&logo=pytorch&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-05122A?style=flat&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-05122A?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-05122A?style=flat&logo=numpy&logoColor=white)
+![Spark](https://img.shields.io/badge/Spark-05122A?style=flat&logo=apache-spark&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-05122A?style=flat&logo=apache-kafka&logoColor=white)
+![Airflow](https://img.shields.io/badge/Airflow-05122A?style=flat&logo=apache-airflow&logoColor=white)
 
 ---
 
-#### **Tools and Systems**
-![Linux](https://img.shields.io/badge/Linux-05122A?style=flat&logo=linux)
-![Git](https://img.shields.io/badge/Git-05122A?style=flat&logo=git)
-![JIRA](https://img.shields.io/badge/JIRA-05122A?style=flat&logo=jira)
-![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-05122A?style=flat&logo=intellij-idea)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code)
-
----
-#### **Quantitative Finance**
-- **Derivative Pricing Models:** Black-Scholes, Heston, SABR, Hull-White, Monte Carlo Simulation  
-- **Portfolio Management:** Risk Management, Factor Modeling, Dynamic Optimization  
-- **Statistical Techniques:** Time Series Analysis, Statistical Arbitrage, Risk-Adjusted Return Modeling  
+### **Data Engineering & Databases**
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-05122A?style=flat&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-05122A?style=flat&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-05122A?style=flat&logo=redis&logoColor=white)
+![Cassandra](https://img.shields.io/badge/Cassandra-05122A?style=flat&logo=apache-cassandra&logoColor=white)
+![InfluxDB](https://img.shields.io/badge/InfluxDB-05122A?style=flat&logo=influxdb&logoColor=white)
 
 ---
 
-#### **Mathematics and Statistics**
-- **Stochastic Calculus:** Brownian Motion, Geometric Brownian Motion, Ito’s Lemma  
-- **Numerical Methods:** PDEs, ODEs, Mean-Reverting Processes (Ornstein-Uhlenbeck)  
-- **Optimization:** Linear and Non-Linear Optimization  
+### **Soft Skills**
+- **Leadership:** Led and mentored cross-functional engineering teams of up to 12 members.
+- **Collaboration:** Proficient in Agile/Scrum methodologies and hybrid/on-site trading environment collaboration.
+- **Problem Solving:** Solving complex NP-Hard problems (e.g., nested routing algorithms) through first-principles engineering.
+- **Communication:** Effectively bridging the gap between front-office quantitative research and core engineering execution.
 
 ---
 
-#### **Soft Skills**
-- Strong leadership and team management experience (Led teams of up to 12).  
-- Proficient in collaborative agile development methodologies.  
-- Skilled at breaking down complex problems and delivering scalable solutions.  
+## 🏢 Professional Experience
+
+### **BNP Paribas CIB** | C++ Quantitative Developer (Automated Market Making)
+*Feb 2026 – Present | New York, USA*
+- Developing high-performance **C++ trading systems with FPGA** for Automated Market Making (AMM) strategies.
+- Collaborating with front-office to optimize latency and enhance execution performance in a hybrid on-site trading environment.
+
+### **LogiNext Solutions Inc.** | Senior Software Engineer (Analytics Department)
+*Mar 2023 – Jun 2025 | Mumbai, India*
+- **NP-Hard Optimization:** Architected and developed Map Construction and Routing Algorithms solving **3 Nested NP-Hard Problems** using Constraint Programming, PostGIS, and MongoDB.
+- **Team Leadership:** Led a team of **12 engineers** as Head of the Data Analytics department.
+- **AI/LLM Engineering:** Built a **Large Language Model (LLM)** for internal development and query resolution, improving bug resolution efficiency by **80%**.
+- **Data Infrastructure:** Engineered a robust ML Pipeline for proactive error detection and resolution using the ELK stack.
+
+### **Versor Investments (QR Systems LLP)** | Quantitative Developer (Merger Arbitrage & Stock Selection)
+*Feb 2022 – Oct 2022 | Mumbai, India*
+- **AUM Management:** Contributed to the management of a combined **AUM of $8.5 Billion**.
+- **Alpha Generation:** Developed and backtested systematic merger arbitrage strategies, yielding a **15% improvement** in alpha capture.
+- **Execution Efficiency:** Deployed scalable ML pipelines for Order & Execution Management Systems, increasing trade execution efficiency by **29%**.
+- **Strategy Innovation:** Built portfolio strategies capitalizing on arbitrage opportunities from the impact of ESG scores on pre- & post-merger statistics.
+
+### **Bank of America (BA Continuum)** | Senior Software Engineer (FICC)
+*Jan 2020 – Jul 2021 | Chennai, India*
+- **Latency Optimization:** Integrated **C++ pipelines** in SANDRA (Object-Oriented Database) to store trades, reducing trade processing latency by **50%**.
+- **System Migration:** Led the migration of **1 million+ lines of code** to Python 3.8, enhancing system scalability and execution efficiency by **40%**.
+- **Trading Services:** Engineered Python-based trading services to enhance storage, processing, and matching of trades on the QUARTZ platform.
+
+### **Bank of America** | Senior Tech Associate (Data Analysis and Insight Technology)
+*Jun 2018 – Dec 2019 | Chennai, India*
+- **Predictive Analytics:** Architected an ML/AI platform to deploy predictive models, increasing decision-making accuracy by **67%**.
+- **Process Automation:** Designed machine learning models for data validation rules prediction, reducing manual workload by approximately **36 Full-Time Equivalents (FTEs)**.
 
 ---
 
+## 🎓 Education
 
+- **Georgia Institute of Technology (Online):** M.S. in Computer Science (Specialization in Computing Systems) | *Expected Dec 2026*
+- **Stevens Institute of Technology:** M.S. in Financial Engineering (GPA: 3.968/4.0) | *Expected May 2026*
+- **WorldQuant University:** M.S. in Financial Engineering (GPA: 86%) | *May 2024*
+- **Carnegie Mellon University (Tepper):** M.S. in Computational Finance (Program withdrawn due to father's illness) | *Aug 2021 – Oct 2021*
+- **Vellore Institute of Technology:** B.Tech in Computer Science and Engineering (GPA: 8.78/10.0) | *Sept 2018*
 
-## My GitHub Stats 💻
+---
+
+## 🚀 Key Research & Projects
+
+### **Research**
+
+- **AI-Integrated FPGA for Market Making in Volatile Environments (Master's Thesis)**
+  *Oct 2024 – Dec 2025 | Stevens Institute of Technology*
+  - Engineering a **sub-10µs trading platform** with custom-built limit order book, FPGA market data handlers, kernel bypass (**DPDK**), hardware timestamping, and lock-free data structures for deterministic, microsecond-level execution.
+
+- **Dynamic Portfolio Optimization (Master's Thesis)**
+  *Mar 2024 – June 2024 | WorldQuant University*
+  - Built a real-time portfolio optimization system using convex and non-convex optimization methods, enhancing risk-adjusted returns via adaptive asset rebalancing and multi-factor modeling.
+
+### **Selected Projects**
+
+- **Adaptive Volatility Regime Based Execution and Risk Framework**
+  *Sep 2025 – Dec 2025*
+  - Developed adaptive volatility regime switch framework dynamically selecting among passive, TWAP, and aggressive strategies.
+  - Achieved **20.0% increase in Sharpe Ratio**, **6.1% transaction cost reduction**, and **20.1% CVaR decrease** with robust risk management.
+
+- **Statistical Arbitrage Reversal and Momentum Strategies**
+  *Jun 2025 – Aug 2025*
+  - Designed and backtested a 120-day volume-momentum-based crypto portfolio strategy, yielding a **155.76% annualized return** and **1.94 Sharpe Ratio** (post transaction costs), significantly outperforming the Bitcoin buy-and-hold benchmark.
+
+- **Financial Modelling using Stochastic Calculus**
+  *Nov 2023 – Jan 2024*
+  - Modeled asset prices & derivative strategies using Brownian Motion, GBM, Ito's Lemma, Martingales, Girsanov's Theorem.
+  - Applied SDEs, Fokker-Planck and Kolmogorov forward/backward equations, Ornstein-Uhlenbeck mean-reverting processes for modeling volatility, interest rates, and time-dependent drift in financial instruments.
+
+- **Environmental Social Governance (ESG) Merger Arbitrage Strategy**
+  *Apr 2022 – Jun 2022*
+  - Developed the ESG Strategy that was further converted to a portfolio and embedded in all the existing portfolio. It caters to the arbitrage opportunity being made by the effect of ESG scores on target and acquirer pre- and post-merger statistics.
+
+- **Blockchain In Retail**
+  *Jan 2018 – Mar 2018*
+  - Developed a decentralized e-commerce platform to secure and streamline retail transactions with smart contracts, currency conversion, custom hashing and matching algorithms using Homebrew, Truffle, MetaMask, Ganache, GETH, Solc, Puppeth.
+
+- **QS Rank Predictor**
+  *Jun 2017 – Jul 2017*
+  - Constructed ensemble machine learning model consisting of multiple deep neural networks to predict QS World Ranking, helping in achieving a world ranking of 301 - 400 for the VIT CS in 2020.
+
+---
+
+## 🏆 Awards & Certifications
+
+- **Global Recognition Gold Award:** Bank of America (Top 1% recognition for AI/ML impact).
+- **1st Place:** Vanguard ETF Trading Challenge (Personal Portfolio).
+- **CFA Level 1 Candidate** | **Bloomberg Market Concepts (BMC)**.
+- **Deep Learning Specialization** (Andrew Ng) | **Financial Engineering & Risk Mgmt** (Columbia).
+- **Corporate Finance and Valuation** (NYU Stern - Aswath Damodaran).
+
+---
+
+## 📊 GitHub Impact
 
 <div align="center">
-
-<img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.main.svg" alt="GitHub Overview" width="100%" />
-
-<br/>
-
-<img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.habits.svg" alt="Coding Habits" width="100%" />
-
-<br/>
-
-<img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.activity.svg" alt="Commit Activity" width="100%" />
-
-<br/>
-
-<img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.advanced.svg" alt="Advanced Metrics" width="100%" />
-
-<br/>
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=shreejitverma&theme=dracula&hide_border=true&background=000000&ring=4fff67&currStreakLabel=4fff67)](https://git.io/streak-stats)
-
-<br/>
-
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=shreejitverma)
-
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.main.svg" alt="GitHub Overview" width="100%" />
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.advanced.svg" alt="Advanced Metrics" width="100%" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=shreejitverma" />
 </div>
 
-[twitter]: https://twitter.com/shreejitverma
-[youtube]: https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw
-[website]: https://www.shreejitverma.com/
-[instagram]: https://www.instagram.com/shreejitverma/
-[discord]: https://discord.gg/As463f7tv4
-[linkedin]: https://www.linkedin.com/in/shreejitverma/
-[devto]: https://dev.to/shreejitverma
-[gmail]: mailto:shreejitverma@gmail.com
-[facebook]: https://facebook.com/shreejitverma
-[patreon]: https://www.patreon.com/shreejitverma
-[paypal]: https://paypal.me/shreejitverma?country.x=IN&locale.x=en_GB
-
-Here’s the full-fledged **Certifications** section, formatted with attractive badges and clickable links for easy navigation:
-
-
-### 🏆 Certifications
-
-#### **Finance & Quantitative Modeling**
-- [![CFA Level 1](https://img.shields.io/badge/CFA%20Level%201-3D9AC9?style=flat&logo=cfa-institute)](https://www.cfainstitute.org/en/programs/cfa)
-- [![Bloomberg Market Concepts](https://img.shields.io/badge/Bloomberg%20Market%20Concepts-232F44?style=flat&logo=bloomberg)](https://portal.bloombergforeducation.com/certificates/8Nm9y3yx5b9yaWztgxSmewLD)
-- [Financial Engineering and Risk Management - Part I & II](https://coursera.org/share/70b94743c090c143954cdcbe01ebf521) (Coursera)
-- [Investment Foundations Program (CFA Institute)](http://basno.com/cfbvwwwf)
-- [The Complete Financial Analyst Training & Investing Course](https://www.udemy.com/course/the-complete-financial-analyst-training-and-investing-course/)
-- [Machine Learning for Trading Specialization (Google Cloud)](https://coursera.org/share/7a85fee31445a626d1212f7c2f55eeab)
-- [Trading Strategies in Emerging Markets Specialization (ISB)](https://www.coursera.org/specializations/trading-strategy#courses)
-- [Finance & Quantitative Modeling for Analysts (University of Pennsylvania, Wharton)](https://coursera.org/share/abe2916c68432d5d156494c2f1f59b6d)
-
 ---
 
-#### **Algorithmic Trading & Portfolio Management**
-- [Algorithmic Trading Specialization (ISB)](https://coursera.org/share/d885ad5ddd521bf8ebf5386364281e02)
-  - Includes: Advanced Trading Algorithms, Portfolio Design, and Trading Basics
-- [Investment Management Specialization (University of Geneva, UBS)](https://www.coursera.org/specializations/investment-management)
-- [Corporate Finance and Valuation (NYU Stern - Aswath Damodaran)](https://coursera.org/share/ad6c6e3574db71e2e38777b74b6af97f)
+## 🔗 Connect & Support
+[Website](https://www.shreejitverma.com/) | [LinkedIn](https://www.linkedin.com/in/shreejitverma/) | [Twitter](https://twitter.com/shreejitverma) | [YouTube](https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw)
 
----
-
-#### **Data Science & Machine Learning**
-- [![Deep Learning Specialization](https://img.shields.io/badge/Deep%20Learning%20Specialization-FF6F00?style=flat&logo=deeplearning)](https://coursera.org/share/62c6f8a2d4a998dc4856249a1a937e17)
-- [Applied Data Science with Python Specialization (University of Michigan)](https://coursera.org/share/a24e1310f62486c32f6a2393fa1240dc)
-  - Includes: Applied Text Mining, Machine Learning, and Data Visualization
-- [Data Science Foundations using R Specialization (Johns Hopkins University)](https://coursera.org/share/3ca9e040262f60d9c367379013a1e7c1)
-- [Big Data Specialization (UC San Diego)](https://coursera.org/share/e3c471b726d96029d683efcfec957692)
-
----
-
-#### **Technical Skills & Tools**
-- [Data Structures and Algorithms Specialization (Coursera)](https://coursera.org/share/98a957a6518b5ca605f44f365df05151)
-- [Algorithms Part I & II (Princeton University)](https://www.coursera.org/learn/algorithms-part1)
-- [Big Data - Capstone Project](https://coursera.org/share/2f1dc8ec4e40c787dd1cdbcb897339cc)
-- [Machine Learning with Big Data](https://coursera.org/share/31c0fe4c97c717e33658619eaab33c85)
-
----
-
-#### **Honorable Mentions**
-- [Regression Models (Data Science Statistics and Machine Learning Specialization)](https://www.coursera.org/learn/regression-models?specialization=data-science-statistics-machine-learning)
-- [Exploratory Data Analysis](https://www.coursera.org/learn/exploratory-data-analysis?specialization=data-science-statistics-machine-learning)
-- [Practical Machine Learning (JHU)](https://coursera.org/share/e2c31a9900603149be868d0fed729b33)
-- [Python for Everybody (University of Michigan)](https://coursera.org/share/1266287fba2a17e954350a24cbcda288)
-
----
-
-## Connect With Me:
-
-[<img height="30" src="https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white" />][website]
-[<img height="30" src = "https://img.shields.io/badge/Youtube-%23E4405F.svg?&style=for-the-badge&logo=Youtube&logoColor=white">][youtube]
-[<img height="30" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" />][twitter]
-[<img height="30" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />][linkedin]
-[<img height="30" src="https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev" />][devto]
-[<img height="30" src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />][instagram]
-[<img height="30" src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />][facebook]
-[<img height="30" src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" />][discord]
-
-<br />
-
----
-
-## Support Me!
-
-You can show support by starring my repos, liking and sharing my videos, and [subscribing](https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw) to my channel.
-
-If you really, really, really enjoy my work, you can also support me on [Patreon][patreon].
-
-[<img height="30" src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" />][patreon]
-[<img height="30" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" />][paypal]
-
-Thank you all so much 🙏
+*If you find my research or code helpful, consider starring my repositories!*
