@@ -13,12 +13,14 @@ export const metadata: Metadata = {
     default: 'Shreejit Verma | Quantitative Developer & Researcher',
     template: '%s | Shreejit Verma',
   },
-  description: 'Quantitative Developer and Researcher specializing in HFT, Statistical Arbitrage, and Market Microstructure. Expertise in C++, Python, FPGA, and Stochastic Calculus.',
+  description: 'Senior Quantitative Developer & Researcher specializing in HFT execution, low-latency systems (FPGA/DPDK), and alpha-generating statistical strategies. Expertise in C++23, Python, Stochastic Calculus, and Market Microstructure.',
   keywords: [
+    'Jane Street', 'Citadel', 'Jump Trading', 'Optiver', 'Hudson River Trading', 'HRT', 'Two Sigma', 'IMC Trading',
     'Quantitative Developer', 'Quantitative Researcher', 'HFT', 'High Frequency Trading', 
     'Algorithmic Trading', 'C++', 'Python', 'Stochastic Calculus', 'Market Microstructure',
     'Financial Engineering', 'Prop Trading', 'Hedge Funds', 'Alpha Generation',
-    'FPGA', 'Low Latency', 'Statistical Arbitrage', 'Machine Learning in Finance'
+    'FPGA', 'DPDK', 'Low Latency', 'Statistical Arbitrage', 'Machine Learning in Finance',
+    'Order Execution', 'Market Making', 'Execution Algorithms'
   ],
   authors: [{ name: 'Shreejit Verma', url: 'https://www.shreejitverma.com' }],
   creator: 'Shreejit Verma',
@@ -28,15 +30,15 @@ export const metadata: Metadata = {
     lastName: 'Verma',
     username: 'shreejitverma',
     gender: 'male',
-    title: 'Shreejit Verma | Quantitative Developer & Researcher',
-    description: 'Specializing in high-performance trading systems, statistical models, and algorithmic strategies for top-tier hedge funds and prop shops.',
+    title: 'Shreejit Verma | Senior Quantitative Developer & Researcher',
+    description: 'Engineering sub-microsecond trading systems and sophisticated alpha strategies. Expert in low-latency infrastructure and financial engineering.',
     siteName: 'Shreejit Verma Portfolio',
     images: [
       {
-        url: 'https://avatars.githubusercontent.com/u/24782948?v=4',
-        width: 400,
-        height: 400,
-        alt: 'Shreejit Verma Profile',
+        url: 'https://www.shreejitverma.com/Shreejit_Verma_profile_pic.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Shreejit Verma | Senior Quantitative Developer',
       },
     ],
     locale: 'en_US',
@@ -44,10 +46,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shreejit Verma | Quantitative Developer',
-    description: 'Engineering alpha through code. Expert in C++, Python, and HFT strategies.',
-    creator: '@shreejitverma', // Assuming handle based on previous context, can be updated
-    images: ['https://avatars.githubusercontent.com/u/24782948?v=4'],
+    title: 'Shreejit Verma | Quantitative Developer & Researcher',
+    description: 'Engineering alpha through low-latency code and statistical modeling. Expert in C++, FPGA, and HFT strategies.',
+    creator: '@shreejitverma',
+    images: ['https://www.shreejitverma.com/Shreejit_Verma_profile_pic.jpg'],
   },
   robots: {
     index: true,
@@ -77,9 +79,9 @@ export default function RootLayout({
     '@type': 'Person',
     name: 'Shreejit Verma',
     url: 'https://www.shreejitverma.com',
-    image: 'https://avatars.githubusercontent.com/u/24782948?v=4',
-    jobTitle: 'Quantitative Developer',
-    description: 'Senior Software Engineer and Quantitative Developer specializing in algorithmic trading, HFT, and financial modeling.',
+    image: 'https://www.shreejitverma.com/Shreejit_Verma_profile_pic.jpg',
+    jobTitle: 'Senior Quantitative Developer',
+    description: 'Senior Quantitative Developer and Researcher specializing in sub-microsecond trading systems, HFT, and alpha generation.',
     alumniOf: [
       {
         '@type': 'CollegeOrUniversity',
@@ -92,12 +94,32 @@ export default function RootLayout({
       {
         '@type': 'CollegeOrUniversity',
         name: 'WorldQuant University',
+      },
+      {
+        '@type': 'CollegeOrUniversity',
+        name: 'Carnegie Mellon University',
+      },
+      {
+        '@type': 'CollegeOrUniversity',
+        name: 'Vellore Institute of Technology',
       }
     ],
     worksFor: [
       {
         '@type': 'Organization',
+        name: 'BNP Paribas CIB',
+      },
+      {
+        '@type': 'Organization',
         name: 'LogiNext Solutions Inc.',
+      },
+      {
+        '@type': 'Organization',
+        name: 'Versor Investments',
+      },
+      {
+        '@type': 'Organization',
+        name: 'Bank of America',
       }
     ],
     knowsAbout: [

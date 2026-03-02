@@ -1,24 +1,45 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProfileImage from './components/ProfileImage';
 import Section from './components/Section';
 import { 
   Github, Linkedin, Mail, Terminal, BookOpen, Briefcase, Code2, 
-  GraduationCap, Award, Cpu 
+  GraduationCap, Award, Cpu, Menu, X 
 } from 'lucide-react';
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Research', href: '#research' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Impact', href: '#impact' },
+  ];
+
   return (
-    <div className='relative min-h-screen bg-transparent text-slate-300 font-sans selection:bg-cyan-500/30 overflow-hidden'>
+    <div className='relative min-h-screen bg-transparent text-slate-300 font-sans selection:bg-cyan-500/30 overflow-x-hidden'>
       {/* Navigation */}
-      <nav className='fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-slate-800/50 bg-slate-950/80'>
-        <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+        scrolled ? 'backdrop-blur-md border-slate-800/50 bg-slate-950/80 h-16' : 'bg-transparent border-transparent h-20'
+      }`}>
+        <div className='max-w-7xl mx-auto px-6 h-full flex items-center justify-between'>
           <div className='flex items-center gap-3'>
-            <div className='relative w-10 h-10 rounded-full overflow-hidden border border-slate-700 shadow-lg'>
+            <div className='relative w-10 h-10 rounded-full overflow-hidden border border-slate-700 shadow-lg shrink-0'>
               <Image 
-                src="/Shreejit_Verma_profile_pic.jpg" 
+                src="/images/user-profile.png" 
                 alt="Shreejit Verma" 
                 fill
                 className='object-cover'
@@ -28,33 +49,79 @@ export default function Home() {
               SV<span className='text-slate-500'>.quant</span>
             </div>
           </div>
-          <div className='hidden md:flex gap-8 text-sm font-medium'>
-            <a href='#about' className='hover:text-cyan-400 transition-colors'>About</a>
-            <a href='#research' className='hover:text-cyan-400 transition-colors'>Research</a>
-            <a href='#experience' className='hover:text-cyan-400 transition-colors'>Experience</a>
-            <a href='#projects' className='hover:text-cyan-400 transition-colors'>Projects</a>
-            <a href='#impact' className='hover:text-cyan-400 transition-colors'>Impact</a>
+
+          {/* Desktop Nav */}
+          <div className='hidden lg:flex gap-8 text-sm font-medium'>
+            {navLinks.map((link) => (
+              <a key={link.name} href={link.href} className='hover:text-cyan-400 transition-colors'>
+                {link.name}
+              </a>
+            ))}
             <Link href='/books' className='hover:text-cyan-400 transition-colors'>Reading List</Link>
           </div>
+
           <div className='flex items-center gap-4'>
-            <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-400 transition-colors'>
-              <Github className='w-5 h-5' />
-            </a>
-            <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-400 transition-colors'>
-              <Linkedin className='w-5 h-5' />
-            </a>
-            <a href='/Shreejit Verma Resume.pdf' target='_blank' rel="noopener noreferrer" className='px-4 py-2 text-xs font-bold text-slate-950 bg-cyan-400 rounded hover:bg-cyan-300 transition-colors'>
+            <div className='hidden sm:flex items-center gap-4 mr-2'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-400 transition-colors'>
+                <Github className='w-5 h-5' />
+              </a>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-400 transition-colors'>
+                <Linkedin className='w-5 h-5' />
+              </a>
+            </div>
+            <a href='/Shreejit Verma Resume.pdf' target='_blank' rel="noopener noreferrer" className='px-4 py-2 text-xs font-bold text-slate-950 bg-cyan-400 rounded hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20'>
               RESUME
             </a>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className='lg:hidden text-slate-300 hover:text-cyan-400 transition-colors'
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Dropdown */}
+        <div className={`lg:hidden absolute top-full left-0 right-0 bg-slate-900 border-b border-slate-800 transition-all duration-300 overflow-hidden ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        }`}>
+          <div className='flex flex-col p-6 gap-4'>
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href} 
+                className='text-lg font-medium hover:text-cyan-400 transition-colors'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+            <Link 
+              href='/books' 
+              className='text-lg font-medium hover:text-cyan-400 transition-colors'
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Reading List
+            </Link>
+            <div className='flex gap-6 mt-2 pt-4 border-t border-slate-800'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='text-slate-400 hover:text-cyan-400'>
+                <Github className='w-6 h-6' />
+              </a>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='text-slate-400 hover:text-cyan-400'>
+                <Linkedin className='w-6 h-6' />
+              </a>
+            </div>
           </div>
         </div>
       </nav>
 
       <main className='relative z-10'>
         {/* Hero Section */}
-        <section className='pt-32 pb-20 px-6 max-w-7xl mx-auto'>
+        <section className='pt-40 pb-20 px-6 max-w-7xl mx-auto'>
           <div className='flex flex-col md:flex-row items-center gap-12'>
-            <div className='max-w-3xl flex-1'>
+            <div className='max-w-3xl flex-1 text-center md:text-left'>
               <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-6 border border-cyan-500/20'>
                 <Terminal className='w-3 h-3' />
                 <span>SYSTEM_READY</span>
@@ -65,11 +132,11 @@ export default function Home() {
                   Developer & Researcher
                 </span>
               </h1>
-              <p className='text-xl text-slate-400 mb-8 max-w-2xl leading-relaxed'>
+              <p className='text-xl text-slate-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0'>
                 Engineering high-performance trading systems and statistical models. 
                 Specializing in low-latency infrastructure, algorithmic strategies, and financial engineering.
               </p>
-              <div className='flex gap-4'>
+              <div className='flex flex-wrap justify-center md:justify-start gap-4'>
                 <a href='#experience' className='px-6 py-3 bg-slate-100 text-slate-950 font-semibold rounded hover:bg-slate-200 transition-colors'>
                   View Experience
                 </a>
@@ -78,9 +145,9 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className='relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl shrink-0'>
+            <div className='relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl shrink-0 order-first md:order-last'>
               <ProfileImage 
-                src="/Shreejit_Verma_profile_pic.jpg" 
+                src="/images/user-profile.png" 
                 alt="Shreejit Verma" 
                 className='object-cover'
               />
@@ -93,6 +160,13 @@ export default function Home() {
           <div className='grid md:grid-cols-2 gap-6'>
             {[
               {
+                school: "Georgia Institute of Technology (Online)",
+                degree: "Master of Science in Computer Science with Specialization in Computing Systems",
+                date: "Aug 2024 – Expected Dec 2026",
+                gpa: "",
+                details: "Coursework: High-Performance Computing, Distributed Computing, Database Management Systems, Bayesian Statistics."
+              },
+              {
                 school: "Stevens Institute of Technology",
                 degree: "Master of Science in Financial Engineering",
                 date: "Aug 2024 – May 2026",
@@ -100,18 +174,11 @@ export default function Home() {
                 details: "Coursework: Market Microstructure, Quantitative Hedge Fund Strategies, Algorithmic Trading Strategies, Multivariate Statistics."
               },
               {
-                school: "Georgia Institute of Technology",
-                degree: "Master of Science in Computer Science",
-                date: "Aug 2024 – Expected Dec 2026",
-                gpa: "",
-                details: "Specialization in Computing Systems. Coursework: High-Performance Computing, Distributed Computing, DBMS, Bayesian Statistics."
-              },
-              {
                 school: "WorldQuant University",
                 degree: "Master of Science in Financial Engineering",
                 date: "Dec 2021 – May 2024",
                 gpa: "GPA: 86%",
-                details: "Coursework: Deep Learning for Finance, Financial Econometrics, Fixed Income, Portfolio Management, Risk Management."
+                details: "Coursework: Deep Learning for Finance, Financial Econometrics, Fixed Income, Equity, Portfolio Management, Risk Management."
               },
               {
                 school: "Carnegie Mellon University, Tepper School of Business",
@@ -122,10 +189,10 @@ export default function Home() {
               },
               {
                 school: "Vellore Institute of Technology",
-                degree: "Bachelor of Technology in Computer Science",
+                degree: "Bachelor of Technology in Computer Science and Engineering",
                 date: "Jul 2014 – Sept 2018",
                 gpa: "GPA: 8.78/10.0",
-                details: "Coursework: Data Structures and Algorithms, Computer Networks, Reinforcement Learning, NLP."
+                details: "Coursework: Data Structures and Algorithms, Computer Networks, Reinforcement Learning, Natural Language Processing (NLP)."
               }
             ].map((edu, i) => (
               <div key={i} className='p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
@@ -136,85 +203,6 @@ export default function Home() {
                 <div className='text-sm text-slate-300 font-medium mb-1'>{edu.degree}</div>
                 {edu.gpa && <div className='text-xs text-cyan-500 mb-3 font-mono'>{edu.gpa}</div>}
                 <p className='text-sm text-slate-400'>{edu.details}</p>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* Research Section */}
-        <Section id='research' title='Research' icon={<BookOpen className='w-6 h-6' />}>
-          <div className='grid md:grid-cols-2 gap-6'>
-            {[
-              {
-                title: "AI-Integrated FPGA for Market Making",
-                subtitle: "Master's Thesis",
-                date: "Oct 2024 – Dec 2025",
-                details: "Engineering a sub-10µs trading platform with a custom-built limit order book, FPGA market data handlers, kernel bypass (DPDK), and lock-free data structures for deterministic execution.",
-                link: "https://github.com/shreejitverma/trishul-ultra-hft-project"
-              },
-              {
-                title: "Dynamic Portfolio Optimization",
-                subtitle: "Master's Thesis (WorldQuant University)",
-                date: "Mar 2024 – June 2024",
-                details: "Built a real-time portfolio optimization system using convex and non-convex methods, enhancing risk-adjusted returns via adaptive asset rebalancing and multi-factor modeling.",
-                link: "https://github.com/shreejitverma/Dynamic-Portfolio-Optimization"
-              }
-            ].map((res, i) => (
-              <div key={i} className='p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
-                <div className='flex justify-between items-start mb-2'>
-                  <h3 className='font-bold text-slate-100'>{res.title}</h3>
-                  <span className='text-xs font-mono text-cyan-400 whitespace-nowrap ml-2'>{res.date}</span>
-                </div>
-                <div className='text-sm text-slate-300 font-medium mb-3'>{res.subtitle}</div>
-                <p className='text-sm text-slate-400 mb-4'>{res.details}</p>
-                {res.link && (
-                  <a href={res.link} target='_blank' rel='noopener noreferrer' className='text-xs font-mono text-cyan-500 hover:underline'>
-                    VIEW_ON_GITHUB
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* Skills Section - Categorized */}
-        <Section id='skills' title='Technical Arsenal' icon={<Cpu className='w-6 h-6' />}>
-          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
-            {[
-              {
-                category: "Quantitative Finance",
-                skills: "Stochastic Calculus, Derivative Pricing, Time Series Analysis, Factor Modeling, Greeks, Risk Management, Market Microstructure"
-              },
-              {
-                category: "Mathematics & Stats",
-                skills: "Probability, PDE, Linear Algebra, Markov Chains, Bayesian Statistics, Numerical Methods, Differential Equations"
-              },
-              {
-                category: "Programming",
-                skills: "Python, C++, C, Java, R, MATLAB, KDB+/Q, JavaScript, Verilog, VHDL, Bash, Linux"
-              },
-              {
-                category: "Machine Learning",
-                skills: "TensorFlow, PyTorch, Scikit-learn, XGBoost, RNN, LSTM, Random Forest, Clustering, NLP, Deep Learning, Neural Networks"
-              },
-              {
-                category: "Data Engineering",
-                skills: "Spark, Hadoop, Kafka, Airflow, PostgreSQL, MongoDB, Redis, ZeroMQ, Cassandra, Dask, PySpark, FastAPI, REST APIs, InfluxDB, SQL, BQL"
-              },
-              {
-                category: "Systems & DevOps",
-                skills: "Docker, Kubernetes, AWS, GCP, Linux, Git, Jenkins, Ansible, CI/CD, Serverless Architecture"
-              }
-            ].map((group, i) => (
-              <div key={i} className='p-6 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500/30 transition-all'>
-                <h3 className='text-lg font-semibold text-slate-100 mb-3'>{group.category}</h3>
-                <div className='flex flex-wrap gap-2'>
-                  {group.skills.split(', ').map((skill, j) => (
-                    <span key={j} className='px-2 py-1 text-xs font-mono rounded bg-slate-900 text-slate-400 border border-slate-800'>
-                      {skill}
-                    </span>
-                  ))}
-                </div>
               </div>
             ))}
           </div>
@@ -231,7 +219,7 @@ export default function Home() {
               </div>
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
-                  <h3 className='font-bold text-slate-100'>BNP Paribas CIB</h3>
+                  <h3 className='font-bold text-slate-100'><a href="https://cib.bnpparibas/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">BNP Paribas CIB</a></h3>
                   <span className='text-xs font-mono text-cyan-400'>Feb 2026 – Present</span>
                 </div>
                 <div className='text-sm text-slate-400 mb-4 font-medium'>C++ Quantitative Developer (Automated Market Making)</div>
@@ -249,7 +237,7 @@ export default function Home() {
               </div>
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
-                  <h3 className='font-bold text-slate-100'>LogiNext Solutions Inc.</h3>
+                  <h3 className='font-bold text-slate-100'><a href="https://loginextsolutions.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">LogiNext Solutions Inc.</a></h3>
                   <span className='text-xs font-mono text-cyan-400'>Mar 2023 – Jun 2025</span>
                 </div>
                 <div className='text-sm text-slate-400 mb-4 font-medium'>Senior Software Engineer Analytics</div>
@@ -268,7 +256,7 @@ export default function Home() {
               </div>
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
-                  <h3 className='font-bold text-slate-100'>Versor Investments</h3>
+                  <h3 className='font-bold text-slate-100'><a href="https://versorinvest.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">Versor Investments</a></h3>
                   <span className='text-xs font-mono text-slate-500'>Feb 2022 – Oct 2022</span>
                 </div>
                 <div className='text-sm text-slate-400 mb-4 font-medium'>Quantitative Developer</div>
@@ -288,7 +276,7 @@ export default function Home() {
               </div>
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
-                  <h3 className='font-bold text-slate-100'>Bank of America</h3>
+                  <h3 className='font-bold text-slate-100'><a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">Bank of America</a></h3>
                   <span className='text-xs font-mono text-slate-500'>Jan 2020 – Jul 2021</span>
                 </div>
                 <div className='text-sm text-slate-400 mb-4 font-medium'>Senior Software Engineer (FICC)</div>
@@ -321,56 +309,123 @@ export default function Home() {
           </div>
         </Section>
 
+        {/* Skills Section - Categorized */}
+        <Section id='skills' title='Technical Arsenal' icon={<Cpu className='w-6 h-6' />}>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {[
+              {
+                category: "Quantitative Finance",
+                skills: "Stochastic Calculus, Derivative Pricing, Time Series Analysis, Factor Modeling, Greeks, Risk Management, Market Microstructure"
+              },
+              {
+                category: "Mathematics & Stats",
+                skills: "Probability, PDE, Linear Algebra, Markov Chains, Bayesian Statistics, Numerical Methods, Differential Equations"
+              },
+              {
+                category: "Programming",
+                skills: "Python, C++, C, Java, R, MATLAB, KDB+/Q, OCaml, JavaScript, Verilog, VHDL, Bash, Linux"
+              },
+              {
+                category: "Machine Learning",
+                skills: "TensorFlow, PyTorch, Scikit-learn, XGBoost, RNN, LSTM, Random Forest, Clustering, NLP, Deep Learning, Neural Networks, LLMs"
+              },
+              {
+                category: "Data Engineering",
+                skills: "Spark, Hadoop, Kafka, Airflow, PostgreSQL, MongoDB, Redis, ZeroMQ, Cassandra, Dask, PySpark, FastAPI, REST APIs, InfluxDB, SQL, BQL"
+              },
+              {
+                category: "Systems & DevOps",
+                skills: "Docker, Kubernetes, AWS, GCP, Linux Kernel Tuning, DPDK, FPGA, Git, Jenkins, Ansible, CI/CD, Serverless Architecture"
+              }
+            ].map((group, i) => (
+              <div key={i} className='p-6 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500/30 transition-all'>
+                <h3 className='text-lg font-semibold text-slate-100 mb-3'>{group.category}</h3>
+                <div className='flex flex-wrap gap-2'>
+                  {group.skills.split(', ').map((skill, j) => (
+                    <span key={j} className='px-2 py-1 text-xs font-mono rounded bg-slate-900 text-slate-400 border border-slate-800'>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        {/* Research Section */}
+        <Section id='research' title='Research' icon={<BookOpen className='w-6 h-6' />}>
+          <div className='grid md:grid-cols-2 gap-6'>
+            {[
+              {
+                title: "AI-Integrated FPGA for Market Making in Volatile Environments",
+                subtitle: "Master's Thesis",
+                date: "Oct 2024 – Dec 2025",
+                details: "Engineering a sub-10µs trading platform with a custom-built limit order book, FPGA market data handlers, kernel bypass (DPDK), hardware timestamping, and lock-free data structures for deterministic, microsecond-level execution performance.",
+                link: "https://github.com/shreejitverma/trishul-ultra-hft-project"
+              },
+              {
+                title: "Dynamic Portfolio Optimization",
+                subtitle: "Master's Thesis (WorldQuant University)",
+                date: "Mar 2024 – June 2024",
+                details: "Built a real-time portfolio optimization system using convex and non-convex optimization methods, enhancing risk-adjusted returns via adaptive asset rebalancing and multi-factor modeling, managing interest rate, FX, credit, and market risks.",
+                link: "https://github.com/shreejitverma/Dynamic-Portfolio-Optimization"
+              }
+            ].map((res, i) => (
+              <div key={i} className='p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
+                <div className='flex justify-between items-start mb-2'>
+                  <h3 className='font-bold text-slate-100'>{res.title}</h3>
+                  <span className='text-xs font-mono text-cyan-400 whitespace-nowrap ml-2'>{res.date}</span>
+                </div>
+                <div className='text-sm text-slate-300 font-medium mb-3'>{res.subtitle}</div>
+                <p className='text-sm text-slate-400 mb-4'>{res.details}</p>
+                {res.link && (
+                  <a href={res.link} target='_blank' rel='noopener noreferrer' className='text-xs font-mono text-cyan-500 hover:underline'>
+                    VIEW_ON_GITHUB
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </Section>
+
         {/* Projects Section */}
         <Section id='projects' title='Key Projects' icon={<Code2 className='w-6 h-6' />}>
           <div className='grid md:grid-cols-2 gap-6'>
             {[
               {
-                title: 'AI-Integrated FPGA for Market Making',
-                desc: 'Engineering a sub-10µs trading platform with custom-built limit order book, FPGA market data handlers, and kernel bypass (DPDK) for deterministic execution.',
-                tech: ['FPGA', 'C++', 'Verilog', 'HFT'],
-                link: 'https://github.com/shreejitverma/trishul-ultra-hft-project'
-              },
-              {
-                title: 'Adaptive Volatility Regime Execution',
-                desc: 'Developed a regime-switching framework dynamically selecting between passive, TWAP, and aggressive strategies. Achieved 20% increase in Sharpe Ratio.',
-                tech: ['Python', 'ML', 'Algo Trading'],
+                title: 'Adaptive Volatility Regime Based Execution and Risk Framework',
+                desc: 'Developed adaptive volatility regime switch framework dynamically selecting among passive, TWAP, and aggressive strategies. Achieved 20.0% increase in Sharpe Ratio, 6.1% transaction cost reduction, and 20.1% CVaR decrease.',
+                tech: ['Python', 'Execution Algos', 'Risk Mgmt'],
                 link: 'https://github.com/shreejitverma/Adaptive-Volatility-Regime-Based-Execution-and-Risk-Framework'
               },
               {
-                title: 'Statistical Arbitrage Reversal Strategies',
-                desc: 'Designed volume-momentum-based crypto portfolio strategy yielding 155.76% annualized return and 1.94 Sharpe Ratio.',
-                tech: ['Quant Research', 'Python', 'Crypto'],
+                title: 'Statistical Arbitrage Reversal and Momentum Strategies',
+                desc: 'Designed and backtested a 120-day volume-momentum-based crypto portfolio strategy, yielding a 155.76% annualized return and 1.94 Sharpe Ratio, significantly outperforming the Bitcoin benchmark.',
+                tech: ['Quant Research', 'Backtesting', 'Alpha Gen'],
                 link: 'https://github.com/shreejitverma/Statistical-Arbitrage-Reversal-and-Momentum-Strategies'
               },
               {
-                title: 'Dynamic Portfolio Optimization',
-                desc: 'Built real-time portfolio optimization system using convex/non-convex methods, enhancing risk-adjusted returns via adaptive asset rebalancing.',
-                tech: ['Optimization', 'Python', 'Risk Mgmt'],
-                link: 'https://github.com/shreejitverma/Dynamic-Portfolio-Optimization'
-              },
-              {
                 title: 'Financial Modelling: Stochastic Calculus',
-                desc: 'Modeled asset prices and derivative strategies using Brownian Motion, GBM, Ito\'s Lemma, and SDEs for volatility and interest rate modeling.',
-                tech: ['Stochastic Calculus', 'Python', 'Quant Finance'],
+                desc: 'Modeled asset prices & derivative strategies using Brownian Motion, GBM, Ito\'s Lemma, Martingales, Girsanov\'s Theorem. Applied SDEs, Fokker-Planck and Kolmogorov forward/backward equations, Ornstein-Uhlenbeck mean-reverting processes.',
+                tech: ['Stochastic Calculus', 'Derivative Pricing', 'SDEs'],
                 link: '#'
               },
               {
-                title: 'ESG Merger Arbitrage Strategy',
-                desc: 'Developed ESG-focused strategy for merger arbitrage, analyzing the effect of ESG scores on target and acquirer pre- and post-merger statistics.',
+                title: 'Environmental Social Governance (ESG) Merger Arbitrage Strategy',
+                desc: 'Developed the ESG Strategy that was further converted to a portfolio and embedded in all the existing portfolio. It caters to the arbitrage opportunity being made by the effect of ESG scores on target and acquirer pre- and post-merger statistics.',
                 tech: ['Merger Arbitrage', 'ESG', 'Strategy'],
                 link: '#'
               },
               {
                 title: 'Blockchain In Retail',
-                desc: 'Decentralized e-commerce platform with smart contracts, currency conversion, and matching algorithms using Ethereum/Solidity.',
-                tech: ['Blockchain', 'Solidity', 'Web3'],
+                desc: 'Decentralized e-commerce platform with smart contracts, currency conversion, and matching algorithms using Ethereum/Solidity, Truffle, MetaMask, Ganache, GETH, Solc, Puppeth.',
+                tech: ['Blockchain', 'Solidity', 'Smart Contracts'],
                 link: '#'
               },
               {
                 title: 'QS Rank Predictor',
-                desc: 'Machine learning model consisting of multiple deep neural networks to predict QS World Ranking, achieving top global ranking in VIT CS 2020.',
-                tech: ['Machine Learning', 'Deep Learning', 'Python'],
+                desc: 'Constructed ensemble machine learning model consisting of multiple deep neural networks to predict QS World Ranking, helping in achieving a world ranking of 301 - 400 for the VIT CS in 2020.',
+                tech: ['Deep Learning', 'Neural Networks', 'Python'],
                 link: '#'
               }
             ].map((project, i) => (
@@ -408,8 +463,8 @@ export default function Home() {
               <ul className='space-y-3 text-sm text-slate-400'>
                 <li><strong className="text-slate-200">Global Recognition Gold Award</strong> (Bank of America) - Led enterprise-wide AI/ML campaign identifying 64 high-impact use cases.</li>
                 <li><strong className="text-slate-200">Global Recognition Silver Award</strong> (Bank of America, 2x) - For Total Return Swap Bonds contributions and AI/ML framework.</li>
-                <li><strong className="text-slate-200">1st Place</strong> - Vanguard ETF Trading Challenge (Personal Portfolio).</li>
-                <li><strong className="text-slate-200">State Rank Holder</strong> - International Science Olympiad & Math Olympiad.</li>
+                <li><strong className="text-slate-200">1st Place</strong> - Vanguard ETF Trading Challenge (Personal Portfolio), 6th Place for the team portfolio.</li>
+                <li><strong className="text-slate-200">State Rank Holder</strong> - International Science Olympiad & International Math Olympiad.</li>
                 <li><strong className="text-slate-200">President</strong> - Stevens Graduate Financial Association.</li>
               </ul>
             </div>
@@ -422,22 +477,26 @@ export default function Home() {
                   <h4 className='text-xs font-bold text-slate-500 uppercase tracking-wider mb-2'>Finance</h4>
                   <ul className='space-y-1'>
                     <li>CFA Level 1</li>
-                    <li>Bloomberg Market Certification</li>
-                    <li>Financial Engineering & Risk Mgmt (Columbia)</li>
-                    <li>Investment Management Specialization (Geneva/UBS)</li>
-                    <li>Corporate Finance and Valuation (NYU Stern/Damodaran)</li>
-                    <li>ML for Trading Specialization (Google Cloud/NYIF)</li>
-                    <li>Finance & Quant Modeling Specialization (Wharton)</li>
+                    <li>Bloomberg Market Concepts (BMC)</li>
+                    <li><a href="https://www.coursera.org/specializations/financial-engineering" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Financial Engineering & Risk Mgmt Part I & II (Columbia)</a></li>
+                    <li><a href="http://basno.com/cfbvwwwf" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Investment Foundations Program (CFA Institute)</a></li>
+                    <li><a href="https://www.udemy.com/course/the-complete-financial-analyst-training-and-investing-course/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">The Complete Financial Analyst Training & Investing Course</a></li>
+                    <li><a href="https://coursera.org/share/7a85fee31445a626d1212f7c2f55eeab" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">ML for Trading Specialization (Google Cloud/NYIF)</a></li>
+                    <li><a href="https://www.coursera.org/specializations/investment-management" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Investment Management Specialization (Geneva/UBS)</a></li>
+                    <li><a href="https://www.coursera.org/specializations/trading-strategy#courses" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Trading Strategies in Emerging Markets (ISB)</a></li>
+                    <li><a href="https://coursera.org/share/abe2916c68432d5d156494c2f1f59b6d" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Finance & Quant Modeling for Analysts (Wharton)</a></li>
+                    <li><a href="https://coursera.org/share/ad6c6e3574db71e2e38777b74b6af97f" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Corporate Finance and Valuation (NYU Stern/Damodaran)</a></li>
                   </ul>
                 </div>
                 <div>
                   <h4 className='text-xs font-bold text-slate-500 uppercase tracking-wider mb-2'>Computer Science</h4>
                   <ul className='space-y-1'>
-                    <li>Deep Learning Specialization (Andrew Ng)</li>
-                    <li>Applied Data Science with Python (Michigan)</li>
-                    <li>Data Science Foundations using R (Johns Hopkins)</li>
-                    <li>Big Data Specialization (UC San Diego)</li>
-                    <li>Data Structures and Algorithms Specialization</li>
+                    <li><a href="https://coursera.org/share/62c6f8a2d4a998dc4856249a1a937e17" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Deep Learning Specialization (Andrew Ng)</a></li>
+                    <li><a href="https://coursera.org/share/a24e1310f62486c32f6a2393fa1240dc" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Applied Data Science with Python (Michigan)</a></li>
+                    <li><a href="https://coursera.org/share/3ca9e040262f60d9c367379013a1e7c1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Data Science Foundations using R (Johns Hopkins)</a></li>
+                    <li><a href="https://coursera.org/share/e3c471b726d96029d683efcfec957692" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Big Data Specialization (UC San Diego)</a></li>
+                    <li><a href="https://coursera.org/share/98a957a6518b5ca605f44f365df05151" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Data Structures and Algorithms Specialization</a></li>
+                    <li><a href="https://www.coursera.org/learn/algorithms-part1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Algorithms, Part I & II (Princeton)</a></li>
                   </ul>
                 </div>
               </div>
@@ -453,13 +512,13 @@ export default function Home() {
                 <BookOpen className='w-6 h-6 text-cyan-400' />
                 <h2 className='text-3xl font-bold text-slate-100'>Essential Reading</h2>
               </div>
-              <p className='text-slate-400 max-w-2xl'>
+              <p className='text-slate-400 max-w-2xl text-balance'>
                 A curated collection of books that have influenced my trading philosophy and technical approach. From stochastic calculus to Eastern philosophy.
               </p>
             </div>
             <Link 
               href='/books' 
-              className='px-6 py-3 bg-cyan-500/10 text-cyan-400 font-semibold rounded-lg border border-cyan-500/20 hover:bg-cyan-500 hover:text-slate-950 transition-all duration-300'
+              className='px-6 py-3 bg-cyan-500/10 text-cyan-400 font-semibold rounded-lg border border-cyan-500/20 hover:bg-cyan-500 hover:text-slate-950 transition-all duration-300 w-fit'
             >
               View Full Reading List
             </Link>
