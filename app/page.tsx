@@ -452,9 +452,9 @@ export default function Home() {
                 <div>
                   <h4 className='text-xs font-bold text-slate-500 uppercase tracking-wider mb-2'>Finance</h4>
                   <ul className='space-y-1'>
-                    <li>CFA Level 1</li>
-                    <li>Bloomberg Market Concepts (BMC)</li>
-                    <li><a href="https://www.coursera.org/specializations/financial-engineering" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Financial Engineering & Risk Mgmt Part I & II (Columbia)</a></li>
+                    <li><a href="http://basno.com/l2c3uqav" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">CFA Level 1</a></li>
+                    <li><a href="https://portal.bloombergforeducation.com/certificates/8Nm9y3yx5b9yaWztgxSmewLD" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Bloomberg Market Certification (BMC)</a></li>
+                    <li><a href="https://coursera.org/share/70b94743c090c143954cdcbe01ebf521" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Financial Engineering & Risk Mgmt Part I & II (Columbia)</a></li>
                     <li><a href="http://basno.com/cfbvwwwf" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Investment Foundations Program (CFA Institute)</a></li>
                     <li><a href="https://www.udemy.com/course/the-complete-financial-analyst-training-and-investing-course/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">The Complete Financial Analyst Training & Investing Course</a></li>
                     <li><a href="https://coursera.org/share/7a85fee31445a626d1212f7c2f55eeab" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">ML for Trading Specialization (Google Cloud/NYIF)</a></li>

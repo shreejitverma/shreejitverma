@@ -156,9 +156,9 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
 ## 📜 Certifications
 
 ### **Finance**
-- **CFA Level 1**
-- **Bloomberg Market Concepts (BMC)**
-- **Financial Engineering and Risk Management Part I & II** (Columbia/Coursera)
+- **[CFA Level 1](http://basno.com/l2c3uqav)**
+- **[Bloomberg Market Concepts (BMC)](https://portal.bloombergforeducation.com/certificates/8Nm9y3yx5b9yaWztgxSmewLD)**
+- **[Financial Engineering and Risk Management Part I & II](https://coursera.org/share/70b94743c090c143954cdcbe01ebf521)** (Columbia/Coursera)
 - **[Investment Foundations Program (CFA Institute)](http://basno.com/cfbvwwwf)**
 - **[The Complete Financial Analyst Training & Investing Course](https://www.udemy.com/course/the-complete-financial-analyst-training-and-investing-course/)**
 - **[Machine Learning for Trading Specialization](https://coursera.org/share/7a85fee31445a626d1212f7c2f55eeab)** (Google Cloud/NYIF)
