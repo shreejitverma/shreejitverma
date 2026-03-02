@@ -14,6 +14,50 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
 
 ---
 
+## 🎓 Education
+
+- **Georgia Institute of Technology (Online):** M.S. in Computer Science (Specialization in Computing Systems) | *Expected Dec 2026*
+- **Stevens Institute of Technology:** M.S. in Financial Engineering (GPA: 3.968/4.0) | *Expected May 2026*
+- **WorldQuant University:** M.S. in Financial Engineering (GPA: 86%) | *May 2024*
+- **Carnegie Mellon University (Tepper):** M.S. in Computational Finance (Program withdrawn due to father's illness) | *Aug 2021 – Oct 2021*
+- **Vellore Institute of Technology:** B.Tech in Computer Science and Engineering (GPA: 8.78/10.0) | *Sept 2018*
+
+---
+
+## 🏢 Professional Experience
+
+### **BNP Paribas CIB** | C++ Quantitative Developer (Automated Market Making)
+*Feb 2026 – Present | New York, USA*
+- Developing high-performance **C++ trading systems with FPGA** for Automated Market Making (AMM) strategies.
+- Collaborating with front-office to optimize latency and enhance execution performance in a hybrid on-site trading environment.
+
+### **LogiNext Solutions Inc.** | Senior Software Engineer (Analytics Department)
+*Mar 2023 – Jun 2025 | Mumbai, India*
+- **NP-Hard Optimization:** Architected and developed Map Construction and Routing Algorithms solving **3 Nested NP-Hard Problems** using Constraint Programming, PostGIS, and MongoDB.
+- **Team Leadership:** Led a team of **12 engineers** as Head of the Data Analytics department.
+- **AI/LLM Engineering:** Built a **Large Language Model (LLM)** for internal development and query resolution, improving bug resolution efficiency by **80%**.
+- **Data Infrastructure:** Engineered a robust ML Pipeline for proactive error detection and resolution using the ELK stack.
+
+### **Versor Investments (QR Systems LLP)** | Quantitative Developer (Merger Arbitrage & Stock Selection)
+*Feb 2022 – Oct 2022 | Mumbai, India*
+- **AUM Management:** Contributed to the management of a combined **AUM of $8.5 Billion**.
+- **Alpha Generation:** Developed and backtested systematic merger arbitrage strategies, yielding a **15% improvement** in alpha capture.
+- **Execution Efficiency:** Deployed scalable ML pipelines for Order & Execution Management Systems, increasing trade execution efficiency by **29%**.
+- **Strategy Innovation:** Built portfolio strategies capitalizing on arbitrage opportunities from the impact of ESG scores on pre- & post-merger statistics.
+
+### **Bank of America (BA Continuum)** | Senior Software Engineer (FICC)
+*Jan 2020 – Jul 2021 | Chennai, India*
+- **Latency Optimization:** Integrated **C++ pipelines** in SANDRA (Object-Oriented Database) to store trades, reducing trade processing latency by **50%**.
+- **System Migration:** Led the migration of **1 million+ lines of code** to Python 3.8, enhancing system scalability and execution efficiency by **40%**.
+- **Trading Services:** Engineered Python-based trading services to enhance storage, processing, and matching of trades on the QUARTZ platform.
+
+### **Bank of America** | Senior Tech Associate (Data Analysis and Insight Technology)
+*Jun 2018 – Dec 2019 | Chennai, India*
+- **Predictive Analytics:** Architected an ML/AI platform to deploy predictive models, increasing decision-making accuracy by **67%**.
+- **Process Automation:** Designed machine learning models for data validation rules prediction, reducing manual workload by approximately **36 Full-Time Equivalents (FTEs)**.
+
+---
+
 ## 🛠️ Skills
 
 ### **Programming Languages**
@@ -74,50 +118,6 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
 
 ---
 
-## 🏢 Professional Experience
-
-### **BNP Paribas CIB** | C++ Quantitative Developer (Automated Market Making)
-*Feb 2026 – Present | New York, USA*
-- Developing high-performance **C++ trading systems with FPGA** for Automated Market Making (AMM) strategies.
-- Collaborating with front-office to optimize latency and enhance execution performance in a hybrid on-site trading environment.
-
-### **LogiNext Solutions Inc.** | Senior Software Engineer (Analytics Department)
-*Mar 2023 – Jun 2025 | Mumbai, India*
-- **NP-Hard Optimization:** Architected and developed Map Construction and Routing Algorithms solving **3 Nested NP-Hard Problems** using Constraint Programming, PostGIS, and MongoDB.
-- **Team Leadership:** Led a team of **12 engineers** as Head of the Data Analytics department.
-- **AI/LLM Engineering:** Built a **Large Language Model (LLM)** for internal development and query resolution, improving bug resolution efficiency by **80%**.
-- **Data Infrastructure:** Engineered a robust ML Pipeline for proactive error detection and resolution using the ELK stack.
-
-### **Versor Investments (QR Systems LLP)** | Quantitative Developer (Merger Arbitrage & Stock Selection)
-*Feb 2022 – Oct 2022 | Mumbai, India*
-- **AUM Management:** Contributed to the management of a combined **AUM of $8.5 Billion**.
-- **Alpha Generation:** Developed and backtested systematic merger arbitrage strategies, yielding a **15% improvement** in alpha capture.
-- **Execution Efficiency:** Deployed scalable ML pipelines for Order & Execution Management Systems, increasing trade execution efficiency by **29%**.
-- **Strategy Innovation:** Built portfolio strategies capitalizing on arbitrage opportunities from the impact of ESG scores on pre- & post-merger statistics.
-
-### **Bank of America (BA Continuum)** | Senior Software Engineer (FICC)
-*Jan 2020 – Jul 2021 | Chennai, India*
-- **Latency Optimization:** Integrated **C++ pipelines** in SANDRA (Object-Oriented Database) to store trades, reducing trade processing latency by **50%**.
-- **System Migration:** Led the migration of **1 million+ lines of code** to Python 3.8, enhancing system scalability and execution efficiency by **40%**.
-- **Trading Services:** Engineered Python-based trading services to enhance storage, processing, and matching of trades on the QUARTZ platform.
-
-### **Bank of America** | Senior Tech Associate (Data Analysis and Insight Technology)
-*Jun 2018 – Dec 2019 | Chennai, India*
-- **Predictive Analytics:** Architected an ML/AI platform to deploy predictive models, increasing decision-making accuracy by **67%**.
-- **Process Automation:** Designed machine learning models for data validation rules prediction, reducing manual workload by approximately **36 Full-Time Equivalents (FTEs)**.
-
----
-
-## 🎓 Education
-
-- **Georgia Institute of Technology (Online):** M.S. in Computer Science (Specialization in Computing Systems) | *Expected Dec 2026*
-- **Stevens Institute of Technology:** M.S. in Financial Engineering (GPA: 3.968/4.0) | *Expected May 2026*
-- **WorldQuant University:** M.S. in Financial Engineering (GPA: 86%) | *May 2024*
-- **Carnegie Mellon University (Tepper):** M.S. in Computational Finance (Program withdrawn due to father's illness) | *Aug 2021 – Oct 2021*
-- **Vellore Institute of Technology:** B.Tech in Computer Science and Engineering (GPA: 8.78/10.0) | *Sept 2018*
-
----
-
 ## 🚀 Key Research & Projects
 
 ### **Research**
@@ -160,13 +160,45 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
 
 ---
 
-## 🏆 Awards & Certifications
+## 🏆 Achievements
 
-- **Global Recognition Gold Award:** Bank of America (Top 1% recognition for AI/ML impact).
-- **1st Place:** Vanguard ETF Trading Challenge (Personal Portfolio).
-- **CFA Level 1 Candidate** | **Bloomberg Market Concepts (BMC)**.
-- **Deep Learning Specialization** (Andrew Ng) | **Financial Engineering & Risk Mgmt** (Columbia).
-- **Corporate Finance and Valuation** (NYU Stern - Aswath Damodaran).
+- **1st Place:** Vanguard ETF Trading Challenge (Personal Portfolio), 6th Place for the team portfolio.
+- **Global Recognition Gold Award** (Bank of America) - Led enterprise-wide AI/ML campaign identifying 64 high-impact use cases.
+- **Global Recognition Silver Award** (Bank of America, 2x) - For Total Return Swap Bonds contributions and AI/ML framework.
+- **State Rank Holder** - International Science Olympiad and International Mathematics Olympiad.
+- **President** - Stevens Graduate Financial Association.
+
+---
+
+## 📜 Certifications
+
+### **Finance**
+- **CFA Level 1**
+- **Bloomberg Market Concepts (BMC)**
+- **Financial Engineering and Risk Management Part I & II** (Columbia/Coursera)
+- **Investment Foundations Program** (CFA Institute)
+- **The Complete Financial Analyst Training & Investing Course** (Udemy)
+- **Machine Learning for Trading Specialization** (Google Cloud/NYIF)
+- **Investment Management Specialization** (Geneva/UBS)
+- **Trading Strategies in Emerging Markets Specialization** (ISB)
+- **Finance & Quantitative Modeling for Analysts** (Wharton)
+- **Corporate Finance and Valuation** (NYU STERN, Aswath Damodaran)
+
+### **Computer Science**
+- **Deep Learning Specialization** (Andrew Ng/Coursera)
+- **Applied Data Science with Python Specialization** (Michigan)
+- **Data Science Foundations using R Specialization** (Johns Hopkins)
+- **Data Science Statistics and Machine Learning Specialization** (Johns Hopkins)
+- **Big Data Specialization** (UC San Diego)
+- **Data Structures and Algorithms Specialization** (Coursera)
+- **Algorithms, Part I & II** (Princeton)
+
+---
+
+## 🎾 Interests & 🗣️ Languages
+
+- **Interests:** Chess, Poker, FI, Martial Arts, Cricket, Boxing, Badminton, Reading, Cooking, Dancing, Psychology, History, Philosophy.
+- **Languages:** English, Hindi (Fluent); French, Sanskrit, Spanish, Russian (Intermediate); Chinese, Italian, Tamil, Punjabi (Beginner).
 
 ---
 
