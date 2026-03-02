@@ -242,7 +242,7 @@ export default function Home() {
                 </div>
                 <div className='text-sm text-slate-400 mb-4 font-medium'>Senior Software Engineer Analytics</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-400 space-y-2 marker:text-slate-600'>
-                  <li>Designed and implemented **Map Construction and Routing Algorithms** to solve complex NP-hard problems.</li>
+                  <li>Design and implementation of **Map Construction and Routing Algorithms** to solve complex NP-hard problems.</li>
                   <li>Built a **Large Language Model (LLM)** for internal development and bug query resolution, reducing issue resolution time by 80%.</li>
                   <li>Led a team of 12 to develop a high-performance **geospatial mapping application** using PostGIS, MongoDB, and AWS.</li>
                 </ul>
@@ -403,30 +403,6 @@ export default function Home() {
                 desc: 'Designed and backtested a 120-day volume-momentum-based crypto portfolio strategy, yielding a 155.76% annualized return and 1.94 Sharpe Ratio, significantly outperforming the Bitcoin benchmark.',
                 tech: ['Quant Research', 'Backtesting', 'Alpha Gen'],
                 link: 'https://github.com/shreejitverma/Statistical-Arbitrage-Reversal-and-Momentum-Strategies'
-              },
-              {
-                title: 'Financial Modelling: Stochastic Calculus',
-                desc: 'Modeled asset prices & derivative strategies using Brownian Motion, GBM, Ito\'s Lemma, Martingales, Girsanov\'s Theorem. Applied SDEs, Fokker-Planck and Kolmogorov forward/backward equations, Ornstein-Uhlenbeck mean-reverting processes.',
-                tech: ['Stochastic Calculus', 'Derivative Pricing', 'SDEs'],
-                link: '#'
-              },
-              {
-                title: 'Environmental Social Governance (ESG) Merger Arbitrage Strategy',
-                desc: 'Developed the ESG Strategy that was further converted to a portfolio and embedded in all the existing portfolio. It caters to the arbitrage opportunity being made by the effect of ESG scores on target and acquirer pre- and post-merger statistics.',
-                tech: ['Merger Arbitrage', 'ESG', 'Strategy'],
-                link: '#'
-              },
-              {
-                title: 'Blockchain In Retail',
-                desc: 'Decentralized e-commerce platform with smart contracts, currency conversion, and matching algorithms using Ethereum/Solidity, Truffle, MetaMask, Ganache, GETH, Solc, Puppeth.',
-                tech: ['Blockchain', 'Solidity', 'Smart Contracts'],
-                link: '#'
-              },
-              {
-                title: 'QS Rank Predictor',
-                desc: 'Constructed ensemble machine learning model consisting of multiple deep neural networks to predict QS World Ranking, helping in achieving a world ranking of 301 - 400 for the VIT CS in 2020.',
-                tech: ['Deep Learning', 'Neural Networks', 'Python'],
-                link: '#'
               }
             ].map((project, i) => (
               <a 

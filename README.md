@@ -141,23 +141,6 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
   *Jun 2025 – Aug 2025*
   - Designed and backtested a 120-day volume-momentum-based crypto portfolio strategy, yielding a **155.76% annualized return** and **1.94 Sharpe Ratio** (post transaction costs), significantly outperforming the Bitcoin buy-and-hold benchmark.
 
-- **Financial Modelling using Stochastic Calculus**
-  *Nov 2023 – Jan 2024*
-  - Modeled asset prices & derivative strategies using Brownian Motion, GBM, Ito's Lemma, Martingales, Girsanov's Theorem.
-  - Applied SDEs, Fokker-Planck and Kolmogorov forward/backward equations, Ornstein-Uhlenbeck mean-reverting processes for modeling volatility, interest rates, and time-dependent drift in financial instruments.
-
-- **Environmental Social Governance (ESG) Merger Arbitrage Strategy**
-  *Apr 2022 – Jun 2022*
-  - Developed the ESG Strategy that was further converted to a portfolio and embedded in all the existing portfolio. It caters to the arbitrage opportunity being made by the effect of ESG scores on target and acquirer pre- and post-merger statistics.
-
-- **Blockchain In Retail**
-  *Jan 2018 – Mar 2018*
-  - Developed a decentralized e-commerce platform to secure and streamline retail transactions with smart contracts, currency conversion, custom hashing and matching algorithms using Homebrew, Truffle, MetaMask, Ganache, GETH, Solc, Puppeth.
-
-- **QS Rank Predictor**
-  *Jun 2017 – Jul 2017*
-  - Constructed ensemble machine learning model consisting of multiple deep neural networks to predict QS World Ranking, helping in achieving a world ranking of 301 - 400 for the VIT CS in 2020.
-
 ---
 
 ## 🏆 Achievements
