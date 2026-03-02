@@ -371,19 +371,23 @@ export default function Home() {
                 link: "https://github.com/shreejitverma/Dynamic-Portfolio-Optimization"
               }
             ].map((res, i) => (
-              <div key={i} className='p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all'>
-                <div className='flex justify-between items-start mb-2'>
-                  <h3 className='font-bold text-slate-100'>{res.title}</h3>
-                  <span className='text-xs font-mono text-cyan-400 whitespace-nowrap ml-2'>{res.date}</span>
+              <a 
+                key={i} 
+                href={res.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='group p-8 rounded-2xl bg-slate-950 border border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10 block'
+              >
+                <div className='flex justify-between items-start mb-3'>
+                  <h3 className='text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors'>{res.title}</h3>
+                  <div className='flex items-center gap-3'>
+                    <span className='text-xs font-mono text-cyan-400 whitespace-nowrap'>{res.date}</span>
+                    <Github className='w-5 h-5 text-slate-500 group-hover:text-cyan-400 transition-colors opacity-0 group-hover:opacity-100 shrink-0' />
+                  </div>
                 </div>
                 <div className='text-sm text-slate-300 font-medium mb-3'>{res.subtitle}</div>
-                <p className='text-sm text-slate-400 mb-4'>{res.details}</p>
-                {res.link && (
-                  <a href={res.link} target='_blank' rel='noopener noreferrer' className='text-xs font-mono text-cyan-500 hover:underline'>
-                    VIEW_ON_GITHUB
-                  </a>
-                )}
-              </div>
+                <p className='text-sm text-slate-400 mb-4 leading-relaxed'>{res.details}</p>
+              </a>
             ))}
           </div>
         </Section>
@@ -470,6 +474,7 @@ export default function Home() {
                     <li><a href="https://coursera.org/share/62c6f8a2d4a998dc4856249a1a937e17" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Deep Learning Specialization (Andrew Ng)</a></li>
                     <li><a href="https://coursera.org/share/a24e1310f62486c32f6a2393fa1240dc" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Applied Data Science with Python (Michigan)</a></li>
                     <li><a href="https://coursera.org/share/3ca9e040262f60d9c367379013a1e7c1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Data Science Foundations using R (Johns Hopkins)</a></li>
+                    <li><a href="https://www.coursera.org/specializations/data-science-statistics-machine-learning" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Data Science Statistics and ML (Johns Hopkins)</a></li>
                     <li><a href="https://coursera.org/share/e3c471b726d96029d683efcfec957692" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Big Data Specialization (UC San Diego)</a></li>
                     <li><a href="https://coursera.org/share/98a957a6518b5ca605f44f365df05151" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Data Structures and Algorithms Specialization</a></li>
                     <li><a href="https://www.coursera.org/learn/algorithms-part1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400">Algorithms, Part I & II (Princeton)</a></li>

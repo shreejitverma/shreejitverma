@@ -172,10 +172,10 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
 - **[Deep Learning Specialization](https://coursera.org/share/62c6f8a2d4a998dc4856249a1a937e17)** (Andrew Ng/Coursera)
 - **[Applied Data Science with Python Specialization](https://coursera.org/share/a24e1310f62486c32f6a2393fa1240dc)** (Michigan)
 - **[Data Science Foundations using R Specialization](https://coursera.org/share/3ca9e040262f60d9c367379013a1e7c1)** (Johns Hopkins)
-- **Data Science Statistics and Machine Learning Specialization** (Johns Hopkins)
+- **[Data Science Statistics and Machine Learning Specialization](https://www.coursera.org/specializations/data-science-statistics-machine-learning)** (Johns Hopkins)
 - **[Big Data Specialization](https://coursera.org/share/e3c471b726d96029d683efcfec957692)** (UC San Diego)
 - **[Data Structures and Algorithms Specialization](https://coursera.org/share/98a957a6518b5ca605f44f365df05151)** (Coursera)
-- **Algorithms, Part I & II** (Princeton)
+- **[Algorithms, Part I & II](https://www.coursera.org/learn/algorithms-part1)** (Princeton)
 
 ---
 
