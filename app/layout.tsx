@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Shreejit Verma', url: 'https://www.shreejitverma.com' }],
   creator: 'Shreejit Verma',
+  icons: {
+    icon: '/Shreejit_Verma_profile_pic.jpg',
+    shortcut: '/Shreejit_Verma_profile_pic.jpg',
+    apple: '/Shreejit_Verma_profile_pic.jpg',
+  },
   openGraph: {
     type: 'profile',
     firstName: 'Shreejit',
