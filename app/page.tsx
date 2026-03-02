@@ -69,7 +69,7 @@ export default function Home() {
                 <Linkedin className='w-5 h-5' />
               </a>
             </div>
-            <a href='/Shreejit Verma Resume.pdf' target='_blank' rel="noopener noreferrer" className='px-4 py-2 text-xs font-bold text-slate-950 bg-cyan-400 rounded hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20'>
+            <a href='https://shreejitverma.com/Shreejit_Verma_Resume.pdf' target='_blank' rel="noopener noreferrer" className='px-4 py-2 text-xs font-bold text-slate-950 bg-cyan-400 rounded hover:bg-cyan-300 transition-colors shadow-lg shadow-cyan-500/20'>
               RESUME
             </a>
             
