@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   },
   description: 'Senior Quantitative Developer & Researcher specializing in HFT execution, low-latency systems (FPGA/DPDK), and alpha-generating statistical strategies. Expertise in C++23, Python, Stochastic Calculus, and Market Microstructure.',
   keywords: [
-    'Jane Street', 'Citadel', 'Jump Trading', 'Optiver', 'Hudson River Trading', 'HRT', 'Two Sigma', 'IMC Trading',
+    'Jane Street', 'Citadel', 'Jump Trading', 'Optiver', 'Hudson River Trading', 'HRT', 'Two Sigma', 'IMC Trading', 'Radley James', 'Tower Research', 'Akuna Capital', 'DRW', 'Virtu Financial',
     'Quantitative Developer', 'Quantitative Researcher', 'HFT', 'High Frequency Trading', 
-    'Algorithmic Trading', 'C++', 'Python', 'Stochastic Calculus', 'Market Microstructure',
+    'Ultra Low Latency', 'Deterministic Execution', 'FPGA Market Data', 'Kernel Bypass', 'DPDK',
+    'Algorithmic Trading', 'C++23', 'Python', 'Stochastic Calculus', 'Market Microstructure',
     'Financial Engineering', 'Prop Trading', 'Hedge Funds', 'Alpha Generation',
-    'FPGA', 'DPDK', 'Low Latency', 'Statistical Arbitrage', 'Machine Learning in Finance',
-    'Order Execution', 'Market Making', 'Execution Algorithms'
+    'Statistical Arbitrage', 'Machine Learning in Finance', 'Order Execution', 'Market Making'
   ],
   authors: [{ name: 'Shreejit Verma', url: 'https://www.shreejitverma.com' }],
   creator: 'Shreejit Verma',

@@ -133,8 +133,8 @@ export default function Home() {
                 </span>
               </h1>
               <p className='text-xl text-slate-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0'>
-                Engineering high-performance trading systems and statistical models. 
-                Specializing in low-latency infrastructure, algorithmic strategies, and financial engineering.
+                Engineering ultra-low latency trading systems and alpha-generating models. 
+                Expertise in **FPGA/DPDK** infrastructure, **deterministic execution**, and statistical arbitrage strategies for high-frequency environments.
               </p>
               <div className='flex flex-wrap justify-center md:justify-start gap-4'>
                 <a href='#experience' className='px-6 py-3 bg-slate-100 text-slate-950 font-semibold rounded hover:bg-slate-200 transition-colors'>

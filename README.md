@@ -10,7 +10,7 @@
 
 ## 🏛️ Professional Summary
 
-Senior Quantitative Developer and Researcher with over 7 years of experience engineering high-performance trading infrastructure and sophisticated alpha-generating strategies. Proven track record in managing **$8.5 Billion AUM**, reducing trade processing latency by **50%**, and increasing decision-making accuracy by **67%**. Expertise spans the full stack of modern quantitative finance: from **FPGA-accelerated market data handlers** and **low-latency C++ execution engines** to **stochastic calculus-based derivative pricing** and **ML-driven risk frameworks**. Currently focused on sub-microsecond trading systems and adaptive volatility regime execution.
+Senior Quantitative Developer and Researcher with over 7 years of experience engineering **ultra-low latency** trading infrastructure and sophisticated alpha-generating strategies. Proven track record in managing **$8.5 Billion AUM**, reducing trade processing latency by **50%**, and increasing decision-making accuracy by **67%**. Expertise spans the full stack of modern quantitative finance: from **FPGA-accelerated market data handlers** and **deterministic C++ execution engines** to **stochastic calculus-based derivative pricing** and **ML-driven risk frameworks**. Currently focused on sub-microsecond trading systems, kernel bypass (**DPDK/Solarflare**), and adaptive volatility regime execution for global HFT environments.
 
 ---
 
