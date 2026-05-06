@@ -1,15 +1,22 @@
 'use client';
 
+import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
-import { useEffect } from 'react';
+import { useTheme } from 'next-themes';
 
 export default function BackgroundCanvas() {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     // Initialize canvas if script is already loaded (for navigation between pages)
     if (typeof window !== 'undefined' && (window as any).initCanvas) {
       (window as any).initCanvas();
     }
   }, []);
+
+  if (!mounted || theme === 'light') return null;
 
   return (
     <>
