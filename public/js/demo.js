@@ -1,8 +1,7 @@
 window.initCanvas = function() {
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
-    var isDark = document.documentElement.classList.contains('dark') || 
-                 (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var isDark = document.documentElement.classList.contains('dark');
 
     // Main
     initHeader();
