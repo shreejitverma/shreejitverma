@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "shreejitverma.com"
+        }
+      ],
+      "destination": "https://www.shreejitverma.com/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/books/(.*)",
