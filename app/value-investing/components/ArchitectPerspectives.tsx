@@ -25,28 +25,28 @@ const architects = [
 
 export default function ArchitectPerspectives() {
   return (
-    <div className='bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6'>
-      <h3 className='text-sm font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-2'>
+    <div className='bg-background dark:bg-card/50 border border-border rounded-2xl p-6'>
+      <h3 className='text-sm font-bold text-foreground mb-6 flex items-center gap-2'>
         <MessageSquare className='w-4 h-4 text-blue-400' />
         ARCHITECT_PERSPECTIVES
       </h3>
       
       <div className='space-y-6'>
         {architects.map((arch, i) => (
-          <div key={i} className='relative pl-6 border-l-2 border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-colors group'>
-            <div className='absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white dark:bg-slate-950 border-2 border-slate-200 dark:border-slate-800 group-hover:border-cyan-500 transition-colors' />
+          <div key={i} className='relative pl-6 border-l-2 border-border hover:border-primary/50 transition-colors group'>
+            <div className='absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-background border-2 border-border group-hover:border-cyan-500 transition-colors' />
             
             <div className='flex items-center justify-between mb-2'>
-              <h4 className='text-xs font-bold text-slate-900 dark:text-slate-100'>{arch.name}</h4>
-              <span className='text-[8px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500'>{arch.tag}</span>
+              <h4 className='text-xs font-bold text-foreground'>{arch.name}</h4>
+              <span className='text-[8px] font-mono px-2 py-0.5 rounded bg-muted dark:bg-muted text-muted-foreground'>{arch.tag}</span>
             </div>
             
             <div className='relative mb-3'>
               <Quote className='w-3 h-3 text-slate-300 dark:text-slate-700 absolute -left-4 -top-1' />
-              <p className='text-[10px] italic text-slate-500 leading-relaxed'>{arch.quote}</p>
+              <p className='text-[10px] italic text-muted-foreground leading-relaxed'>{arch.quote}</p>
             </div>
             
-            <div className='p-3 rounded-lg bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 text-[10px] text-slate-600 dark:text-slate-400'>
+            <div className='p-3 rounded-lg bg-slate-50 dark:bg-background/50 border border-border text-[10px] text-muted-foreground'>
               <span className='font-bold text-cyan-600 dark:text-cyan-500 mr-2'>SIGHT:</span>
               {arch.perspective}
             </div>

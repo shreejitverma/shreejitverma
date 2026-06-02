@@ -17,14 +17,14 @@ export default function MetricCard({ title, value, label, trend, icon, color }: 
   const isPositive = trend.startsWith('+');
 
   const colorClasses = {
-    cyan: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-500',
+    cyan: 'bg-primary/10 border-cyan-500/20 text-cyan-500',
     blue: 'bg-blue-500/10 border-blue-500/20 text-blue-500',
     indigo: 'bg-indigo-500/10 border-indigo-500/20 text-indigo-500',
     emerald: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500',
   };
 
   return (
-    <div className='bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl hover:border-cyan-500/30 transition-all group'>
+    <div className='bg-background dark:bg-card/50 border border-border p-6 rounded-2xl hover:border-primary/30 transition-all group'>
       <div className='flex items-center justify-between mb-4'>
         <div className={clsx('p-2 rounded-lg border', colorClasses[color])}>
           {icon}
@@ -38,10 +38,10 @@ export default function MetricCard({ title, value, label, trend, icon, color }: 
         </div>
       </div>
       <div>
-        <h3 className='text-xs font-mono text-slate-500 mb-1 uppercase tracking-wider'>{title}</h3>
+        <h3 className='text-xs font-mono text-muted-foreground mb-1 uppercase tracking-wider'>{title}</h3>
         <div className='flex items-baseline gap-2'>
-          <span className='text-2xl font-bold text-slate-900 dark:text-slate-100'>{value}</span>
-          <span className='text-xs text-slate-400 font-medium'>{label}</span>
+          <span className='text-2xl font-bold text-foreground'>{value}</span>
+          <span className='text-xs text-muted-foreground font-medium'>{label}</span>
         </div>
       </div>
       

@@ -48,22 +48,22 @@ const EngineeringPhilosophy = () => {
       {principles.map((p, i) => (
         <div 
           key={i} 
-          className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between group hover:border-cyan-500/50 transition-all duration-300"
+          className="p-4 rounded-xl bg-background dark:bg-slate-900 border border-border flex flex-col justify-between group hover:border-primary/50 transition-all duration-300"
         >
           <div className="flex items-start justify-between mb-2">
-            <div className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 group-hover:bg-cyan-500/10 transition-colors">
+            <div className="p-2 rounded-lg bg-slate-50 dark:bg-muted group-hover:bg-primary/10 transition-colors">
               {p.icon}
             </div>
-            <span className="text-[10px] font-mono font-bold text-slate-400 dark:text-slate-500">
+            <span className="text-[10px] font-mono font-bold text-muted-foreground/60">
               CORE_METRIC_{i + 1}
             </span>
           </div>
           <div>
-            <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">{p.title}</h4>
-            <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-tight mb-3">
+            <h4 className="text-sm font-bold text-foreground mb-1">{p.title}</h4>
+            <p className="text-[11px] text-muted-foreground leading-tight mb-3">
               {p.desc}
             </p>
-            <div className="w-full h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+            <div className="w-full h-1 bg-muted dark:bg-muted rounded-full overflow-hidden">
               <div 
                 className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-1000 ease-out"
                 style={{ width: `${p.value}%` }}

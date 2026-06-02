@@ -36,22 +36,22 @@ export default function ValueInvestingPage() {
   if (!mounted) return null;
 
   return (
-    <div className='min-h-screen bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-sans selection:bg-cyan-500/30'>
+    <div className='min-h-screen bg-background text-muted-foreground font-sans selection:bg-primary/30'>
       {/* ... navigation ... */}
-      <nav className='fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/50 bg-white/80 dark:bg-slate-950/80'>
+      <nav className='fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border/50 bg-background/80'>
         <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
-          <Link href='/' className='font-mono text-xl font-bold text-cyan-600 dark:text-cyan-400 tracking-tighter hover:text-cyan-500 transition-colors flex items-center gap-2'>
+          <Link href='/' className='font-mono text-xl font-bold text-primary tracking-tighter hover:text-cyan-500 transition-colors flex items-center gap-2'>
             <Cpu className="w-6 h-6" />
-            SV<span className='text-slate-400 dark:text-slate-500'>.terminal</span>
+            SV<span className='text-muted-foreground/60'>.terminal</span>
           </Link>
           <div className='flex items-center gap-6'>
-            <Link href="/" className="text-sm font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Home</Link>
-            <Link href="/books" className="text-sm font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Archives</Link>
-            <div className='flex items-center gap-4 border-l border-slate-200 dark:border-slate-800 pl-6'>
-              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
+            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
+            <Link href="/books" className="text-sm font-medium hover:text-primary transition-colors">Archives</Link>
+            <div className='flex items-center gap-4 border-l border-border pl-6'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
                 <Github className='w-5 h-5' />
               </a>
-              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
                 <Linkedin className='w-5 h-5' />
               </a>
             </div>
@@ -63,22 +63,22 @@ export default function ValueInvestingPage() {
         {/* System Header */}
         <div className='grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8'>
           <div className='lg:col-span-3 flex flex-col justify-end'>
-            <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-mono mb-6 border border-cyan-500/20 w-fit'>
+            <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono mb-6 border border-cyan-500/20 w-fit'>
               <Terminal className='w-3 h-3' />
               <span>VALUE_INTELLIGENCE_v4.5</span>
             </div>
-            <h1 className='text-4xl md:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-4 tracking-tight'>
+            <h1 className='text-4xl md:text-6xl font-bold text-foreground mb-4 tracking-tight'>
               Quant <span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-500'>Value</span> Research
             </h1>
-            <p className='text-lg text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed'>
+            <p className='text-lg text-muted-foreground dark:text-muted-foreground max-w-3xl leading-relaxed'>
               Analyzing the &quot;Architects&quot; of wealth through the lens of modern quantitative finance. 
               Moat decomposition using the 7 Powers framework and deep factor analysis.
             </p>
           </div>
           
-          <div className='bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl flex flex-col gap-4'>
+          <div className='bg-card/50 dark:bg-card border border-border p-6 rounded-2xl flex flex-col gap-4'>
             <div className='flex items-center justify-between'>
-              <span className='text-xs font-mono text-slate-500'>RESEARCH_CORE</span>
+              <span className='text-xs font-mono text-muted-foreground'>RESEARCH_CORE</span>
               <span className='flex items-center gap-1 text-[10px] font-mono text-emerald-500'>
                 <span className='w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse' />
                 ACTIVE_FETCH
@@ -86,20 +86,20 @@ export default function ValueInvestingPage() {
             </div>
             <div className='space-y-2'>
               <div className='flex justify-between text-xs font-mono'>
-                <span className='text-slate-400'>SEC_FILINGS</span>
-                <span className='text-cyan-400'>SYNCED</span>
+                <span className='text-muted-foreground'>SEC_FILINGS</span>
+                <span className='text-primary'>SYNCED</span>
               </div>
               <div className='flex justify-between text-xs font-mono'>
-                <span className='text-slate-400'>MOAT_SCORE</span>
-                <span className='text-cyan-400'>9.4/10</span>
+                <span className='text-muted-foreground'>MOAT_SCORE</span>
+                <span className='text-primary'>9.4/10</span>
               </div>
               <div className='flex justify-between text-xs font-mono'>
-                <span className='text-slate-400'>LAST_SYNC</span>
-                <span className='text-cyan-400 truncate max-w-[120px]'>{lastUpdate.split('T')[1].split('.')[0]}</span>
+                <span className='text-muted-foreground'>LAST_SYNC</span>
+                <span className='text-primary truncate max-w-[120px]'>{lastUpdate.split('T')[1].split('.')[0]}</span>
               </div>
             </div>
-            <div className='mt-auto pt-4 border-t border-slate-200 dark:border-slate-800'>
-              <button className='w-full py-2 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2'>
+            <div className='mt-auto pt-4 border-t border-border'>
+              <button className='w-full py-2 bg-cyan-600 hover:bg-primary text-foreground rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2'>
                 <BarChart3 className='w-3 h-3' />
                 GENERATE ALPHA
               </button>
@@ -114,7 +114,7 @@ export default function ValueInvestingPage() {
             value="34.01%" 
             label="ROE (MSFT)" 
             trend="+1.2%" 
-            icon={<Shield className="w-5 h-5 text-cyan-400" />}
+            icon={<Shield className="w-5 h-5 text-primary" />}
             color="cyan"
           />
           <MetricCard 
@@ -155,20 +155,20 @@ export default function ValueInvestingPage() {
             <RiskAntiModels />
 
             {/* Terminal Output */}
-            <div className='bg-slate-950 border border-slate-800 rounded-2xl p-6 font-mono text-[10px] space-y-2 overflow-hidden h-[300px]'>
-              <div className='flex items-center gap-2 text-slate-500 mb-2'>
+            <div className='bg-background border border-border rounded-2xl p-6 font-mono text-[10px] space-y-2 overflow-hidden h-[300px]'>
+              <div className='flex items-center gap-2 text-muted-foreground mb-2'>
                 <div className='w-2 h-2 rounded-full bg-red-500/50' />
                 <div className='w-2 h-2 rounded-full bg-amber-500/50' />
                 <div className='w-2 h-2 rounded-full bg-emerald-500/50' />
                 <span className='ml-2 opacity-50 uppercase'>kernel_logs</span>
               </div>
               <div className='text-emerald-500'>[OK] Running 7 Powers analysis for Microsoft (MSFT)...</div>
-              <div className='text-slate-500'>[INFO] Switching Costs: Office 365 / ERP integration detected</div>
-              <div className='text-slate-500'>[INFO] Network Economies: GitHub / LinkedIn growth sync</div>
+              <div className='text-muted-foreground'>[INFO] Switching Costs: Office 365 / ERP integration detected</div>
+              <div className='text-muted-foreground'>[INFO] Network Economies: GitHub / LinkedIn growth sync</div>
               <div className='text-cyan-500'>[SIGNAL] Scale Economies: Azure infrastructure moat identified</div>
-              <div className='text-slate-500'>[INFO] Cornered Resource: OpenAI exclusive Azure partnership</div>
+              <div className='text-muted-foreground'>[INFO] Cornered Resource: OpenAI exclusive Azure partnership</div>
               <div className='text-amber-500'>[WARN] Counter-Positioning: Lower score due to incumbent nature</div>
-              <div className='text-slate-500'>[INFO] Calculating Graham-Number for Tech Sector...</div>
+              <div className='text-muted-foreground'>[INFO] Calculating Graham-Number for Tech Sector...</div>
               <div className='text-emerald-500 animate-pulse'>_</div>
             </div>
           </div>
@@ -178,19 +178,19 @@ export default function ValueInvestingPage() {
       </main>
 
       {/* Footer */}
-      <footer className='py-12 border-t border-slate-200 dark:border-slate-800 mt-20'>
+      <footer className='py-12 border-t border-border mt-20'>
         <div className='max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6'>
           <div className='flex items-center gap-2 font-mono text-sm'>
             <span className='text-cyan-500 font-bold'>SV</span>
-            <span className='text-slate-500'>{"//"} QUANT_RESEARCH_DEPT</span>
+            <span className='text-muted-foreground'>{"//"} QUANT_RESEARCH_DEPT</span>
           </div>
-          <p className='text-slate-400 dark:text-slate-500 text-xs'>
+          <p className='text-muted-foreground/60 text-xs'>
             © {new Date().getFullYear()} Shreejit Verma. Advanced Financial Engineering.
           </p>
           <div className='flex items-center gap-6'>
-            <a href="#" className="text-xs text-slate-500 hover:text-cyan-400">Terminals</a>
-            <a href="#" className="text-xs text-slate-500 hover:text-cyan-400">Documentation</a>
-            <a href="#" className="text-xs text-slate-500 hover:text-cyan-400">API</a>
+            <a href="#" className="text-xs text-muted-foreground hover:text-primary">Terminals</a>
+            <a href="#" className="text-xs text-muted-foreground hover:text-primary">Documentation</a>
+            <a href="#" className="text-xs text-muted-foreground hover:text-primary">API</a>
           </div>
         </div>
       </footer>

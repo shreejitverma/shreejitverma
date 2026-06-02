@@ -112,20 +112,20 @@ export default function BooksPage() {
   ];
 
   return (
-    <div className='min-h-screen bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-sans selection:bg-cyan-500/30'>
+    <div className='min-h-screen bg-background text-muted-foreground font-sans selection:bg-primary/30'>
       {/* Navigation */}
-      <nav className='fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/50 bg-white/80 dark:bg-slate-950/80'>
+      <nav className='fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border/50 bg-background/80'>
         <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
-          <Link href='/' className='font-mono text-xl font-bold text-cyan-600 dark:text-cyan-400 tracking-tighter hover:text-cyan-500 transition-colors'>
-            SV<span className='text-slate-400 dark:text-slate-500'>.quant</span>
+          <Link href='/' className='font-mono text-xl font-bold text-primary tracking-tighter hover:text-cyan-500 transition-colors'>
+            SV<span className='text-muted-foreground/60'>.quant</span>
           </Link>
           <div className='flex items-center gap-6'>
-            <Link href="/" className="text-sm font-medium hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Home</Link>
-            <div className='flex items-center gap-4 border-l border-slate-200 dark:border-slate-800 pl-6'>
-              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
+            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
+            <div className='flex items-center gap-4 border-l border-border pl-6'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
                 <Github className='w-5 h-5' />
               </a>
-              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
                 <Linkedin className='w-5 h-5' />
               </a>
             </div>
@@ -136,14 +136,14 @@ export default function BooksPage() {
       <main className='pt-32 pb-20 px-6 max-w-7xl mx-auto'>
         {/* Header */}
         <div className='mb-12'>
-          <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-mono mb-6 border border-cyan-500/20'>
+          <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono mb-6 border border-cyan-500/20'>
             <Book className='w-3 h-3' />
             <span>DIGITAL_LIBRARY</span>
           </div>
-          <h1 className='text-5xl md:text-7xl font-bold text-slate-900 dark:text-slate-100 mb-8 tracking-tight'>
+          <h1 className='text-5xl md:text-7xl font-bold text-foreground mb-8 tracking-tight'>
             The <span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-500'>Archives</span>
           </h1>
-          <p className='text-xl text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed mb-8'>
+          <p className='text-xl text-muted-foreground dark:text-muted-foreground max-w-3xl leading-relaxed mb-8'>
             A comprehensive digital repository of {allBooks.length > 0 ? allBooks.length : '...'} books covering quantitative finance, algorithms, history, and philosophy.
           </p>
           
@@ -160,7 +160,7 @@ export default function BooksPage() {
         {loading && (
           <div className="text-center py-20">
             <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-cyan-500 mb-4"></div>
-            <p className="text-slate-500">Loading library index...</p>
+            <p className="text-muted-foreground">Loading library index...</p>
           </div>
         )}
 
@@ -194,17 +194,17 @@ export default function BooksPage() {
                 <button
                   onClick={() => setPage(p => Math.max(1, p - 1))}
                   disabled={page === 1}
-                  className="px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 disabled:opacity-50 hover:border-cyan-500/30 transition-all"
+                  className="px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-900 border border-border text-muted-foreground dark:text-muted-foreground disabled:opacity-50 hover:border-primary/30 transition-all"
                 >
                   Previous
                 </button>
-                <span className="text-sm text-slate-400 dark:text-slate-500 font-mono">
+                <span className="text-sm text-muted-foreground/60 font-mono">
                   Page {page} of {totalPages}
                 </span>
                 <button
                   onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                   disabled={page === totalPages}
-                  className="px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 disabled:opacity-50 hover:border-cyan-500/30 transition-all"
+                  className="px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-900 border border-border text-muted-foreground dark:text-muted-foreground disabled:opacity-50 hover:border-primary/30 transition-all"
                 >
                   Next
                 </button>
@@ -214,7 +214,7 @@ export default function BooksPage() {
             {filteredBooks.length === 0 && (
               <div className='text-center py-32'>
                 <Filter className='w-12 h-12 text-slate-300 dark:text-slate-800 mx-auto mb-4' />
-                <p className='text-slate-400 dark:text-slate-500 text-lg'>No books found matching your criteria.</p>
+                <p className='text-muted-foreground/60 text-lg'>No books found matching your criteria.</p>
               </div>
             )}
           </>
@@ -222,9 +222,9 @@ export default function BooksPage() {
       </main>
 
       {/* Footer */}
-      <footer className='py-12 border-t border-slate-200 dark:border-slate-800 mt-20'>
+      <footer className='py-12 border-t border-border mt-20'>
         <div className='max-w-7xl mx-auto px-6 text-center'>
-          <p className='text-slate-400 dark:text-slate-500 text-sm'>
+          <p className='text-muted-foreground/60 text-sm'>
             © {new Date().getFullYear()} Shreejit Verma. Curated for the curious mind.
           </p>
         </div>

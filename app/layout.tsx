@@ -155,7 +155,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={clsx(inter.variable, jetbrainsMono.variable, 'bg-background text-foreground antialiased selection:bg-cyan-500/30 selection:text-cyan-900 dark:selection:text-cyan-100 font-sans')}>
+      <body className={clsx(inter.variable, jetbrainsMono.variable, 'bg-background text-foreground antialiased selection:bg-primary/30 selection:text-cyan-900 dark:selection:text-cyan-100 font-sans')}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <BackgroundCanvas />
           {children}

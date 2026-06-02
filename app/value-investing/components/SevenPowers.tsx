@@ -9,7 +9,7 @@ const powers = [
     icon: <Repeat className="w-4 h-4" />, 
     description: 'Loss of value if customer switches to alternative.',
     score: 95,
-    color: 'text-cyan-400',
+    color: 'text-primary',
     bg: 'bg-cyan-400/10'
   },
   { 
@@ -56,28 +56,28 @@ const powers = [
 
 export default function SevenPowers() {
   return (
-    <div className='bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6'>
+    <div className='bg-background dark:bg-card/50 border border-border rounded-2xl p-6'>
       <div className='flex items-center justify-between mb-6'>
-        <h3 className='text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2'>
-          <Shield className='w-4 h-4 text-cyan-400' />
+        <h3 className='text-sm font-bold text-foreground flex items-center gap-2'>
+          <Shield className='w-4 h-4 text-primary' />
           7_POWERS_DECOMPOSITION
         </h3>
-        <span className='text-[10px] font-mono text-slate-500'>FRAMEWORK: HAMILTON_HELMER</span>
+        <span className='text-[10px] font-mono text-muted-foreground'>FRAMEWORK: HAMILTON_HELMER</span>
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {powers.map((power, i) => (
-          <div key={i} className='p-4 rounded-xl bg-white dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
+          <div key={i} className='p-4 rounded-xl bg-background/50 border border-border hover:border-primary/30 transition-all'>
             <div className='flex items-center justify-between mb-2'>
               <div className={clsx('p-1.5 rounded-lg border', power.bg, power.color.replace('text-', 'border-').replace('400', '500/20'))}>
                 {power.icon}
               </div>
               <span className={clsx('text-xs font-mono font-bold', power.color)}>{power.score}%</span>
             </div>
-            <h4 className='text-xs font-bold text-slate-900 dark:text-slate-100 mb-1'>{power.name}</h4>
-            <p className='text-[10px] text-slate-500 leading-tight'>{power.description}</p>
+            <h4 className='text-xs font-bold text-foreground mb-1'>{power.name}</h4>
+            <p className='text-[10px] text-muted-foreground leading-tight'>{power.description}</p>
             
-            <div className='mt-3 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden'>
+            <div className='mt-3 h-1 w-full bg-muted dark:bg-muted rounded-full overflow-hidden'>
               <div 
                 className={clsx('h-full rounded-full transition-all duration-1000', power.color.replace('text-', 'bg-'))} 
                 style={{ width: `${power.score}%` }} 

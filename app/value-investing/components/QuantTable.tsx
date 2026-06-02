@@ -23,34 +23,34 @@ const mockStocks = [
 
 export default function QuantTable() {
   return (
-    <div className='bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden'>
-      <div className='p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between'>
-        <h3 className='text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2'>
-          <ShieldCheck className='w-4 h-4 text-cyan-400' />
+    <div className='bg-background dark:bg-card/50 border border-border rounded-2xl overflow-hidden'>
+      <div className='p-6 border-b border-border flex items-center justify-between'>
+        <h3 className='text-sm font-bold text-foreground flex items-center gap-2'>
+          <ShieldCheck className='w-4 h-4 text-primary' />
           SECTOR_BENCHMARK_v2
         </h3>
         <div className='flex gap-2'>
-          <button className='text-[10px] font-mono px-3 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-cyan-400 transition-colors'>EXPORT_CSV</button>
-          <button className='text-[10px] font-mono px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-500 border border-cyan-500/20'>LIVE_MODE</button>
+          <button className='text-[10px] font-mono px-3 py-1 rounded-md bg-muted dark:bg-muted text-muted-foreground hover:text-primary transition-colors'>EXPORT_CSV</button>
+          <button className='text-[10px] font-mono px-3 py-1 rounded-md bg-primary/10 text-cyan-500 border border-cyan-500/20'>LIVE_MODE</button>
         </div>
       </div>
       
       <div className='overflow-x-auto'>
         <table className='w-full text-left border-collapse'>
           <thead>
-            <tr className='bg-slate-50/50 dark:bg-slate-950/50'>
-              <th className='px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider border-b border-slate-200 dark:border-slate-800'>
-                <div className='flex items-center gap-2 cursor-pointer hover:text-cyan-400'>
+            <tr className='bg-slate-50/50 dark:bg-background/50'>
+              <th className='px-6 py-4 text-[10px] font-mono text-muted-foreground uppercase tracking-wider border-b border-border'>
+                <div className='flex items-center gap-2 cursor-pointer hover:text-primary'>
                   Security <ArrowUpDown className='w-3 h-3' />
                 </div>
               </th>
-              <th className='px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider border-b border-slate-200 dark:border-slate-800'>ROE</th>
-              <th className='px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider border-b border-slate-200 dark:border-slate-800'>10y CAGR</th>
-              <th className='px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider border-b border-slate-200 dark:border-slate-800'>D/E</th>
-              <th className='px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider border-b border-slate-200 dark:border-slate-800'>FCF Yield</th>
-              <th className='px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider border-b border-slate-200 dark:border-slate-800'>Moat</th>
-              <th className='px-6 py-4 text-[10px] font-mono text-slate-500 uppercase tracking-wider border-b border-slate-200 dark:border-slate-800'>Signal</th>
-              <th className='px-6 py-4 border-b border-slate-200 dark:border-slate-800'></th>
+              <th className='px-6 py-4 text-[10px] font-mono text-muted-foreground uppercase tracking-wider border-b border-border'>ROE</th>
+              <th className='px-6 py-4 text-[10px] font-mono text-muted-foreground uppercase tracking-wider border-b border-border'>10y CAGR</th>
+              <th className='px-6 py-4 text-[10px] font-mono text-muted-foreground uppercase tracking-wider border-b border-border'>D/E</th>
+              <th className='px-6 py-4 text-[10px] font-mono text-muted-foreground uppercase tracking-wider border-b border-border'>FCF Yield</th>
+              <th className='px-6 py-4 text-[10px] font-mono text-muted-foreground uppercase tracking-wider border-b border-border'>Moat</th>
+              <th className='px-6 py-4 text-[10px] font-mono text-muted-foreground uppercase tracking-wider border-b border-border'>Signal</th>
+              <th className='px-6 py-4 border-b border-border'></th>
             </tr>
           </thead>
           <tbody className='divide-y divide-slate-200 dark:divide-slate-800'>
@@ -58,26 +58,26 @@ export default function QuantTable() {
               <tr key={i} className='hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors group'>
                 <td className='px-6 py-4'>
                   <div className='flex flex-col'>
-                    <span className='text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-cyan-400 transition-colors'>{stock.ticker}</span>
-                    <span className='text-[10px] text-slate-500'>{stock.name}</span>
+                    <span className='text-sm font-bold text-foreground group-hover:text-primary transition-colors'>{stock.ticker}</span>
+                    <span className='text-[10px] text-muted-foreground'>{stock.name}</span>
                   </div>
                 </td>
                 <td className='px-6 py-4 text-xs font-mono font-bold text-emerald-500'>{stock.roe}</td>
-                <td className='px-6 py-4 text-xs font-mono text-slate-600 dark:text-slate-400'>{stock.cagr}</td>
+                <td className='px-6 py-4 text-xs font-mono text-muted-foreground'>{stock.cagr}</td>
                 <td className={clsx(
                   'px-6 py-4 text-xs font-mono font-bold',
-                  parseFloat(stock.de) < 0.5 ? 'text-cyan-500' : 'text-slate-400'
+                  parseFloat(stock.de) < 0.5 ? 'text-cyan-500' : 'text-muted-foreground'
                 )}>{stock.de}</td>
-                <td className='px-6 py-4 text-xs font-mono text-slate-600 dark:text-slate-400'>{stock.fcf}</td>
+                <td className='px-6 py-4 text-xs font-mono text-muted-foreground'>{stock.fcf}</td>
                 <td className='px-6 py-4'>
                   <span className={clsx(
                     'px-2 py-0.5 rounded text-[9px] font-bold uppercase',
-                    stock.moat === 'Wide' ? 'bg-cyan-500/10 text-cyan-500' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'
+                    stock.moat === 'Wide' ? 'bg-primary/10 text-cyan-500' : 'bg-muted dark:bg-muted text-muted-foreground'
                   )}>{stock.moat}</span>
                 </td>
                 <td className='px-6 py-4'>
                   <div className='flex items-center gap-2'>
-                    {stock.signal.includes('Strong') ? <Flame className='w-3 h-3 text-orange-500 animate-pulse' /> : <Zap className='w-3 h-3 text-cyan-400' />}
+                    {stock.signal.includes('Strong') ? <Flame className='w-3 h-3 text-orange-500 animate-pulse' /> : <Zap className='w-3 h-3 text-primary' />}
                     <span className={clsx(
                       'text-xs font-bold',
                       stock.signal.includes('Buy') ? 'text-emerald-500' : 
@@ -87,11 +87,11 @@ export default function QuantTable() {
                 </td>
                 <td className='px-6 py-4 text-right'>
                   <div className='flex items-center justify-end gap-2'>
-                    <button className='p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors opacity-0 group-hover:opacity-100'>
-                      <ExternalLink className='w-3 h-3 text-slate-400' />
+                    <button className='p-1.5 hover:bg-muted dark:hover:bg-muted rounded-md transition-colors opacity-0 group-hover:opacity-100'>
+                      <ExternalLink className='w-3 h-3 text-muted-foreground' />
                     </button>
-                    <button className='p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors'>
-                      <MoreHorizontal className='w-3 h-3 text-slate-400' />
+                    <button className='p-1.5 hover:bg-muted dark:hover:bg-muted rounded-md transition-colors'>
+                      <MoreHorizontal className='w-3 h-3 text-muted-foreground' />
                     </button>
                   </div>
                 </td>
@@ -101,8 +101,8 @@ export default function QuantTable() {
         </table>
       </div>
       
-      <div className='p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/50 flex items-center justify-center'>
-        <button className='text-xs font-mono text-slate-400 hover:text-cyan-400 transition-colors uppercase tracking-widest'>Load More Securities</button>
+      <div className='p-4 border-t border-border bg-slate-50/50 dark:bg-background/50 flex items-center justify-center'>
+        <button className='text-xs font-mono text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest'>Load More Securities</button>
       </div>
     </div>
   );

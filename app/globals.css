@@ -3,16 +3,31 @@
 :root {
   --background: #fafafa;
   --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --card-border: #e4e4e7;
   --muted: #f4f4f5;
-  --muted-foreground: #71717a;
+  --muted-foreground: #52525b;
   --accent: #0891b2;
   --accent-foreground: #fafafa;
   --border: #e4e4e7;
+  --primary: #0891b2;
+  --secondary: #f1f5f9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -20,11 +35,16 @@
 .dark {
   --background: #000000;
   --foreground: #fafafa;
+  --card: #0a0a0a;
+  --card-foreground: #fafafa;
+  --card-border: #27272a;
   --muted: #18181b;
   --muted-foreground: #a1a1aa;
   --accent: #22d3ee;
   --accent-foreground: #000000;
   --border: #27272a;
+  --primary: #22d3ee;
+  --secondary: #1e293b;
 }
 
 body {
@@ -37,6 +57,11 @@ body {
 
 /* Custom selection color for better readability */
 ::selection {
-  background-color: rgba(8, 145, 178, 0.2);
+  background-color: rgba(34, 211, 238, 0.3);
   color: inherit;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
 }

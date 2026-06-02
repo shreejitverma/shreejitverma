@@ -33,36 +33,36 @@ const antiModels = [
     icon: <Ghost className="w-4 h-4" />, 
     description: 'Cultural decay and loss of founding vision.',
     riskLevel: 'NEGLIGIBLE',
-    color: 'text-slate-400',
+    color: 'text-muted-foreground',
     bg: 'bg-slate-400/10'
   },
 ];
 
 export default function RiskAntiModels() {
   return (
-    <div className='bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-6'>
+    <div className='bg-background dark:bg-card/50 border border-border rounded-2xl p-6'>
       <div className='flex items-center justify-between mb-6'>
-        <h3 className='text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2'>
+        <h3 className='text-sm font-bold text-foreground flex items-center gap-2'>
           <AlertTriangle className='w-4 h-4 text-rose-500' />
           RISK_ANTI_MODELS
         </h3>
-        <span className='text-[10px] font-mono text-slate-500'>STATUS: MONITORING</span>
+        <span className='text-[10px] font-mono text-muted-foreground'>STATUS: MONITORING</span>
       </div>
 
       <div className='space-y-3'>
         {antiModels.map((model, i) => (
-          <div key={i} className='flex items-center gap-4 p-3 rounded-xl bg-white dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 hover:border-rose-500/30 transition-all group'>
+          <div key={i} className='flex items-center gap-4 p-3 rounded-xl bg-background/50 border border-border hover:border-rose-500/30 transition-all group'>
             <div className={clsx('p-2 rounded-lg border shrink-0', model.bg, model.color.replace('text-', 'border-').replace('500', '500/20'))}>
               {model.icon}
             </div>
             <div className='flex-1 min-w-0'>
               <div className='flex items-center justify-between mb-1'>
-                <h4 className='text-xs font-bold text-slate-900 dark:text-slate-100 truncate'>{model.name}</h4>
+                <h4 className='text-xs font-bold text-foreground truncate'>{model.name}</h4>
                 <span className={clsx('text-[8px] font-mono font-bold px-1.5 py-0.5 rounded', model.bg, model.color)}>
                   {model.riskLevel}
                 </span>
               </div>
-              <p className='text-[10px] text-slate-500 leading-tight line-clamp-1 group-hover:line-clamp-none transition-all'>{model.description}</p>
+              <p className='text-[10px] text-muted-foreground leading-tight line-clamp-1 group-hover:line-clamp-none transition-all'>{model.description}</p>
             </div>
           </div>
         ))}
