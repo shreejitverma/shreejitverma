@@ -184,8 +184,8 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
 ## 📊 GitHub Impact
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.main.svg" alt="GitHub Overview" width="100%" />
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.advanced.svg" alt="Advanced Metrics" width="100%" />
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/main/public/metrics/metrics.main.svg" alt="GitHub Overview" width="100%" />
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/main/public/metrics/metrics.advanced.svg" alt="Advanced Metrics" width="100%" />
   <img src="https://visitor-badge.laobi.icu/badge?page_id=shreejitverma" />
 </div>
 

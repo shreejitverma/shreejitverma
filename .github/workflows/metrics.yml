@@ -77,16 +77,12 @@ jobs:
           plugin_people_types: followers, following
           output_action: none
 
-      - name: Push to metrics branch
+      - name: Commit and Push to main
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          mkdir -p /tmp/metrics_output
-          cp *.svg /tmp/metrics_output/
-          git fetch origin metrics
-          git checkout metrics
-          git pull origin metrics
-          cp /tmp/metrics_output/*.svg .
-          git add *.svg
-          git commit -m "chore: update all metrics [skip ci]" || echo "No changes to commit"
-          git push origin metrics
+          mkdir -p public/metrics
+          cp *.svg public/metrics/
+          git add public/metrics/*.svg
+          git commit -m "chore: update profile metrics [skip ci]" || echo "No changes to commit"
+          git push origin main

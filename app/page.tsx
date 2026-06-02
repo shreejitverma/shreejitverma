@@ -546,7 +546,8 @@ export default function Home() {
             <div className='grid lg:grid-cols-2 gap-6'>
               <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
-                  src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.main.svg" 
+                  src="/metrics/metrics.main.svg"
+ 
                   alt="GitHub Overview" 
                   className='max-w-full h-auto rounded-lg'
                   loading="lazy"
@@ -554,7 +555,8 @@ export default function Home() {
               </div>
               <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
-                  src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.habits.svg" 
+                  src="/metrics/metrics.habits.svg"
+ 
                   alt="Coding Habits" 
                   className='max-w-full h-auto rounded-lg'
                   loading="lazy"
@@ -564,7 +566,8 @@ export default function Home() {
             <div className='grid lg:grid-cols-2 gap-6'>
               <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
-                  src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.activity.svg" 
+                  src="/metrics/metrics.activity.svg"
+ 
                   alt="Commit Activity" 
                   className='max-w-full h-auto rounded-lg'
                   loading="lazy"
@@ -572,7 +575,8 @@ export default function Home() {
               </div>
               <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
-                  src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.advanced.svg" 
+                  src="/metrics/metrics.advanced.svg"
+ 
                   alt="Advanced Metrics" 
                   className='max-w-full h-auto rounded-lg'
                   loading="lazy"
@@ -582,7 +586,8 @@ export default function Home() {
             <div className='grid lg:grid-cols-2 gap-6'>
               <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
-                  src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.streak.svg" 
+                  src="/metrics/metrics.streak.svg"
+ 
                   alt="GitHub Streak" 
                   className='max-w-full h-auto rounded-lg'
                   loading="lazy"
