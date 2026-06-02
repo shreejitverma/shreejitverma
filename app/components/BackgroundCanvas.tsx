@@ -11,34 +11,50 @@ declare global {
 }
 
 export default function BackgroundCanvas() {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    // Initialize canvas if script is already loaded (for navigation between pages)
-    if (typeof window !== 'undefined' && window.initCanvas) {
-      window.initCanvas();
-    }
   }, []);
 
-  if (!mounted || theme === 'light') return null;
+  // Use resolvedTheme to handle 'system' preference correctly
+  const currentTheme = resolvedTheme || theme;
+
+  useEffect(() => {
+    if (mounted && window.initCanvas) {
+      window.initCanvas();
+    }
+  }, [mounted, currentTheme]);
+
+  if (!mounted) return null;
 
   return (
     <>
-      <Script src="/js/TweenLite.min.js" strategy="beforeInteractive" />
-      <Script src="/js/EasePack.min.js" strategy="beforeInteractive" />
+      <Script 
+        src="/js/TweenLite.min.js" 
+        strategy="lazyOnload" 
+      />
+      <Script 
+        src="/js/EasePack.min.js" 
+        strategy="lazyOnload" 
+      />
       <Script 
         src="/js/demo.js" 
-        strategy="afterInteractive" 
+        strategy="lazyOnload" 
         onLoad={() => {
-          if (typeof window !== 'undefined' && window.initCanvas) {
+          if (window.initCanvas) {
             window.initCanvas();
           }
         }}
       />
-      <div id="large-header" className="fixed inset-0 z-0 pointer-events-none">
-         <canvas id="demo-canvas" className="w-full h-full"></canvas>
+      <div 
+        id="large-header" 
+        className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-1000 ${
+          currentTheme === 'dark' ? 'bg-[#000000]' : 'bg-white'
+        }`}
+      >
+         <canvas id="demo-canvas" className="w-full h-full opacity-60"></canvas>
       </div>
     </>
   );
