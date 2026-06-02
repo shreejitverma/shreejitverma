@@ -351,23 +351,26 @@ export default function Home() {
           <div className='grid md:grid-cols-2 gap-6'>
             <Link 
               href='/value-investing'
-              className='group p-8 rounded-2xl bg-slate-900 dark:bg-slate-900 border-2 border-cyan-500/30 hover:border-cyan-500 transition-all hover:shadow-2xl hover:shadow-cyan-500/20 block relative overflow-hidden'
+              className='group p-8 rounded-2xl bg-slate-100/40 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10 block relative overflow-hidden'
             >
-              <div className='absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity'>
-                <Cpu className='w-12 h-12 text-cyan-400' />
+              <div className='absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity'>
+                <Cpu className='w-12 h-12 text-slate-900 dark:text-slate-100' />
               </div>
               <div className='flex justify-between items-start mb-3'>
-                <h3 className='text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors'>Value Intelligence Platform</h3>
-                <ArrowUpRight className='w-6 h-6 text-cyan-400' />
+                <h3 className='text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors'>Value Intelligence Platform</h3>
+                <div className='flex items-center gap-3'>
+                  <span className='text-xs font-mono text-cyan-600 dark:text-cyan-400 whitespace-nowrap'>Active</span>
+                  <ArrowUpRight className='w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors opacity-0 group-hover:opacity-100 shrink-0' />
+                </div>
               </div>
-              <div className='text-sm text-cyan-400/80 font-mono mb-3 uppercase tracking-widest'>Autonomous Research Engine</div>
-              <p className='text-sm text-slate-300 mb-6 leading-relaxed'>
+              <div className='text-sm text-slate-700 dark:text-slate-300 font-medium mb-3'>Autonomous Research Engine</div>
+              <p className='text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed'>
                 A sophisticated quantitative platform aggregating factor-based strategies from Buffett, Dalio, and Lynch. Real-time alpha discovery and risk decomposition.
               </p>
-              <div className='flex gap-2'>
-                <span className='px-2 py-1 text-[10px] font-mono rounded bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'>QUANT</span>
-                <span className='px-2 py-1 text-[10px] font-mono rounded bg-blue-500/20 text-blue-400 border border-blue-500/30'>ALPHA</span>
-                <span className='px-2 py-1 text-[10px] font-mono rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'>HFT_READY</span>
+              <div className='flex flex-wrap gap-2'>
+                <span className='px-3 py-1 text-xs font-mono rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800'>QUANT</span>
+                <span className='px-3 py-1 text-xs font-mono rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800'>ALPHA</span>
+                <span className='px-3 py-1 text-xs font-mono rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800'>HFT_READY</span>
               </div>
             </Link>
             {[
