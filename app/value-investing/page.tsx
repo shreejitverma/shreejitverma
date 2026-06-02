@@ -5,24 +5,15 @@ import Link from 'next/link';
 import { 
   TrendingUp, 
   Shield, 
-  Activity, 
   BarChart3, 
   Layers, 
   Zap, 
   Terminal, 
   Github, 
   Linkedin,
-  ArrowUpRight,
-  Search,
-  Cpu,
-  Globe,
-  Database,
-  LineChart,
-  PieChart
+  Cpu
 } from 'lucide-react';
-import { clsx } from 'clsx';
 import MetricCard from './components/MetricCard';
-import PortfolioOverview from './components/PortfolioOverview';
 import QuantTable from './components/QuantTable';
 
 import SevenPowers from './components/SevenPowers';
@@ -80,7 +71,7 @@ export default function ValueInvestingPage() {
               Quant <span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-500'>Value</span> Research
             </h1>
             <p className='text-lg text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed'>
-              Analyzing the "Architects" of wealth through the lens of modern quantitative finance. 
+              Analyzing the &quot;Architects&quot; of wealth through the lens of modern quantitative finance. 
               Moat decomposition using the 7 Powers framework and deep factor analysis.
             </p>
           </div>
@@ -191,7 +182,7 @@ export default function ValueInvestingPage() {
         <div className='max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6'>
           <div className='flex items-center gap-2 font-mono text-sm'>
             <span className='text-cyan-500 font-bold'>SV</span>
-            <span className='text-slate-500'>// QUANT_RESEARCH_DEPT</span>
+            <span className='text-slate-500'>{"//"} QUANT_RESEARCH_DEPT</span>
           </div>
           <p className='text-slate-400 dark:text-slate-500 text-xs'>
             © {new Date().getFullYear()} Shreejit Verma. Advanced Financial Engineering.

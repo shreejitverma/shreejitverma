@@ -1,6 +1,6 @@
 'use client';
 
-import { Activity, ArrowUpRight, Maximize2 } from 'lucide-react';
+import { Activity, Maximize2 } from 'lucide-react';
 
 export default function PortfolioOverview() {
   return (

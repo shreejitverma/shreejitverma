@@ -4,6 +4,12 @@ import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { useTheme } from 'next-themes';
 
+declare global {
+  interface Window {
+    initCanvas?: () => void;
+  }
+}
+
 export default function BackgroundCanvas() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -11,8 +17,8 @@ export default function BackgroundCanvas() {
   useEffect(() => {
     setMounted(true);
     // Initialize canvas if script is already loaded (for navigation between pages)
-    if (typeof window !== 'undefined' && (window as any).initCanvas) {
-      (window as any).initCanvas();
+    if (typeof window !== 'undefined' && window.initCanvas) {
+      window.initCanvas();
     }
   }, []);
 
@@ -26,8 +32,8 @@ export default function BackgroundCanvas() {
         src="/js/demo.js" 
         strategy="afterInteractive" 
         onLoad={() => {
-          if (typeof window !== 'undefined' && (window as any).initCanvas) {
-            (window as any).initCanvas();
+          if (typeof window !== 'undefined' && window.initCanvas) {
+            window.initCanvas();
           }
         }}
       />

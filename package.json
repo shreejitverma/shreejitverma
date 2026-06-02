@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
@@ -21,6 +21,8 @@
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/node": "^20.19.35",
     "@types/react": "^19.2.14",

@@ -2,14 +2,14 @@
 
 import { memo } from 'react';
 import Image from 'next/image';
-import { Download, ExternalLink, FileText, Hash, TrendingUp, Users } from 'lucide-react';
+import { Download, ExternalLink, FileText, TrendingUp, Users } from 'lucide-react';
 
 interface BookCardProps {
   title: string;
   author: string;
   category: string;
   year: string;
-  format: string;
+  format?: string;
   review: string;
   downloadLink: string;
   link?: string;
@@ -22,7 +22,7 @@ interface BookCardProps {
 
 const PLACEHOLDER_COVER = 'https://placehold.co/400x600/1e293b/cbd5e1?text=Book+Cover';
 
-const BookCard = memo(({ title, author, category, year, format, review, downloadLink, link, isbn, publisher, coverImage, importance, salesCount }: BookCardProps) => {
+const BookCard = memo(({ title, author, category, year, review, downloadLink, link, coverImage, importance, salesCount }: BookCardProps) => {
   return (
     <div className='group relative bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800/50 rounded-2xl p-5 hover:border-cyan-500/40 transition-all duration-300 flex flex-col hover:shadow-xl hover:shadow-cyan-500/5 backdrop-blur-sm'>
       <div className='flex gap-4 mb-4'>
@@ -76,7 +76,7 @@ const BookCard = memo(({ title, author, category, year, format, review, download
       {review && !review.startsWith("A valuable addition") && (
         <div className="mb-4">
           <p className="text-xs text-slate-600 dark:text-slate-400 italic line-clamp-3 bg-white dark:bg-slate-950/30 p-2 rounded border border-slate-200 dark:border-slate-800/50">
-            "{review}"
+            &quot;{review}&quot;
           </p>
         </div>
       )}
