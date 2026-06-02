@@ -6,6 +6,7 @@ import Link from 'next/link';
 import ProfileImage from './components/ProfileImage';
 import Section from './components/Section';
 import { ThemeToggle } from './components/ThemeToggle';
+import EngineeringPhilosophy from './components/EngineeringPhilosophy';
 import { 
   Github, Linkedin, Mail, Terminal, BookOpen, Briefcase, Code2, 
   GraduationCap, Award, Cpu, Menu, X, ArrowUpRight 
@@ -598,14 +599,8 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
-                <img 
-                  src="/metrics/metrics.habits.svg"
- 
-                  alt="Coding Habits" 
-                  className='max-w-full h-auto rounded-lg'
-                  loading="lazy"
-                />
+              <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
+                <EngineeringPhilosophy />
               </div>
             </div>
             <div className='grid lg:grid-cols-2 gap-6'>
