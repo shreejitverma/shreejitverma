@@ -234,8 +234,10 @@ export default function Home() {
                 </div>
                 <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>C++ Quantitative Developer (Automated Market Making)</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-600 dark:text-slate-400 space-y-2 marker:text-slate-400 dark:marker:text-slate-600'>
-                  <li>Developing high-performance C++ trading systems with FPGA for Automated Market Making strategies at BNP Paribas CIB.</li>
-                  <li>Collaborating with front-office to optimize latency and enhance execution performance in a hybrid on-site trading environment.</li>
+                  <li>Developing high-performance C++ trading systems with FPGA for Automated Market Making strategies.</li>
+                  <li>Collaborating with front-office to optimize latency and enhance execution performance.</li>
+                  <li>Leading development for the Prime Credit Market platform, supporting ~$500 million in daily market-making.</li>
+                  <li>Integrating agentic AI frameworks and LLM assistants with automated testing protocols.</li>
                 </ul>
               </div>
             </div>
@@ -250,11 +252,11 @@ export default function Home() {
                   <h3 className='font-bold text-slate-900 dark:text-slate-100'><a href="https://loginextsolutions.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">LogiNext Solutions Inc.</a></h3>
                   <span className='text-xs font-mono text-cyan-600 dark:text-cyan-400'>Mar 2023 – Jun 2025</span>
                 </div>
-                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Senior Software Engineer Analytics</div>
+                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Senior Software Engineer in Analytics Department</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-600 dark:text-slate-400 space-y-2 marker:text-slate-400 dark:marker:text-slate-600'>
-                  <li>Design and implementation of **Map Construction and Routing Algorithms** to solve complex NP-hard problems.</li>
-                  <li>Built a **Large Language Model (LLM)** for internal development and bug query resolution, reducing issue resolution time by 80%.</li>
-                  <li>Led a team of 12 to develop a high-performance **geospatial mapping application** using PostGIS, MongoDB, and AWS.</li>
+                  <li>Architected Map Construction and Routing Algorithms (solving 3 Nested NP-Hard Problems) using Constraint Programming.</li>
+                  <li>Led a team of 12 as Head of the Data Analytics department.</li>
+                  <li>Built an internal Large Language Model (LLM) that improved bug resolution by 80%.</li>
                 </ul>
               </div>
             </div>
@@ -269,17 +271,16 @@ export default function Home() {
                   <h3 className='font-bold text-slate-900 dark:text-slate-100'><a href="https://versorinvest.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Versor Investments</a></h3>
                   <span className='text-xs font-mono text-slate-400 dark:text-slate-500'>Feb 2022 – Oct 2022</span>
                 </div>
-                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Quantitative Developer</div>
+                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Quantitative Developer, Merger Arbitrage and Stock Selection Portfolio</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-600 dark:text-slate-400 space-y-2 marker:text-slate-400 dark:marker:text-slate-600'>
-                  <li>Developed ML-driven **Order and Execution Management Systems**, improving trade execution efficiency by 20%.</li>
-                  <li>Backtested and deployed **systematic merger arbitrage strategies**, increasing alpha capture by 15%.</li>
-                  <li>Engineered **risk-adjusted return models** for optimizing portfolio risk exposure and factor analysis.</li>
-                  <li>Managed a combined **AUM of $8.5 Billion** across merger arbitrage and stock selection portfolios.</li>
+                  <li>Contributed to the management of $8.5 Billion AUM.</li>
+                  <li>Developed systematic strategies for merger arbitrage, yielding a 15% improvement in alpha capture.</li>
+                  <li>Deployed scalable ML pipelines for Order & Execution Management Systems, increasing efficiency by 29%.</li>
                 </ul>
               </div>
             </div>
 
-            {/* BoA 1 */}
+            {/* Bank of America */}
             <div className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
               <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
                 <div className='w-3 h-3 bg-slate-400 dark:bg-slate-600 rounded-full'></div>
@@ -287,31 +288,13 @@ export default function Home() {
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-slate-900 dark:text-slate-100'><a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Bank of America</a></h3>
-                  <span className='text-xs font-mono text-slate-400 dark:text-slate-500'>Jan 2020 – Jul 2021</span>
+                  <span className='text-xs font-mono text-slate-400 dark:text-slate-500'>Jun 2018 – Jul 2021</span>
                 </div>
-                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Senior Software Engineer (FICC)</div>
+                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Senior Software Engineer (FICC) / Senior Tech Associate</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-600 dark:text-slate-400 space-y-2 marker:text-slate-400 dark:marker:text-slate-600'>
-                  <li>Engineered Python-based trading services to enhance the storage, processing, matching, and execution of trades on QUARTZ.</li>
-                  <li>Integrated C++ pipelines to store trades in the object-oriented database SANDRA, reducing trade processing latency by <strong className="text-slate-800 dark:text-slate-300">50%</strong>.</li>
-                  <li>Led migration of 1 million+ lines of code to Python 3.8, enhancing system scalability and execution efficiency by <strong className="text-slate-800 dark:text-slate-300">40%</strong>.</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* BoA 2 */}
-            <div className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
-              <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
-                <div className='w-3 h-3 bg-slate-400 dark:bg-slate-600 rounded-full'></div>
-              </div>
-              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
-                <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
-                  <h3 className='font-bold text-slate-900 dark:text-slate-100'>Bank of America</h3>
-                  <span className='text-xs font-mono text-slate-400 dark:text-slate-500'>Jun 2018 – Dec 2019</span>
-                </div>
-                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Senior Tech Associate (Data Analysis and Insight Technology)</div>
-                <ul className='list-disc list-outside ml-4 text-sm text-slate-600 dark:text-slate-400 space-y-2 marker:text-slate-400 dark:marker:text-slate-600'>
-                  <li>Architected and developed an ML/AI platform to deploy predictive models, increasing decision-making accuracy by <strong className="text-slate-800 dark:text-slate-300">67%</strong>.</li>
-                  <li>Designed machine learning models for data validation rules prediction, reducing close to <strong className="text-slate-800 dark:text-slate-300">36 Full-Time Equivalents (FTEs)</strong>.</li>
+                  <li>Engineered Python-based trading services on QUARTZ and integrated C++ pipelines with SANDRA (OODB), reducing latency by 50%.</li>
+                  <li>Led the migration of 1M+ lines of code to Python 3.8, increasing efficiency by 40%.</li>
+                  <li>Architected an ML/AI platform that increased decision-making accuracy by 67% and reduced ~36 FTEs.</li>
                 </ul>
               </div>
             </div>
