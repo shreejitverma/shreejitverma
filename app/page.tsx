@@ -180,8 +180,8 @@ export default function Home() {
                 school: "Stevens Institute of Technology",
                 degree: "Master of Science in Financial Engineering",
                 date: "Aug 2024 – May 2026",
-                gpa: "GPA: 3.968/4.0",
-                details: "Coursework: Market Microstructure, Quantitative Hedge Fund Strategies, Algorithmic Trading Strategies, Multivariate Statistics."
+                gpa: "GPA: 3.974/4.0",
+                details: "Coursework: Market Microstructure, Portfolio Theory and Applications, Algorithmic Trading Strategies, Multivariate Statistics."
               },
               {
                 school: "WorldQuant University",
@@ -420,9 +420,34 @@ export default function Home() {
                 title: 'Statistical Arbitrage Reversal and Momentum Strategies',
                 desc: 'Designed and backtested a 120-day volume-momentum-based crypto portfolio strategy, yielding a 155.76% annualized return and 1.94 Sharpe Ratio, significantly outperforming the Bitcoin benchmark.',
                 tech: ['Quant Research', 'Backtesting', 'Alpha Gen'],
-                link: 'https://github.com/shreejitverma/Statistical-Arbitrage-Reversal-and-Momentum-Strategies'
-              }
-            ].map((project, i) => (
+                link: "https://github.com/shreejitverma/Statistical-Arbitrage-Reversal-and-Momentum-Strategies"
+                },
+                {
+                title: 'Financial Modelling using Stochastic Calculus',
+                desc: 'Modeled asset prices & derivative strategies using Brownian Motion, GBM, Ito’s Lemma, Martingales, Girsanov’s Theorem, SDEs, Fokker–Planck and Kolmogorov equations for volatility and interest rates.',
+                tech: ['Stochastic Calculus', 'Derivative Pricing', 'Python'],
+                link: '#'
+                },
+                {
+                title: 'Environmental Social Governance (ESG) Merger Arbitrage Strategy',
+                desc: 'Developed the ESG Strategy, which was subsequently converted into a portfolio and embedded across all existing portfolios. Caters to the arbitrage opportunity from ESG scores on pre- and post-merger statistics.',
+                tech: ['ESG', 'Arbitrage', 'Portfolio Strategy'],
+                link: '#'
+                },
+                {
+                title: 'Blockchain In Retail',
+                desc: 'Developed a decentralized e-commerce platform to secure and streamline retail transactions with smart contracts, currency conversion, custom hashing, and matching algorithms.',
+                tech: ['Blockchain', 'Smart Contracts', 'Solidity'],
+                link: '#'
+                },
+                {
+                title: 'QS Rank Predictor',
+                desc: 'Constructed an ensemble machine learning model consisting of multiple Deep neural networks to predict QS World Ranking and provided suggestions on areas to improve.',
+                tech: ['Deep Learning', 'Neural Networks', 'Predictive Modeling'],
+                link: '#'
+                }
+                ].map((project, i) => (
+
               <a 
                 key={i} 
                 href={project.link}
@@ -455,8 +480,8 @@ export default function Home() {
                 <Award className='w-5 h-5 text-yellow-600 dark:text-yellow-500' /> Awards
               </h3>
               <ul className='space-y-3 text-sm text-slate-600 dark:text-slate-400'>
-                <li><strong className="text-slate-900 dark:text-slate-200">Global Recognition Gold Award</strong> (Bank of America) - Led enterprise-wide AI/ML campaign identifying 64 high-impact use cases.</li>
-                <li><strong className="text-slate-900 dark:text-slate-200">Global Recognition Silver Award</strong> (Bank of America, 2x) - For Total Return Swap Bonds contributions and AI/ML framework.</li>
+                <li><strong className="text-slate-900 dark:text-slate-200">Global Recognition Gold Award</strong> (Bank of America) - Led enterprise-wide AI/ML campaign identifying 64 high-impact use cases; organized 4 large-scale events for 2500+ employees.</li>
+                <li><strong className="text-slate-900 dark:text-slate-200">Global Recognition Silver Award</strong> (Bank of America, 2x) - For Total Return Swap Bonds contributions and in-house AI/ML framework.</li>
                 <li><strong className="text-slate-900 dark:text-slate-200">1st Place</strong> - Vanguard ETF Trading Challenge (Personal Portfolio), 6th Place for the team portfolio.</li>
                 <li><strong className="text-slate-900 dark:text-slate-200">State Rank Holder</strong> - International Science Olympiad & International Math Olympiad.</li>
                 <li><strong className="text-slate-900 dark:text-slate-200">President</strong> - Stevens Graduate Financial Association.</li>
@@ -464,36 +489,56 @@ export default function Home() {
             </div>
             <div className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800'>
               <h3 className='text-lg font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2'>
-                <BookOpen className='w-5 h-5 text-cyan-600 dark:text-cyan-500' /> Certifications
+                <Cpu className='w-5 h-5 text-cyan-600 dark:text-cyan-500' /> Interests & Languages
               </h3>
-              <div className='grid grid-cols-1 gap-4 text-sm text-slate-600 dark:text-slate-400'>
+              <div className='space-y-4 text-sm'>
                 <div>
-                  <h4 className='text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2'>Finance</h4>
-                  <ul className='space-y-1'>
-                    <li><a href="http://basno.com/l2c3uqav" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">CFA Level 1</a></li>
-                    <li><a href="https://portal.bloombergforeducation.com/certificates/8Nm9y3yx5b9yaWztgxSmewLD" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Bloomberg Market Certification (BMC)</a></li>
-                    <li><a href="https://coursera.org/share/70b94743c090c143954cdcbe01ebf521" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Financial Engineering & Risk Mgmt Part I & II (Columbia)</a></li>
-                    <li><a href="http://basno.com/cfbvwwwf" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Investment Foundations Program (CFA Institute)</a></li>
-                    <li><a href="https://www.udemy.com/course/the-complete-financial-analyst-training-and-investing-course/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">The Complete Financial Analyst Training & Investing Course</a></li>
-                    <li><a href="https://coursera.org/share/7a85fee31445a626d1212f7c2f55eeab" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">ML for Trading Specialization (Google Cloud/NYIF)</a></li>
-                    <li><a href="https://www.coursera.org/specializations/investment-management" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Investment Management Specialization (Geneva/UBS)</a></li>
-                    <li><a href="https://www.coursera.org/specializations/trading-strategy#courses" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Trading Strategies in Emerging Markets (ISB)</a></li>
-                    <li><a href="https://coursera.org/share/abe2916c68432d5d156494c2f1f59b6d" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Finance & Quant Modeling for Analysts (Wharton)</a></li>
-                    <li><a href="https://coursera.org/share/ad6c6e3574db71e2e38777b74b6af97f" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Corporate Finance and Valuation (NYU Stern/Damodaran)</a></li>
-                  </ul>
+                  <h4 className='text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2'>Interests</h4>
+                  <p className='text-slate-600 dark:text-slate-400'>Chess, Poker, F1, Martial Arts, Cricket, Boxing, Badminton, Reading, Cooking, Dancing, Psychology, History, Philosophy</p>
                 </div>
                 <div>
-                  <h4 className='text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2'>Computer Science</h4>
-                  <ul className='space-y-1'>
-                    <li><a href="https://coursera.org/share/62c6f8a2d4a998dc4856249a1a937e17" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Deep Learning Specialization (Andrew Ng)</a></li>
-                    <li><a href="https://coursera.org/share/a24e1310f62486c32f6a2393fa1240dc" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Applied Data Science with Python (Michigan)</a></li>
-                    <li><a href="https://coursera.org/share/3ca9e040262f60d9c367379013a1e7c1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Data Science Foundations using R (Johns Hopkins)</a></li>
-                    <li><a href="https://www.coursera.org/specializations/data-science-statistics-machine-learning" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Data Science Statistics and ML (Johns Hopkins)</a></li>
-                    <li><a href="https://coursera.org/share/e3c471b726d96029d683efcfec957692" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Big Data Specialization (UC San Diego)</a></li>
-                    <li><a href="https://coursera.org/share/98a957a6518b5ca605f44f365df05151" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Data Structures and Algorithms Specialization</a></li>
-                    <li><a href="https://www.coursera.org/learn/algorithms-part1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Algorithms, Part I & II (Princeton)</a></li>
-                  </ul>
+                  <h4 className='text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2'>Languages</h4>
+                  <p className='text-slate-600 dark:text-slate-400'>
+                    <span className='font-medium'>Fluent:</span> English, Hindi<br />
+                    <span className='font-medium'>Intermediate:</span> French, Sanskrit, Spanish, Russian<br />
+                    <span className='font-medium'>Beginner:</span> Chinese, Italian, Tamil, Punjabi
+                  </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* Certifications Section */}
+        <Section id='certifications' title='Certifications' icon={<BookOpen className='w-6 h-6' />}>
+          <div className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800'>
+            <div className='grid md:grid-cols-2 gap-8 text-sm text-slate-600 dark:text-slate-400'>
+              <div>
+                <h4 className='text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2'>Finance</h4>
+                <ul className='space-y-1'>
+                  <li><a href="http://basno.com/l2c3uqav" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">CFA Level 1</a></li>
+                  <li><a href="https://portal.bloombergforeducation.com/certificates/8Nm9y3yx5b9yaWztgxSmewLD" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Bloomberg Market Certification (BMC)</a></li>
+                  <li><a href="https://coursera.org/share/70b94743c090c143954cdcbe01ebf521" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Financial Engineering & Risk Mgmt Part I & II (Columbia)</a></li>
+                  <li><a href="http://basno.com/cfbvwwwf" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Investment Foundations Program (CFA Institute)</a></li>
+                  <li><a href="https://www.udemy.com/course/the-complete-financial-analyst-training-and-investing-course/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">The Complete Financial Analyst Training & Investing Course</a></li>
+                  <li><a href="https://coursera.org/share/7a85fee31445a626d1212f7c2f55eeab" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">ML for Trading Specialization (Google Cloud/NYIF)</a></li>
+                  <li><a href="https://www.coursera.org/specializations/investment-management" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Investment Management Specialization (Geneva/UBS)</a></li>
+                  <li><a href="https://www.coursera.org/specializations/trading-strategy#courses" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Trading Strategies in Emerging Markets (ISB)</a></li>
+                  <li><a href="https://coursera.org/share/abe2916c68432d5d156494c2f1f59b6d" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Finance & Quant Modeling for Analysts (Wharton)</a></li>
+                  <li><a href="https://coursera.org/share/ad6c6e3574db71e2e38777b74b6af97f" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Corporate Finance and Valuation (NYU Stern/Damodaran)</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className='text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2'>Computer Science</h4>
+                <ul className='space-y-1'>
+                  <li><a href="https://coursera.org/share/62c6f8a2d4a998dc4856249a1a937e17" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Deep Learning Specialization (Andrew Ng)</a></li>
+                  <li><a href="https://coursera.org/share/a24e1310f62486c32f6a2393fa1240dc" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Applied Data Science with Python (Michigan)</a></li>
+                  <li><a href="https://coursera.org/share/3ca9e040262f60d9c367379013a1e7c1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Data Science Foundations using R (Johns Hopkins)</a></li>
+                  <li><a href="https://www.coursera.org/specializations/data-science-statistics-machine-learning" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Data Science Statistics and ML (Johns Hopkins)</a></li>
+                  <li><a href="https://coursera.org/share/e3c471b726d96029d683efcfec957692" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Big Data Specialization (UC San Diego)</a></li>
+                  <li><a href="https://coursera.org/share/98a957a6518b5ca605f44f365df05151" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Data Structures and Algorithms Specialization</a></li>
+                  <li><a href="https://www.coursera.org/learn/algorithms-part1" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400">Algorithms, Part I & II (Princeton)</a></li>
+                </ul>
               </div>
             </div>
           </div>
