@@ -117,10 +117,10 @@ export default function Home() {
               Reading List
             </Link>
             <div className='flex gap-6 mt-2 pt-4 border-t border-slate-200 dark:border-slate-800'>
-              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400'>
                 <Github className='w-6 h-6' />
               </a>
-              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400'>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400'>
                 <Linkedin className='w-6 h-6' />
               </a>
             </div>
@@ -143,7 +143,7 @@ export default function Home() {
                   Developer & Researcher
                 </span>
               </h1>
-              <p className='text-xl text-slate-500 dark:text-slate-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0'>
+              <p className='text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0'>
                 Engineering ultra-low latency trading systems and alpha-generating models. 
                 Expertise in **FPGA/DPDK** infrastructure, **deterministic execution**, and statistical arbitrage strategies for high-frequency environments.
               </p>
@@ -206,14 +206,14 @@ export default function Home() {
                 details: "Coursework: Data Structures and Algorithms, Computer Networks, Reinforcement Learning, Natural Language Processing (NLP)."
               }
             ].map((edu, i) => (
-              <div key={i} className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
+              <div key={i} className='p-6 rounded-2xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex justify-between items-start mb-2'>
                   <h3 className='font-bold text-slate-900 dark:text-slate-100'>{edu.school}</h3>
                   <span className='text-xs font-mono text-cyan-600 dark:text-cyan-400 whitespace-nowrap ml-2'>{edu.date}</span>
                 </div>
                 <div className='text-sm text-slate-800 dark:text-slate-300 font-medium mb-1'>{edu.degree}</div>
                 {edu.gpa && <div className='text-xs text-cyan-600 dark:text-cyan-500 mb-3 font-mono'>{edu.gpa}</div>}
-                <p className='text-sm text-slate-500 dark:text-slate-400'>{edu.details}</p>
+                <p className='text-sm text-slate-600 dark:text-slate-400'>{edu.details}</p>
               </div>
             ))}
           </div>
@@ -228,12 +228,12 @@ export default function Home() {
               <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
                 <div className='w-3 h-3 bg-cyan-600 dark:bg-cyan-500 rounded-full animate-pulse'></div>
               </div>
-              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
+              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-slate-900 dark:text-slate-100'><a href="https://cib.bnpparibas/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">BNP Paribas CIB</a></h3>
                   <span className='text-xs font-mono text-cyan-600 dark:text-cyan-400'>Feb 2026 – Present</span>
                 </div>
-                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>C++ Quantitative Developer (Automated Market Making)</div>
+                <div className='text-sm text-slate-600 dark:text-slate-400 mb-4 font-medium'>C++ Quantitative Developer (Automated Market Making)</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-600 dark:text-slate-400 space-y-2 marker:text-slate-400 dark:marker:text-slate-600'>
                   <li>Developing high-performance C++ trading systems with FPGA for Automated Market Making strategies.</li>
                   <li>Collaborating with front-office to optimize latency and enhance execution performance.</li>
@@ -248,12 +248,12 @@ export default function Home() {
               <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
                 <div className='w-3 h-3 bg-slate-400 dark:bg-slate-600 rounded-full'></div>
               </div>
-              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
+              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-slate-900 dark:text-slate-100'><a href="https://loginextsolutions.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">LogiNext Solutions Inc.</a></h3>
                   <span className='text-xs font-mono text-cyan-600 dark:text-cyan-400'>Mar 2023 – Jun 2025</span>
                 </div>
-                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Senior Software Engineer in Analytics Department</div>
+                <div className='text-sm text-slate-600 dark:text-slate-400 mb-4 font-medium'>Senior Software Engineer in Analytics Department</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-600 dark:text-slate-400 space-y-2 marker:text-slate-400 dark:marker:text-slate-600'>
                   <li>Architected Map Construction and Routing Algorithms (solving 3 Nested NP-Hard Problems) using Constraint Programming.</li>
                   <li>Led a team of 12 as Head of the Data Analytics department.</li>
@@ -267,12 +267,12 @@ export default function Home() {
               <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
                 <div className='w-3 h-3 bg-slate-400 dark:bg-slate-600 rounded-full'></div>
               </div>
-              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
+              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-slate-900 dark:text-slate-100'><a href="https://versorinvest.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Versor Investments</a></h3>
                   <span className='text-xs font-mono text-slate-400 dark:text-slate-500'>Feb 2022 – Oct 2022</span>
                 </div>
-                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Quantitative Developer, Merger Arbitrage and Stock Selection Portfolio</div>
+                <div className='text-sm text-slate-600 dark:text-slate-400 mb-4 font-medium'>Quantitative Developer, Merger Arbitrage and Stock Selection Portfolio</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-600 dark:text-slate-400 space-y-2 marker:text-slate-400 dark:marker:text-slate-600'>
                   <li>Contributed to the management of $8.5 Billion AUM.</li>
                   <li>Developed systematic strategies for merger arbitrage, yielding a 15% improvement in alpha capture.</li>
@@ -286,12 +286,12 @@ export default function Home() {
               <div className='flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 group-hover:border-cyan-500/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
                 <div className='w-3 h-3 bg-slate-400 dark:bg-slate-600 rounded-full'></div>
               </div>
-              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
+              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-slate-900 dark:text-slate-100'><a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Bank of America</a></h3>
                   <span className='text-xs font-mono text-slate-400 dark:text-slate-500'>Jun 2018 – Jul 2021</span>
                 </div>
-                <div className='text-sm text-slate-500 dark:text-slate-400 mb-4 font-medium'>Senior Software Engineer (FICC) / Senior Tech Associate</div>
+                <div className='text-sm text-slate-600 dark:text-slate-400 mb-4 font-medium'>Senior Software Engineer (FICC) / Senior Tech Associate</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-slate-600 dark:text-slate-400 space-y-2 marker:text-slate-400 dark:marker:text-slate-600'>
                   <li>Engineered Python-based trading services on QUARTZ and integrated C++ pipelines with SANDRA (OODB), reducing latency by 50%.</li>
                   <li>Led the migration of 1M+ lines of code to Python 3.8, increasing efficiency by 40%.</li>
@@ -332,7 +332,7 @@ export default function Home() {
                 skills: "Docker, Kubernetes, AWS, GCP, Linux Kernel Tuning, DPDK, FPGA, Git, Jenkins, Ansible, CI/CD, Serverless Architecture"
               }
             ].map((group, i) => (
-              <div key={i} className='p-6 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
+              <div key={i} className='p-6 rounded-xl bg-slate-100/40 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <h3 className='text-lg font-semibold text-slate-900 dark:text-slate-100 mb-3'>{group.category}</h3>
                 <div className='flex flex-wrap gap-2'>
                   {group.skills.split(', ').map((skill, j) => (
@@ -391,7 +391,7 @@ export default function Home() {
                 href={res.link}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='group p-8 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10 block'
+                className='group p-8 rounded-2xl bg-slate-100/40 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10 block'
               >
                 <div className='flex justify-between items-start mb-3'>
                   <h3 className='text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors'>{res.title}</h3>
@@ -401,7 +401,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className='text-sm text-slate-700 dark:text-slate-300 font-medium mb-3'>{res.subtitle}</div>
-                <p className='text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed'>{res.details}</p>
+                <p className='text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed'>{res.details}</p>
               </a>
             ))}
           </div>
@@ -454,16 +454,16 @@ export default function Home() {
                 href={project.link}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='group p-8 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10 block'
+                className='group p-8 rounded-2xl bg-slate-100/40 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10 block'
               >
                 <div className='flex justify-between items-start mb-3'>
                   <h3 className='text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors'>{project.title}</h3>
                   <Github className='w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors opacity-0 group-hover:opacity-100' />
                 </div>
-                <p className='text-slate-500 dark:text-slate-400 mb-6 text-sm leading-relaxed'>{project.desc}</p>
+                <p className='text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed'>{project.desc}</p>
                 <div className='flex flex-wrap gap-2'>
                   {project.tech.map((t, j) => (
-                    <span key={j} className='px-3 py-1 text-xs font-mono rounded-full bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800'>
+                    <span key={j} className='px-3 py-1 text-xs font-mono rounded-full bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800'>
                       {t}
                     </span>
                   ))}
@@ -476,7 +476,7 @@ export default function Home() {
         {/* Certifications & Awards */}
         <Section id='awards' title='Awards & Certifications' icon={<Award className='w-6 h-6' />}>
           <div className='grid md:grid-cols-2 gap-8'>
-            <div className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800'>
+            <div className='p-6 rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800'>
               <h3 className='text-lg font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2'>
                 <Award className='w-5 h-5 text-yellow-600 dark:text-yellow-500' /> Awards
               </h3>
@@ -488,7 +488,7 @@ export default function Home() {
                 <li><strong className="text-slate-900 dark:text-slate-200">President</strong> - Stevens Graduate Financial Association.</li>
               </ul>
             </div>
-            <div className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800'>
+            <div className='p-6 rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800'>
               <h3 className='text-lg font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2'>
                 <Cpu className='w-5 h-5 text-cyan-600 dark:text-cyan-500' /> Interests & Languages
               </h3>
@@ -512,7 +512,7 @@ export default function Home() {
 
         {/* Certifications Section */}
         <Section id='certifications' title='Certifications' icon={<BookOpen className='w-6 h-6' />}>
-          <div className='p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800'>
+          <div className='p-6 rounded-2xl bg-slate-100/40 dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800'>
             <div className='grid md:grid-cols-2 gap-8 text-sm text-slate-600 dark:text-slate-400'>
               <div>
                 <h4 className='text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-2'>Finance</h4>
@@ -553,7 +553,7 @@ export default function Home() {
                 <BookOpen className='w-6 h-6 text-cyan-600 dark:text-cyan-400' />
                 <h2 className='text-3xl font-bold text-slate-900 dark:text-slate-100'>Essential Reading</h2>
               </div>
-              <p className='text-slate-500 dark:text-slate-400 max-w-2xl text-balance'>
+              <p className='text-slate-600 dark:text-slate-400 max-w-2xl text-balance'>
                 A curated collection of books that have influenced my trading philosophy and technical approach. From stochastic calculus to Eastern philosophy.
               </p>
             </div>
@@ -590,7 +590,7 @@ export default function Home() {
         <Section id='impact' title='GitHub Impact' icon={<Github className='w-6 h-6' />}>
           <div className='space-y-8'>
             <div className='grid lg:grid-cols-2 gap-6'>
-              <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+              <div className='p-4 rounded-2xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
                   src="/metrics/metrics.main.svg"
  
@@ -599,12 +599,12 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
+              <div className='p-4 rounded-2xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all'>
                 <EngineeringPhilosophy />
               </div>
             </div>
             <div className='grid lg:grid-cols-2 gap-6'>
-              <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+              <div className='p-4 rounded-2xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
                   src="/metrics/metrics.activity.svg"
  
@@ -613,7 +613,7 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+              <div className='p-4 rounded-2xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
                   src="/metrics/metrics.advanced.svg"
  
@@ -624,7 +624,7 @@ export default function Home() {
               </div>
             </div>
             <div className='grid lg:grid-cols-2 gap-6'>
-              <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+              <div className='p-4 rounded-2xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
                   src="/metrics/metrics.streak.svg"
  
@@ -633,7 +633,7 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <div className='p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
+              <div className='p-4 rounded-2xl bg-slate-100/40 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/30 transition-all flex items-center justify-center overflow-hidden'>
                 <img 
                   src="https://visitor-badge.laobi.icu/badge?page_id=shreejitverma" 
                   alt="Visitor Badge" 
@@ -652,14 +652,14 @@ export default function Home() {
               © {new Date().getFullYear()} Shreejit Verma. Built with Next.js & Tailwind.
             </div>
             <div className='flex gap-6'>
-              <a href='mailto:shreejitverma@gmail.com' className='flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
+              <a href='mailto:shreejitverma@gmail.com' className='flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
                 <Mail className='w-4 h-4' />
                 <span>Contact Me</span>
               </a>
-              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
                 LinkedIn
               </a>
-              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors'>
                 GitHub
               </a>
             </div>

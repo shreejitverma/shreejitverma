@@ -60,7 +60,7 @@ const EngineeringPhilosophy = () => {
           </div>
           <div>
             <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">{p.title}</h4>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mb-3">
+            <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-tight mb-3">
               {p.desc}
             </p>
             <div className="w-full h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">

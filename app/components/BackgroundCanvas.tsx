@@ -51,7 +51,7 @@ export default function BackgroundCanvas() {
       <div 
         id="large-header" 
         className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-1000 ${
-          currentTheme === 'dark' ? 'bg-[#000000]' : 'bg-white'
+          currentTheme === 'dark' ? 'bg-[#000000]' : 'bg-[#fafafa]'
         }`}
       >
          <canvas id="demo-canvas" className="w-full h-full opacity-60"></canvas>
