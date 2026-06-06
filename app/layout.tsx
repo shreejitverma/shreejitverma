@@ -142,6 +142,7 @@ export default function RootLayout({
     sameAs: [
       'https://www.linkedin.com/in/shreejitverma/',
       'https://github.com/shreejitverma',
+      'https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ',
       'https://twitter.com/shreejitverma'
     ]
   };

@@ -69,9 +69,13 @@ export default function Home() {
                 <Github className='w-5 h-5' />
               </a>
               <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
-                <Linkedin className='w-5 h-5' />
+               <Linkedin className='w-5 h-5' />
               </a>
-            </div>
+              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar">
+               <GraduationCap className='w-5 h-5' />
+              </a>
+              </div>
+
             <ThemeToggle />
             <a href='https://shreejitverma.com/Shreejit_Verma_Resume.pdf' target='_blank' rel="noopener noreferrer" className='px-4 py-2 text-xs font-bold text-slate-950 bg-primary rounded hover:opacity-90 transition-colors shadow-lg shadow-primary/20'>
               RESUME
@@ -122,6 +126,9 @@ export default function Home() {
               </a>
               <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary'>
                 <Linkedin className='w-6 h-6' />
+              </a>
+              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary'>
+                <GraduationCap className='w-6 h-6' />
               </a>
             </div>
           </div>
@@ -664,6 +671,9 @@ export default function Home() {
               </a>
               <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary transition-colors'>
                 GitHub
+              </a>
+              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary transition-colors'>
+                Scholar
               </a>
             </div>
           </div>

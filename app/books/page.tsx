@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import Link from 'next/link';
-import { Github, Linkedin, Book, Filter } from 'lucide-react';
+import { Github, Linkedin, Book, Filter, GraduationCap } from 'lucide-react';
 import BookCard from './components/BookCard';
 import SearchInput from './components/SearchInput';
 import CategoryFilter from './components/CategoryFilter';
@@ -126,9 +126,13 @@ export default function BooksPage() {
                 <Github className='w-5 h-5' />
               </a>
               <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
-                <Linkedin className='w-5 h-5' />
+               <Linkedin className='w-5 h-5' />
               </a>
-            </div>
+              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar">
+               <GraduationCap className='w-5 h-5' />
+              </a>
+              </div>
+
           </div>
         </div>
       </nav>

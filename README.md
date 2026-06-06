@@ -4,6 +4,7 @@
 [![Website](https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://www.shreejitverma.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shreejitverma/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shreejitverma)
+[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shreejitverma@gmail.com)
 [![Resume](https://img.shields.io/badge/Resume-000000?style=for-the-badge&logo=read-the-docs&logoColor=white)](https://shreejitverma.com/Shreejit_Verma_Resume.pdf)
 
@@ -192,6 +193,6 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
 ---
 
 ## 🔗 Connect & Support
-[Website](https://www.shreejitverma.com/) | [LinkedIn](https://www.linkedin.com/in/shreejitverma/) | [Twitter](https://twitter.com/shreejitverma) | [YouTube](https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw)
+[Website](https://www.shreejitverma.com/) | [LinkedIn](https://www.linkedin.com/in/shreejitverma/) | [Google Scholar](https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ) | [Twitter](https://twitter.com/shreejitverma) | [YouTube](https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw)
 
 *If you find my research or code helpful, consider starring my repositories!*
