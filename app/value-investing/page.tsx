@@ -12,7 +12,8 @@ import {
   Github, 
   Linkedin,
   Cpu,
-  GraduationCap
+  GraduationCap,
+  Calendar
 } from 'lucide-react';
 import MetricCard from './components/MetricCard';
 import QuantTable from './components/QuantTable';
@@ -56,10 +57,12 @@ export default function ValueInvestingPage() {
                <Linkedin className='w-5 h-5' />
               </a>
               <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar">
-               <GraduationCap className='w-5 h-5' />
+                <GraduationCap className='w-5 h-5' />
+              </a>
+              <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Schedule a Meeting">
+                <Calendar className='w-5 h-5' />
               </a>
               </div>
-
           </div>
         </div>
       </nav>

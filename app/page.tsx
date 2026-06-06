@@ -9,7 +9,7 @@ import { ThemeToggle } from './components/ThemeToggle';
 import EngineeringPhilosophy from './components/EngineeringPhilosophy';
 import { 
   Github, Linkedin, Mail, Terminal, BookOpen, Briefcase, Code2, 
-  GraduationCap, Award, Cpu, Menu, X, ArrowUpRight 
+  GraduationCap, Award, Cpu, Menu, X, ArrowUpRight, Calendar 
 } from 'lucide-react';
 
 export default function Home() {
@@ -72,10 +72,12 @@ export default function Home() {
                <Linkedin className='w-5 h-5' />
               </a>
               <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar">
-               <GraduationCap className='w-5 h-5' />
+                <GraduationCap className='w-5 h-5' />
+              </a>
+              <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Schedule a Meeting">
+                <Calendar className='w-5 h-5' />
               </a>
               </div>
-
             <ThemeToggle />
             <a href='https://shreejitverma.com/Shreejit_Verma_Resume.pdf' target='_blank' rel="noopener noreferrer" className='px-4 py-2 text-xs font-bold text-slate-950 bg-primary rounded hover:opacity-90 transition-colors shadow-lg shadow-primary/20'>
               RESUME
@@ -160,6 +162,10 @@ export default function Home() {
                 </a>
                 <a href='#projects' className='px-6 py-3 border border-border text-muted-foreground font-semibold rounded hover:border-primary/50 hover:text-primary transition-colors'>
                   Key Projects
+                </a>
+                <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='px-6 py-3 bg-primary/10 text-primary border border-primary/20 font-semibold rounded hover:bg-primary/20 transition-colors flex items-center gap-2'>
+                  <Calendar className='w-4 h-4' />
+                  Book a Call
                 </a>
               </div>
             </div>
@@ -674,6 +680,9 @@ export default function Home() {
               </a>
               <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary transition-colors'>
                 Scholar
+              </a>
+              <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary transition-colors'>
+                Book a Call
               </a>
             </div>
           </div>
