@@ -152,7 +152,7 @@ export default function Home() {
               </h1>
               <p className='text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0'>
                 Engineering ultra-low latency trading systems and alpha-generating models. 
-                Expertise in **FPGA/DPDK** infrastructure, **deterministic execution**, and statistical arbitrage strategies for high-frequency environments.
+                Expertise in <strong className='text-foreground'>FPGA/DPDK</strong> infrastructure, <strong className='text-foreground'>deterministic execution</strong>, and statistical arbitrage strategies for high-frequency environments.
               </p>
               <div className='flex flex-wrap justify-center md:justify-start gap-4'>
                 <a href='#experience' className='px-6 py-3 bg-foreground dark:bg-background text-background dark:text-foreground font-semibold rounded hover:opacity-90 transition-colors'>
