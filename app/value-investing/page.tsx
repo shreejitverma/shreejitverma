@@ -67,7 +67,8 @@ export default function ValueInvestingPage() {
         </div>
       </nav>
 
-      <main className='pt-24 pb-20 px-6 max-w-[1600px] mx-auto'>
+      {/* relative z-10 lifts content above the fixed z-0 BackgroundCanvas layer */}
+      <main className='relative z-10 pt-24 pb-20 px-6 max-w-[1600px] mx-auto'>
         {/* System Header */}
         <div className='grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8'>
           <div className='lg:col-span-3 flex flex-col justify-end'>
@@ -186,7 +187,7 @@ export default function ValueInvestingPage() {
       </main>
 
       {/* Footer */}
-      <footer className='py-12 border-t border-border mt-20'>
+      <footer className='relative z-10 py-12 border-t border-border mt-20'>
         <div className='max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6'>
           <div className='flex items-center gap-2 font-mono text-sm'>
             <span className='text-cyan-500 font-bold'>SV</span>

@@ -147,7 +147,8 @@ export default function BooksPage() {
         </div>
       </nav>
 
-      <main className='pt-32 pb-20 px-6 max-w-7xl mx-auto'>
+      {/* relative z-10 lifts content above the fixed z-0 BackgroundCanvas layer */}
+      <main className='relative z-10 pt-32 pb-20 px-6 max-w-7xl mx-auto'>
         {/* Header */}
         <div className='mb-12'>
           <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono mb-6 border border-cyan-500/20'>
@@ -226,7 +227,7 @@ export default function BooksPage() {
       </main>
 
       {/* Footer */}
-      <footer className='py-12 border-t border-border mt-20'>
+      <footer className='relative z-10 py-12 border-t border-border mt-20'>
         <div className='max-w-7xl mx-auto px-6 text-center'>
           <p className='text-muted-foreground/60 text-sm'>
             © {new Date().getFullYear()} Shreejit Verma. Curated for the curious mind.

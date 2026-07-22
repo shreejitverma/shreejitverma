@@ -91,6 +91,34 @@ test.describe('Books library functionality', () => {
     expect(y).toBeLessThan(300);
   });
 
+  test('content paints above the fixed background canvas layer', async ({ page }) => {
+    // Locator assertions cannot catch paint-order occlusion: main content that
+    // stacks below the fixed z-0 background canvas is still "visible" to
+    // Playwright. Probe actual paint order at the center of key elements.
+    const targets = [
+      page.getByRole('button', { name: /^All/ }),
+      page.getByTestId('results-summary'),
+    ];
+    for (const target of targets) {
+      await target.scrollIntoViewIfNeeded();
+      const box = (await target.boundingBox())!;
+      const paintsAboveCanvas = await target.evaluate((el, point) => {
+        const layer = document.getElementById('large-header');
+        if (!layer) return false;
+        // The canvas layer is pointer-events-none, which hit testing skips;
+        // temporarily make it hit-testable so paint order is really checked.
+        const prev = layer.style.pointerEvents;
+        layer.style.pointerEvents = 'auto';
+        const stack = document.elementsFromPoint(point.x, point.y);
+        layer.style.pointerEvents = prev;
+        const elIndex = stack.findIndex((node) => node === el || el.contains(node));
+        const layerIndex = stack.findIndex((node) => node === layer || layer.contains(node));
+        return elIndex !== -1 && layerIndex !== -1 && elIndex < layerIndex;
+      }, { x: box.x + box.width / 2, y: box.y + box.height / 2 });
+      expect(paintsAboveCanvas, `element paints under the background canvas`).toBe(true);
+    }
+  });
+
   test('every rendered book card has an image with meaningful alt text', async ({ page }) => {
     const images = page.locator('main img');
     const count = await images.count();
