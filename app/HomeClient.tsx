@@ -79,14 +79,16 @@ export default function Home() {
               </a>
               </div>
             <ThemeToggle />
-            <a href='https://shreejitverma.com/Shreejit_Verma_Resume.pdf' target='_blank' rel="noopener noreferrer" className='px-4 py-2 text-xs font-bold text-slate-950 bg-primary rounded hover:opacity-90 transition-colors shadow-lg shadow-primary/20'>
+            <Link href='/resume' className='px-4 py-2 text-xs font-bold text-slate-950 bg-primary rounded hover:opacity-90 transition-colors shadow-lg shadow-primary/20'>
               RESUME
-            </a>
+            </Link>
             
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className='lg:hidden text-muted-foreground hover:text-primary transition-colors'
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label='Toggle navigation menu'
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
             </button>

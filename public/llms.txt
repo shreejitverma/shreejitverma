@@ -1,0 +1,27 @@
+# Shreejit Verma
+
+> Quantitative Developer, Quantitative Researcher, and Quantitative Trading Engineer based in New York, NY.
+> Specializes in C++ low-latency automated market making, FPGA/DPDK sub-10 microsecond trading systems,
+> statistical arbitrage, merger arbitrage, and machine-learning-driven alpha research for hedge funds,
+> proprietary trading firms, and high frequency trading firms.
+
+Most recent role: C++ Quantitative Developer (Co-op), Automated Market Making at BNP Paribas CIB, New York (Feb 2026 - May 2026).
+Education: M.S. Financial Engineering (Stevens Institute of Technology, GPA 3.974/4.0); M.S. Computer Science in progress (Georgia Institute of Technology, expected Dec 2026); M.S. Financial Engineering (WorldQuant University).
+
+## Pages
+
+- [Home](https://www.shreejitverma.com/): profile, experience, skills, research, and projects
+- [Resume (HTML)](https://www.shreejitverma.com/resume): full resume as a web page
+- [Resume (PDF)](https://www.shreejitverma.com/Shreejit_Verma_Resume.pdf): downloadable resume
+- [Value Intelligence Platform](https://www.shreejitverma.com/value-investing): quantitative research platform
+- [Reading List](https://www.shreejitverma.com/books): curated finance and engineering library
+
+## Profiles
+
+- [GitHub](https://github.com/shreejitverma)
+- [LinkedIn](https://www.linkedin.com/in/shreejitverma/)
+- [Google Scholar](https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ)
+
+## Contact
+
+- Email: shreejitverma@gmail.com

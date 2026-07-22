@@ -87,10 +87,10 @@ export default function QuantTable() {
                 </td>
                 <td className='px-6 py-4 text-right'>
                   <div className='flex items-center justify-end gap-2'>
-                    <button className='p-1.5 hover:bg-muted dark:hover:bg-muted rounded-md transition-colors opacity-0 group-hover:opacity-100'>
+                    <button aria-label='Open security details' className='p-1.5 hover:bg-muted dark:hover:bg-muted rounded-md transition-colors opacity-0 group-hover:opacity-100'>
                       <ExternalLink className='w-3 h-3 text-muted-foreground' />
                     </button>
-                    <button className='p-1.5 hover:bg-muted dark:hover:bg-muted rounded-md transition-colors'>
+                    <button aria-label='More actions' className='p-1.5 hover:bg-muted dark:hover:bg-muted rounded-md transition-colors'>
                       <MoreHorizontal className='w-3 h-3 text-muted-foreground' />
                     </button>
                   </div>
