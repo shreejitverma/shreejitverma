@@ -1,3 +1,18 @@
+"""Download Amazon investor-relations documents into ~/Downloads/Amazon_IR_Documents.
+
+Personal data tool, unrelated to the website. Uses Playwright (Chromium, headed) to
+expand every year tab on the Amazon IR annual-reports page, then parses the fully
+populated HTML with BeautifulSoup and downloads each annual report, proxy statement,
+and shareholder letter with requests, sorted into per-category folders.
+
+Downloads are streamed with connect/read timeouts of 10s/60s and written to a
+temporary ".part" file that is atomically renamed on success, so an interrupted run
+never leaves a truncated PDF. Existing files are skipped, making reruns idempotent.
+
+Dependencies: requests, beautifulsoup4, playwright (with Chromium installed via
+"playwright install chromium").
+"""
+
 import os
 import requests
 import re

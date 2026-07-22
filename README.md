@@ -169,6 +169,8 @@ The E2E suite (`e2e/`) exhaustively covers SEO metadata and JSON-LD structured d
 CI runs lint, typecheck, and the full suite on every pull request (`.github/workflows/e2e.yml`).
 `scripts/enrich_books.py` enriches the reading-list dataset with cover images and descriptions from Open Library and Google Books; it is resumable and idempotent.
 `scripts/categorize_books.py` assigns book categories through hand-curated overrides (`scripts/category_overrides.json`), title-family regex rules, and ordered keyword rules, keeping the `General` shelf a small miscellany bucket.
+`scripts/` also holds standalone personal data tooling unrelated to the site, such as `scripts/amazon_ir_scraper.py`, which downloads Amazon investor-relations PDFs (annual reports, proxy statements, shareholder letters) into `~/Downloads/Amazon_IR_Documents`.
+`backlog.md` is the workspace task backlog managed by `tasks-axi`.
 
 ---
 
