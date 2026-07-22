@@ -119,7 +119,10 @@ def load_overrides() -> dict[str, str]:
                 for key, value in json.load(fh).items()
             }
     except FileNotFoundError:
-        return {}
+        sys.exit(
+            f"error: overrides file {OVERRIDES_PATH!r} not found; "
+            "it holds the authoritative hand-curated categories and must exist"
+        )
 
 
 def classify(book: dict) -> str | None:

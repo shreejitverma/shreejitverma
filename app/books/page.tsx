@@ -82,7 +82,7 @@ export default function BooksPage() {
     let filtered = allBooks;
 
     if (activeCategory !== 'All') {
-      filtered = filtered.filter(book => book.category === activeCategory);
+      filtered = filtered.filter(book => (book.category || 'General') === activeCategory);
     }
 
     if (searchQuery) {
