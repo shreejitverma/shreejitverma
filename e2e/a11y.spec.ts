@@ -6,7 +6,10 @@ test.describe('Accessibility', () => {
   for (const { path } of PAGES) {
     test(`${path} has no critical accessibility violations`, async ({ page }) => {
       await page.goto(path);
-      await page.waitForLoadState('networkidle');
+      // networkidle can hang or flake under parallel load; settle on 'load'
+      // plus a bounded quiet period instead.
+      await page.waitForLoadState('load');
+      await page.waitForTimeout(1000);
 
       const results = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa'])

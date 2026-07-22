@@ -20,7 +20,7 @@ interface BookCardProps {
   salesCount?: number;
 }
 
-const PLACEHOLDER_COVER = 'https://placehold.co/400x600/1e293b/cbd5e1?text=Book+Cover';
+const PLACEHOLDER_COVER = 'https://placehold.co/400x600/1e293b/cbd5e1/png?text=Book+Cover';
 
 const BookCard = memo(({ title, author, category, year, review, downloadLink, link, coverImage, importance, salesCount }: BookCardProps) => {
   return (

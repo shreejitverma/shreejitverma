@@ -13,7 +13,7 @@ export default function ProfileImage({ src, alt, className }: ProfileImageProps)
   const [hasError, setHasError] = useState(false);
   
   // Fallback image using the configured placeholder service
-  const fallbackSrc = 'https://placehold.co/400x400/1e293b/22d3ee?text=SV';
+  const fallbackSrc = 'https://placehold.co/400x400/1e293b/22d3ee/png?text=SV';
 
   return (
     <Image

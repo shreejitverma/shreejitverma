@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { PAGES, IGNORED_CONSOLE_PATTERNS } from './helpers';
+import { PAGES, isIgnoredConsoleError } from './helpers';
 
 test.describe('Runtime health', () => {
   for (const { path } of PAGES) {
@@ -7,9 +7,8 @@ test.describe('Runtime health', () => {
       const errors: string[] = [];
       page.on('console', (message) => {
         if (message.type() !== 'error') return;
-        const text = message.text();
-        if (IGNORED_CONSOLE_PATTERNS.some((pattern) => pattern.test(text))) return;
-        errors.push(text);
+        if (isIgnoredConsoleError(message)) return;
+        errors.push(message.text());
       });
       page.on('pageerror', (error) => {
         errors.push(`pageerror: ${error.message}`);

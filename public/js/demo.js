@@ -171,7 +171,7 @@ window.initCanvas = function() {
     }
 
     function shiftPoint(p) {
-        if (typeof TweenLite !== 'undefined') {
+        if (typeof TweenLite !== 'undefined' && typeof Sine !== 'undefined') {
             // Antigravity drift: slow and wandering
             TweenLite.to(p, 4+2*Math.random(), {
                 x: p.originX - 100 + Math.random() * 200,
