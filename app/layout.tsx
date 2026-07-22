@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   creator: 'Shreejit Verma',
   publisher: 'Shreejit Verma',
   category: 'technology',
-  alternates: {
-    canonical: 'https://www.shreejitverma.com',
-  },
   icons: {
     icon: '/Shreejit_Verma_profile_pic.jpg',
     shortcut: '/Shreejit_Verma_profile_pic.jpg',
@@ -137,7 +134,7 @@ export default function RootLayout({
           {
             '@type': 'EducationalOccupationalCredential',
             credentialCategory: 'degree',
-            name: 'M.S. in Computer Science (Computing Systems), Georgia Institute of Technology',
+            name: 'M.S. in Computer Science (Computing Systems), Georgia Institute of Technology (in progress, expected Dec 2026)',
           },
           {
             '@type': 'EducationalOccupationalCredential',
