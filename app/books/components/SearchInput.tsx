@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Search } from 'lucide-react';
 
 interface SearchInputProps {
@@ -9,8 +9,16 @@ interface SearchInputProps {
 
 export default function SearchInput({ onSearch }: SearchInputProps) {
   const [value, setValue] = useState('');
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
+    // Never notify for the initial mount value: the parent already has it, and
+    // a delayed timer firing after user interaction would clobber newer state
+    // (e.g. reset pagination the user just changed).
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
     const timer = setTimeout(() => {
       onSearch(value);
     }, 300); // 300ms debounce
