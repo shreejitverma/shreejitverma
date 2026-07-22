@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { Github, Linkedin, Book, Filter, GraduationCap, Calendar } from 'lucide-react';
 import BookCard from './components/BookCard';
 import SearchInput from './components/SearchInput';
-import CategoryFilter from './components/CategoryFilter';
+import CategoryFilter, { type CategoryOption } from './components/CategoryFilter';
+import Pagination from './components/Pagination';
 
 // Updated Book Type Definition
 interface ScrapedBook {
@@ -38,6 +39,7 @@ export default function BooksPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const gridTopRef = useRef<HTMLDivElement>(null);
   const BOOKS_PER_PAGE = 24;
 
   useEffect(() => {
@@ -70,12 +72,17 @@ export default function BooksPage() {
     setPage(1);
   }, []);
 
+  const handlePageChange = useCallback((nextPage: number) => {
+    setPage(nextPage);
+    gridTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+
   // Filter and Search Logic
   const filteredBooks = useMemo(() => {
     let filtered = allBooks;
 
     if (activeCategory !== 'All') {
-      filtered = filtered.filter(book => book.category === activeCategory);
+      filtered = filtered.filter(book => (book.category || 'General') === activeCategory);
     }
 
     if (searchQuery) {
@@ -98,18 +105,19 @@ export default function BooksPage() {
 
   const totalPages = Math.ceil(filteredBooks.length / BOOKS_PER_PAGE);
 
-  const categories = [
-    'All', 
-    'Finance & Trading', 
-    'Computer Science & Data',
-    'Business & Leadership',
-    'Self-Help & Psychology', 
-    'Philosophy & Spirituality', 
-    'History & Geopolitics',
-    'Science & Math',
-    'Fiction & Literature',
-    'General'
-  ];
+  // Categories are derived from the data so pills always match reality,
+  // ordered by shelf size with All first and General (miscellany) last.
+  const categories = useMemo<CategoryOption[]>(() => {
+    const counts = new Map<string, number>();
+    for (const book of allBooks) {
+      const cat = book.category || 'General';
+      counts.set(cat, (counts.get(cat) ?? 0) + 1);
+    }
+    const sorted = [...counts.entries()]
+      .sort((a, b) => (a[0] === 'General' ? 1 : b[0] === 'General' ? -1 : b[1] - a[1]))
+      .map(([name, count]) => ({ name, count }));
+    return [{ name: 'All', count: allBooks.length }, ...sorted];
+  }, [allBooks]);
 
   return (
     <div className='min-h-screen bg-background text-muted-foreground font-sans selection:bg-primary/30'>
@@ -139,7 +147,8 @@ export default function BooksPage() {
         </div>
       </nav>
 
-      <main className='pt-32 pb-20 px-6 max-w-7xl mx-auto'>
+      {/* relative z-10 lifts content above the fixed z-0 BackgroundCanvas layer */}
+      <main className='relative z-10 pt-32 pb-20 px-6 max-w-7xl mx-auto'>
         {/* Header */}
         <div className='mb-12'>
           <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono mb-6 border border-cyan-500/20'>
@@ -173,6 +182,16 @@ export default function BooksPage() {
         {/* Books Grid */}
         {!loading && (
           <>
+            <div ref={gridTopRef} className='scroll-mt-24 flex items-baseline justify-between mb-6'>
+              <p className='text-sm text-muted-foreground font-mono' data-testid='results-summary'>
+                {filteredBooks.length === 0
+                  ? 'No results'
+                  : `Showing ${((page - 1) * BOOKS_PER_PAGE + 1).toLocaleString()}–${Math.min(page * BOOKS_PER_PAGE, filteredBooks.length).toLocaleString()} of ${filteredBooks.length.toLocaleString()} books`}
+              </p>
+              {totalPages > 1 && (
+                <p className='text-sm text-muted-foreground/70 font-mono'>Page {page} of {totalPages}</p>
+              )}
+            </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
               {paginatedBooks.map((book, index) => (
                 <BookCard 
@@ -195,27 +214,7 @@ export default function BooksPage() {
             </div>
 
             {/* Pagination */}
-            {totalPages > 1 && (
-              <div className="flex justify-center items-center gap-4 mt-16">
-                <button
-                  onClick={() => setPage(p => Math.max(1, p - 1))}
-                  disabled={page === 1}
-                  className="px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-900 border border-border text-muted-foreground dark:text-muted-foreground disabled:opacity-50 hover:border-primary/30 transition-all"
-                >
-                  Previous
-                </button>
-                <span className="text-sm text-muted-foreground/60 font-mono">
-                  Page {page} of {totalPages}
-                </span>
-                <button
-                  onClick={() => setPage(p => Math.min(totalPages, p + 1))}
-                  disabled={page === totalPages}
-                  className="px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-900 border border-border text-muted-foreground dark:text-muted-foreground disabled:opacity-50 hover:border-primary/30 transition-all"
-                >
-                  Next
-                </button>
-              </div>
-            )}
+            <Pagination page={page} totalPages={totalPages} onPageChange={handlePageChange} />
 
             {filteredBooks.length === 0 && (
               <div className='text-center py-32'>
@@ -228,7 +227,7 @@ export default function BooksPage() {
       </main>
 
       {/* Footer */}
-      <footer className='py-12 border-t border-border mt-20'>
+      <footer className='relative z-10 py-12 border-t border-border mt-20'>
         <div className='max-w-7xl mx-auto px-6 text-center'>
           <p className='text-muted-foreground/60 text-sm'>
             © {new Date().getFullYear()} Shreejit Verma. Curated for the curious mind.
