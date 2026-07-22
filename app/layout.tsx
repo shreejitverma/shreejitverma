@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         url: 'https://www.shreejitverma.com/Shreejit_Verma_profile_pic.jpg',
         width: 1200,
         height: 630,
-        alt: 'Shreejit Verma | Senior Quantitative Developer',
+        alt: 'Shreejit Verma | Quantitative Developer & Quantitative Researcher',
       },
     ],
     locale: 'en_US',
