@@ -185,7 +185,7 @@ export default function BooksPage() {
               <p className='text-sm text-muted-foreground font-mono' data-testid='results-summary'>
                 {filteredBooks.length === 0
                   ? 'No results'
-                  : `Showing ${(page - 1) * BOOKS_PER_PAGE + 1}–${Math.min(page * BOOKS_PER_PAGE, filteredBooks.length)} of ${filteredBooks.length.toLocaleString()} books`}
+                  : `Showing ${((page - 1) * BOOKS_PER_PAGE + 1).toLocaleString()}–${Math.min(page * BOOKS_PER_PAGE, filteredBooks.length).toLocaleString()} of ${filteredBooks.length.toLocaleString()} books`}
               </p>
               {totalPages > 1 && (
                 <p className='text-sm text-muted-foreground/70 font-mono'>Page {page} of {totalPages}</p>

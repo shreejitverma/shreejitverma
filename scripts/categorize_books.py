@@ -2,7 +2,7 @@
 """Reclassify 'General' books into proper categories via keyword rules.
 
 Only books currently categorized as 'General' are touched. Rules are ordered:
-the first category whose keywords match the book's title (or description)
+the first category whose keywords match the book's title or genre
 wins. Books matching nothing stay 'General'.
 
 Usage: python3 scripts/categorize_books.py [--dry-run]
@@ -14,6 +14,7 @@ import argparse
 import json
 import re
 import sys
+import unicodedata
 
 DATA_PATH = "public/books_data_validated.json"
 
@@ -113,7 +114,10 @@ OVERRIDES_PATH = "scripts/category_overrides.json"
 def load_overrides() -> dict[str, str]:
     try:
         with open(OVERRIDES_PATH) as fh:
-            return json.load(fh)
+            return {
+                unicodedata.normalize("NFC", key): value
+                for key, value in json.load(fh).items()
+            }
     except FileNotFoundError:
         return {}
 
@@ -142,7 +146,7 @@ def main() -> int:
     overrides = load_overrides()
     moved: dict[str, int] = {}
     for book in data:
-        title = (book.get("title") or "").strip()
+        title = unicodedata.normalize("NFC", (book.get("title") or "").strip())
         current = (book.get("category") or "").strip()
         # Overrides are authoritative for any book; other rules only lift
         # books out of the General bucket.
