@@ -10,6 +10,15 @@ test.describe('Public assets', () => {
     expect(body.subarray(0, 5).toString()).toBe('%PDF-');
   });
 
+  test('IndexNow key file is served with the key as its exact body', async ({ request }) => {
+    const key = 'a31d850309d40502597fcc0663404e38';
+    const response = await request.get(`/${key}.txt`);
+    expect(response.status()).toBe(200);
+    // Per the IndexNow protocol the body must be exactly the key, so Bing
+    // and Yandex can verify ownership when pinged with this key.
+    expect(await response.text()).toBe(key);
+  });
+
   test('llms.txt describes the profile for AI crawlers', async ({ request }) => {
     const response = await request.get('/llms.txt');
     expect(response.status()).toBe(200);
