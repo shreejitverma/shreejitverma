@@ -4,6 +4,8 @@
 [![Website](https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://www.shreejitverma.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shreejitverma/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shreejitverma)
+[![Google Scholar](https://img.shields.io/badge/Google%20Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ)
+[![Calendly](https://img.shields.io/badge/Calendly-006BFF?style=for-the-badge&logo=calendly&logoColor=white)](https://calendly.com/shreejitverma)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shreejitverma@gmail.com)
 [![Resume](https://img.shields.io/badge/Resume-000000?style=for-the-badge&logo=read-the-docs&logoColor=white)](https://shreejitverma.com/Shreejit_Verma_Resume.pdf)
 
@@ -30,32 +32,27 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
 ### **[BNP Paribas CIB](https://cib.bnpparibas/)** | C++ Quantitative Developer (Automated Market Making)
 *Feb 2026 – Present | New York, USA*
 - Developing high-performance **C++ trading systems with FPGA** for Automated Market Making (AMM) strategies.
-- Collaborating with front-office to optimize latency and enhance execution performance in a hybrid on-site trading environment.
+- Collaborating with front-office to optimize latency and enhance execution performance.
+- Leading development for the **Prime Credit Market platform**, supporting ~$500 million in daily market-making.
+- Integrating agentic AI frameworks and LLM assistants with automated testing protocols.
 
 ### **[LogiNext Solutions Inc.](https://loginextsolutions.com/)** | Senior Software Engineer (Analytics Department)
 *Mar 2023 – Jun 2025 | Mumbai, India*
-- **NP-Hard Optimization:** Architected and developed Map Construction and Routing Algorithms solving **3 Nested NP-Hard Problems** using Constraint Programming, PostGIS, and MongoDB.
+- **NP-Hard Optimization:** Architected Map Construction and Routing Algorithms solving **3 Nested NP-Hard Problems** using Constraint Programming.
 - **Team Leadership:** Led a team of **12 engineers** as Head of the Data Analytics department.
-- **AI/LLM Engineering:** Built a **Large Language Model (LLM)** for internal development and query resolution, improving bug resolution efficiency by **80%**.
-- **Data Infrastructure:** Engineered a robust ML Pipeline for proactive error detection and resolution using the ELK stack.
+- **AI/LLM Engineering:** Built an internal **Large Language Model (LLM)** that improved bug resolution efficiency by **80%**.
 
 ### **[Versor Investments (QR Systems LLP)](https://versorinvest.com/)** | Quantitative Developer (Merger Arbitrage & Stock Selection)
 *Feb 2022 – Oct 2022 | Mumbai, India*
 - **AUM Management:** Contributed to the management of a combined **AUM of $8.5 Billion**.
-- **Alpha Generation:** Developed and backtested systematic merger arbitrage strategies, yielding a **15% improvement** in alpha capture.
+- **Alpha Generation:** Developed systematic strategies for merger arbitrage, yielding a **15% improvement** in alpha capture.
 - **Execution Efficiency:** Deployed scalable ML pipelines for Order & Execution Management Systems, increasing trade execution efficiency by **29%**.
-- **Strategy Innovation:** Built portfolio strategies capitalizing on arbitrage opportunities from the impact of ESG scores on pre- & post-merger statistics.
 
-### **[Bank of America (BA Continuum)](https://www.bankofamerica.com/)** | Senior Software Engineer (FICC)
-*Jan 2020 – Jul 2021 | Chennai, India*
-- **Latency Optimization:** Integrated **C++ pipelines** in SANDRA (Object-Oriented Database) to store trades, reducing trade processing latency by **50%**.
-- **System Migration:** Led the migration of **1 million+ lines of code** to Python 3.8, enhancing system scalability and execution efficiency by **40%**.
-- **Trading Services:** Engineered Python-based trading services to enhance storage, processing, and matching of trades on the QUARTZ platform.
-
-### **Bank of America** | Senior Tech Associate (Data Analysis and Insight Technology)
-*Jun 2018 – Dec 2019 | Chennai, India*
-- **Predictive Analytics:** Architected an ML/AI platform to deploy predictive models, increasing decision-making accuracy by **67%**.
-- **Process Automation:** Designed machine learning models for data validation rules prediction, reducing manual workload by approximately **36 Full-Time Equivalents (FTEs)**.
+### **[Bank of America (BA Continuum)](https://www.bankofamerica.com/)** | Senior Software Engineer (FICC) / Senior Tech Associate
+*Jun 2018 – Jul 2021 | Chennai, India*
+- **Latency Optimization:** Engineered Python-based trading services on **QUARTZ** and integrated **C++ pipelines** with **SANDRA (OODB)**, reducing trade processing latency by **50%**.
+- **System Migration:** Led the migration of **1 million+ lines of code** to Python 3.8, increasing efficiency by **40%**.
+- **Predictive Analytics:** Architected an ML/AI platform that increased decision-making accuracy by **67%** and reduced manual workload by approximately **36 Full-Time Equivalents (FTEs)**.
 
 ---
 
@@ -189,14 +186,14 @@ Senior Quantitative Developer and Researcher with over 7 years of experience eng
 ## 📊 GitHub Impact
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.main.svg" alt="GitHub Overview" width="100%" />
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/metrics/metrics.advanced.svg" alt="Advanced Metrics" width="100%" />
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/main/public/metrics/metrics.main.svg" alt="GitHub Overview" width="100%" />
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/main/public/metrics/metrics.advanced.svg" alt="Advanced Metrics" width="100%" />
   <img src="https://visitor-badge.laobi.icu/badge?page_id=shreejitverma" />
 </div>
 
 ---
 
 ## 🔗 Connect & Support
-[Website](https://www.shreejitverma.com/) | [LinkedIn](https://www.linkedin.com/in/shreejitverma/) | [Twitter](https://twitter.com/shreejitverma) | [YouTube](https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw)
+[Website](https://www.shreejitverma.com/) | [LinkedIn](https://www.linkedin.com/in/shreejitverma/) | [Google Scholar](https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ) | [Calendly](https://calendly.com/shreejitverma) | [Twitter](https://twitter.com/shreejitverma) | [YouTube](https://www.youtube.com/channel/UCkxV3Br2EsN0lxWowBFOpKw)
 
 *If you find my research or code helpful, consider starring my repositories!*

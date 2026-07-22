@@ -73,6 +73,7 @@ export const metadata: Metadata = {
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import BackgroundCanvas from '@/app/components/BackgroundCanvas';
+import { ThemeProvider } from '@/app/components/ThemeProvider';
 
 export default function RootLayout({
   children,
@@ -141,12 +142,13 @@ export default function RootLayout({
     sameAs: [
       'https://www.linkedin.com/in/shreejitverma/',
       'https://github.com/shreejitverma',
+      'https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ',
       'https://twitter.com/shreejitverma'
     ]
   };
 
   return (
-    <html lang='en' className='scroll-smooth'>
+    <html lang='en' className='scroll-smooth' suppressHydrationWarning>
       <head>
         <Script
           id="json-ld-profile"
@@ -154,11 +156,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={clsx(inter.variable, jetbrainsMono.variable, 'bg-slate-950 text-slate-300 antialiased selection:bg-cyan-500/30 selection:text-cyan-200 font-sans')}>
-        <BackgroundCanvas />
-        {children}
-        <SpeedInsights />
-        <Analytics />
+      <body className={clsx(inter.variable, jetbrainsMono.variable, 'bg-background text-foreground antialiased selection:bg-primary/30 selection:text-cyan-900 dark:selection:text-cyan-100 font-sans')}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <BackgroundCanvas />
+          {children}
+          <SpeedInsights />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
