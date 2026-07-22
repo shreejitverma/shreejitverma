@@ -90,15 +90,19 @@ def run():
             # Stream the download
             if not os.path.exists(filepath):
                 print(f"Downloading into {folder_category}/: {filename}...")
+                temp_filepath = filepath + ".part"
                 try:
-                    doc_response = requests.get(full_url, headers=headers, stream=True)
+                    doc_response = requests.get(full_url, headers=headers, stream=True, timeout=(10, 60))
                     doc_response.raise_for_status()
-                    
-                    with open(filepath, 'wb') as f:
+
+                    with open(temp_filepath, 'wb') as f:
                         for chunk in doc_response.iter_content(chunk_size=8192):
                             f.write(chunk)
+                    os.replace(temp_filepath, filepath)
                 except Exception as e:
                     print(f"  -> Failed to download: {e}")
+                    if os.path.exists(temp_filepath):
+                        os.remove(temp_filepath)
             else:
                 pass # Silently skip duplicates to keep the terminal clean
 
