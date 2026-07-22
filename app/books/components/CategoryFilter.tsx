@@ -18,8 +18,8 @@ const CategoryFilter = memo(({ categories, activeCategory, onSelectCategory }: C
           onClick={() => onSelectCategory(cat)}
           className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-300 flex items-center gap-2 ${
             activeCategory === cat 
-              ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20' 
-              : 'bg-slate-900/50 text-slate-400 border border-slate-800 hover:border-cyan-500/40 hover:text-cyan-400'
+              ? 'bg-primary text-slate-950 shadow-lg shadow-cyan-500/20' 
+              : 'bg-card/50 dark:bg-card text-muted-foreground dark:text-muted-foreground border border-border hover:border-cyan-500/40 hover:text-primary'
           }`}
         >
           {activeCategory === cat && <ChevronRight className="w-3 h-3" />}

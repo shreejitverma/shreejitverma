@@ -1,6 +1,7 @@
 window.initCanvas = function() {
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+    var isDark = document.documentElement.classList.contains('dark');
 
     // Main
     initHeader();
@@ -18,29 +19,42 @@ window.initCanvas = function() {
         }
 
         canvas = document.getElementById('demo-canvas');
-        if (!canvas) return; // Guard clause
+        if (!canvas) return; 
 
         canvas.width = width;
         canvas.height = height;
         ctx = canvas.getContext('2d');
 
-        // create points
+        // Check theme again more reliably
+        var bodyClass = document.body.className;
+        var htmlClass = document.documentElement.className;
+        isDark = htmlClass.includes('dark') || bodyClass.includes('dark');
+
+        // create points - denser for antigravity feel
         points = [];
-        for(var x = 0; x < width; x = x + width/20) {
-            for(var y = 0; y < height; y = y + height/20) {
-                var px = x + Math.random()*width/20;
-                var py = y + Math.random()*height/20;
-                var p = {x: px, originX: px, y: py, originY: py };
+        var spacing = width > 768 ? 15 : 10;
+        for(var x = 0; x < width; x = x + width/spacing) {
+            for(var y = 0; y < height; y = y + height/spacing) {
+                var px = x + Math.random()*width/spacing;
+                var py = y + Math.random()*height/spacing;
+                var p = {
+                    x: px, 
+                    originX: px, 
+                    y: py, 
+                    originY: py,
+                    vx: Math.random() * 0.5 - 0.25, // velocity for "floating"
+                    vy: Math.random() * 0.5 - 0.25
+                };
                 points.push(p);
             }
         }
 
-        // for each point find the 5 closest points
+        // find closest points
         for(var i = 0; i < points.length; i++) {
             var closest = [];
             var p1 = points[i];
             for(var j = 0; j < points.length; j++) {
-                var p2 = points[j]
+                var p2 = points[j];
                 if(!(p1 == p2)) {
                     var placed = false;
                     for(var k = 0; k < 5; k++) {
@@ -67,7 +81,7 @@ window.initCanvas = function() {
 
         // assign a circle to each point
         for(var i in points) {
-            var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
+            var c = new Circle(points[i], 1+Math.random()*2, isDark ? 'rgba(34,211,238,0.3)' : 'rgba(8,145,178,0.3)');
             points[i].circle = c;
         }
     }
@@ -119,15 +133,29 @@ window.initCanvas = function() {
     function animate() {
         if(animateHeader) {
             if (ctx) ctx.clearRect(0,0,width,height);
+            
+            // Re-check dark mode on each frame for theme toggles
+            var htmlClass = document.documentElement.className;
+            isDark = htmlClass.includes('dark');
+
             for(var i in points) {
-                // detect points in range
-                if(Math.abs(getDistance(target, points[i])) < 4000) {
+                // Update floating position subtly
+                points[i].x += points[i].vx;
+                points[i].y += points[i].vy;
+
+                // Bounce off edges
+                if (points[i].x < 0 || points[i].x > width) points[i].vx *= -1;
+                if (points[i].y < 0 || points[i].y > height) points[i].vy *= -1;
+
+                // detect points in range of mouse
+                var dist = getDistance(target, points[i]);
+                if(dist < 40000) { // increased range for interactivity
                     points[i].active = 0.3;
                     points[i].circle.active = 0.6;
-                } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+                } else if(dist < 80000) {
                     points[i].active = 0.1;
                     points[i].circle.active = 0.3;
-                } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+                } else if(dist < 120000) {
                     points[i].active = 0.02;
                     points[i].circle.active = 0.1;
                 } else {
@@ -144,11 +172,15 @@ window.initCanvas = function() {
 
     function shiftPoint(p) {
         if (typeof TweenLite !== 'undefined') {
-            TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
-                y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
+            // Antigravity drift: slow and wandering
+            TweenLite.to(p, 4+2*Math.random(), {
+                x: p.originX - 100 + Math.random() * 200,
+                y: p.originY - 100 + Math.random() * 200, 
+                ease: Sine.easeInOut,
                 onComplete: function() {
                     shiftPoint(p);
-                }});
+                }
+            });
         }
     }
 
@@ -160,7 +192,11 @@ window.initCanvas = function() {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p.closest[i].x, p.closest[i].y);
-            ctx.strokeStyle = 'rgba(156,217,249,'+ p.active+')';
+            
+            // Antigravity cyan/blue glow
+            var strokeColor = isDark ? 'rgba(34,211,238,' : 'rgba(8,145,178,';
+            ctx.strokeStyle = strokeColor + p.active + ')';
+            ctx.lineWidth = 0.5;
             ctx.stroke();
         }
     }
@@ -176,10 +212,23 @@ window.initCanvas = function() {
         this.draw = function() {
             if(!_this.active) return;
             if (!ctx) return;
+            
+            // Add bloom/glow effect for antigravity feel
             ctx.beginPath();
             ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-            ctx.fillStyle = 'rgba(156,217,249,'+ _this.active+')';
+            
+            var fillColor = isDark ? 'rgba(34,211,238,' : 'rgba(8,145,178,';
+            ctx.fillStyle = fillColor + _this.active + ')';
+            
+            if (isDark) {
+                ctx.shadowBlur = 10 * _this.active;
+                ctx.shadowColor = 'rgba(34,211,238, 0.5)';
+            } else {
+                ctx.shadowBlur = 0;
+            }
+            
             ctx.fill();
+            ctx.shadowBlur = 0; // reset
         };
     }
 
