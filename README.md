@@ -153,6 +153,24 @@ Expertise spans the full stack of modern quantitative finance: **FPGA-accelerate
 
 ---
 
+## Website Development
+
+This repository also powers [www.shreejitverma.com](https://www.shreejitverma.com/) (Next.js 15, Tailwind, deployed on Vercel).
+
+```bash
+npm run dev          # local dev server
+npm run build        # production build
+npm run lint         # ESLint
+npm run typecheck    # TypeScript strict check
+npm run test:e2e     # full Playwright E2E suite (desktop + mobile)
+```
+
+The E2E suite (`e2e/`) exhaustively covers SEO metadata and JSON-LD structured data, page content correctness against the resume, navigation and mobile menu behavior, link integrity, public assets, the books library (search, filters, pagination, dataset quality), WCAG 2A/AA accessibility scans, and per-page console health.
+CI runs lint, typecheck, and the full suite on every pull request (`.github/workflows/e2e.yml`).
+`scripts/enrich_books.py` enriches the reading-list dataset with cover images and descriptions from Open Library and Google Books; it is resumable and idempotent.
+
+---
+
 ## GitHub Impact
 
 <div align="center">
