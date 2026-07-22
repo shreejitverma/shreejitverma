@@ -13,6 +13,8 @@ declare global {
 export default function BackgroundCanvas() {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [tweenLoaded, setTweenLoaded] = useState(false);
+  const [easeLoaded, setEaseLoaded] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -31,23 +33,31 @@ export default function BackgroundCanvas() {
 
   return (
     <>
-      <Script 
-        src="/js/TweenLite.min.js" 
-        strategy="lazyOnload" 
+      {/* demo.js reads the TweenLite and Sine globals, so the scripts must
+          load strictly in dependency order. */}
+      <Script
+        src="/js/TweenLite.min.js"
+        strategy="lazyOnload"
+        onLoad={() => setTweenLoaded(true)}
       />
-      <Script 
-        src="/js/EasePack.min.js" 
-        strategy="lazyOnload" 
-      />
-      <Script 
-        src="/js/demo.js" 
-        strategy="lazyOnload" 
-        onLoad={() => {
-          if (window.initCanvas) {
-            window.initCanvas();
-          }
-        }}
-      />
+      {tweenLoaded && (
+        <Script
+          src="/js/EasePack.min.js"
+          strategy="lazyOnload"
+          onLoad={() => setEaseLoaded(true)}
+        />
+      )}
+      {easeLoaded && (
+        <Script
+          src="/js/demo.js"
+          strategy="lazyOnload"
+          onLoad={() => {
+            if (window.initCanvas) {
+              window.initCanvas();
+            }
+          }}
+        />
+      )}
       <div 
         id="large-header" 
         className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-1000 ${

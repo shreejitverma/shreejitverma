@@ -22,7 +22,7 @@ export default function PortfolioOverview() {
             <div className='w-2 h-2 rounded-full bg-slate-700' />
             <span className='text-[10px] font-mono text-muted-foreground uppercase'>Benchmark</span>
           </div>
-          <button className='p-2 hover:bg-muted dark:hover:bg-muted rounded-lg transition-colors'>
+          <button aria-label='Expand chart' className='p-2 hover:bg-muted dark:hover:bg-muted rounded-lg transition-colors'>
             <Maximize2 className='w-4 h-4 text-muted-foreground' />
           </button>
         </div>
