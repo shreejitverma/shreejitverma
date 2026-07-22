@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Reclassify 'General' books into proper categories via keyword rules.
+"""Reclassify books into proper categories.
 
-Only books currently categorized as 'General' are touched. Rules are ordered:
-the first category whose keywords match the book's title or genre
-wins. Books matching nothing stay 'General'.
+Three layers are applied per book, in order:
+1. scripts/category_overrides.json - a hand-curated exact-title map that is
+   authoritative for every book, whatever its current category.
+2. FAMILY_RULES - regexes over the raw title for whole families of entries
+   (school textbooks, Hindu scriptures, GPS/mapping papers, dictionaries).
+3. RULES - ordered keyword rules; the first category whose keywords match the
+   book's title or genre wins.
+Layers 2 and 3 only lift books out of the 'General' bucket, titles matching
+DOCUMENT_PATTERN (personal documents such as brochures, receipts, and reports)
+deliberately stay there, and books matching nothing stay 'General'.
 
 Usage: python3 scripts/categorize_books.py [--dry-run]
 """

@@ -168,6 +168,7 @@ npm run test:e2e     # full Playwright E2E suite (desktop + mobile)
 The E2E suite (`e2e/`) exhaustively covers SEO metadata and JSON-LD structured data, page content correctness against the resume, navigation and mobile menu behavior, link integrity, public assets, the books library (search, filters, pagination, dataset quality), WCAG 2A/AA accessibility scans, and per-page console health.
 CI runs lint, typecheck, and the full suite on every pull request (`.github/workflows/e2e.yml`).
 `scripts/enrich_books.py` enriches the reading-list dataset with cover images and descriptions from Open Library and Google Books; it is resumable and idempotent.
+`scripts/categorize_books.py` assigns book categories through hand-curated overrides (`scripts/category_overrides.json`), title-family regex rules, and ordered keyword rules, keeping the `General` shelf a small miscellany bucket.
 
 ---
 
