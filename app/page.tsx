@@ -153,8 +153,8 @@ export default function Home() {
                 </span>
               </h1>
               <p className='text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0'>
-                Engineering ultra-low latency trading systems and alpha-generating models. 
-                Expertise in <strong className='text-foreground'>FPGA/DPDK</strong> infrastructure, <strong className='text-foreground'>deterministic execution</strong>, and statistical arbitrage strategies for high-frequency environments.
+                Quantitative Developer, Quantitative Researcher, and Quantitative Trading Engineer based in New York.
+                I build ultra-low latency <strong className='text-foreground'>C++ market-making systems</strong> with <strong className='text-foreground'>FPGA/DPDK</strong> infrastructure, deterministic execution, and statistical arbitrage strategies for hedge funds, prop trading, and HFT firms.
               </p>
               <div className='flex flex-wrap justify-center md:justify-start gap-4'>
                 <a href='#experience' className='px-6 py-3 bg-foreground dark:bg-background text-background dark:text-foreground font-semibold rounded hover:opacity-90 transition-colors'>
@@ -188,7 +188,7 @@ export default function Home() {
                 degree: "Master of Science in Computer Science with Specialization in Computing Systems",
                 date: "Aug 2024 – Expected Dec 2026",
                 gpa: "",
-                details: "Coursework: High-Performance Computing, Distributed Computing, Database Management Systems, Bayesian Statistics."
+                details: "Coursework: Computer Networks, Advanced Operating Systems, Distributed Computing, Database Management Systems."
               },
               {
                 school: "Stevens Institute of Technology",
@@ -216,7 +216,7 @@ export default function Home() {
                 degree: "Bachelor of Technology in Computer Science and Engineering",
                 date: "Jul 2014 – Sept 2018",
                 gpa: "GPA: 8.78/10.0",
-                details: "Coursework: Data Structures and Algorithms, Computer Networks, Reinforcement Learning, Natural Language Processing (NLP)."
+                details: "Coursework: Data Structures and Algorithms, Programming Language Translators, Natural Language Processing (NLP)."
               }
             ].map((edu, i) => (
               <div key={i} className='p-6 rounded-2xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
@@ -244,14 +244,13 @@ export default function Home() {
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-foreground'><a href="https://cib.bnpparibas/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">BNP Paribas CIB</a></h3>
-                  <span className='text-xs font-mono text-primary'>Feb 2026 – Present</span>
+                  <span className='text-xs font-mono text-primary'>Feb 2026 – May 2026</span>
                 </div>
-                <div className='text-sm text-muted-foreground mb-4 font-medium'>C++ Quantitative Developer (Automated Market Making)</div>
+                <div className='text-sm text-muted-foreground mb-4 font-medium'>C++ Quantitative Developer (Co-op), Automated Market Making | New York</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
-                  <li>Developing high-performance C++ trading systems with FPGA for Automated Market Making strategies.</li>
-                  <li>Collaborating with front-office to optimize latency and enhance execution performance.</li>
-                  <li>Leading development for the Prime Credit Market platform, supporting ~$500 million in daily market-making.</li>
-                  <li>Integrating agentic AI frameworks and LLM assistants with automated testing protocols.</li>
+                  <li>Built low-latency components of the automated market-making stack for the Prime Credit Market (average $500M of daily market-making volume), spanning real-time market-data ingestion, tick analytics, and pricing/execution paths.</li>
+                  <li>Profiled and optimized the software hot path feeding FPGA-accelerated market-data handlers and quoting engines.</li>
+                  <li>Integrated secure on-premise LLM tooling with Git/Jira/Confluence to automate code, testing, and documentation workflows.</li>
                 </ul>
               </div>
             </div>
@@ -264,13 +263,13 @@ export default function Home() {
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-foreground'><a href="https://loginextsolutions.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LogiNext Solutions Inc.</a></h3>
-                  <span className='text-xs font-mono text-primary'>Mar 2023 – Jun 2025</span>
+                  <span className='text-xs font-mono text-primary'>Mar 2023 – Jul 2024</span>
                 </div>
-                <div className='text-sm text-muted-foreground mb-4 font-medium'>Senior Software Engineer in Analytics Department</div>
+                <div className='text-sm text-muted-foreground mb-4 font-medium'>Senior Software Engineer, Analytics</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
-                  <li>Architected Map Construction and Routing Algorithms (solving 3 Nested NP-Hard Problems) using Constraint Programming.</li>
-                  <li>Led a team of 12 as Head of the Data Analytics department.</li>
-                  <li>Built an internal Large Language Model (LLM) that improved bug resolution by 80%.</li>
+                  <li>Architected Map Construction, Map Routing, and Rich Vehicle Routing algorithms (3 nested NP-Hard problems) using CP-SAT constraint programming and convex optimization over PostGIS, MongoDB, and S3.</li>
+                  <li>Led a 12-engineer team delivering a high-throughput geospatial mapping application platform.</li>
+                  <li>Built an LLM-powered debugging and query-resolution tool used company-wide, cutting mean bug-resolution time by 80%.</li>
                 </ul>
               </div>
             </div>
@@ -287,9 +286,9 @@ export default function Home() {
                 </div>
                 <div className='text-sm text-muted-foreground mb-4 font-medium'>Quantitative Developer, Merger Arbitrage and Stock Selection Portfolio</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
-                  <li>Contributed to the management of $8.5 Billion AUM.</li>
-                  <li>Developed systematic strategies for merger arbitrage, yielding a 15% improvement in alpha capture.</li>
-                  <li>Deployed scalable ML pipelines for Order & Execution Management Systems, increasing efficiency by 29%.</li>
+                  <li>Developed and backtested systematic merger-arbitrage strategies for an $8.5 Billion AUM fund, improving alpha capture by 15%.</li>
+                  <li>Built and deployed ML pipelines for Order and Execution Management Systems, increasing trade execution efficiency by 29%.</li>
+                  <li>Designed an ESG-driven merger-arbitrage signal capitalizing on pre- and post-merger statistics.</li>
                 </ul>
               </div>
             </div>
@@ -302,13 +301,31 @@ export default function Home() {
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-foreground'><a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Bank of America</a></h3>
-                  <span className='text-xs font-mono text-muted-foreground/50'>Jun 2018 – Jul 2021</span>
+                  <span className='text-xs font-mono text-muted-foreground/50'>Jan 2020 – Jul 2021</span>
                 </div>
-                <div className='text-sm text-muted-foreground mb-4 font-medium'>Senior Software Engineer (FICC) / Senior Tech Associate</div>
+                <div className='text-sm text-muted-foreground mb-4 font-medium'>Senior Software Engineer, Fixed Income Commodities and Currencies (FICC)</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
-                  <li>Engineered Python-based trading services on QUARTZ and integrated C++ pipelines with SANDRA (OODB), reducing latency by 50%.</li>
-                  <li>Led the migration of 1M+ lines of code to Python 3.8, increasing efficiency by 40%.</li>
-                  <li>Architected an ML/AI platform that increased decision-making accuracy by 67% and reduced ~36 FTEs.</li>
+                  <li>Engineered Python-based trading services enhancing storage, processing, matching, and execution of trades on QUARTZ.</li>
+                  <li>Integrated C++ pipelines to store trades in the object-oriented database SANDRA, reducing trade processing latency by 50%.</li>
+                  <li>Led the migration of 1M+ lines of code to Python 3.8, enhancing scalability and execution efficiency by 40%.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Bank of America - Senior Tech Associate */}
+            <div className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
+              <div className='flex items-center justify-center w-10 h-10 rounded-full border border-border bg-card group-hover:border-primary/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
+                <div className='w-3 h-3 bg-muted-foreground/50 rounded-full'></div>
+              </div>
+              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
+                <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
+                  <h3 className='font-bold text-foreground'><a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Bank of America</a></h3>
+                  <span className='text-xs font-mono text-muted-foreground/50'>Jun 2018 – Dec 2019</span>
+                </div>
+                <div className='text-sm text-muted-foreground mb-4 font-medium'>Senior Tech Associate, Data Analysis and Insight Technology</div>
+                <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
+                  <li>Architected and developed an ML/AI platform to deploy predictive models, increasing decision-making accuracy by 67%.</li>
+                  <li>Designed machine learning models for data validation rules prediction, reducing workload by close to 36 Full-Time Equivalents (FTEs).</li>
                 </ul>
               </div>
             </div>
@@ -389,9 +406,9 @@ export default function Home() {
             {[
               {
                 title: "AI-Integrated FPGA for Market Making in Volatile Environments",
-                subtitle: "Master's Thesis",
-                date: "Oct 2024 – Dec 2025",
-                details: "Engineering a sub-10µs trading platform with a custom-built limit order book, FPGA market data handlers, kernel bypass (DPDK), hardware timestamping, and lock-free data structures for deterministic, microsecond-level execution performance.",
+                subtitle: "Master's Thesis (Stevens Institute of Technology)",
+                date: "Oct 2025 – May 2026",
+                details: "Engineered a sub-10µs low-latency trading system with a custom-built limit order book, FPGA market data handlers, kernel bypass (DPDK), hardware timestamping, and lock-free data structures for deterministic, microsecond-level execution.",
                 link: "https://github.com/shreejitverma/trishul-ultra-hft-project"
               },
               {
@@ -435,9 +452,21 @@ export default function Home() {
               },
               {
                 title: 'Statistical Arbitrage Reversal and Momentum Strategies',
-                desc: 'Designed and backtested a 120-day volume-momentum-based crypto portfolio strategy, yielding a 155.76% annualized return and 1.94 Sharpe Ratio, significantly outperforming the Bitcoin benchmark.',
+                desc: 'As Quant Researcher at WallStreetQuants, designed and backtested a 120-day volume-momentum-based crypto portfolio strategy, yielding a 155.76% annualized return and 1.94 Sharpe Ratio (post transaction costs), significantly outperforming the Bitcoin buy-and-hold benchmark.',
                 tech: ['Quant Research', 'Backtesting', 'Alpha Gen'],
                 link: "https://github.com/shreejitverma/Statistical-Arbitrage-Reversal-and-Momentum-Strategies"
+                },
+                {
+                title: 'Sovereign AI Command Center',
+                desc: 'Local-first, autonomous agentic AI platform orchestrating LLM providers behind a unified API, with multi-step tool-calling via the Model Context Protocol (MCP), RAG and persistent semantic memory on ChromaDB, and hardware-aware deployment of quantized open-weight models with zero data leaving the host.',
+                tech: ['Agentic AI', 'MCP', 'RAG', 'LLM Infrastructure'],
+                link: 'https://github.com/shreejitverma/srijan'
+                },
+                {
+                title: 'Plug-and-Play Agentic AI Engineering Harness',
+                desc: 'Cross-platform agentic AI developer platform on NixOS with declarative configuration, version-pinned dependencies, and automated health checks. Multi-agent orchestration automates isolated Git worktrees, autonomous task execution, and CI-gated shipping in one command.',
+                tech: ['NixOS', 'Multi-Agent Systems', 'DevEx'],
+                link: 'https://github.com/shreejitverma/dotfiles-nix'
                 },
                 {
                 title: 'Financial Modelling using Stochastic Calculus',
@@ -502,6 +531,7 @@ export default function Home() {
                 <li><strong className="text-slate-900 dark:text-slate-200">1st Place</strong> - Vanguard ETF Trading Challenge (Personal Portfolio), 6th Place for the team portfolio.</li>
                 <li><strong className="text-slate-900 dark:text-slate-200">State Rank Holder</strong> - International Science Olympiad & International Math Olympiad.</li>
                 <li><strong className="text-slate-900 dark:text-slate-200">President</strong> - Stevens Graduate Financial Association.</li>
+                <li><strong className="text-slate-900 dark:text-slate-200">Beta Gamma Sigma Member</strong> - International business honor society.</li>
               </ul>
             </div>
             <div className='p-6 rounded-2xl bg-muted/40 dark:bg-slate-900/30 border border-border'>
