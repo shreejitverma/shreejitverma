@@ -36,22 +36,59 @@ test.describe('Books library functionality', () => {
   });
 
   test('category filter switches the shelf and resets pagination', async ({ page }) => {
-    await page.getByRole('button', { name: 'Computer Science & Data' }).click();
+    await page.getByRole('button', { name: /Computer Science & Data/ }).click();
     await expect.poll(async () => page.locator('main h3').count()).toBeGreaterThan(0);
     await expect(page.getByText(/Page 1 of/)).toBeVisible();
-    await page.getByRole('button', { name: 'All', exact: true }).click();
+    await page.getByRole('button', { name: /^All/ }).click();
     await expect(page.getByText(/Page 1 of/)).toBeVisible();
   });
 
-  test('pagination navigates forward and back', async ({ page }) => {
-    const next = page.getByRole('button', { name: 'Next' });
-    const previous = page.getByRole('button', { name: 'Previous' });
+  test('category pills are data-driven with counts matching the dataset', async ({ page, request }) => {
+    const books: Array<{ category?: string }> = await (await request.get('/books_data_validated.json')).json();
+    const counts = new Map<string, number>();
+    for (const book of books) {
+      const cat = book.category || 'General';
+      counts.set(cat, (counts.get(cat) ?? 0) + 1);
+    }
+    const pills = page.locator('[role="group"][aria-label="Filter books by category"] button');
+    await expect(pills).toHaveCount(counts.size + 1);
+    await expect(pills.first()).toContainText('All');
+    await expect(pills.first()).toContainText(books.length.toLocaleString('en-US'));
+    for (const [cat, count] of counts) {
+      const pill = page.getByRole('button', { name: new RegExp(cat.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) });
+      await expect(pill, `pill for ${cat}`).toContainText(count.toLocaleString('en-US'));
+    }
+  });
+
+  test('pagination navigates forward and back with numbered jumps', async ({ page }) => {
+    const next = page.getByRole('button', { name: 'Next page' });
+    const previous = page.getByRole('button', { name: 'Previous page' });
     await expect(previous).toBeDisabled();
     await next.click();
     await expect(page.getByText(/Page 2 of/)).toBeVisible();
+    await expect(page.getByTestId('results-summary')).toContainText('Showing 25');
     await previous.click();
     await expect(page.getByText(/Page 1 of/)).toBeVisible();
     await expect(previous).toBeDisabled();
+    // Jump straight to the last page via the numbered window.
+    const summaryText = (await page.getByTestId('results-summary').textContent()) ?? '';
+    const total = Number(summaryText.replace(/,/g, '').match(/of (\d+) books/)?.[1]);
+    const lastPage = Math.ceil(total / 24);
+    await page.getByRole('button', { name: `Page ${lastPage}`, exact: true }).click();
+    await expect(page.getByText(new RegExp(`Page ${lastPage} of ${lastPage}`))).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Next page' })).toBeDisabled();
+  });
+
+  test('page change scrolls back to the top of the results', async ({ page }) => {
+    await page.getByRole('button', { name: 'Next page' }).scrollIntoViewIfNeeded();
+    await page.getByRole('button', { name: 'Next page' }).click();
+    // Smooth scrolling can settle a sub-pixel above 0; require the summary to
+    // land within the top viewport region rather than exactly at 0.
+    await expect
+      .poll(async () => page.getByTestId('results-summary').boundingBox().then((b) => (b ? b.y : -9999)), { timeout: 10_000 })
+      .toBeGreaterThanOrEqual(-10);
+    const { y } = (await page.getByTestId('results-summary').boundingBox())!;
+    expect(y).toBeLessThan(300);
   });
 
   test('every rendered book card has an image with meaningful alt text', async ({ page }) => {
@@ -83,6 +120,29 @@ test.describe('Books dataset quality', () => {
     }
     expect(missingText, `books missing description/review: ${missingText.slice(0, 5).join('; ')}`).toEqual([]);
     expect(badCover, badCover.slice(0, 5).join('; ')).toEqual([]);
+  });
+
+  test('categories are well structured with a small General remainder', async ({ request }) => {
+    const books: Array<{ category?: string }> = await (await request.get('/books_data_validated.json')).json();
+    const counts = new Map<string, number>();
+    for (const book of books) {
+      const cat = (book.category || '').trim();
+      expect(cat, 'book with empty category').not.toBe('');
+      counts.set(cat, (counts.get(cat) ?? 0) + 1);
+    }
+    expect([...counts.keys()].sort()).toEqual([
+      'Business & Leadership',
+      'Computer Science & Data',
+      'Education & Reference',
+      'Fiction & Literature',
+      'Finance & Trading',
+      'General',
+      'History & Geopolitics',
+      'Philosophy & Spirituality',
+      'Science & Math',
+      'Self-Help & Psychology',
+    ]);
+    expect(counts.get('General') ?? 0, 'General must stay a small miscellany bucket').toBeLessThan(150);
   });
 
   test('a substantial share of the library has real cover images', async ({ request }) => {
