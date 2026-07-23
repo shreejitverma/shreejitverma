@@ -19,21 +19,25 @@ import MetricCard from './components/MetricCard';
 import QuantTable from './components/QuantTable';
 
 import SevenPowers from './components/SevenPowers';
+import Methodology from './components/Methodology';
+import { UNIVERSE, SNAPSHOT_AS_OF } from './lib/data';
+import { computeUniverse, median } from './lib/scoring';
 import ArchitectPerspectives from './components/ArchitectPerspectives';
 import RiskAntiModels from './components/RiskAntiModels';
 import HistoricalCases from './components/HistoricalCases';
 
 export default function ValueInvestingPage() {
   const [mounted, setMounted] = useState(false);
-  const [lastUpdate, setLastUpdate] = useState(new Date().toISOString());
 
   useEffect(() => {
     setMounted(true);
-    const interval = setInterval(() => {
-      setLastUpdate(new Date().toISOString());
-    }, 5000);
-    return () => clearInterval(interval);
   }, []);
+
+  const universeMetrics = computeUniverse(UNIVERSE);
+  const top = [...universeMetrics].sort((a, b) => b.compositeScore - a.compositeScore)[0];
+  const medianRoe = median(universeMetrics.map((m) => m.roePct));
+  const medianFcfMargin = median(universeMetrics.map((m) => m.fcfMarginPct));
+  const medianDebtToEquity = median(universeMetrics.map((m) => m.debtToEquity));
 
   if (!mounted) return null;
 
@@ -88,67 +92,64 @@ export default function ValueInvestingPage() {
           <div className='bg-card/50 dark:bg-card border border-border p-6 rounded-2xl flex flex-col gap-4'>
             <div className='flex items-center justify-between'>
               <span className='text-xs font-mono text-muted-foreground'>RESEARCH_CORE</span>
-              <span className='flex items-center gap-1 text-[10px] font-mono text-emerald-500'>
-                <span className='w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse' />
-                ACTIVE_FETCH
-              </span>
+              <span className='text-[10px] font-mono text-primary'>STATIC_SNAPSHOT</span>
             </div>
             <div className='space-y-2'>
               <div className='flex justify-between text-xs font-mono'>
-                <span className='text-muted-foreground'>SEC_FILINGS</span>
-                <span className='text-primary'>SYNCED</span>
+                <span className='text-muted-foreground'>UNIVERSE</span>
+                <span className='text-primary'>{UNIVERSE.length} SECURITIES</span>
               </div>
               <div className='flex justify-between text-xs font-mono'>
-                <span className='text-muted-foreground'>MOAT_SCORE</span>
-                <span className='text-primary'>9.4/10</span>
+                <span className='text-muted-foreground'>FACTORS</span>
+                <span className='text-primary'>5 FUNDAMENTAL</span>
               </div>
               <div className='flex justify-between text-xs font-mono'>
-                <span className='text-muted-foreground'>LAST_SYNC</span>
-                <span className='text-primary truncate max-w-[120px]'>{lastUpdate.split('T')[1].split('.')[0]}</span>
+                <span className='text-muted-foreground'>DATA</span>
+                <span className='text-primary truncate max-w-[150px]' title={SNAPSHOT_AS_OF}>FY2024 FILINGS</span>
               </div>
             </div>
             <div className='mt-auto pt-4 border-t border-border'>
-              <button className='w-full py-2 bg-cyan-600 hover:bg-primary text-foreground rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2'>
+              <a href='#methodology' className='w-full py-2 bg-cyan-600 hover:bg-primary text-foreground rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2'>
                 <BarChart3 className='w-3 h-3' />
-                GENERATE ALPHA
-              </button>
+                VIEW METHODOLOGY
+              </a>
             </div>
           </div>
         </div>
 
         {/* Core Strategy Metrics */}
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8'>
-          <MetricCard 
-            title="Capital Efficiency" 
-            value="34.01%" 
-            label="ROE (MSFT)" 
-            trend="+1.2%" 
+          <MetricCard
+            title="Top Composite"
+            value={top.compositeScore.toFixed(1)}
+            label={`${top.ticker} - ${top.signal}`}
+            trend={top.moat}
             icon={<Shield className="w-5 h-5 text-primary" />}
             color="cyan"
           />
-          <MetricCard 
-            title="Compounding Power" 
-            value="25.41%" 
-            label="10y CAGR" 
-            trend="+0.8%" 
+          <MetricCard
+            title="Median ROE"
+            value={`${medianRoe.toFixed(1)}%`}
+            label="universe median"
+            trend="quality"
             icon={<Layers className="w-5 h-5 text-blue-400" />}
             color="blue"
           />
-          <MetricCard 
-            title="Financial Strength" 
-            value="0.30" 
-            label="Debt/Equity" 
-            trend="-0.02" 
-            icon={<TrendingUp className="w-5 h-5 text-indigo-400" />}
-            color="indigo"
-          />
-          <MetricCard 
-            title="Cash Generation" 
-            value="1.11%" 
-            label="FCF Yield" 
-            trend="+0.1%" 
+          <MetricCard
+            title="Median FCF Margin"
+            value={`${medianFcfMargin.toFixed(1)}%`}
+            label="cash conversion"
+            trend="fundamentals"
             icon={<Zap className="w-5 h-5 text-emerald-400" />}
             color="emerald"
+          />
+          <MetricCard
+            title="Median D/E"
+            value={medianDebtToEquity.toFixed(2)}
+            label="balance-sheet risk"
+            trend="leverage"
+            icon={<TrendingUp className="w-5 h-5 text-indigo-400" />}
+            color="indigo"
           />
         </div>
 
@@ -169,7 +170,7 @@ export default function ValueInvestingPage() {
                 <div className='w-2 h-2 rounded-full bg-red-500/50' />
                 <div className='w-2 h-2 rounded-full bg-amber-500/50' />
                 <div className='w-2 h-2 rounded-full bg-emerald-500/50' />
-                <span className='ml-2 opacity-50 uppercase'>kernel_logs</span>
+                <span className='ml-2 opacity-50 uppercase'>framework_trace (illustrative)</span>
               </div>
               <div className='text-emerald-500'>[OK] Running 7 Powers analysis for Microsoft (MSFT)...</div>
               <div className='text-muted-foreground'>[INFO] Switching Costs: Office 365 / ERP integration detected</div>
@@ -181,6 +182,10 @@ export default function ValueInvestingPage() {
               <div className='text-emerald-500 animate-pulse'>_</div>
             </div>
           </div>
+        </div>
+
+        <div className='mb-8'>
+          <Methodology />
         </div>
 
         <HistoricalCases />
