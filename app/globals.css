@@ -1,4 +1,11 @@
 @import "tailwindcss";
+/* Static assets hold vendored scripts, saved web pages, and local-only library
+   symlinks; scanning them for class names is slow and bloats the CSS. */
+@source not "../public";
+
+/* next-themes toggles the .dark class on <html>. Without this, Tailwind v4's
+   dark: variant follows the OS color scheme instead of the site theme. */
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #fafafa;
@@ -8,10 +15,12 @@
   --card-border: #e4e4e7;
   --muted: #f4f4f5;
   --muted-foreground: #52525b;
-  --accent: #0891b2;
-  --accent-foreground: #fafafa;
+  /* Deep teal: >= 4.5:1 (WCAG AA) on the background and on its own 10-20% tints. */
+  --accent: #0b6882;
+  --accent-foreground: #ffffff;
   --border: #e4e4e7;
-  --primary: #0891b2;
+  --primary: #0b6882;
+  --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
 }
 
@@ -24,8 +33,10 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   
   --font-sans: var(--font-geist-sans);
@@ -44,6 +55,7 @@
   --accent-foreground: #000000;
   --border: #27272a;
   --primary: #22d3ee;
+  --primary-foreground: #000000;
   --secondary: #1e293b;
 }
 

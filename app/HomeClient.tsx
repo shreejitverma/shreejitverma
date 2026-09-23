@@ -48,7 +48,7 @@ export default function Home() {
               />
             </div>
             <div className='font-mono text-xl font-bold text-primary tracking-tighter'>
-              SV<span className='text-muted-foreground/50'>.quant</span>
+              SV<span className='text-muted-foreground'>.quant</span>
             </div>
           </div>
 
@@ -65,21 +65,21 @@ export default function Home() {
 
           <div className='flex items-center gap-4'>
             <div className='hidden sm:flex items-center gap-4 mr-2'>
-              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' aria-label='GitHub'>
                 <Github className='w-5 h-5' />
               </a>
-              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' aria-label='LinkedIn'>
                <Linkedin className='w-5 h-5' />
               </a>
-              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar">
+              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar" aria-label="Google Scholar">
                 <GraduationCap className='w-5 h-5' />
               </a>
-              <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Schedule a Meeting">
+              <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Schedule a Meeting" aria-label="Schedule a Meeting">
                 <Calendar className='w-5 h-5' />
               </a>
               </div>
             <ThemeToggle />
-            <Link href='/resume' className='px-4 py-2 text-xs font-bold text-slate-950 bg-primary rounded hover:opacity-90 transition-colors shadow-lg shadow-primary/20'>
+            <Link href='/resume' className='px-4 py-2 text-xs font-bold text-primary-foreground bg-primary rounded hover:opacity-90 transition-colors shadow-lg shadow-primary/20'>
               RESUME
             </Link>
             
@@ -125,13 +125,13 @@ export default function Home() {
               Reading List
             </Link>
             <div className='flex gap-6 mt-2 pt-4 border-t border-border'>
-              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary' aria-label='GitHub'>
                 <Github className='w-6 h-6' />
               </a>
-              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary'>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary' aria-label='LinkedIn'>
                 <Linkedin className='w-6 h-6' />
               </a>
-              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary'>
+              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary' aria-label='Google Scholar'>
                 <GraduationCap className='w-6 h-6' />
               </a>
             </div>
@@ -227,7 +227,7 @@ export default function Home() {
                   <span className='text-xs font-mono text-primary whitespace-nowrap ml-2'>{edu.date}</span>
                 </div>
                 <div className='text-sm text-foreground font-medium mb-1'>{edu.degree}</div>
-                {edu.gpa && <div className='text-xs text-cyan-600 dark:text-cyan-500 mb-3 font-mono'>{edu.gpa}</div>}
+                {edu.gpa && <div className='text-xs text-cyan-700 dark:text-cyan-500 mb-3 font-mono'>{edu.gpa}</div>}
                 <p className='text-sm text-muted-foreground'>{edu.details}</p>
               </div>
             ))}
@@ -284,7 +284,7 @@ export default function Home() {
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-foreground'><a href="https://versorinvest.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Versor Investments</a></h3>
-                  <span className='text-xs font-mono text-muted-foreground/50'>Feb 2022 – Oct 2022</span>
+                  <span className='text-xs font-mono text-muted-foreground'>Feb 2022 – Oct 2022</span>
                 </div>
                 <div className='text-sm text-muted-foreground mb-4 font-medium'>Quantitative Developer, Merger Arbitrage and Stock Selection Portfolio</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
@@ -303,7 +303,7 @@ export default function Home() {
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-foreground'><a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Bank of America</a></h3>
-                  <span className='text-xs font-mono text-muted-foreground/50'>Jan 2020 – Jul 2021</span>
+                  <span className='text-xs font-mono text-muted-foreground'>Jan 2020 – Jul 2021</span>
                 </div>
                 <div className='text-sm text-muted-foreground mb-4 font-medium'>Senior Software Engineer, Fixed Income Commodities and Currencies (FICC)</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
@@ -322,7 +322,7 @@ export default function Home() {
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-foreground'><a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Bank of America</a></h3>
-                  <span className='text-xs font-mono text-muted-foreground/50'>Jun 2018 – Dec 2019</span>
+                  <span className='text-xs font-mono text-muted-foreground'>Jun 2018 – Dec 2019</span>
                 </div>
                 <div className='text-sm text-muted-foreground mb-4 font-medium'>Senior Tech Associate, Data Analysis and Insight Technology</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
@@ -392,7 +392,7 @@ export default function Home() {
                 <h3 className='text-xl font-bold text-foreground group-hover:text-cyan-600 dark:group-hover:text-primary transition-colors'>Value Intelligence Platform</h3>
                 <div className='flex items-center gap-3'>
                   <span className='text-xs font-mono text-primary whitespace-nowrap'>Active</span>
-                  <ArrowUpRight className='w-5 h-5 text-muted-foreground/50 group-hover:text-cyan-600 dark:group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 shrink-0' />
+                  <ArrowUpRight className='w-5 h-5 text-muted-foreground group-hover:text-cyan-600 dark:group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 shrink-0' />
                 </div>
               </div>
               <div className='text-sm text-muted-foreground font-medium mb-3'>Autonomous Research Engine</div>
@@ -432,7 +432,7 @@ export default function Home() {
                   <h3 className='text-xl font-bold text-foreground group-hover:text-cyan-600 dark:group-hover:text-primary transition-colors'>{res.title}</h3>
                   <div className='flex items-center gap-3'>
                     <span className='text-xs font-mono text-primary whitespace-nowrap'>{res.date}</span>
-                    <Github className='w-5 h-5 text-muted-foreground/50 group-hover:text-cyan-600 dark:group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 shrink-0' />
+                    <Github className='w-5 h-5 text-muted-foreground group-hover:text-cyan-600 dark:group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 shrink-0' />
                   </div>
                 </div>
                 <div className='text-sm text-muted-foreground font-medium mb-3'>{res.subtitle}</div>
@@ -505,7 +505,7 @@ export default function Home() {
               >
                 <div className='flex justify-between items-start mb-3'>
                   <h3 className='text-xl font-bold text-foreground group-hover:text-cyan-600 dark:group-hover:text-primary transition-colors'>{project.title}</h3>
-                  <Github className='w-5 h-5 text-muted-foreground/50 group-hover:text-cyan-600 dark:group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100' />
+                  <Github className='w-5 h-5 text-muted-foreground group-hover:text-cyan-600 dark:group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100' />
                 </div>
                 <p className='text-muted-foreground mb-6 text-sm leading-relaxed'>{project.desc}</p>
                 <div className='flex flex-wrap gap-2'>
@@ -525,7 +525,7 @@ export default function Home() {
           <div className='grid md:grid-cols-2 gap-8'>
             <div className='p-6 rounded-2xl bg-muted/40 dark:bg-slate-900/30 border border-border'>
               <h3 className='text-lg font-bold text-foreground mb-4 flex items-center gap-2'>
-                <Award className='w-5 h-5 text-yellow-600 dark:text-yellow-500' /> Awards
+                <Award className='w-5 h-5 text-yellow-700 dark:text-yellow-500' /> Awards
               </h3>
               <ul className='space-y-3 text-sm text-muted-foreground'>
                 <li><strong className="text-slate-900 dark:text-slate-200">Global Recognition Gold Award</strong> (Bank of America) - Led enterprise-wide AI/ML campaign identifying 64 high-impact use cases; organized 4 large-scale events for 2500+ employees.</li>
@@ -538,15 +538,15 @@ export default function Home() {
             </div>
             <div className='p-6 rounded-2xl bg-muted/40 dark:bg-slate-900/30 border border-border'>
               <h3 className='text-lg font-bold text-foreground mb-4 flex items-center gap-2'>
-                <Cpu className='w-5 h-5 text-cyan-600 dark:text-cyan-500' /> Interests & Languages
+                <Cpu className='w-5 h-5 text-cyan-700 dark:text-cyan-500' /> Interests & Languages
               </h3>
               <div className='space-y-4 text-sm'>
                 <div>
-                  <h4 className='text-xs font-bold text-muted-foreground/50 uppercase tracking-wider mb-2'>Interests</h4>
+                  <h4 className='text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2'>Interests</h4>
                   <p className='text-muted-foreground'>Chess, Poker, F1, Martial Arts, Cricket, Boxing, Badminton, Reading, Cooking, Dancing, Psychology, History, Philosophy</p>
                 </div>
                 <div>
-                  <h4 className='text-xs font-bold text-muted-foreground/50 uppercase tracking-wider mb-2'>Languages</h4>
+                  <h4 className='text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2'>Languages</h4>
                   <p className='text-muted-foreground'>
                     <span className='font-medium'>Fluent:</span> English, Hindi<br />
                     <span className='font-medium'>Intermediate:</span> French, Sanskrit, Spanish, Russian<br />
@@ -563,7 +563,7 @@ export default function Home() {
           <div className='p-6 rounded-2xl bg-muted/40 dark:bg-slate-900/30 border border-border'>
             <div className='grid md:grid-cols-2 gap-8 text-sm text-muted-foreground'>
               <div>
-                <h4 className='text-xs font-bold text-muted-foreground/50 uppercase tracking-wider mb-2'>Finance</h4>
+                <h4 className='text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2'>Finance</h4>
                 <ul className='space-y-1'>
                   <li><a href="http://basno.com/l2c3uqav" target="_blank" rel="noopener noreferrer" className="hover:text-primary">CFA Level 1</a></li>
                   <li><a href="https://portal.bloombergforeducation.com/certificates/8Nm9y3yx5b9yaWztgxSmewLD" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Bloomberg Market Certification (BMC)</a></li>
@@ -578,7 +578,7 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <h4 className='text-xs font-bold text-muted-foreground/50 uppercase tracking-wider mb-2'>Computer Science</h4>
+                <h4 className='text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2'>Computer Science</h4>
                 <ul className='space-y-1'>
                   <li><a href="https://coursera.org/share/62c6f8a2d4a998dc4856249a1a937e17" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Deep Learning Specialization (Andrew Ng)</a></li>
                   <li><a href="https://coursera.org/share/a24e1310f62486c32f6a2393fa1240dc" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Applied Data Science with Python (Michigan)</a></li>
@@ -607,7 +607,7 @@ export default function Home() {
             </div>
             <Link 
               href='/books' 
-              className='px-6 py-3 bg-primary/10 text-primary font-semibold rounded-lg border border-primary/20 hover:bg-primary hover:text-slate-950 transition-all duration-300 w-fit'
+              className='px-6 py-3 bg-primary/10 text-primary font-semibold rounded-lg border border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all duration-300 w-fit'
             >
               View Full Reading List
             </Link>
@@ -639,6 +639,7 @@ export default function Home() {
           <div className='space-y-8'>
             <div className='grid lg:grid-cols-2 gap-6'>
               <div className='p-4 rounded-2xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all flex items-center justify-center overflow-hidden'>
+                {/* eslint-disable-next-line @next/next/no-img-element -- SVG metric cards bypass next/image optimization anyway */}
                 <img 
                   src="/metrics/metrics.main.svg"
  
@@ -653,6 +654,7 @@ export default function Home() {
             </div>
             <div className='grid lg:grid-cols-2 gap-6'>
               <div className='p-4 rounded-2xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all flex items-center justify-center overflow-hidden'>
+                {/* eslint-disable-next-line @next/next/no-img-element -- SVG metric cards bypass next/image optimization anyway */}
                 <img 
                   src="/metrics/metrics.activity.svg"
  
@@ -662,6 +664,7 @@ export default function Home() {
                 />
               </div>
               <div className='p-4 rounded-2xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all flex items-center justify-center overflow-hidden'>
+                {/* eslint-disable-next-line @next/next/no-img-element -- SVG metric cards bypass next/image optimization anyway */}
                 <img 
                   src="/metrics/metrics.advanced.svg"
  
@@ -673,6 +676,7 @@ export default function Home() {
             </div>
             <div className='grid lg:grid-cols-2 gap-6'>
               <div className='p-4 rounded-2xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all flex items-center justify-center overflow-hidden'>
+                {/* eslint-disable-next-line @next/next/no-img-element -- SVG metric cards bypass next/image optimization anyway */}
                 <img 
                   src="/metrics/metrics.streak.svg"
  
@@ -682,6 +686,7 @@ export default function Home() {
                 />
               </div>
               <div className='p-4 rounded-2xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all flex items-center justify-center overflow-hidden'>
+                {/* eslint-disable-next-line @next/next/no-img-element -- third-party dynamic badge; must not be proxied or cached */}
                 <img 
                   src="https://visitor-badge.laobi.icu/badge?page_id=shreejitverma" 
                   alt="Visitor Badge" 

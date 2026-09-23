@@ -27,7 +27,7 @@ export default function ArchitectPerspectives() {
   return (
     <div className='bg-background dark:bg-card/50 border border-border rounded-2xl p-6'>
       <h3 className='text-sm font-bold text-foreground mb-6 flex items-center gap-2'>
-        <MessageSquare className='w-4 h-4 text-blue-400' />
+        <MessageSquare className='w-4 h-4 text-blue-700 dark:text-blue-400' />
         ARCHITECT_PERSPECTIVES
       </h3>
       
@@ -47,7 +47,7 @@ export default function ArchitectPerspectives() {
             </div>
             
             <div className='p-3 rounded-lg bg-slate-50 dark:bg-background/50 border border-border text-[10px] text-muted-foreground'>
-              <span className='font-bold text-cyan-600 dark:text-cyan-500 mr-2'>SIGHT:</span>
+              <span className='font-bold text-cyan-700 dark:text-cyan-500 mr-2'>SIGHT:</span>
               {arch.perspective}
             </div>
           </div>

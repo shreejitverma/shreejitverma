@@ -28,7 +28,6 @@ interface ScrapedBook {
 }
 
 interface Book extends ScrapedBook {
-  rating?: number;
   src?: string;
   link?: string; // Amazon link
 }
@@ -49,8 +48,7 @@ export default function BooksPage() {
       .then((data: ScrapedBook[]) => {
         const enhancedData = data.map(b => ({
           ...b,
-          rating: 4, 
-          review: b.review || b.description || "A valuable addition to any library. This text offers deep insights into its subject matter.",
+          review: b.review || b.description,
           link: `https://www.amazon.com/s?k=${encodeURIComponent(b.title + " " + b.author)}`
         }));
         setAllBooks(enhancedData);
@@ -125,21 +123,21 @@ export default function BooksPage() {
       <nav className='fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border/50 bg-background/80'>
         <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
           <Link href='/' className='font-mono text-xl font-bold text-primary tracking-tighter hover:text-cyan-500 transition-colors'>
-            SV<span className='text-muted-foreground/60'>.quant</span>
+            SV<span className='text-muted-foreground'>.quant</span>
           </Link>
           <div className='flex items-center gap-6'>
             <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
             <div className='flex items-center gap-4 border-l border-border pl-6'>
-              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' aria-label='GitHub'>
                 <Github className='w-5 h-5' />
               </a>
-              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' aria-label='LinkedIn'>
                <Linkedin className='w-5 h-5' />
               </a>
-              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar">
+              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar" aria-label="Google Scholar">
                 <GraduationCap className='w-5 h-5' />
               </a>
-              <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Schedule a Meeting">
+              <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Schedule a Meeting" aria-label="Schedule a Meeting">
                 <Calendar className='w-5 h-5' />
               </a>
               </div>
@@ -189,7 +187,7 @@ export default function BooksPage() {
                   : `Showing ${((page - 1) * BOOKS_PER_PAGE + 1).toLocaleString()}–${Math.min(page * BOOKS_PER_PAGE, filteredBooks.length).toLocaleString()} of ${filteredBooks.length.toLocaleString()} books`}
               </p>
               {totalPages > 1 && (
-                <p className='text-sm text-muted-foreground/70 font-mono'>Page {page} of {totalPages}</p>
+                <p className='text-sm text-muted-foreground font-mono'>Page {page} of {totalPages}</p>
               )}
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
@@ -202,7 +200,6 @@ export default function BooksPage() {
                   year={book.year}
                   format={book.format}
                   review={book.review || ""}
-                  downloadLink={book.downloadLink}
                   link={book.link}
                   isbn={book.isbn}
                   publisher={book.publisher}
@@ -219,7 +216,7 @@ export default function BooksPage() {
             {filteredBooks.length === 0 && (
               <div className='text-center py-32'>
                 <Filter className='w-12 h-12 text-slate-300 dark:text-slate-800 mx-auto mb-4' />
-                <p className='text-muted-foreground/60 text-lg'>No books found matching your criteria.</p>
+                <p className='text-muted-foreground text-lg'>No books found matching your criteria.</p>
               </div>
             )}
           </>
@@ -229,7 +226,7 @@ export default function BooksPage() {
       {/* Footer */}
       <footer className='relative z-10 py-12 border-t border-border mt-20'>
         <div className='max-w-7xl mx-auto px-6 text-center'>
-          <p className='text-muted-foreground/60 text-sm'>
+          <p className='text-muted-foreground text-sm'>
             © {new Date().getFullYear()} Shreejit Verma. Curated for the curious mind.
           </p>
         </div>

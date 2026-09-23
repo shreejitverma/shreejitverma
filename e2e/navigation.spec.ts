@@ -41,6 +41,25 @@ test.describe('Navigation and interactions', () => {
       .not.toBe(before);
   });
 
+  test('dark: utilities follow the site theme, not the OS color scheme', async ({ browser }) => {
+    // Regression: without a class-based dark variant, a light-OS visitor saw
+    // text-slate-900 award titles on the default dark background.
+    const context = await browser.newContext({ colorScheme: 'light' });
+    const page = await context.newPage();
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveClass(/\bdark\b/);
+    const award = page.getByText('Global Recognition Gold Award').first();
+    const luminance = await award.evaluate((el) => {
+      const canvas = document.createElement('canvas').getContext('2d')!;
+      canvas.fillStyle = getComputedStyle(el).color;
+      canvas.fillRect(0, 0, 1, 1);
+      const [r, g, b] = canvas.getImageData(0, 0, 1, 1).data;
+      return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+    });
+    expect(luminance, 'award title must be light text on the dark theme').toBeGreaterThan(0.7);
+    await context.close();
+  });
+
   test('cross-page navigation links work', async ({ page }) => {
     await page.goto('/value-investing');
     await page.getByRole('link', { name: 'Home', exact: true }).click();

@@ -63,6 +63,16 @@ test.describe('SEO metadata', () => {
     expect(nodes.some((n: { '@type'?: string }) => n['@type'] === 'ProfilePage'), 'ProfilePage node missing').toBe(true);
   });
 
+  // Crawlers index the server response; a client-only mount gate would ship
+  // an empty document even though the hydrated page looks fine in a browser.
+  for (const { path } of PAGES) {
+    test(`${path} server-renders its content`, async ({ request }) => {
+      const response = await request.get(path);
+      expect(response.status()).toBe(200);
+      expect(await response.text()).toMatch(/<h1[\s>]/);
+    });
+  }
+
   test('home and resume pages have exactly one h1', async ({ page }) => {
     for (const path of ['/', '/resume']) {
       await page.goto(path);

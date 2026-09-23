@@ -16,6 +16,14 @@ test.describe('Books library functionality', () => {
     await expect(page.getByText(/digital repository of \d{3,}/)).toBeVisible();
   });
 
+  test('cards never offer downloads that the site does not serve', async ({ page }) => {
+    // /library and /content_library were local-only symlinks; every link into
+    // them 404ed in production.
+    await expect(page.locator('main a[href^="/library/"], main a[href^="/content_library/"]')).toHaveCount(0);
+    const amazonLinks = page.getByRole('link', { name: /^Find on Amazon: .+$/ });
+    expect(await amazonLinks.count()).toBeGreaterThanOrEqual(BOOKS_PER_PAGE);
+  });
+
   test('search narrows results to matching titles or authors', async ({ page }) => {
     const search = page.getByPlaceholder(SEARCH_PLACEHOLDER);
     await search.fill('C++');

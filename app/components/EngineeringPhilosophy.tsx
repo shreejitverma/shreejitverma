@@ -6,37 +6,37 @@ import { Activity, Zap, Shield, Target, Cpu, Layers } from 'lucide-react';
 const EngineeringPhilosophy = () => {
   const principles = [
     {
-      icon: <Zap className="w-5 h-5 text-amber-500" />,
+      icon: <Zap className="w-5 h-5 text-amber-700 dark:text-amber-500" />,
       title: "Ultra-Low Latency",
       desc: "Minimizing microsecond-level overhead through kernel bypass (DPDK) and FPGA acceleration.",
       value: 98
     },
     {
-      icon: <Shield className="w-5 h-5 text-emerald-500" />,
+      icon: <Shield className="w-5 h-5 text-emerald-700 dark:text-emerald-500" />,
       title: "Deterministic Execution",
       desc: "Ensuring predictable response times via lock-free data structures and cache-line alignment.",
       value: 95
     },
     {
-      icon: <Target className="w-5 h-5 text-blue-500" />,
+      icon: <Target className="w-5 h-5 text-blue-700 dark:text-blue-500" />,
       title: "Alpha-Centric Design",
       desc: "Translating quantitative signals into high-performance execution strategies with minimal slippage.",
       value: 92
     },
     {
-      icon: <Layers className="w-5 h-5 text-cyan-500" />,
+      icon: <Layers className="w-5 h-5 text-cyan-700 dark:text-cyan-500" />,
       title: "Scalable Architecture",
       desc: "Building modular systems that handle millions of events per second with graceful degradation.",
       value: 89
     },
     {
-      icon: <Cpu className="w-5 h-5 text-purple-500" />,
+      icon: <Cpu className="w-5 h-5 text-purple-700 dark:text-purple-500" />,
       title: "Hardware Synergies",
       desc: "Optimizing software for modern CPU architectures (SIMD, branch prediction) and custom hardware.",
       value: 94
     },
     {
-      icon: <Activity className="w-5 h-5 text-rose-500" />,
+      icon: <Activity className="w-5 h-5 text-rose-700 dark:text-rose-500" />,
       title: "Statistical Rigor",
       desc: "Applying rigorous backtesting and risk modeling to ensure robust performance across regimes.",
       value: 91
@@ -54,7 +54,7 @@ const EngineeringPhilosophy = () => {
             <div className="p-2 rounded-lg bg-slate-50 dark:bg-muted group-hover:bg-primary/10 transition-colors">
               {p.icon}
             </div>
-            <span className="text-[10px] font-mono font-bold text-muted-foreground/60">
+            <span className="text-[10px] font-mono font-bold text-muted-foreground">
               CORE_METRIC_{i + 1}
             </span>
           </div>

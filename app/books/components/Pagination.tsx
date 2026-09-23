@@ -41,7 +41,7 @@ const Pagination = memo(({ page, totalPages, onPageChange }: PaginationProps) =>
 
       {pageWindow(page, totalPages).map((item, index) =>
         item === 'gap' ? (
-          <span key={`gap-${index}`} className='px-1 text-muted-foreground/60 select-none' aria-hidden='true'>
+          <span key={`gap-${index}`} className='px-1 text-muted-foreground select-none' aria-hidden='true'>
             …
           </span>
         ) : (
@@ -52,7 +52,7 @@ const Pagination = memo(({ page, totalPages, onPageChange }: PaginationProps) =>
             aria-current={item === page ? 'page' : undefined}
             className={`${buttonBase} ${
               item === page
-                ? 'bg-primary text-slate-950 border-primary shadow-lg shadow-cyan-500/20 font-bold'
+                ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-cyan-500/20 font-bold'
                 : 'bg-card/50 dark:bg-card border-border text-muted-foreground hover:border-primary/40 hover:text-primary'
             }`}
           >
