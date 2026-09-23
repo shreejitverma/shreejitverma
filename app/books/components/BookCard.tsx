@@ -2,7 +2,7 @@
 
 import { memo } from 'react';
 import Image from 'next/image';
-import { Download, ExternalLink, TrendingUp, Users } from 'lucide-react';
+import { ExternalLink, TrendingUp, Users } from 'lucide-react';
 
 interface BookCardProps {
   title: string;
@@ -11,7 +11,6 @@ interface BookCardProps {
   year: string;
   format?: string;
   review: string;
-  downloadLink: string;
   link?: string;
   isbn?: string;
   publisher?: string;
@@ -25,7 +24,7 @@ const PLACEHOLDER_COVER = 'https://placehold.co/400x600/1e293b/cbd5e1/png?text=B
 const PRIMARY_ACTION =
   'flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary text-xs font-bold rounded-lg transition-all duration-300 border border-cyan-500/20 hover:border-transparent';
 
-const BookCard = memo(({ title, author, category, year, review, downloadLink, link, coverImage, importance, salesCount }: BookCardProps) => {
+const BookCard = memo(({ title, author, category, year, review, link, coverImage, importance, salesCount }: BookCardProps) => {
   return (
     <div className='group relative bg-card/30 dark:bg-card border border-border/50 rounded-2xl p-5 hover:border-cyan-500/40 transition-all duration-300 flex flex-col hover:shadow-xl hover:shadow-cyan-500/5 backdrop-blur-sm'>
       <div className='flex gap-4 mb-4'>
@@ -85,39 +84,16 @@ const BookCard = memo(({ title, author, category, year, review, downloadLink, li
       )}
 
       <div className='mt-auto pt-4 border-t border-border/50 flex justify-between items-center gap-2'>
-        {downloadLink ? (
-          <>
-            <a
-              href={downloadLink}
-              download
-              className={PRIMARY_ACTION}
-            >
-              <Download className='w-3 h-3' />
-              Download
-            </a>
-            <a
-              href={link}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='p-2 rounded-lg bg-muted dark:bg-muted hover:bg-slate-200 dark:hover:bg-slate-700 text-muted-foreground dark:text-muted-foreground hover:text-yellow-600 dark:hover:text-yellow-500 transition-colors'
-              title="Buy on Amazon"
-              aria-label={`Find ${title} on Amazon`}
-            >
-              <ExternalLink className='w-3 h-3' />
-            </a>
-          </>
-        ) : (
-          <a
-            href={link}
-            target='_blank'
-            rel='noopener noreferrer'
-            className={PRIMARY_ACTION}
-            aria-label={`Find ${title} on Amazon`}
-          >
-            <ExternalLink className='w-3 h-3' />
-            Find on Amazon
-          </a>
-        )}
+        <a
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+          className={PRIMARY_ACTION}
+          aria-label={`Find on Amazon: ${title}`}
+        >
+          <ExternalLink className='w-3 h-3' />
+          Find on Amazon
+        </a>
       </div>
     </div>
   );

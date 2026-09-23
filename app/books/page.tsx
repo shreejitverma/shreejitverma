@@ -27,16 +27,6 @@ interface ScrapedBook {
   salesCount?: number;
 }
 
-// public/library and public/content_library are symlinks into the owner's
-// local archive. They are never deployed, so links into them 404 in production
-// and must not be offered as downloads.
-const LOCAL_ONLY_PREFIXES = ['/library/', '/content_library/'];
-
-function servedDownloadLink(link: string | undefined): string {
-  if (!link || LOCAL_ONLY_PREFIXES.some((prefix) => link.startsWith(prefix))) return '';
-  return link;
-}
-
 interface Book extends ScrapedBook {
   src?: string;
   link?: string; // Amazon link
@@ -58,7 +48,6 @@ export default function BooksPage() {
       .then((data: ScrapedBook[]) => {
         const enhancedData = data.map(b => ({
           ...b,
-          downloadLink: servedDownloadLink(b.downloadLink),
           review: b.review || b.description,
           link: `https://www.amazon.com/s?k=${encodeURIComponent(b.title + " " + b.author)}`
         }));
@@ -211,7 +200,6 @@ export default function BooksPage() {
                   year={book.year}
                   format={book.format}
                   review={book.review || ""}
-                  downloadLink={book.downloadLink}
                   link={book.link}
                   isbn={book.isbn}
                   publisher={book.publisher}

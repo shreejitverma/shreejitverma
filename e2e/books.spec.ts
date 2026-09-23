@@ -20,7 +20,7 @@ test.describe('Books library functionality', () => {
     // /library and /content_library were local-only symlinks; every link into
     // them 404ed in production.
     await expect(page.locator('main a[href^="/library/"], main a[href^="/content_library/"]')).toHaveCount(0);
-    const amazonLinks = page.getByRole('link', { name: /^Find .+ on Amazon$/ });
+    const amazonLinks = page.getByRole('link', { name: /^Find on Amazon: .+$/ });
     expect(await amazonLinks.count()).toBeGreaterThanOrEqual(BOOKS_PER_PAGE);
   });
 
