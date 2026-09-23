@@ -15,10 +15,13 @@ one vault note identifies it unambiguously:
   fuzzy   title similarity >= 0.88 and both authors agree
 Every tier rejects a known author conflict. Prefixes must end on a word
 boundary. Site entries listed under "skip" in scripts/cover_overrides.json
-(exact site titles, each with a reason) are never touched: anonymous files
-whose generic title fits several books. Covers the vault marks as
-`cover_source: generated` are typeset title cards, not real covers, and are
-skipped. A site book matched by several notes with different covers is left
+(exact site titles, each with a reason) never receive a vault cover: anonymous
+files whose generic title fits several books, or a different book that shares
+a title prefix. If such an entry already points at a self-hosted cover, that
+cover is cleared (with coverLookupDone) so enrich_books.py fetches a hotlinked
+one on its next run; any other cover URL is left untouched. Covers the vault
+marks as `cover_source: generated` are typeset title cards, not real covers,
+and are skipped. A site book matched by several notes with different covers is left
 unchanged, unless exactly one of those notes matched its title exactly.
 
 Output files are named by a hash of the source image, so they are safe to
@@ -225,7 +228,6 @@ def main() -> int:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
     parser.add_argument("--vault", default=DEFAULT_VAULT)
-    parser.add_argument("--data", default=DATA_PATH)
     parser.add_argument(
         "--dry-run", action="store_true", help="report matches without writing files"
     )
@@ -238,7 +240,7 @@ def main() -> int:
         print("error: cwebp not found (brew install webp)", file=sys.stderr)
         return 2
 
-    with open(args.data, encoding="utf-8") as fh:
+    with open(DATA_PATH, encoding="utf-8") as fh:
         books = json.load(fh)
     with open(OVERRIDES_PATH, encoding="utf-8") as fh:
         skip_titles = set(json.load(fh)["skip"])
@@ -247,9 +249,14 @@ def main() -> int:
         "main": collections.defaultdict(list),
         "titles": [],
     }
+    reverted = 0
     for i, book in enumerate(books):
         title = norm(book.get("title", ""))
         if book.get("title") in skip_titles:
+            if (book.get("coverImage") or "").startswith(COVERS_URL + "/"):
+                del book["coverImage"]
+                book.pop("coverLookupDone", None)
+                reverted += 1
             continue
         if not title:
             continue  # e.g. non-Latin titles normalize to nothing; never match on an empty key
@@ -293,7 +300,8 @@ def main() -> int:
         if not args.dry_run and not os.path.exists(dest):
             convert(src, dest)
 
-    changed = replaced = added = 0
+    changed = reverted
+    replaced = added = 0
     for i, note in assignments.items():
         url = f"{COVERS_URL}/{outputs[note['cover_path']]}"
         book = books[i]
@@ -320,7 +328,7 @@ def main() -> int:
         for name in orphans:
             os.remove(os.path.join(COVERS_DIR, name))
         if changed:
-            write_json_atomic(args.data, books)
+            write_json_atomic(DATA_PATH, books)
 
     with_cover = sum(1 for b in books if (b.get("coverImage") or "").strip())
     print(f"vault book notes usable: {len(notes)}  skipped: {dict(skipped)}")
@@ -332,7 +340,8 @@ def main() -> int:
         f"cover files: {len(outputs)}  orphans {'found' if args.dry_run else 'removed'}: {len(orphans)}"
     )
     print(
-        f"entries changed: {changed} (new cover: {added}, replaced hotlink: {replaced})"
+        f"entries changed: {changed} (new cover: {added}, replaced hotlink: {replaced},"
+        f" skip-listed cover cleared: {reverted})"
     )
     print(
         f"site books with a cover: {with_cover}/{len(books)} ({with_cover / len(books):.1%})"
