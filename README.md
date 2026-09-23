@@ -168,6 +168,8 @@ npm run test:e2e     # full Playwright E2E suite (desktop + mobile)
 The E2E suite (`e2e/`) covers every public page; `e2e/README.md` lists what each spec checks.
 CI runs lint, typecheck, and the full suite on every pull request (`.github/workflows/e2e.yml`).
 `scripts/enrich_books.py` enriches the reading-list dataset with cover images and descriptions from Open Library and Google Books; it is resumable and idempotent.
+`scripts/import_vault_covers.py` imports curated covers from the Obsidian vault (`Reading/Library/` notes and `Attachments/Covers/`) as 320px WebP files under `public/covers/`, matching books by title and author and never guessing: ambiguous matches, generated title-card covers, and titles listed in `scripts/cover_overrides.json` are skipped.
+Vault covers take precedence over the hotlinked covers from `enrich_books.py`, which never overwrites an existing cover; rerun the import after adding books or covers to the vault (`python3 scripts/import_vault_covers.py --dry-run` previews the changes).
 `scripts/categorize_books.py` assigns book categories through hand-curated overrides (`scripts/category_overrides.json`), title-family regex rules, and ordered keyword rules, keeping the `General` shelf a small miscellany bucket.
 `scripts/` also holds standalone personal data tooling unrelated to the site, such as `scripts/amazon_ir_scraper.py`, which downloads Amazon investor-relations PDFs (annual reports, proxy statements, shareholder letters) into `~/Downloads/Amazon_IR_Documents`.
 `backlog.md` is the workspace task backlog managed by `tasks-axi`.
