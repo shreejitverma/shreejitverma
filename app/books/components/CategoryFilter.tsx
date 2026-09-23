@@ -26,7 +26,7 @@ const CategoryFilter = memo(({ categories, activeCategory, onSelectCategory }: C
             aria-pressed={isActive}
             className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-300 flex items-center gap-2 ${
               isActive
-                ? 'bg-primary text-slate-950 shadow-lg shadow-cyan-500/20'
+                ? 'bg-primary text-primary-foreground shadow-lg shadow-cyan-500/20'
                 : 'bg-card/50 dark:bg-card text-muted-foreground dark:text-muted-foreground border border-border hover:border-cyan-500/40 hover:text-primary'
             }`}
           >
@@ -34,7 +34,7 @@ const CategoryFilter = memo(({ categories, activeCategory, onSelectCategory }: C
             {name}
             <span
               className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono ${
-                isActive ? 'bg-slate-950/20 text-slate-950' : 'bg-muted text-muted-foreground'
+                isActive ? 'bg-black/20 text-primary-foreground' : 'bg-muted text-muted-foreground'
               }`}
             >
               {count.toLocaleString()}

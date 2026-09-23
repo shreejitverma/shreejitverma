@@ -68,7 +68,7 @@ export default function Methodology() {
             <li>Nothing on this page is investment advice; it is a methodology demonstration.</li>
           </ul>
           <div className='mt-5 flex items-start gap-2 p-3 rounded-lg bg-amber-500/10 border border-amber-500/20'>
-            <AlertTriangle className='w-4 h-4 text-amber-500 shrink-0 mt-0.5' />
+            <AlertTriangle className='w-4 h-4 text-amber-700 dark:text-amber-500 shrink-0 mt-0.5' />
             <p className='text-[11px] text-muted-foreground leading-relaxed'>
               Factor weights are subjective research priors, not fitted parameters. Changing them changes the
               ranking; the point of publishing them is that the ranking is reproducible.

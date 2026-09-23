@@ -22,6 +22,8 @@ export interface CompanyFundamentals {
 export interface ComputedMetrics {
   ticker: string;
   name: string;
+  /** Reporting currency; only the per-share Graham Number is denominated in it. */
+  currency: CompanyFundamentals['currency'];
   moat: 'Wide' | 'Narrow';
   roePct: number;
   operatingMarginPct: number;

@@ -314,8 +314,8 @@ export default function ResumePage() {
           ))}
         </ul>
         <p className='text-sm mt-4'>
-          Full certification list on the <Link href='/' className='text-primary hover:underline'>home page</Link> and
-          in the <a href='/Shreejit_Verma_Resume.pdf' className='text-primary hover:underline'>PDF resume</a>.
+          Full certification list on the <Link href='/' className='text-primary underline underline-offset-2'>home page</Link> and
+          in the <a href='/Shreejit_Verma_Resume.pdf' className='text-primary underline underline-offset-2'>PDF resume</a>.
         </p>
       </section>
     </main>

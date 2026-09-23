@@ -137,9 +137,13 @@ export function computeUniverse(universe: CompanyFundamentals[]): ComputedMetric
       const oriented = factor.higherIsBetter ? rank : 100 - rank;
       return total + factor.weight * oriented;
     }, 0);
+    // Thresholds apply to the published (rounded) score so the displayed
+    // number and its signal can never disagree at a boundary.
+    const compositeScore = roundTo(composite, 1);
     return {
       ticker: row.company.ticker,
       name: row.company.name,
+      currency: row.company.currency,
       moat: row.company.moat,
       roePct: roundTo(row.values.roePct, 1),
       operatingMarginPct: roundTo(row.values.operatingMarginPct, 1),
@@ -147,13 +151,14 @@ export function computeUniverse(universe: CompanyFundamentals[]): ComputedMetric
       revenueCagrPct: roundTo(row.values.revenueCagrPct, 1),
       debtToEquity: roundTo(row.values.debtToEquity, 2),
       grahamNumber: roundTo(grahamNumber(row.company), 1),
-      compositeScore: roundTo(composite, 1),
-      signal: signalFromScore(composite),
+      compositeScore,
+      signal: signalFromScore(compositeScore),
     };
   });
 }
 
 export function median(values: number[]): number {
+  if (values.length === 0) throw new RangeError('median of an empty array is undefined');
   const sorted = [...values].sort((a, b) => a - b);
   const mid = Math.floor(sorted.length / 2);
   return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
@@ -161,8 +166,8 @@ export function median(values: number[]): number {
 
 /** RFC 4180-style CSV of the computed universe, sorted by composite score. */
 export function toCsv(rows: ComputedMetrics[]): string {
-  const header = 'ticker,name,roe_pct,operating_margin_pct,fcf_margin_pct,revenue_cagr_5y_pct,debt_to_equity,graham_number,moat,composite_score,signal';
-  const escape = (value: string) => (/[",\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value);
+  const header = 'ticker,name,roe_pct,operating_margin_pct,fcf_margin_pct,revenue_cagr_5y_pct,debt_to_equity,graham_number,currency,moat,composite_score,signal';
+  const escape = (value: string) => (/[",\r\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value);
   const body = [...rows]
     .sort((a, b) => b.compositeScore - a.compositeScore)
     .map((row) =>
@@ -175,6 +180,7 @@ export function toCsv(rows: ComputedMetrics[]): string {
         row.revenueCagrPct,
         row.debtToEquity,
         row.grahamNumber,
+        row.currency,
         row.moat,
         row.compositeScore,
         row.signal,

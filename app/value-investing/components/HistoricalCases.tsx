@@ -32,12 +32,12 @@ export default function HistoricalCases() {
       <div className='flex items-center justify-between mb-8'>
         <div>
           <h3 className='text-xl font-bold text-foreground flex items-center gap-2'>
-            <History className='w-5 h-5 text-indigo-400' />
+            <History className='w-5 h-5 text-indigo-700 dark:text-indigo-400' />
             HISTORICAL_ANTI_MODELS
           </h3>
           <p className='text-sm text-muted-foreground font-mono mt-1'>LEARNING_FROM_THE_FALLEN</p>
         </div>
-        <div className='hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-500 text-[10px] font-mono border border-rose-500/20'>
+        <div className='hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-700 dark:text-rose-500 text-[10px] font-mono border border-rose-500/20'>
           <AlertCircle className='w-3 h-3' />
           <span>CAUTIONARY_TALES_ONLY</span>
         </div>
@@ -52,7 +52,7 @@ export default function HistoricalCases() {
               </div>
               <span className='text-[8px] font-mono text-muted-foreground uppercase tracking-widest'>{item.status}</span>
             </div>
-            <h4 className='text-lg font-bold text-foreground mb-1 group-hover:text-indigo-400 transition-colors'>{item.name}</h4>
+            <h4 className='text-lg font-bold text-foreground mb-1 group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors'>{item.name}</h4>
             <div className='text-[10px] font-mono text-muted-foreground mb-4'>{item.period}</div>
             
             <div className='space-y-3'>
@@ -61,8 +61,8 @@ export default function HistoricalCases() {
                 <div className='text-xs text-muted-foreground leading-snug'>{item.reason}</div>
               </div>
               <div className='pt-3 border-t border-slate-100 dark:border-border'>
-                <div className='text-[8px] font-bold text-rose-500 uppercase mb-1'>Destruction</div>
-                <div className='text-xs font-bold text-rose-500'>{item.impact}</div>
+                <div className='text-[8px] font-bold text-rose-700 dark:text-rose-500 uppercase mb-1'>Destruction</div>
+                <div className='text-xs font-bold text-rose-700 dark:text-rose-500'>{item.impact}</div>
               </div>
             </div>
             

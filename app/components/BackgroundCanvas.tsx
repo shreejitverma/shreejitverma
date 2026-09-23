@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { useTheme } from 'next-themes';
+import { useHydrated } from './useHydrated';
 
 declare global {
   interface Window {
@@ -12,13 +13,9 @@ declare global {
 
 export default function BackgroundCanvas() {
   const { theme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useHydrated();
   const [tweenLoaded, setTweenLoaded] = useState(false);
   const [easeLoaded, setEaseLoaded] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Use resolvedTheme to handle 'system' preference correctly
   const currentTheme = resolvedTheme || theme;

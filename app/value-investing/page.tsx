@@ -1,6 +1,3 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { 
   TrendingUp, 
@@ -27,43 +24,35 @@ import RiskAntiModels from './components/RiskAntiModels';
 import HistoricalCases from './components/HistoricalCases';
 
 export default function ValueInvestingPage() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const universeMetrics = computeUniverse(UNIVERSE);
   const top = [...universeMetrics].sort((a, b) => b.compositeScore - a.compositeScore)[0];
   const medianRoe = median(universeMetrics.map((m) => m.roePct));
   const medianFcfMargin = median(universeMetrics.map((m) => m.fcfMarginPct));
   const medianDebtToEquity = median(universeMetrics.map((m) => m.debtToEquity));
 
-  if (!mounted) return null;
-
   return (
     <div className='min-h-screen bg-background text-muted-foreground font-sans selection:bg-primary/30'>
       {/* ... navigation ... */}
       <nav className='fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border/50 bg-background/80'>
-        <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
+        <div className='max-w-[1600px] mx-auto px-6 h-16 flex items-center justify-between'>
           <Link href='/' className='font-mono text-xl font-bold text-primary tracking-tighter hover:text-cyan-500 transition-colors flex items-center gap-2'>
             <Cpu className="w-6 h-6" />
-            SV<span className='text-muted-foreground/60'>.terminal</span>
+            SV<span className='text-muted-foreground'>.terminal</span>
           </Link>
           <div className='flex items-center gap-6'>
             <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
             <Link href="/books" className="text-sm font-medium hover:text-primary transition-colors">Archives</Link>
             <div className='flex items-center gap-4 border-l border-border pl-6'>
-              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
+              <a href='https://github.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' aria-label='GitHub'>
                 <Github className='w-5 h-5' />
               </a>
-              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>
+              <a href='https://www.linkedin.com/in/shreejitverma/' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' aria-label='LinkedIn'>
                <Linkedin className='w-5 h-5' />
               </a>
-              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar">
+              <a href='https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Google Scholar" aria-label="Google Scholar">
                 <GraduationCap className='w-5 h-5' />
               </a>
-              <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Schedule a Meeting">
+              <a href='https://calendly.com/shreejitverma' target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' title="Schedule a Meeting" aria-label="Schedule a Meeting">
                 <Calendar className='w-5 h-5' />
               </a>
               </div>
@@ -109,7 +98,7 @@ export default function ValueInvestingPage() {
               </div>
             </div>
             <div className='mt-auto pt-4 border-t border-border'>
-              <a href='#methodology' className='w-full py-2 bg-cyan-600 hover:bg-primary text-foreground rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2'>
+              <a href='#methodology' className='w-full py-2 bg-primary hover:opacity-90 text-primary-foreground rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2'>
                 <BarChart3 className='w-3 h-3' />
                 VIEW METHODOLOGY
               </a>
@@ -132,7 +121,7 @@ export default function ValueInvestingPage() {
             value={`${medianRoe.toFixed(1)}%`}
             label="universe median"
             trend="quality"
-            icon={<Layers className="w-5 h-5 text-blue-400" />}
+            icon={<Layers className="w-5 h-5 text-blue-700 dark:text-blue-400" />}
             color="blue"
           />
           <MetricCard
@@ -140,7 +129,7 @@ export default function ValueInvestingPage() {
             value={`${medianFcfMargin.toFixed(1)}%`}
             label="cash conversion"
             trend="fundamentals"
-            icon={<Zap className="w-5 h-5 text-emerald-400" />}
+            icon={<Zap className="w-5 h-5 text-emerald-700 dark:text-emerald-400" />}
             color="emerald"
           />
           <MetricCard
@@ -148,7 +137,7 @@ export default function ValueInvestingPage() {
             value={medianDebtToEquity.toFixed(2)}
             label="balance-sheet risk"
             trend="leverage"
-            icon={<TrendingUp className="w-5 h-5 text-indigo-400" />}
+            icon={<TrendingUp className="w-5 h-5 text-indigo-700 dark:text-indigo-400" />}
             color="indigo"
           />
         </div>
@@ -170,16 +159,16 @@ export default function ValueInvestingPage() {
                 <div className='w-2 h-2 rounded-full bg-red-500/50' />
                 <div className='w-2 h-2 rounded-full bg-amber-500/50' />
                 <div className='w-2 h-2 rounded-full bg-emerald-500/50' />
-                <span className='ml-2 opacity-50 uppercase'>framework_trace (illustrative)</span>
+                <span className='ml-2 uppercase'>framework_trace (illustrative)</span>
               </div>
-              <div className='text-emerald-500'>[OK] Running 7 Powers analysis for Microsoft (MSFT)...</div>
+              <div className='text-emerald-700 dark:text-emerald-500'>[OK] Running 7 Powers analysis for Microsoft (MSFT)...</div>
               <div className='text-muted-foreground'>[INFO] Switching Costs: Office 365 / ERP integration detected</div>
               <div className='text-muted-foreground'>[INFO] Network Economies: GitHub / LinkedIn growth sync</div>
-              <div className='text-cyan-500'>[SIGNAL] Scale Economies: Azure infrastructure moat identified</div>
+              <div className='text-cyan-700 dark:text-cyan-500'>[SIGNAL] Scale Economies: Azure infrastructure moat identified</div>
               <div className='text-muted-foreground'>[INFO] Cornered Resource: OpenAI exclusive Azure partnership</div>
-              <div className='text-amber-500'>[WARN] Counter-Positioning: Lower score due to incumbent nature</div>
+              <div className='text-amber-700 dark:text-amber-500'>[WARN] Counter-Positioning: Lower score due to incumbent nature</div>
               <div className='text-muted-foreground'>[INFO] Calculating Graham-Number for Tech Sector...</div>
-              <div className='text-emerald-500 animate-pulse'>_</div>
+              <div className='text-emerald-700 dark:text-emerald-500 animate-pulse'>_</div>
             </div>
           </div>
         </div>
@@ -193,19 +182,14 @@ export default function ValueInvestingPage() {
 
       {/* Footer */}
       <footer className='relative z-10 py-12 border-t border-border mt-20'>
-        <div className='max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6'>
+        <div className='max-w-[1600px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6'>
           <div className='flex items-center gap-2 font-mono text-sm'>
-            <span className='text-cyan-500 font-bold'>SV</span>
+            <span className='text-cyan-700 dark:text-cyan-500 font-bold'>SV</span>
             <span className='text-muted-foreground'>{"//"} QUANT_RESEARCH_DEPT</span>
           </div>
-          <p className='text-muted-foreground/60 text-xs'>
+          <p className='text-muted-foreground text-xs'>
             © {new Date().getFullYear()} Shreejit Verma. Advanced Financial Engineering.
           </p>
-          <div className='flex items-center gap-6'>
-            <a href="#" className="text-xs text-muted-foreground hover:text-primary">Terminals</a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-primary">Documentation</a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-primary">API</a>
-          </div>
         </div>
       </footer>
     </div>
