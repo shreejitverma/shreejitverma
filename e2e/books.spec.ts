@@ -181,6 +181,24 @@ test.describe('Books dataset quality', () => {
     expect(counts.get('General') ?? 0, 'General must stay a small miscellany bucket').toBeLessThan(150);
   });
 
+  test('every self-hosted cover the dataset references is served as an image', async ({ request }) => {
+    // Covers imported from the Obsidian vault by scripts/import_vault_covers.py.
+    const books: Array<Record<string, string>> = await (await request.get('/books_data_validated.json')).json();
+    const local = [...new Set(books.map((b) => b.coverImage ?? '').filter((url) => url.startsWith('/covers/')))];
+    expect(local.length, 'vault covers should be imported').toBeGreaterThan(400);
+    const broken: string[] = [];
+    for (let i = 0; i < local.length; i += 25) {
+      const batch = local.slice(i, i + 25);
+      const responses = await Promise.all(batch.map((url) => request.get(url)));
+      responses.forEach((response, j) => {
+        if (response.status() !== 200 || response.headers()['content-type'] !== 'image/webp') {
+          broken.push(`${batch[j]} -> ${response.status()} ${response.headers()['content-type']}`);
+        }
+      });
+    }
+    expect(broken, broken.slice(0, 5).join('\n')).toEqual([]);
+  });
+
   test('a substantial share of the library has real cover images', async ({ request }) => {
     const books: Array<Record<string, string>> = await (await request.get('/books_data_validated.json')).json();
     const withCover = books.filter((b) => (b.coverImage ?? '').trim().length > 0).length;
