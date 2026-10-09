@@ -193,10 +193,38 @@ Vault covers take precedence over the hotlinked covers from `enrich_books.py`, w
 
 ## GitHub Impact
 
+Refreshed daily by `.github/workflows/metrics.yml`; counts include private-repository contributions.
+
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/main/public/metrics/metrics.main.svg" alt="GitHub Overview" width="100%" />
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/main/public/metrics/metrics.advanced.svg" alt="Advanced Metrics" width="100%" />
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=shreejitverma" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/contrib3d.night-green.svg" />
+    <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/contrib3d.green-animate.svg" alt="3D contribution calendar for the last year" width="100%" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/streak.dark.svg" />
+    <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/streak.light.svg" alt="Contribution streak" width="80%" />
+  </picture>
+</div>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.overview.svg" alt="GitHub overview: activity, repositories, and lines of code changed" width="49%" valign="top" />
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.languages.svg" alt="Most used and recently used programming languages" width="49%" valign="top" />
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.calendar.svg" alt="Contribution calendar and pull request status" width="49%" valign="top" />
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.habits.svg" alt="Coding habits: commits by hour and day" width="49%" valign="top" />
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.repositories.svg" alt="Featured repositories" width="49%" valign="top" />
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.achievements.svg" alt="GitHub achievements" width="49%" valign="top" />
+</p>
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/snake.dark.svg" />
+    <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/snake.light.svg" alt="Animated snake eating the contribution graph" width="100%" />
+  </picture>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=shreejitverma" alt="Profile visitor count" />
 </div>
 
 ---

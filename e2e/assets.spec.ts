@@ -28,12 +28,12 @@ test.describe('Public assets', () => {
     expect(text).toContain('/resume');
   });
 
-  test('profile image and GitHub metrics are served', async ({ request }) => {
+  test('profile images are served', async ({ request }) => {
+    // GitHub metrics cards are published to the `output` branch, not served here.
     for (const asset of [
       '/Shreejit_Verma_profile_pic.jpg',
       '/images/user-profile.png',
-      '/metrics/metrics.main.svg',
-      '/metrics/metrics.advanced.svg',
+      '/images/profile-square.jpg',
     ]) {
       const response = await request.get(asset);
       expect(response.status(), asset).toBe(200);
