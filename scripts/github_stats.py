@@ -123,7 +123,8 @@ def collect(token: str, login: str) -> dict:
             "pullRequests": contributions["totalPullRequestContributions"],
             "reviews": contributions["totalPullRequestReviewContributions"],
             "issues": contributions["totalIssueContributions"],
-            "privateContributions": contributions["restrictedContributionsCount"],
+            # Contributions the API token cannot access, already included in the total.
+            "restrictedContributions": contributions["restrictedContributionsCount"],
         },
         "streak": {"current": current, "longest": longest},
         "pullRequests": {

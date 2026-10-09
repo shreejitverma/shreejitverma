@@ -21,7 +21,9 @@ export interface GitHubStats {
     pullRequests: number;
     reviews: number;
     issues: number;
-    privateContributions: number;
+    // GitHub's restrictedContributionsCount: contributions the API token cannot
+    // access, already included in `contributions`.
+    restrictedContributions: number;
   };
   streak: { current: number; longest: number };
   pullRequests: { merged: number; open: number; closed: number };
@@ -51,7 +53,7 @@ export function parseGitHubStats(raw: unknown): GitHubStats | null {
   if (typeof data.generatedAt !== 'string' || Number.isNaN(Date.parse(data.generatedAt))) return null;
   if (!isCount(data.memberSince) || !isCount(data.followers)) return null;
 
-  const lastYear = counts(data.lastYear, ['contributions', 'commits', 'pullRequests', 'reviews', 'issues', 'privateContributions'] as const);
+  const lastYear = counts(data.lastYear, ['contributions', 'commits', 'pullRequests', 'reviews', 'issues', 'restrictedContributions'] as const);
   const streak = counts(data.streak, ['current', 'longest'] as const);
   const pullRequests = counts(data.pullRequests, ['merged', 'open', 'closed'] as const);
   const repositories = counts(data.repositories, ['public', 'stars', 'forks'] as const);

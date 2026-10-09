@@ -106,7 +106,7 @@ function CertificationList({ title, items }: { title: string; items: Certificati
 function GitHubStatTiles({ stats }: { stats: GitHubStats }) {
   const { lastYear, streak, pullRequests, repositories } = stats;
   const tiles = [
-    { value: formatCount(lastYear.contributions), label: 'contributions in the last year', context: `${formatCount(lastYear.privateContributions)} in private repositories` },
+    { value: formatCount(lastYear.contributions), label: 'contributions in the last year', context: 'Across public and private repositories' },
     { value: formatCount(lastYear.commits), label: 'commits in the last year', context: `${formatCount(lastYear.pullRequests)} pull requests opened` },
     { value: formatCount(pullRequests.merged), label: 'pull requests merged', context: `${pullRequests.open} open, ${pullRequests.closed} closed without merge` },
     { value: `${streak.current}d`, label: 'current contribution streak', context: `Longest in the last year: ${streak.longest} days` },
