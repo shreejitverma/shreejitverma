@@ -5,6 +5,9 @@ export const SITE = 'https://www.shreejitverma.com';
 export const PAGES: { path: string; canonical: string }[] = [
   { path: '/', canonical: SITE },
   { path: '/resume', canonical: `${SITE}/resume` },
+  { path: '/work/trishul', canonical: `${SITE}/work/trishul` },
+  { path: '/writing', canonical: `${SITE}/writing` },
+  { path: '/writing/frtb-for-engineers', canonical: `${SITE}/writing/frtb-for-engineers` },
   { path: '/books', canonical: `${SITE}/books` },
   { path: '/value-investing', canonical: `${SITE}/value-investing` },
 ];
