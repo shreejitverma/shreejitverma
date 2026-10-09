@@ -47,19 +47,21 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: python3 scripts/github_stats.py "$USER_LOGIN" "$DIST/github-stats.json"
 
-      # lowlighter/metrics must be referenced as @latest: any other ref (a
-      # release tag or commit SHA) is treated as a fork and rebuilds its
-      # Docker image from source, which no longer builds, instead of pulling
-      # the published ghcr.io/lowlighter/metrics image.
+      # lowlighter/metrics decides whether it is the official action from
+      # github.action, which is the step id. After stripping "metrics..." and
+      # underscores that id must equal "lowlighter"; otherwise the action
+      # treats itself as a fork and rebuilds its Docker image from source,
+      # which fails, instead of pulling the published ghcr.io image. So every
+      # lowlighter step id is lowlighter_metrics_<card> (underscores only).
       #
       # Every card step uses continue-on-error so one flaky renderer cannot
       # block the others from publishing; the final step still fails the run
       # if any card failed, so a broken card never goes unnoticed.
 
       - name: "Card: overview"
-        id: overview
+        id: lowlighter_metrics_overview
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -72,9 +74,9 @@ jobs:
           plugin_lines_sections: base
 
       - name: "Card: contribution calendar and pull requests"
-        id: calendar
+        id: lowlighter_metrics_calendar
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -93,9 +95,9 @@ jobs:
       # Byte counts are dominated by notebook outputs and markup, so only
       # programming languages are counted, alongside what was written recently.
       - name: "Card: languages"
-        id: languages
+        id: lowlighter_metrics_languages
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -114,9 +116,9 @@ jobs:
           plugin_languages_limit: 8
 
       - name: "Card: coding habits"
-        id: habits
+        id: lowlighter_metrics_habits
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -132,9 +134,9 @@ jobs:
           plugin_habits_charts_type: classic
 
       - name: "Card: achievements"
-        id: achievements
+        id: lowlighter_metrics_achievements
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -150,9 +152,9 @@ jobs:
           plugin_achievements_limit: 8
 
       - name: "Card: featured repositories"
-        id: repositories
+        id: lowlighter_metrics_repositories
         continue-on-error: true
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -286,17 +288,17 @@ jobs:
         if: always()
         run: |
           failed=""
-          [ "${{ steps.stats.outcome }}" = success ]        || failed="$failed stats"
-          [ "${{ steps.overview.outcome }}" = success ]     || failed="$failed overview"
-          [ "${{ steps.calendar.outcome }}" = success ]     || failed="$failed calendar"
-          [ "${{ steps.languages.outcome }}" = success ]    || failed="$failed languages"
-          [ "${{ steps.habits.outcome }}" = success ]       || failed="$failed habits"
-          [ "${{ steps.achievements.outcome }}" = success ] || failed="$failed achievements"
-          [ "${{ steps.repositories.outcome }}" = success ] || failed="$failed repositories"
-          [ "${{ steps.contrib3d.outcome }}" = success ]    || failed="$failed contrib3d"
-          [ "${{ steps.snake.outcome }}" = success ]        || failed="$failed snake"
-          [ "${{ steps.streak.outcome }}" = success ]       || failed="$failed streak"
-          [ "${{ steps.validate.outputs.ok }}" = true ]     || failed="$failed validation"
+          [ "${{ steps.stats.outcome }}" = success ]                           || failed="$failed stats"
+          [ "${{ steps.lowlighter_metrics_overview.outcome }}" = success ]     || failed="$failed overview"
+          [ "${{ steps.lowlighter_metrics_calendar.outcome }}" = success ]     || failed="$failed calendar"
+          [ "${{ steps.lowlighter_metrics_languages.outcome }}" = success ]    || failed="$failed languages"
+          [ "${{ steps.lowlighter_metrics_habits.outcome }}" = success ]       || failed="$failed habits"
+          [ "${{ steps.lowlighter_metrics_achievements.outcome }}" = success ] || failed="$failed achievements"
+          [ "${{ steps.lowlighter_metrics_repositories.outcome }}" = success ] || failed="$failed repositories"
+          [ "${{ steps.contrib3d.outcome }}" = success ]                       || failed="$failed contrib3d"
+          [ "${{ steps.snake.outcome }}" = success ]                           || failed="$failed snake"
+          [ "${{ steps.streak.outcome }}" = success ]                          || failed="$failed streak"
+          [ "${{ steps.validate.outputs.ok }}" = true ]                        || failed="$failed validation"
           if [ -n "$failed" ]; then
             echo "::error::failed cards:$failed"; exit 1
           fi
