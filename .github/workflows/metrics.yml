@@ -1,74 +1,232 @@
 name: Metrics
+
+# Renders the GitHub activity cards and stats embedded in README.md and the
+# website's GitHub Impact section, and publishes them as a single commit on
+# the `output` branch, so daily refreshes never touch main (each main commit is
+# a production deploy). Pull requests that change the pipeline render the
+# same files and upload them as an artifact for review instead of publishing.
 on:
-  schedule: [{cron: "0 0 * * *"}]
+  schedule: [{cron: "0 4 * * *"}]
   workflow_dispatch:
-  push: {branches: ["master", "main"]}
+    inputs:
+      publish:
+        description: Publish to the output branch even when not run from main
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: [.github/workflows/metrics.yml, scripts/github_stats.py, scripts/github_cards.py, scripts/tests/**]
+  pull_request:
+    paths: [.github/workflows/metrics.yml, scripts/github_stats.py, scripts/github_cards.py, scripts/tests/**]
+
+concurrency:
+  group: metrics-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  USER_LOGIN: shreejitverma
+  DIST: ${{ github.workspace }}/dist
+  PUBLISH: ${{ github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || inputs.publish == true) }}
+  # Every file the output branch serves; README.md and app/lib/github.ts
+  # reference these names.
+  CARDS: >-
+    card.stats.light card.stats.dark card.languages.light card.languages.dark
+    metrics.calendar contrib3d.green-animate contrib3d.night-green
+    snake.light snake.dark streak.light streak.dark
+
 jobs:
-  github-metrics:
+  render:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     permissions:
       contents: write
     steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v7
 
-      - name: Identity & Languages
-        uses: lowlighter/metrics@latest
+      - name: Prepare output directory
+        run: mkdir -p "$DIST"
+
+      - name: Test the stats and card scripts
+        run: python3 -m unittest discover -s scripts/tests -v
+
+      - name: "Stats: github-stats.json"
+        id: stats
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: python3 scripts/github_stats.py "$USER_LOGIN" "$DIST/github-stats.json"
+
+      # The stats and language cards are drawn from github-stats.json rather
+      # than by lowlighter/metrics, whose v3.34 (its latest release, 2023)
+      # reports zero stars and line counts, crashes on the languages
+      # recently-used section, and renders "Unexpected error" for habits and
+      # achievements against today's GitHub API.
+      - name: "Cards: stats and languages"
+        id: cards
+        continue-on-error: true
+        if: steps.stats.outcome == 'success'
+        run: python3 scripts/github_cards.py "$DIST/github-stats.json" "$DIST"
+
+      # lowlighter/metrics decides whether it is the official action from
+      # github.action, which is the step id. After stripping "metrics..." and
+      # underscores that id must equal "lowlighter"; otherwise the action
+      # treats itself as a fork and rebuilds its Docker image from source,
+      # which fails, instead of pulling the published ghcr.io image.
+      #
+      # Every card step uses continue-on-error so one flaky renderer cannot
+      # block the others from publishing; the final step still fails the run
+      # if any card failed, so a broken card never goes unnoticed.
+      - name: "Card: contribution calendar and pull requests"
+        id: lowlighter_metrics_calendar
+        continue-on-error: true
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          user: shreejitverma
+          user: ${{ env.USER_LOGIN }}
           template: classic
-          base: header, metadata, repositories
-          filename: metrics.main.svg
-          config_timezone: America/New_York
-          plugin_languages: yes
-          plugin_languages_indepth: no
-          plugin_languages_details: lines, percentage
-          plugin_languages_limit: 8
-          plugin_languages_aliases: Jupyter Notebook:Python
+          filename: metrics.calendar.svg
           output_action: none
-
-      - name: Download Streak Metrics
-        run: |
-          curl -L "https://streak-stats.demolab.com?user=shreejitverma&theme=dracula&hide_border=true&background=000000&ring=4fff67&currStreakLabel=4fff67" -o metrics.streak.svg
-
-      - name: Activity Heatmap
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: shreejitverma
-          template: classic
-          base: ""
-          filename: metrics.activity.svg
           config_timezone: America/New_York
+          base: ""
           plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
-          output_action: none
-
-      - name: Community & Project Metrics
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: shreejitverma
-          template: classic
-          base: ""
-          filename: metrics.advanced.svg
-          config_timezone: America/New_York
+          plugin_isocalendar_duration: full-year
+          # `user` counts the PRs and issues authored on GitHub; the
+          # `repositories` view is dominated by dependabot PRs.
           plugin_followup: yes
-          plugin_followup_sections: repositories
-          plugin_people: yes
-          plugin_people_limit: 28
-          plugin_people_types: followers, following
-          output_action: none
+          plugin_followup_sections: user
 
-      - name: Commit and Push to main
+      - name: Collect lowlighter render
+        if: always()
+        run: |
+          # lowlighter's container writes its renders as root.
+          shopt -s nullglob
+          for f in /metrics_renders/*.svg; do sudo cp "$f" "$DIST/"; done
+          sudo chown -R "$(id -u):$(id -g)" "$DIST"
+          ls -la "$DIST"
+
+      - name: "Card: 3D contribution calendar"
+        id: contrib3d
+        continue-on-error: true
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+        env:
+          # A token with repo scope adds private-repository activity.
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          USERNAME: ${{ env.USER_LOGIN }}
+          # The default reads only the first 100 owned repositories, which
+          # undercounts the card's star and fork totals (~376 repositories).
+          MAX_REPOS: 1000
+
+      - name: Collect 3D renders
+        if: always()
+        run: |
+          for variant in green-animate night-green; do
+            src="profile-3d-contrib/profile-$variant.svg"
+            [ -f "$src" ] && cp "$src" "$DIST/contrib3d.$variant.svg"
+          done
+          true
+
+      - name: "Card: contribution snake"
+        id: snake
+        continue-on-error: true
+        uses: Platane/snk/svg-only@v3.5.0
+        with:
+          github_user_name: ${{ env.USER_LOGIN }}
+          outputs: |
+            dist/snake.light.svg?palette=github-light
+            dist/snake.dark.svg?palette=github-dark
+
+      - name: "Card: contribution streak"
+        id: streak
+        continue-on-error: true
+        run: |
+          base="https://streak-stats.demolab.com/?user=$USER_LOGIN&hide_border=true&date_format=M%20j%5B%2C%20Y%5D"
+          fetch() {
+            local out="$1" query="$2" tmp
+            tmp="$(mktemp)"
+            curl -fsSL --retry 3 --max-time 60 "$base&$query" -o "$tmp"
+            # The service answers errors with an SVG card, so check the body.
+            if ! grep -q '<svg' "$tmp" || grep -qi 'something went wrong\|could not find' "$tmp"; then
+              echo "::error::streak card $out looks like an error card"; cat "$tmp"; return 1
+            fi
+            mv "$tmp" "$DIST/$out"
+          }
+          # Light uses GitHub's accent blue so it matches the dark variant.
+          fetch streak.light.svg "theme=default&background=FFFFFF00&ring=0969DA&fire=0969DA&currStreakLabel=0969DA&sideNums=1F2328"
+          fetch streak.dark.svg "theme=github-dark-blue&background=0D111700"
+
+      - name: Validate renders
+        id: validate
+        if: always()
+        run: |
+          status=0
+          for f in $CARDS; do
+            path="$DIST/$f.svg"
+            if [ ! -s "$path" ]; then
+              echo "::error::missing card $f.svg"; status=1; continue
+            fi
+            if ! head -c 2048 "$path" | grep -q '<svg'; then
+              echo "::error::$f.svg is not an SVG"; rm -f "$path"; status=1; continue
+            fi
+            # Renderers report failures inside the image; never publish those.
+            if grep -q 'Unexpected error\|An error occurred\|Reached maximum execution time' "$path"; then
+              echo "::error::$f.svg rendered an error"; rm -f "$path"; status=1; continue
+            fi
+            printf '%-28s %8d bytes\n' "$f.svg" "$(wc -c < "$path")"
+          done
+          if ! python3 -c 'import json, sys; json.load(open(sys.argv[1]))' "$DIST/github-stats.json"; then
+            echo "::error::github-stats.json is missing or not valid JSON"; rm -f "$DIST/github-stats.json"; status=1
+          fi
+          echo "ok=$([ $status -eq 0 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      - name: Upload renders for review
+        if: always() && env.PUBLISH != 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: metrics-cards
+          path: dist/
+          retention-days: 14
+
+      # Publishes the current set of cards as one orphan commit, so the
+      # branch never accumulates history. A card that failed today keeps its
+      # last good version; files no longer in $CARDS are dropped.
+      - name: Publish to output branch
+        if: always() && env.PUBLISH == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          mkdir -p public/metrics
-          cp *.svg public/metrics/
-          git add public/metrics/*.svg
-          git commit -m "chore: update profile metrics [skip ci]" || echo "No changes to commit"
-          git push origin main
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          previous="$(mktemp -d)"
+          work="$(mktemp -d)"
+          if git fetch --depth=1 origin output; then
+            git --work-tree="$previous" checkout FETCH_HEAD -- .
+          fi
+          for name in $CARDS; do
+            if [ -f "$DIST/$name.svg" ]; then cp "$DIST/$name.svg" "$work/"
+            elif [ -f "$previous/$name.svg" ]; then cp "$previous/$name.svg" "$work/"
+            fi
+          done
+          if [ -f "$DIST/github-stats.json" ]; then cp "$DIST/github-stats.json" "$work/"
+          elif [ -f "$previous/github-stats.json" ]; then cp "$previous/github-stats.json" "$work/"
+          fi
+          # The output branch only holds images; keep Vercel from deploying it.
+          printf '{\n  "git": { "deploymentEnabled": false }\n}\n' > "$work/vercel.json"
+          cd "$work"
+          git init -q -b output
+          git add -A
+          git commit -q -m "Update GitHub profile metrics cards"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" output:output
+          git ls-files
+
+      - name: Fail if any card failed
+        if: always()
+        run: |
+          failed=""
+          [ "${{ steps.stats.outcome }}" = success ]                       || failed="$failed stats"
+          [ "${{ steps.cards.outcome }}" = success ]                       || failed="$failed cards"
+          [ "${{ steps.lowlighter_metrics_calendar.outcome }}" = success ] || failed="$failed calendar"
+          [ "${{ steps.contrib3d.outcome }}" = success ]                   || failed="$failed contrib3d"
+          [ "${{ steps.snake.outcome }}" = success ]                       || failed="$failed snake"
+          [ "${{ steps.streak.outcome }}" = success ]                      || failed="$failed streak"
+          [ "${{ steps.validate.outputs.ok }}" = true ]                    || failed="$failed validation"
+          if [ -n "$failed" ]; then
+            echo "::error::failed cards:$failed"; exit 1
+          fi

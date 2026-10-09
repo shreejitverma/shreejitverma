@@ -40,7 +40,7 @@ export default function TrishulCaseStudy() {
       title={title}
       description={description}
       path={path}
-      back={{ href: '/#work', label: 'Selected work' }}
+      back={{ href: '/#research', label: 'Research' }}
     >
       <p>
         <a href={REPO} target='_blank' rel='noopener noreferrer' className='inline-flex items-center gap-2'>

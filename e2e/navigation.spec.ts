@@ -22,7 +22,9 @@ test.describe('Navigation and interactions', () => {
     const dropdown = page.locator('nav div.absolute.top-full');
     await expect(dropdown).toHaveClass(/max-h-0/);
     await menuButton.click();
-    await expect(dropdown).toHaveClass(/max-h-96/);
+    await expect(dropdown).not.toHaveClass(/max-h-0/);
+    await expect(dropdown.getByRole('link', { name: 'Reading List' })).toBeVisible();
+    await expect(dropdown.getByRole('link', { name: 'Intelligence Platform' })).toBeVisible();
     await expect(menuButton).toHaveAttribute('aria-expanded', 'true');
     const menuLink = dropdown.locator('a[href="#experience"]').first();
     await menuLink.click();
@@ -58,6 +60,13 @@ test.describe('Navigation and interactions', () => {
     });
     expect(luminance, 'award title must be light text on the dark theme').toBeGreaterThan(0.7);
     await context.close();
+  });
+
+  test('desktop nav links to the standalone pages', async ({ page, isMobile }) => {
+    test.skip(isMobile, 'desktop nav is hidden on mobile');
+    await page.goto('/');
+    await expect(page.locator('nav').getByRole('link', { name: 'Intelligence', exact: true })).toHaveAttribute('href', '/value-investing');
+    await expect(page.locator('nav').getByRole('link', { name: 'Reading List', exact: true })).toHaveAttribute('href', '/books');
   });
 
   test('cross-page navigation links work', async ({ page }) => {

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, Linkedin, Menu, X } from 'lucide-react';
+import { Calendar, Github, GraduationCap, Linkedin, Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { CONTACT } from '@/app/lib/profile';
 
@@ -11,11 +11,26 @@ import { CONTACT } from '@/app/lib/profile';
 // back to the home page anchors.
 const SECTIONS = [
   { name: 'Experience', id: 'experience' },
-  { name: 'Work', id: 'work' },
+  { name: 'Research', id: 'research' },
+  { name: 'Projects', id: 'projects' },
   { name: 'Skills', id: 'skills' },
   { name: 'Education', id: 'education' },
+  { name: 'Impact', id: 'impact' },
   { name: 'Writing', id: 'writing' },
   { name: 'Awards', id: 'awards' },
+];
+
+// Standalone pages, listed after the sections.
+const PAGES = [
+  { name: 'Intelligence', href: '/value-investing' },
+  { name: 'Reading List', href: '/books' },
+];
+
+const SOCIALS = [
+  { name: 'GitHub', href: CONTACT.github, Icon: Github },
+  { name: 'LinkedIn', href: CONTACT.linkedin, Icon: Linkedin },
+  { name: 'Google Scholar', href: CONTACT.scholar, Icon: GraduationCap },
+  { name: 'Book a call', href: CONTACT.calendly, Icon: Calendar },
 ];
 
 interface SiteNavProps {
@@ -35,6 +50,7 @@ export default function SiteNav({ onHome = false }: SiteNavProps) {
   }, []);
 
   const hrefFor = (id: string) => (onHome ? `#${id}` : `/#${id}`);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <nav
@@ -42,8 +58,8 @@ export default function SiteNav({ onHome = false }: SiteNavProps) {
         scrolled || isMenuOpen ? 'backdrop-blur-md border-border/50 bg-background/85 h-16' : 'bg-transparent border-transparent h-20'
       }`}
     >
-      <div className='max-w-7xl mx-auto px-6 h-full flex items-center justify-between'>
-        <Link href='/' className='flex items-center gap-3' aria-label='Shreejit Verma, home'>
+      <div className='max-w-7xl mx-auto px-6 h-full flex items-center justify-between gap-6'>
+        <Link href='/' className='flex items-center gap-3 shrink-0' aria-label='Shreejit Verma, home'>
           <span className='relative w-10 h-10 rounded-full overflow-hidden border border-border shadow-lg shrink-0'>
             <Image src='/images/profile-square.jpg' alt='' fill sizes='40px' className='object-cover' />
           </span>
@@ -52,22 +68,31 @@ export default function SiteNav({ onHome = false }: SiteNavProps) {
           </span>
         </Link>
 
-        <div className='hidden lg:flex gap-8 text-sm font-medium'>
+        <div className='hidden xl:flex items-center gap-5 text-sm font-medium'>
           {SECTIONS.map((section) => (
             <a key={section.id} href={hrefFor(section.id)} className='hover:text-primary transition-colors'>
               {section.name}
             </a>
           ))}
+          <span className='w-px h-4 bg-border' aria-hidden='true' />
+          {PAGES.map((page) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className={page.href === '/value-investing' ? 'text-primary font-bold hover:opacity-80 transition-opacity' : 'hover:text-primary transition-colors'}
+            >
+              {page.name}
+            </Link>
+          ))}
         </div>
 
-        <div className='flex items-center gap-4'>
-          <div className='hidden sm:flex items-center gap-4 mr-2'>
-            <a href={CONTACT.github} target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' aria-label='GitHub'>
-              <Github className='w-5 h-5' />
-            </a>
-            <a href={CONTACT.linkedin} target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' aria-label='LinkedIn'>
-              <Linkedin className='w-5 h-5' />
-            </a>
+        <div className='flex items-center gap-4 shrink-0'>
+          <div className='hidden sm:flex xl:hidden 2xl:flex items-center gap-4 mr-1'>
+            {SOCIALS.map(({ name, href, Icon }) => (
+              <a key={name} href={href} target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors' aria-label={name} title={name}>
+                <Icon className='w-5 h-5' />
+              </a>
+            ))}
           </div>
           <ThemeToggle />
           <Link
@@ -77,7 +102,7 @@ export default function SiteNav({ onHome = false }: SiteNavProps) {
             RESUME
           </Link>
           <button
-            className='lg:hidden text-muted-foreground hover:text-primary transition-colors'
+            className='xl:hidden text-muted-foreground hover:text-primary transition-colors'
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label='Toggle navigation menu'
             aria-expanded={isMenuOpen}
@@ -88,28 +113,32 @@ export default function SiteNav({ onHome = false }: SiteNavProps) {
       </div>
 
       <div
-        className={`lg:hidden absolute top-full left-0 right-0 bg-card border-b border-border transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        className={`xl:hidden absolute top-full left-0 right-0 bg-card border-b border-border transition-all duration-300 overflow-y-auto ${
+          isMenuOpen ? 'max-h-[calc(100dvh-4rem)] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
         }`}
       >
         <div className='flex flex-col p-6 gap-4'>
-          {SECTIONS.map((section) => (
-            <a
-              key={section.id}
-              href={hrefFor(section.id)}
-              className='text-lg font-medium hover:text-primary transition-colors'
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {section.name}
-            </a>
-          ))}
-          <div className='flex gap-6 mt-2 pt-4 border-t border-border'>
-            <a href={CONTACT.github} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary' aria-label='GitHub'>
-              <Github className='w-6 h-6' />
-            </a>
-            <a href={CONTACT.linkedin} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary' aria-label='LinkedIn'>
-              <Linkedin className='w-6 h-6' />
-            </a>
+          <div className='grid grid-cols-2 gap-x-6 gap-y-4'>
+            {SECTIONS.map((section) => (
+              <a key={section.id} href={hrefFor(section.id)} className='text-lg font-medium hover:text-primary transition-colors' onClick={closeMenu}>
+                {section.name}
+              </a>
+            ))}
+          </div>
+          <div className='flex flex-col gap-4 pt-4 border-t border-border'>
+            <Link href='/value-investing' className='text-lg font-bold text-primary hover:opacity-80 transition-opacity' onClick={closeMenu}>
+              Intelligence Platform
+            </Link>
+            <Link href='/books' className='text-lg font-medium hover:text-primary transition-colors' onClick={closeMenu}>
+              Reading List
+            </Link>
+          </div>
+          <div className='flex gap-6 pt-4 border-t border-border'>
+            {SOCIALS.map(({ name, href, Icon }) => (
+              <a key={name} href={href} target='_blank' rel='noopener noreferrer' className='text-muted-foreground hover:text-primary' aria-label={name}>
+                <Icon className='w-6 h-6' />
+              </a>
+            ))}
           </div>
         </div>
       </div>

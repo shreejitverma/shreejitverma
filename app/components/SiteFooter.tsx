@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <div className='text-sm text-muted-foreground space-y-2'>
           <p className='text-foreground font-semibold'>{HEADLINE.name}</p>
           <p>{HEADLINE.current} · {HEADLINE.location}</p>
-          <p>© {new Date().getFullYear()} {HEADLINE.name}.</p>
+          <p>© {new Date().getFullYear()} {HEADLINE.name}. Built with Next.js &amp; Tailwind.</p>
         </div>
         <div className='text-sm space-y-2'>
           <p className='text-xs font-bold uppercase tracking-wider text-muted-foreground'>Contact</p>
@@ -33,6 +33,8 @@ export default function SiteFooter() {
             <li><Link href='/writing' className='text-muted-foreground hover:text-primary transition-colors'>Writing</Link></li>
             <li><Link href='/value-investing' className='text-muted-foreground hover:text-primary transition-colors'>Value Intelligence Platform</Link></li>
             <li><Link href='/books' className='text-muted-foreground hover:text-primary transition-colors'>Reading list</Link></li>
+            <li><Link href='/#impact' className='text-muted-foreground hover:text-primary transition-colors'>GitHub impact</Link></li>
+            <li><Link href='/#certifications' className='text-muted-foreground hover:text-primary transition-colors'>Certifications</Link></li>
           </ul>
         </div>
       </div>

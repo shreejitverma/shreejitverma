@@ -119,7 +119,7 @@ export default function ResumePage() {
         <section aria-labelledby='resume-projects' className='mb-12'>
           <h2 id='resume-projects' className={`${sectionHeading} mb-6`}>Research & Selected Projects</h2>
           <div className='space-y-6'>
-            {PROJECTS.map((proj) => (
+            {PROJECTS.filter((proj) => !proj.homeOnly).map((proj) => (
               <article key={proj.name}>
                 <div className='flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1'>
                   <h3 className='font-semibold text-foreground'>
@@ -133,7 +133,7 @@ export default function ResumePage() {
                   </h3>
                   <span className='text-xs font-mono text-primary whitespace-nowrap'>{proj.dates}</span>
                 </div>
-                <p className='text-xs font-mono mb-1'>{proj.context}</p>
+                {proj.context && <p className='text-xs font-mono mb-1'>{proj.context}</p>}
                 <p className='text-sm'>{proj.detail}</p>
                 {proj.caseStudy && (
                   <Link href={proj.caseStudy} className='text-sm text-primary underline underline-offset-2'>Read the case study</Link>

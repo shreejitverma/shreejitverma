@@ -187,17 +187,22 @@ export const EDUCATION: School[] = [
 
 export interface Project {
   name: string;
-  context: string;
-  dates: string;
+  // Research work (theses, research systems) is shown apart from projects.
+  kind: 'research' | 'project';
+  context?: string;
+  dates?: string;
   detail: string;
   tags: string[];
   repo?: string;
   caseStudy?: string;
+  // Shown on the home page but not on /resume, which mirrors the resume PDF.
+  homeOnly?: boolean;
 }
 
 export const PROJECTS: Project[] = [
   {
     name: 'Trishul: AI-Integrated FPGA for Market Making',
+    kind: 'research',
     context: 'MS Thesis, Stevens Institute of Technology',
     dates: 'Oct 2025 - May 2026',
     detail:
@@ -208,6 +213,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Adaptive Volatility Regime-Based Execution and Risk Framework',
+    kind: 'project',
     context: 'C++ library',
     dates: 'Sept 2025 - Dec 2025',
     detail:
@@ -217,6 +223,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Statistical Arbitrage Reversal and Momentum Strategies',
+    kind: 'project',
     context: 'Quant Researcher, WallStreetQuants',
     dates: 'Jun 2025 - Aug 2025',
     detail:
@@ -226,6 +233,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Dynamic Portfolio Optimization',
+    kind: 'research',
     context: 'MS Thesis, WorldQuant University',
     dates: 'Mar 2024 - Jun 2024',
     detail:
@@ -235,6 +243,7 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'CryoZen: Sovereign AI Command Center',
+    kind: 'project',
     context: 'Independent project',
     dates: 'May 2026 - Present',
     detail:
@@ -244,12 +253,46 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Plug-and-Play Agentic AI Engineering Harness',
+    kind: 'project',
     context: 'Independent project',
     dates: 'May 2026 - Present',
     detail:
       'Cross-platform agentic developer platform on NixOS with declarative configuration, multi-agent orchestration, isolated Git worktrees, autonomous task execution, and CI-gated shipping.',
     tags: ['NixOS', 'Multi-Agent Systems', 'DevEx'],
     repo: 'https://github.com/shreejitverma/dotfiles-nix',
+  },
+  {
+    name: 'ESG Merger Arbitrage Strategy',
+    kind: 'project',
+    context: 'Versor Investments',
+    dates: 'Apr 2022 - Jun 2022',
+    detail:
+      'ESG-driven merger-arbitrage strategy capturing the opportunity created by ESG scores on target and acquirer pre- and post-merger statistics; converted into a standalone portfolio and embedded across all existing portfolios.',
+    tags: ['ESG', 'Merger Arbitrage', 'Portfolio Strategy'],
+  },
+  {
+    name: 'Financial Modelling using Stochastic Calculus',
+    kind: 'project',
+    detail:
+      'Modeled asset prices and derivative strategies with Brownian motion, GBM, Ito\'s Lemma, martingales, Girsanov\'s theorem, SDEs, and the Fokker-Planck and Kolmogorov equations for volatility and interest rates.',
+    tags: ['Stochastic Calculus', 'Derivatives Pricing', 'Python'],
+    homeOnly: true,
+  },
+  {
+    name: 'Blockchain in Retail',
+    kind: 'project',
+    dates: 'Jan 2018 - Mar 2018',
+    detail:
+      'Decentralized e-commerce platform securing and streamlining retail transactions with smart contracts, currency conversion, custom hashing, and matching algorithms.',
+    tags: ['Blockchain', 'Smart Contracts', 'Solidity'],
+  },
+  {
+    name: 'QS Rank Predictor',
+    kind: 'project',
+    dates: 'Jun 2017 - Jul 2017',
+    detail:
+      'Ensemble of deep neural networks predicting QS World University Rankings, with suggestions on the areas each institution should improve.',
+    tags: ['Deep Learning', 'Neural Networks', 'Predictive Modeling'],
   },
 ];
 
@@ -261,27 +304,35 @@ export interface SkillGroup {
 export const SKILLS: SkillGroup[] = [
   {
     label: 'Low-Latency Systems',
-    items: ['C++20/23', 'Lock-free data structures', 'Memory pools', 'SIMD', 'Cache-aware design', 'DPDK / kernel bypass', 'FPGA (Verilog, VHDL)', 'TCP/IP, UDP multicast', 'Linux performance tuning'],
+    items: ['C++20/23', 'Lock-free data structures', 'Memory pools', 'SIMD', 'Cache-aware design', 'DPDK / kernel bypass', 'FPGA (Verilog, VHDL)', 'TCP/IP, UDP multicast', 'Linux kernel and performance tuning'],
+  },
+  {
+    label: 'Programming Languages',
+    items: ['C++', 'Python', 'C', 'Java', 'R', 'MATLAB', 'kdb+/q', 'OCaml', 'JavaScript / TypeScript', 'Verilog', 'VHDL', 'Bash'],
   },
   {
     label: 'Quantitative Finance',
-    items: ['Market microstructure', 'Market making', 'Execution algorithms', 'Statistical arbitrage', 'Derivatives pricing', 'Greeks', 'Factor modeling', 'Portfolio optimization'],
+    items: ['Market microstructure', 'Market making', 'Execution algorithms', 'Statistical arbitrage', 'Derivatives pricing', 'Greeks', 'Factor modeling', 'Portfolio optimization', 'Risk management'],
   },
   {
     label: 'Market Risk',
     items: ['FRTB (IMA / SA)', 'Basel IV', 'Expected Shortfall', 'DRC / NMRF', 'Sensitivities-Based Method', 'P&L Attribution', 'Backtesting'],
   },
   {
-    label: 'Mathematics & ML',
-    items: ['Stochastic calculus', 'Probability', 'Time series analysis', 'Numerical methods', 'Bayesian statistics', 'XGBoost', 'Deep learning', 'Reinforcement learning'],
+    label: 'Mathematics & Statistics',
+    items: ['Stochastic calculus', 'Probability', 'PDEs', 'Linear algebra', 'Markov chains', 'Time series analysis', 'Bayesian statistics', 'Numerical methods', 'Differential equations'],
+  },
+  {
+    label: 'Machine Learning & AI',
+    items: ['PyTorch', 'TensorFlow', 'scikit-learn', 'XGBoost', 'Random forests', 'RNN / LSTM', 'Reinforcement learning', 'Clustering', 'NLP', 'LLMs, RAG, MCP agents'],
   },
   {
     label: 'Data & Distributed Compute',
-    items: ['kdb+/q', 'Python (NumPy, SciPy, Polars, pandas)', 'Kafka', 'Spark', 'Airflow', 'PostgreSQL', 'Redis', 'Slurm', 'IBM Symphony'],
+    items: ['NumPy, SciPy, Polars, pandas', 'Spark / PySpark', 'Dask', 'Hadoop', 'Kafka', 'ZeroMQ', 'Airflow', 'PostgreSQL', 'MongoDB', 'Cassandra', 'Redis', 'InfluxDB', 'SQL / BQL', 'FastAPI, REST APIs', 'Slurm', 'IBM Symphony'],
   },
   {
-    label: 'Infrastructure',
-    items: ['Docker', 'Kubernetes / OpenShift', 'CMake', 'Git', 'CI/CD', 'AWS', 'GCP', 'Bash'],
+    label: 'Systems & DevOps',
+    items: ['Docker', 'Kubernetes / OpenShift', 'AWS', 'GCP', 'Serverless', 'CMake', 'Git', 'Jenkins', 'Ansible', 'CI/CD', 'Linux'],
   },
 ];
 
@@ -294,9 +345,13 @@ export const AWARDS: { title: string; detail: string }[] = [
   { title: 'State Rank Holder', detail: 'International Science Olympiad and International Mathematics Olympiad.' },
 ];
 
-export const INTERESTS = 'Chess, Poker, F1, Martial Arts, Cricket, Boxing, Badminton, Psychology, History, Philosophy';
+export const INTERESTS = 'Chess, Poker, F1, Martial Arts, Cricket, Boxing, Badminton, Reading, Cooking, Dancing, Psychology, History, Philosophy';
 
-export const LANGUAGES = 'English and Hindi (fluent); French, Sanskrit, Spanish, Russian (intermediate)';
+export const LANGUAGES: { level: string; names: string }[] = [
+  { level: 'Fluent', names: 'English, Hindi' },
+  { level: 'Intermediate', names: 'French, Sanskrit, Spanish, Russian' },
+  { level: 'Beginner', names: 'Chinese, Italian, Tamil, Punjabi' },
+];
 
 export interface Certification {
   name: string;
