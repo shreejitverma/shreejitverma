@@ -362,7 +362,7 @@ export default function Home() {
             {[
               {
                 category: "Quantitative Finance",
-                skills: "Stochastic Calculus, Derivative Pricing, Time Series Analysis, Factor Modeling, Greeks, Risk Management, Market Microstructure, FRTB (IMA/SA), Basel IV, Expected Shortfall"
+                skills: "Stochastic Calculus, Derivative Pricing, Time Series Analysis, Factor Modeling, Greeks, Risk Management, Market Microstructure, FRTB (IMA/SA), Basel IV Market Risk, Expected Shortfall, P&L Attribution"
               },
               {
                 category: "Mathematics & Stats",
