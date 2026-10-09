@@ -5,20 +5,35 @@ import { Download, Mail, Github, Linkedin, Globe } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Resume | Quantitative Developer, Quantitative Researcher & Quantitative Trading Engineer',
   description:
-    'Resume of Shreejit Verma - Quantitative Developer, Quantitative Researcher, and Quantitative Trading Engineer in New York. C++ automated market making at BNP Paribas, FPGA/DPDK sub-10us trading systems, statistical arbitrage, merger arbitrage, and ML-driven alpha research.',
+    'Resume of Shreejit Verma - Senior Quantitative Developer at Barclays (FRTB market risk), Quantitative Researcher, and Quantitative Trading Engineer in New York. C++ automated market making at BNP Paribas, FPGA/DPDK sub-10us trading systems, statistical arbitrage, merger arbitrage, and ML-driven alpha research.',
   alternates: {
     canonical: 'https://www.shreejitverma.com/resume',
   },
   openGraph: {
     title: 'Shreejit Verma | Resume - Quantitative Developer & Quantitative Researcher',
     description:
-      'C++ low-latency market making, FPGA/DPDK trading systems, statistical arbitrage, and ML-driven alpha research. Full resume with experience, education, projects, and certifications.',
+      'FRTB and Basel IV market risk engines at Barclays, C++ low-latency market making, FPGA/DPDK trading systems, statistical arbitrage, and ML-driven alpha research. Full resume with experience, education, projects, and certifications.',
     url: 'https://www.shreejitverma.com/resume',
     type: 'profile',
   },
 };
 
 const experience = [
+  {
+    company: 'Barclays',
+    url: 'https://www.ib.barclays/',
+    role: 'Senior Quantitative Developer (Contract), FRTB Market Risk',
+    location: 'New York, USA (Hybrid)',
+    dates: 'Oct 2026 - Present',
+    bullets: [
+      'Optimizing enterprise-scale analytics engines and distributed calculation pipelines for the Fundamental Review of the Trading Book (FRTB) across the Corporate & Investment Bank, leading technical delivery of Basel IV market risk capital models under the Internal Model Approach (IMA) and Standardised Approach (SA).',
+      'Architecting low-latency C++ and Python distributed pricing and risk calculation pipelines, optimizing Expected Shortfall (ES), Default Risk Charge (DRC), and Non-Modellable Risk Factor (NMRF) simulations across multi-asset trading desks.',
+      'Engineering high-throughput aggregation engines for the Sensitivities-Based Method (SBM), Gross Jump-to-Default (JTD), and Residual Risk Add-on (RRAO), cutting intra-day risk batch computation latency by over 35%.',
+      'Designing automated backtesting and P&L Attribution (PLA) test suites (Risk-Theoretical vs. Hypothetical P&L), establishing stable model eligibility pipelines and minimizing capital charge penalties across major trading desks.',
+      'Scaling real-time scenario generation and risk factor time-series pipelines across high-performance grid environments, integrating kdb+/q and distributed message queues to ingest multi-terabyte tick and pricing feeds for risk factor observability.',
+      'Partnering with Quantitative Research, Front Office Trading, Risk Methodology, and Model Risk Governance to implement, validate, and document Basel IV compliance frameworks for regulatory audits (Fed, PRA, FINMA).',
+    ],
+  },
   {
     company: 'BNP Paribas CIB',
     url: 'https://cib.bnpparibas/',
@@ -160,7 +175,7 @@ const skills = [
   },
   {
     label: 'Quantitative Finance',
-    items: 'Statistical Analysis, Derivative Pricing, Time Series Analysis, Factor Modeling, Predictive Modeling, Greeks, Market Microstructure',
+    items: 'Statistical Analysis, Derivative Pricing, Time Series Analysis, Factor Modeling, Predictive Modeling, Greeks, Market Microstructure, FRTB (IMA/SA), Basel IV Market Risk, Expected Shortfall, P&L Attribution',
   },
   {
     label: 'Machine Learning',
@@ -176,11 +191,11 @@ const skills = [
   },
   {
     label: 'Systems & Low Latency',
-    items: 'TCP/IP, UDP, Multicast, cache and multithreading optimization, FPGA (Verilog, VHDL), kernel bypass (DPDK), lock-free data structures',
+    items: 'TCP/IP, UDP, Multicast, cache and multithreading optimization, SIMD, FPGA (Verilog, VHDL), kernel bypass (DPDK), lock-free data structures, HPC grids (Slurm, IBM Symphony)',
   },
   {
     label: 'Cloud & DevOps',
-    items: 'Linux, Git, Jenkins, CI/CD, Ansible, Docker, Kubernetes, Helm, AWS, GCP',
+    items: 'Linux, Git, Jenkins, CI/CD, Ansible, Docker, Kubernetes, OpenShift, Helm, AWS, GCP',
   },
 ];
 
@@ -231,8 +246,9 @@ export default function ResumePage() {
         <p className='leading-relaxed'>
           Quantitative Developer and Researcher engineering ultra-low latency trading infrastructure and
           alpha-generating strategies for hedge funds, proprietary trading, and high frequency trading
-          environments. Most recently built C++ automated market-making components at BNP Paribas CIB for the
-          Prime Credit Market; previously developed systematic merger-arbitrage strategies at an $8.5B AUM fund
+          environments. Currently a Senior Quantitative Developer at Barclays, building C++ and Python FRTB market
+          risk engines for Basel IV capital (IMA and SA). Previously built C++ automated market-making components
+          at BNP Paribas CIB for the Prime Credit Market, developed systematic merger-arbitrage strategies at an $8.5B AUM fund
           and FICC trading services at Bank of America.
         </p>
       </section>

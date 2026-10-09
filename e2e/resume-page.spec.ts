@@ -28,15 +28,16 @@ test.describe('Resume page', () => {
     }
   });
 
-  test('lists all five employment entries in order', async ({ page }) => {
+  test('lists all six employment entries in order', async ({ page }) => {
     const companies = page.locator('#resume-experience ~ div article h3, section[aria-labelledby="resume-experience"] article h3');
-    await expect(companies).toHaveCount(5);
+    await expect(companies).toHaveCount(6);
     const texts = await companies.allTextContents();
-    expect(texts[0]).toContain('BNP Paribas');
-    expect(texts[1]).toContain('LogiNext');
-    expect(texts[2]).toContain('Versor');
-    expect(texts[3]).toContain('Bank of America');
+    expect(texts[0]).toContain('Barclays');
+    expect(texts[1]).toContain('BNP Paribas');
+    expect(texts[2]).toContain('LogiNext');
+    expect(texts[3]).toContain('Versor');
     expect(texts[4]).toContain('Bank of America');
+    expect(texts[5]).toContain('Bank of America');
   });
 
   test('contains headline quantitative achievements', async ({ page }) => {
