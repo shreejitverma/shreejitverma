@@ -112,6 +112,9 @@ jobs:
           # A token with repo scope adds private-repository activity.
           GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
           USERNAME: ${{ env.USER_LOGIN }}
+          # The default reads only the first 100 owned repositories, which
+          # undercounts the card's star and fork totals (~376 repositories).
+          MAX_REPOS: 1000
 
       - name: Collect 3D renders
         if: always()
@@ -147,7 +150,8 @@ jobs:
             fi
             mv "$tmp" "$DIST/$out"
           }
-          fetch streak.light.svg "theme=default&background=FFFFFF00"
+          # Light uses GitHub's accent blue so it matches the dark variant.
+          fetch streak.light.svg "theme=default&background=FFFFFF00&ring=0969DA&fire=0969DA&currStreakLabel=0969DA&sideNums=1F2328"
           fetch streak.dark.svg "theme=github-dark-blue&background=0D111700"
 
       - name: Validate renders
