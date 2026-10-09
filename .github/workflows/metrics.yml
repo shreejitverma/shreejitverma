@@ -93,7 +93,9 @@ jobs:
           plugin_followup_sections: user
 
       # Byte counts are dominated by notebook outputs and markup, so only
-      # programming languages are counted, alongside what was written recently.
+      # programming languages are counted. The recently-used section is left
+      # out: its analyzer reads commit lists from push events, which GitHub's
+      # Events API no longer includes, so v3.34 crashes on it.
       - name: "Card: languages"
         id: lowlighter_metrics_languages
         continue-on-error: true
@@ -107,11 +109,8 @@ jobs:
           config_timezone: America/New_York
           base: ""
           plugin_languages: yes
-          plugin_languages_sections: most-used, recently-used
+          plugin_languages_sections: most-used
           plugin_languages_categories: programming
-          plugin_languages_recent_categories: programming
-          plugin_languages_recent_days: 90
-          plugin_languages_recent_load: 400
           plugin_languages_details: percentage
           plugin_languages_limit: 8
 

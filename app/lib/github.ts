@@ -113,7 +113,7 @@ export const METRIC_CARDS = {
   },
   languages: {
     label: 'Languages',
-    alt: 'Most used and recently used programming languages',
+    alt: 'Most used programming languages',
     light: outputUrl('metrics.languages.svg'),
   },
   calendar: {

@@ -208,7 +208,7 @@ Refreshed daily by `.github/workflows/metrics.yml`; counts include private-repos
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.overview.svg" alt="GitHub overview: activity, repositories, and lines of code changed" width="49%" valign="top" />
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.languages.svg" alt="Most used and recently used programming languages" width="49%" valign="top" />
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.languages.svg" alt="Most used programming languages" width="49%" valign="top" />
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.calendar.svg" alt="Contribution calendar and pull request status" width="49%" valign="top" />
