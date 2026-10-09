@@ -45,7 +45,7 @@ import {
   type Project,
 } from './lib/profile';
 import { ARTICLES, articleUrl } from './lib/writing';
-import { GITHUB_LOGIN, METRIC_CARDS, getGitHubStats, type GitHubStats } from './lib/github';
+import { GITHUB_LOGIN, METRIC_CARDS, formatCount, getGitHubStats, statTiles, type GitHubStats } from './lib/github';
 import { FEATURED_BOOKS, getLibraryStats } from './lib/reading';
 
 export const metadata: Metadata = {
@@ -59,7 +59,6 @@ const tag = 'px-2.5 py-0.5 text-xs font-mono rounded-full bg-card text-muted-for
 const external = { target: '_blank', rel: 'noopener noreferrer' } as const;
 
 const enDash = (range: string) => range.replace(' - ', ' – ');
-const formatCount = (value: number) => value.toLocaleString('en-US');
 
 function ProjectCard({ project }: { project: Project }) {
   const meta = [project.context, project.dates && enDash(project.dates)].filter(Boolean).join(' · ');
@@ -105,15 +104,7 @@ function CertificationList({ title, items }: { title: string; items: Certificati
 }
 
 function GitHubStatTiles({ stats }: { stats: GitHubStats }) {
-  const { lastYear, streak, pullRequests, repositories } = stats;
-  const tiles = [
-    { value: formatCount(lastYear.contributions), label: 'contributions in the last year', context: 'Across public and private repositories' },
-    { value: formatCount(lastYear.commits), label: 'commits in the last year', context: `${formatCount(lastYear.pullRequests)} pull requests opened` },
-    { value: formatCount(pullRequests.merged), label: 'pull requests merged', context: `${pullRequests.open} open, ${pullRequests.closed} closed without merge` },
-    { value: `${streak.current}d`, label: 'current contribution streak', context: `Longest in the last year: ${streak.longest} days` },
-    { value: formatCount(lastYear.repositoriesContributedTo), label: 'repositories committed to', context: `${formatCount(repositories.public)} public repositories, ${formatCount(repositories.stars)} stars` },
-    { value: String(stats.memberSince), label: 'on GitHub since', context: `${formatCount(stats.followers)} followers` },
-  ];
+  const tiles = statTiles(stats);
   const updated = new Date(stats.generatedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 
   return (

@@ -199,7 +199,7 @@ Refreshed daily by `.github/workflows/metrics.yml` from the GitHub API, includin
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/card.stats.dark.svg" />
-    <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/card.stats.light.svg" alt="GitHub activity in the last 12 months: contributions, commits, pull requests, streaks, repositories, and stars" width="49%" valign="top" />
+    <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/card.stats.light.svg" alt="GitHub activity in the last 12 months: contributions, commits, pull requests and issues, streaks, repositories, stars, and forks" width="49%" valign="top" />
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/card.languages.dark.svg" />

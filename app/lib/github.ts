@@ -99,6 +99,30 @@ export function parseGitHubStats(raw: unknown): GitHubStats | null {
   };
 }
 
+export const formatCount = (value: number) => value.toLocaleString('en-US');
+
+const countOf = (value: number, singular: string, plural = `${singular}s`) => `${formatCount(value)} ${value === 1 ? singular : plural}`;
+
+export interface StatTile {
+  value: string;
+  label: string;
+  context: string;
+}
+
+// Headline numbers for the home page tiles, each with a context line.
+export function statTiles(stats: GitHubStats): StatTile[] {
+  const { lastYear, streak, pullRequests, repositories } = stats;
+  const reviews = lastYear.reviews > 0 ? `, ${countOf(lastYear.reviews, 'code review')}` : '';
+  return [
+    { value: formatCount(lastYear.contributions), label: 'contributions in the last year', context: 'Across public and private repositories' },
+    { value: formatCount(lastYear.commits), label: 'commits in the last year', context: `${countOf(lastYear.pullRequests, 'pull request')} and ${countOf(lastYear.issues, 'issue')} opened` },
+    { value: formatCount(pullRequests.merged), label: 'pull requests merged', context: `${pullRequests.open} open, ${pullRequests.closed} closed without merge${reviews}` },
+    { value: `${streak.current}d`, label: 'current contribution streak', context: `Longest in the last year: ${streak.longest} days` },
+    { value: formatCount(lastYear.repositoriesContributedTo), label: 'repositories committed to', context: `${countOf(repositories.public, 'public repository', 'public repositories')}, ${countOf(repositories.stars, 'star')}, ${countOf(repositories.forks, 'fork')}` },
+    { value: String(stats.memberSince), label: 'on GitHub since', context: `${formatCount(stats.followers)} followers` },
+  ];
+}
+
 // Refreshed at most every six hours; the workflow publishes once a day.
 const REVALIDATE_SECONDS = 6 * 60 * 60;
 

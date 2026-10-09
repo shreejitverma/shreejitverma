@@ -79,18 +79,29 @@ def frame(height: int, theme: dict, title: str, body: list[str], label: str) -> 
 
 def stats_card(stats: dict, theme: dict) -> str:
     last_year = stats["lastYear"]
+    repositories = stats["repositories"]
     rows = [
         ("Contributions", fmt(last_year["contributions"])),
         ("Commits", fmt(last_year["commits"])),
-        ("Pull requests opened", fmt(last_year["pullRequests"])),
+        (
+            "Pull requests and issues opened",
+            f"{fmt(last_year['pullRequests'])} / {fmt(last_year['issues'])}",
+        ),
+    ]
+    if last_year["reviews"] > 0:
+        rows.append(("Code reviews", fmt(last_year["reviews"])))
+    rows += [
         ("Repositories committed to", fmt(last_year["repositoriesContributedTo"])),
         ("Pull requests merged, all time", fmt(stats["pullRequests"]["merged"])),
         (
             "Current / longest streak",
             f"{stats['streak']['current']} / {stats['streak']['longest']} days",
         ),
-        ("Public repositories", fmt(stats["repositories"]["public"])),
-        ("Stars earned", fmt(stats["repositories"]["stars"])),
+        ("Public repositories", fmt(repositories["public"])),
+        (
+            "Stars and forks earned",
+            f"{fmt(repositories['stars'])} / {fmt(repositories['forks'])}",
+        ),
     ]
     body = [
         (
@@ -99,8 +110,9 @@ def stats_card(stats: dict, theme: dict) -> str:
         )
     ]
     top, step = 90, 44
+    per_column = (len(rows) + 1) // 2
     for index, (label, value) in enumerate(rows):
-        column, row = divmod(index, 4)
+        column, row = divmod(index, per_column)
         x = 24 + column * 236
         y = top + row * step
         body.append(
@@ -111,7 +123,7 @@ def stats_card(stats: dict, theme: dict) -> str:
             f'<text x="{x}" y="{y + 19}" font-size="16" font-weight="600" '
             f'fill="{theme["text"]}">{escape(value)}</text>'
         )
-    height = top + 3 * step + 62
+    height = top + (per_column - 1) * step + 62
     body.append(
         f'<text x="24" y="{height - 16}" font-size="11" fill="{theme["muted"]}">'
         f"Updated {escape(updated_on(stats))} from the GitHub API</text>"

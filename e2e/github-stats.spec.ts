@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { parseGitHubStats } from '../app/lib/github';
+import { parseGitHubStats, statTiles } from '../app/lib/github';
 
 // Shape written by scripts/github_stats.py; values are the real profile
 // numbers from the GitHub GraphQL API on 2026-10-09.
@@ -66,5 +66,27 @@ test.describe('GitHub stats parsing', () => {
     expect(parseGitHubStats({ ...VALID, generatedAt: 'yesterday' })).toBeNull();
     expect(parseGitHubStats(null)).toBeNull();
     expect(parseGitHubStats('{}')).toBeNull();
+  });
+});
+
+test.describe('GitHub stat tiles', () => {
+  const contextOf = (stats: typeof VALID, label: string) => statTiles(stats).find((tile) => tile.label === label)?.context;
+
+  test('describe pull requests, issues, stars, and forks, and omit zero code reviews', () => {
+    expect(contextOf(VALID, 'commits in the last year')).toBe('108 pull requests and 6 issues opened');
+    expect(contextOf(VALID, 'pull requests merged')).toBe('1 open, 5 closed without merge');
+    expect(contextOf(VALID, 'repositories committed to')).toBe('66 public repositories, 189 stars, 89 forks');
+  });
+
+  test('show code reviews when there are any, with singular nouns for one', () => {
+    const one = {
+      ...VALID,
+      lastYear: { ...VALID.lastYear, pullRequests: 1, issues: 1, reviews: 1 },
+      repositories: { public: 1, stars: 1, forks: 1 },
+    };
+    expect(contextOf(one, 'commits in the last year')).toBe('1 pull request and 1 issue opened');
+    expect(contextOf(one, 'pull requests merged')).toBe('1 open, 5 closed without merge, 1 code review');
+    expect(contextOf(one, 'repositories committed to')).toBe('1 public repository, 1 star, 1 fork');
+    expect(contextOf({ ...VALID, lastYear: { ...VALID.lastYear, reviews: 1234 } }, 'pull requests merged')).toBe('1 open, 5 closed without merge, 1,234 code reviews');
   });
 });

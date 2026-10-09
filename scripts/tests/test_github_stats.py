@@ -10,7 +10,7 @@ from xml.etree import ElementTree
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from github_cards import THEMES, languages_card, stats_card
+from github_cards import THEMES, WIDTH, languages_card, stats_card
 from github_stats import language_shares, streaks
 
 
@@ -119,6 +119,26 @@ class CardsTest(unittest.TestCase):
             self.assertIn("C++ &amp; &lt;Co&gt;", languages_svg)
             self.assertIn(">60.0%<", languages_svg)
             self.assertIn("Updated Oct 9, 2026", stats_svg)
+            self.assertIn(">194 / 7<", stats_svg)
+            self.assertIn(">189 / 89<", stats_svg)
+            self.assertNotIn("Code reviews", stats_svg)
+
+    def test_reviews_row_appears_only_when_nonzero_and_stays_inside_the_card(self):
+        with_reviews = {**STATS, "lastYear": {**STATS["lastYear"], "reviews": 12}}
+        for stats in (STATS, with_reviews):
+            root = ElementTree.fromstring(stats_card(stats, THEMES["light"]))
+            texts = list(root.iter("{http://www.w3.org/2000/svg}text"))
+            values = [element.text for element in texts]
+            if stats is with_reviews:
+                self.assertEqual(values[values.index("Code reviews") + 1], "12")
+            else:
+                self.assertNotIn("Code reviews", values)
+            # Nine rows must still fit two columns inside the card.
+            for element in texts:
+                self.assertLess(float(element.get("x")), WIDTH, element.text)
+                self.assertLess(
+                    float(element.get("y")), float(root.get("height")), element.text
+                )
 
 
 if __name__ == "__main__":
