@@ -47,6 +47,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: python3 scripts/github_stats.py "$USER_LOGIN" "$DIST/github-stats.json"
 
+      # lowlighter/metrics must be referenced as @latest: any other ref (a
+      # release tag or commit SHA) is treated as a fork and rebuilds its
+      # Docker image from source, which no longer builds, instead of pulling
+      # the published ghcr.io/lowlighter/metrics image.
+      #
       # Every card step uses continue-on-error so one flaky renderer cannot
       # block the others from publishing; the final step still fails the run
       # if any card failed, so a broken card never goes unnoticed.
@@ -54,7 +59,7 @@ jobs:
       - name: "Card: overview"
         id: overview
         continue-on-error: true
-        uses: lowlighter/metrics@v3.34
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -69,7 +74,7 @@ jobs:
       - name: "Card: contribution calendar and pull requests"
         id: calendar
         continue-on-error: true
-        uses: lowlighter/metrics@v3.34
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -90,7 +95,7 @@ jobs:
       - name: "Card: languages"
         id: languages
         continue-on-error: true
-        uses: lowlighter/metrics@v3.34
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -111,7 +116,7 @@ jobs:
       - name: "Card: coding habits"
         id: habits
         continue-on-error: true
-        uses: lowlighter/metrics@v3.34
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -129,7 +134,7 @@ jobs:
       - name: "Card: achievements"
         id: achievements
         continue-on-error: true
-        uses: lowlighter/metrics@v3.34
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
@@ -147,7 +152,7 @@ jobs:
       - name: "Card: featured repositories"
         id: repositories
         continue-on-error: true
-        uses: lowlighter/metrics@v3.34
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ env.USER_LOGIN }}
