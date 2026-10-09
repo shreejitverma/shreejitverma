@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: 'Shreejit Verma | Quantitative Developer & Quantitative Researcher | HFT C++ Engineer',
     template: '%s | Shreejit Verma',
   },
-  description: 'Shreejit Verma - Quantitative Developer, Quantitative Researcher, and Quantitative Trading Engineer in New York. C++ low-latency automated market making at BNP Paribas, FPGA/DPDK sub-10us trading systems, statistical arbitrage, and ML-driven alpha research for hedge funds, prop trading, and HFT firms.',
+  description: 'Shreejit Verma - Senior Quantitative Developer at Barclays (FRTB market risk), Quantitative Researcher, and Quantitative Trading Engineer in New York. C++ FRTB/Basel IV risk engines, low-latency automated market making at BNP Paribas, FPGA/DPDK sub-10us trading systems, statistical arbitrage, and ML-driven alpha research for hedge funds, prop trading, and HFT firms.',
   keywords: [
     'Shreejit Verma',
     'Quantitative Developer', 'Quantitative Researcher', 'Quantitative Trading Engineer',
@@ -26,6 +26,8 @@ export const metadata: Metadata = {
     'Algorithmic Trading', 'Execution Algorithms', 'Order Execution', 'TWAP', 'Smart Order Routing',
     'Stochastic Calculus', 'Derivatives Pricing', 'Financial Engineering', 'Portfolio Optimization',
     'Machine Learning in Finance', 'Time Series Analysis', 'KDB+', 'Python', 'Risk Management',
+    'Senior Quantitative Developer', 'Barclays', 'FRTB', 'Fundamental Review of the Trading Book', 'Basel IV',
+    'Market Risk', 'Expected Shortfall', 'Internal Model Approach', 'Standardised Approach', 'P&L Attribution',
     'Hedge Funds', 'Prop Trading', 'Proprietary Trading', 'Sell Side', 'Buy Side',
     'Jane Street', 'Citadel', 'Citadel Securities', 'Jump Trading', 'Optiver',
     'Hudson River Trading', 'HRT', 'Two Sigma', 'IMC Trading', 'Tower Research',
@@ -49,7 +51,7 @@ export const metadata: Metadata = {
     username: 'shreejitverma',
     gender: 'male',
     title: 'Shreejit Verma | Quantitative Developer & Quantitative Researcher',
-    description: 'C++ Quantitative Developer (BNP Paribas automated market making), FPGA/DPDK sub-10us trading systems, statistical arbitrage, and ML-driven alpha research. New York based, open to global quant roles.',
+    description: 'Senior Quantitative Developer at Barclays (FRTB market risk), previously C++ automated market making at BNP Paribas, FPGA/DPDK sub-10us trading systems, statistical arbitrage, and ML-driven alpha research. New York based, open to global quant roles.',
     siteName: 'Shreejit Verma Portfolio',
     images: [
       {
@@ -103,12 +105,13 @@ export default function RootLayout({
         image: 'https://www.shreejitverma.com/Shreejit_Verma_profile_pic.jpg',
         email: 'mailto:shreejitverma@gmail.com',
         jobTitle: [
+          'Senior Quantitative Developer',
           'Quantitative Developer',
           'Quantitative Researcher',
           'Quantitative Trading Engineer',
         ],
         description:
-          'Quantitative Developer and Researcher specializing in C++ low-latency automated market making, FPGA/DPDK sub-10 microsecond trading systems, statistical arbitrage, and machine-learning-driven alpha research for hedge funds, proprietary trading, and high frequency trading firms.',
+          'Senior Quantitative Developer at Barclays building FRTB and Basel IV market risk engines, specializing in C++ low-latency automated market making, FPGA/DPDK sub-10 microsecond trading systems, statistical arbitrage, and machine-learning-driven alpha research for hedge funds, proprietary trading, and high frequency trading firms.',
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'New York',
@@ -116,12 +119,13 @@ export default function RootLayout({
           addressCountry: 'US',
         },
         nationality: { '@type': 'Country', name: 'India' },
+        worksFor: { '@type': 'Organization', name: 'Barclays', url: 'https://www.ib.barclays/' },
         hasOccupation: {
           '@type': 'Occupation',
-          name: 'Quantitative Developer',
+          name: 'Senior Quantitative Developer',
           occupationLocation: { '@type': 'City', name: 'New York' },
           skills:
-            'C++, Python, KDB+/q, FPGA, DPDK, kernel bypass, lock-free data structures, limit order books, market microstructure, stochastic calculus, statistical arbitrage, machine learning, portfolio optimization, risk management',
+            'C++, Python, KDB+/q, FRTB, Basel IV market risk, Expected Shortfall, FPGA, DPDK, kernel bypass, lock-free data structures, limit order books, market microstructure, stochastic calculus, statistical arbitrage, machine learning, portfolio optimization, risk management',
         },
         alumniOf: [
           { '@type': 'CollegeOrUniversity', name: 'Georgia Institute of Technology' },
@@ -157,6 +161,9 @@ export default function RootLayout({
           'High Frequency Trading',
           'Automated Market Making',
           'Market Microstructure',
+          'FRTB',
+          'Basel IV Market Risk',
+          'Expected Shortfall',
           'Low Latency C++',
           'FPGA Market Data Handlers',
           'Kernel Bypass (DPDK)',

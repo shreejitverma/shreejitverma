@@ -34,6 +34,9 @@ test.describe('Home page content', () => {
 
   test('experience shows all employers with correct dates and both BofA roles', async ({ page }) => {
     const experience = page.locator('#experience');
+    await expect(experience).toContainText('Barclays');
+    await expect(experience).toContainText('Oct 2026 – Present');
+    await expect(experience).toContainText('FRTB');
     await expect(experience).toContainText('BNP Paribas CIB');
     await expect(experience).toContainText('Feb 2026 – May 2026');
     await expect(experience).toContainText('LogiNext Solutions');

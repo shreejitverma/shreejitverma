@@ -1,5 +1,5 @@
 # Shreejit Verma | Quantitative Developer, Quantitative Researcher & Quantitative Trading Engineer
-### HFT · Low-Latency C++ · FPGA/DPDK · Automated Market Making · Statistical Arbitrage · Machine Learning
+### FRTB Market Risk · HFT · Low-Latency C++ · FPGA/DPDK · Automated Market Making · Statistical Arbitrage · Machine Learning
 
 [![Website](https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://www.shreejitverma.com/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shreejitverma/)
@@ -14,7 +14,8 @@
 ## Professional Summary
 
 Quantitative Developer and Researcher based in **New York**, engineering **ultra-low latency trading infrastructure** and alpha-generating strategies for hedge funds, proprietary trading, and high frequency trading environments.
-Most recently a **C++ Quantitative Developer at BNP Paribas CIB (Automated Market Making)**, building low-latency components of the market-making stack for the Prime Credit Market (average **$500M daily market-making volume**).
+Currently a **Senior Quantitative Developer at Barclays**, building C++ and Python **FRTB market risk engines** for Basel IV capital across the Internal Model Approach (IMA) and Standardised Approach (SA).
+Previously a **C++ Quantitative Developer at BNP Paribas CIB (Automated Market Making)**, building low-latency components of the market-making stack for the Prime Credit Market (average **$500M daily market-making volume**).
 Previously contributed to systematic merger-arbitrage strategies at an **$8.5 Billion AUM** fund and engineered FICC trading services at Bank of America, reducing trade processing latency by **50%**.
 Expertise spans the full stack of modern quantitative finance: **FPGA-accelerated market data handlers**, **kernel bypass (DPDK)**, **lock-free C++ execution engines**, **stochastic calculus-based derivative pricing**, and **ML-driven risk and execution frameworks**.
 
@@ -31,6 +32,18 @@ Expertise spans the full stack of modern quantitative finance: **FPGA-accelerate
 ---
 
 ## Professional Experience
+
+### **[Barclays](https://www.ib.barclays/)** | Senior Quantitative Developer (Contract), FRTB Market Risk
+*Oct 2026 - Present | New York, USA (Hybrid)*
+
+Optimizing enterprise-scale analytics engines and distributed calculation pipelines supporting the **Fundamental Review of the Trading Book (FRTB)** across the Corporate & Investment Bank.
+Leading technical delivery of **Basel IV market risk capital models** across the Internal Model Approach (IMA) and Standardised Approach (SA).
+- **Engine Architecture & HPC:** Architecting low-latency **C++ and Python** distributed pricing and risk calculation pipelines, optimizing **Expected Shortfall (ES)**, **Default Risk Charge (DRC)**, and **Non-Modellable Risk Factor (NMRF)** simulations across multi-asset trading desks.
+- **Sensitivities & SA-TB:** Engineering high-throughput aggregation engines for the **Sensitivities-Based Method (SBM)**, Gross **Jump-to-Default (JTD)**, and **Residual Risk Add-on (RRAO)**, cutting intra-day risk batch computation latency by **over 35%**.
+- **IMA & P&L Attribution:** Designing automated backtesting and **P&L Attribution (PLA)** test suites (Risk-Theoretical vs. Hypothetical P&L), establishing stable model eligibility pipelines and minimizing capital charge penalties across major trading desks.
+- **Large-Scale Data Architecture:** Scaling real-time scenario generation and risk factor time-series pipelines across high-performance grids, integrating **kdb+/q** and distributed message queues to ingest **multi-terabyte** tick and pricing feeds for risk factor observability.
+- **Model Validation & Governance:** Partnering with Quantitative Research, Front Office Trading, Risk Methodology, and Model Risk Governance to implement, validate, and document **Basel IV** compliance frameworks for regulatory audits (Fed, PRA, FINMA).
+- *Tech Stack:* C++20, Python (NumPy, SciPy, Polars), kdb+/q, HPC grids (Slurm, IBM Symphony), multi-threading/SIMD, Docker, OpenShift/Kubernetes, Git, CI/CD.
 
 ### **[BNP Paribas CIB](https://cib.bnpparibas/)** | C++ Quantitative Developer (Co-op), Automated Market Making
 *Feb 2026 - May 2026 | New York, USA*
@@ -66,12 +79,12 @@ Expertise spans the full stack of modern quantitative finance: **FPGA-accelerate
 ## Skills
 
 - **Mathematics & Statistics:** Probability, Stochastic Calculus, Differential Equations, PDE, Linear Algebra, Numerical Methods, Markov Chains
-- **Quantitative Finance:** Statistical Analysis, Derivative Pricing, Time Series Analysis, Factor Modeling, Predictive Modeling, Greeks, Market Microstructure
+- **Quantitative Finance:** Statistical Analysis, Derivative Pricing, Time Series Analysis, Factor Modeling, Predictive Modeling, Greeks, Market Microstructure, FRTB (IMA/SA), Basel IV Market Risk, Expected Shortfall, P&L Attribution
 - **Machine Learning:** Linear Regression, Clustering, Random Forest, XGBoost, RNN, LSTM, Deep Learning, Neural Networks, NLP, LLMs
 - **Programming:** C++ (17/20/23, primary), Python, C, Java, R, MATLAB, JavaScript, Node.js, ReactJS, NumPy, Pandas, Polars, SciPy, Keras, PyTorch, TensorFlow, Scikit-learn, QuantLib, Statsmodels, CVXPY, OpenMP, MPI, CUDA, Bash
 - **Data Engineering:** Airflow, Dask, Spark, PySpark, FastAPI, Kafka, Flink, SQL, BQL, KDB+/Q, PostgreSQL, MongoDB, ZeroMQ, Cassandra, Redis, Hadoop, HDFS
-- **Systems & Low Latency:** TCP/IP, UDP, Multicast, cache and multithreading optimization, FPGA (Verilog, VHDL), kernel bypass (DPDK), lock-free data structures
-- **Cloud & DevOps:** Linux, Git, Jenkins, CI/CD, Ansible, Docker, Kubernetes, Helm, AWS, GCP
+- **Systems & Low Latency:** TCP/IP, UDP, Multicast, cache and multithreading optimization, SIMD, FPGA (Verilog, VHDL), kernel bypass (DPDK), lock-free data structures, HPC grids (Slurm, IBM Symphony)
+- **Cloud & DevOps:** Linux, Git, Jenkins, CI/CD, Ansible, Docker, Kubernetes, OpenShift, Helm, AWS, GCP
 
 ---
 
@@ -194,6 +207,7 @@ Vault covers take precedence over the hotlinked covers from `enrich_books.py`, w
 *If you find my research or code helpful, consider starring my repositories.*
 
 <!--
+Senior Quantitative Developer | Barclays | FRTB | Basel IV | Market Risk | Expected Shortfall |
 Quantitative Developer | Quantitative Researcher | Quantitative Trading Engineer | Quant Developer | Quant Researcher |
 High Frequency Trading | HFT | Low Latency C++ | FPGA | DPDK | Kernel Bypass | Limit Order Book | Market Making |
 Market Microstructure | Statistical Arbitrage | Merger Arbitrage | Algorithmic Trading | Execution Algorithms |

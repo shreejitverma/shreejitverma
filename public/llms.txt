@@ -1,11 +1,12 @@
 # Shreejit Verma
 
 > Quantitative Developer, Quantitative Researcher, and Quantitative Trading Engineer based in New York, NY.
-> Specializes in C++ low-latency automated market making, FPGA/DPDK sub-10 microsecond trading systems,
+> Specializes in FRTB and Basel IV market risk engines, C++ low-latency automated market making, FPGA/DPDK sub-10 microsecond trading systems,
 > statistical arbitrage, merger arbitrage, and machine-learning-driven alpha research for hedge funds,
 > proprietary trading firms, and high frequency trading firms.
 
-Most recent role: C++ Quantitative Developer (Co-op), Automated Market Making at BNP Paribas CIB, New York (Feb 2026 - May 2026).
+Current role: Senior Quantitative Developer (Contract), FRTB Market Risk at Barclays, New York (Oct 2026 - Present), building C++ and Python Basel IV market risk capital engines (IMA and SA).
+Previous role: C++ Quantitative Developer (Co-op), Automated Market Making at BNP Paribas CIB, New York (Feb 2026 - May 2026).
 Education: M.S. Financial Engineering (Stevens Institute of Technology, GPA 3.974/4.0); M.S. Computer Science in progress (Georgia Institute of Technology, expected Dec 2026); M.S. Financial Engineering (WorldQuant University).
 
 ## Pages

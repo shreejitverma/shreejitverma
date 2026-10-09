@@ -155,7 +155,7 @@ export default function Home() {
                 </span>
               </h1>
               <p className='text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed mx-auto md:mx-0'>
-                Quantitative Developer, Quantitative Researcher, and Quantitative Trading Engineer based in New York.
+                Quantitative Developer, Quantitative Researcher, and Quantitative Trading Engineer based in New York, currently a Senior Quantitative Developer at <strong className='text-foreground'>Barclays</strong> building C++ and Python <strong className='text-foreground'>FRTB market risk engines</strong> for Basel IV capital.
                 I build ultra-low latency <strong className='text-foreground'>C++ market-making systems</strong> with <strong className='text-foreground'>FPGA/DPDK</strong> infrastructure, deterministic execution, and statistical arbitrage strategies for hedge funds, prop trading, and HFT firms.
               </p>
               <div className='flex flex-wrap justify-center md:justify-start gap-4'>
@@ -238,15 +238,36 @@ export default function Home() {
         <Section id='experience' title='Professional Experience' icon={<Briefcase className='w-6 h-6' />}>
           <div className='space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-700 before:to-transparent'>
             
-            {/* BNP Paribas */}
+            {/* Barclays */}
             <div className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
               <div className='flex items-center justify-center w-10 h-10 rounded-full border border-border bg-card group-hover:border-primary/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
                 <div className='w-3 h-3 bg-cyan-600 dark:bg-primary rounded-full animate-pulse'></div>
               </div>
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
+                  <h3 className='font-bold text-foreground'><a href="https://www.ib.barclays/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Barclays</a></h3>
+                  <span className='text-xs font-mono text-primary'>Oct 2026 – Present</span>
+                </div>
+                <div className='text-sm text-muted-foreground mb-4 font-medium'>Senior Quantitative Developer (Contract), FRTB Market Risk | New York (Hybrid)</div>
+                <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
+                  <li>Architecting low-latency C++ and Python distributed pricing and risk calculation pipelines for FRTB, optimizing Expected Shortfall (ES), Default Risk Charge (DRC), and Non-Modellable Risk Factor (NMRF) simulations across multi-asset trading desks.</li>
+                  <li>Engineering high-throughput Standardised Approach aggregation engines for the Sensitivities-Based Method (SBM), Gross Jump-to-Default (JTD), and Residual Risk Add-on (RRAO), cutting intra-day risk batch latency by over 35%.</li>
+                  <li>Designing automated backtesting and P&amp;L Attribution (PLA) test suites (Risk-Theoretical vs. Hypothetical P&amp;L) for stable Internal Model Approach (IMA) eligibility and lower capital charge penalties.</li>
+                  <li>Scaling real-time scenario generation and risk factor time-series pipelines on high-performance grids, integrating kdb+/q and distributed message queues to ingest multi-terabyte tick and pricing feeds.</li>
+                  <li>Partnering with Quantitative Research, Front Office Trading, Risk Methodology, and Model Risk Governance to implement, validate, and document Basel IV compliance for Fed, PRA, and FINMA audits.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* BNP Paribas */}
+            <div className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
+              <div className='flex items-center justify-center w-10 h-10 rounded-full border border-border bg-card group-hover:border-primary/50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
+                <div className='w-3 h-3 bg-muted-foreground/50 rounded-full'></div>
+              </div>
+              <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
+                <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-foreground'><a href="https://cib.bnpparibas/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">BNP Paribas CIB</a></h3>
-                  <span className='text-xs font-mono text-primary'>Feb 2026 – May 2026</span>
+                  <span className='text-xs font-mono text-muted-foreground'>Feb 2026 – May 2026</span>
                 </div>
                 <div className='text-sm text-muted-foreground mb-4 font-medium'>C++ Quantitative Developer (Co-op), Automated Market Making | New York</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
@@ -265,7 +286,7 @@ export default function Home() {
               <div className='w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>
                 <div className='flex flex-col sm:flex-row justify-between sm:items-center mb-2'>
                   <h3 className='font-bold text-foreground'><a href="https://loginextsolutions.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LogiNext Solutions Inc.</a></h3>
-                  <span className='text-xs font-mono text-primary'>Mar 2023 – Jul 2024</span>
+                  <span className='text-xs font-mono text-muted-foreground'>Mar 2023 – Jul 2024</span>
                 </div>
                 <div className='text-sm text-muted-foreground mb-4 font-medium'>Senior Software Engineer, Analytics</div>
                 <ul className='list-disc list-outside ml-4 text-sm text-muted-foreground space-y-2 marker:text-muted-foreground'>
@@ -341,7 +362,7 @@ export default function Home() {
             {[
               {
                 category: "Quantitative Finance",
-                skills: "Stochastic Calculus, Derivative Pricing, Time Series Analysis, Factor Modeling, Greeks, Risk Management, Market Microstructure"
+                skills: "Stochastic Calculus, Derivative Pricing, Time Series Analysis, Factor Modeling, Greeks, Risk Management, Market Microstructure, FRTB (IMA/SA), Basel IV Market Risk, Expected Shortfall, P&L Attribution"
               },
               {
                 category: "Mathematics & Stats",
@@ -361,7 +382,7 @@ export default function Home() {
               },
               {
                 category: "Systems & DevOps",
-                skills: "Docker, Kubernetes, AWS, GCP, Linux Kernel Tuning, DPDK, FPGA, Git, Jenkins, Ansible, CI/CD, Serverless Architecture"
+                skills: "Docker, Kubernetes, OpenShift, AWS, GCP, Linux Kernel Tuning, DPDK, FPGA, SIMD, Slurm, IBM Symphony, Git, Jenkins, Ansible, CI/CD, Serverless Architecture"
               }
             ].map((group, i) => (
               <div key={i} className='p-6 rounded-xl bg-card/40 dark:bg-card border border-border hover:border-primary/30 transition-all'>

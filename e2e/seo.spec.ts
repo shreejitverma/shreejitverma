@@ -54,6 +54,7 @@ test.describe('SEO metadata', () => {
     for (const role of ['Quantitative Developer', 'Quantitative Researcher', 'Quantitative Trading Engineer']) {
       expect(person.jobTitle, `jobTitle missing ${role}`).toContain(role);
     }
+    expect(person.worksFor?.name, 'current employer missing from JSON-LD').toBe('Barclays');
     expect(person.sameAs).toEqual(
       expect.arrayContaining([expect.stringContaining('linkedin.com'), expect.stringContaining('github.com')]),
     );
