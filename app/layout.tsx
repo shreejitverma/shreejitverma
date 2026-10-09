@@ -5,71 +5,46 @@ import { clsx } from 'clsx';
 import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.shreejitverma.com'),
   title: {
-    default: 'Shreejit Verma | Quantitative Developer & Quantitative Researcher | HFT C++ Engineer',
+    default: 'Shreejit Verma | Senior Quantitative Developer & Quantitative Researcher | Low-Latency C++',
     template: '%s | Shreejit Verma',
   },
-  description: 'Shreejit Verma - Senior Quantitative Developer at Barclays (FRTB market risk), Quantitative Researcher, and Quantitative Trading Engineer in New York. C++ FRTB/Basel IV risk engines, low-latency automated market making at BNP Paribas, FPGA/DPDK sub-10us trading systems, statistical arbitrage, and ML-driven alpha research for hedge funds, prop trading, and HFT firms.',
+  description: 'Shreejit Verma - Senior Quantitative Developer at Barclays (FRTB market risk), Quantitative Researcher, and Quantitative Trading Engineer in New York. Low-latency C++ trading and risk systems: FRTB/Basel IV market risk engines, automated market making at BNP Paribas, FPGA and kernel-bypass market making, statistical arbitrage, and ML-driven alpha research.',
   keywords: [
     'Shreejit Verma',
-    'Quantitative Developer', 'Quantitative Researcher', 'Quantitative Trading Engineer',
-    'Quant Developer', 'Quant Researcher', 'Quant Trader', 'Quantitative Analyst',
-    'HFT', 'High Frequency Trading', 'HFT Developer', 'HFT Engineer',
-    'C++ Quantitative Developer', 'Low Latency C++', 'C++23', 'Ultra Low Latency',
-    'FPGA Trading', 'FPGA Market Data', 'Kernel Bypass', 'DPDK', 'Deterministic Execution',
-    'Limit Order Book', 'Market Making', 'Automated Market Making', 'Market Microstructure',
-    'Statistical Arbitrage', 'Merger Arbitrage', 'Alpha Generation', 'Alpha Research',
-    'Algorithmic Trading', 'Execution Algorithms', 'Order Execution', 'TWAP', 'Smart Order Routing',
-    'Stochastic Calculus', 'Derivatives Pricing', 'Financial Engineering', 'Portfolio Optimization',
-    'Machine Learning in Finance', 'Time Series Analysis', 'KDB+', 'Python', 'Risk Management',
-    'Senior Quantitative Developer', 'Barclays', 'FRTB', 'Fundamental Review of the Trading Book', 'Basel IV',
-    'Market Risk', 'Expected Shortfall', 'Internal Model Approach', 'Standardised Approach', 'P&L Attribution',
-    'Hedge Funds', 'Prop Trading', 'Proprietary Trading', 'Sell Side', 'Buy Side',
-    'Jane Street', 'Citadel', 'Citadel Securities', 'Jump Trading', 'Optiver',
-    'Hudson River Trading', 'HRT', 'Two Sigma', 'IMC Trading', 'Tower Research',
-    'Akuna Capital', 'DRW', 'Virtu Financial', 'SIG', 'Susquehanna', 'Five Rings',
-    'Millennium', 'Point72', 'Balyasny', 'Squarepoint', 'XTX Markets', 'Radix Trading',
-    'New York Quant', 'London Quant', 'Chicago Quant', 'Singapore Quant', 'Hong Kong Quant', 'Amsterdam Quant',
+    'Quantitative Developer', 'Senior Quantitative Developer', 'Quantitative Researcher', 'Quantitative Trading Engineer',
+    'Quant Developer', 'Quant Researcher', 'Low Latency C++', 'C++20', 'High Frequency Trading', 'HFT',
+    'Market Making', 'Automated Market Making', 'Market Microstructure', 'Limit Order Book',
+    'FPGA Trading', 'Kernel Bypass', 'DPDK', 'Lock-Free Data Structures',
+    'Statistical Arbitrage', 'Merger Arbitrage', 'Alpha Research', 'Execution Algorithms',
+    'FRTB', 'Basel IV', 'Market Risk', 'Expected Shortfall', 'P&L Attribution',
+    'Stochastic Calculus', 'Derivatives Pricing', 'Portfolio Optimization', 'kdb+/q', 'Python', 'New York',
   ],
   authors: [{ name: 'Shreejit Verma', url: 'https://www.shreejitverma.com' }],
   creator: 'Shreejit Verma',
   publisher: 'Shreejit Verma',
   category: 'technology',
-  icons: {
-    icon: '/Shreejit_Verma_profile_pic.jpg',
-    shortcut: '/Shreejit_Verma_profile_pic.jpg',
-    apple: '/Shreejit_Verma_profile_pic.jpg',
-  },
   openGraph: {
     type: 'profile',
     firstName: 'Shreejit',
     lastName: 'Verma',
     username: 'shreejitverma',
     gender: 'male',
-    title: 'Shreejit Verma | Quantitative Developer & Quantitative Researcher',
-    description: 'Senior Quantitative Developer at Barclays (FRTB market risk), previously C++ automated market making at BNP Paribas, FPGA/DPDK sub-10us trading systems, statistical arbitrage, and ML-driven alpha research. New York based, open to global quant roles.',
+    title: 'Shreejit Verma | Senior Quantitative Developer & Quantitative Researcher',
+    description: 'Senior Quantitative Developer at Barclays (FRTB market risk), previously C++ automated market making at BNP Paribas. FPGA and kernel-bypass market making, statistical arbitrage, and ML-driven alpha research. New York.',
     siteName: 'Shreejit Verma Portfolio',
-    images: [
-      {
-        url: 'https://www.shreejitverma.com/Shreejit_Verma_profile_pic.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Shreejit Verma | Quantitative Developer & Quantitative Researcher',
-      },
-    ],
     locale: 'en_US',
     url: 'https://www.shreejitverma.com',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shreejit Verma | Quantitative Developer & Quantitative Researcher',
-    description: 'Engineering alpha through low-latency C++, FPGA market data handlers, and statistical modeling for HFT, hedge funds, and prop trading.',
+    title: 'Shreejit Verma | Senior Quantitative Developer & Quantitative Researcher',
+    description: 'Senior Quantitative Developer at Barclays. Low-latency C++ trading and risk systems, FPGA and kernel-bypass market making, statistical arbitrage.',
     creator: '@shreejitverma',
-    images: ['https://www.shreejitverma.com/Shreejit_Verma_profile_pic.jpg'],
   },
   robots: {
     index: true,
@@ -209,7 +184,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang='en' className='scroll-smooth' suppressHydrationWarning>
+    <html lang='en' className={clsx(inter.variable, jetbrainsMono.variable, 'scroll-smooth')} suppressHydrationWarning>
       <head>
         <Script
           id="json-ld-profile"
@@ -217,7 +192,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={clsx(inter.variable, jetbrainsMono.variable, 'bg-background text-foreground antialiased selection:bg-primary/30 selection:text-cyan-900 dark:selection:text-cyan-100 font-sans')}>
+      <body className={clsx('bg-background text-foreground antialiased selection:bg-primary/30 selection:text-cyan-900 dark:selection:text-cyan-100 font-sans')}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <BackgroundCanvas />
           {children}

@@ -74,8 +74,50 @@ test.describe('SEO metadata', () => {
     });
   }
 
-  test('home and resume pages have exactly one h1', async ({ page }) => {
-    for (const path of ['/', '/resume']) {
+  test('home page link preview is a generated 1200x630 card', async ({ page, request }) => {
+    await page.goto('/');
+    const ogImage = (await page.locator('head meta[property="og:image"]').first().getAttribute('content')) ?? '';
+    expect(ogImage).toContain('/opengraph-image');
+    expect(await page.locator('head meta[property="og:image:width"]').first().getAttribute('content')).toBe('1200');
+    expect(await page.locator('head meta[property="og:image:height"]').first().getAttribute('content')).toBe('630');
+    const response = await request.get(new URL(ogImage).pathname + new URL(ogImage).search);
+    expect(response.status()).toBe(200);
+    expect(response.headers()['content-type']).toContain('image/png');
+  });
+
+  test('metadata does not keyword-stuff target employer names', async ({ page }) => {
+    await page.goto('/');
+    const keywords = (await page.locator('head meta[name="keywords"]').first().getAttribute('content')) ?? '';
+    for (const firm of ['Jane Street', 'Citadel', 'Optiver', 'Hudson River Trading', 'Two Sigma', 'Millennium']) {
+      expect(keywords, `${firm} must not appear in meta keywords`).not.toContain(firm);
+    }
+  });
+
+  test('site icons are small purpose-built images', async ({ page, request }) => {
+    // Regression: favicon.ico, icon.png, and apple-icon.png were 5.7 MB photos.
+    await page.goto('/');
+    const hrefs = await page.locator('head link[rel="icon"], head link[rel="apple-touch-icon"]').evaluateAll((links) =>
+      links.map((l) => l.getAttribute('href') ?? ''),
+    );
+    expect(hrefs.length).toBeGreaterThanOrEqual(2);
+    for (const href of [...hrefs, '/favicon.ico']) {
+      const response = await request.get(href);
+      expect(response.status(), href).toBe(200);
+      expect((await response.body()).length, `${href} is too large for an icon`).toBeLessThan(100_000);
+    }
+  });
+
+  test('articles declare TechArticle structured data with an author', async ({ page }) => {
+    await page.goto('/writing/frtb-for-engineers');
+    const blocks = await page.locator('script[type="application/ld+json"]').allTextContents();
+    const article = blocks.map((b) => JSON.parse(b)).find((d) => d['@type'] === 'TechArticle');
+    expect(article, 'TechArticle JSON-LD missing').toBeTruthy();
+    expect(article.author?.name).toBe('Shreejit Verma');
+    expect(article.datePublished).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+
+  test('every page has exactly one h1', async ({ page }) => {
+    for (const { path } of PAGES.filter((p) => !['/books', '/value-investing'].includes(p.path))) {
       await page.goto(path);
       await expect(page.locator('h1')).toHaveCount(1);
     }
@@ -85,7 +127,10 @@ test.describe('SEO metadata', () => {
     const response = await request.get('/sitemap.xml');
     expect(response.status()).toBe(200);
     const xml = await response.text();
-    for (const url of [SITE, `${SITE}/resume`, `${SITE}/value-investing`, `${SITE}/books`, `${SITE}/Shreejit_Verma_Resume.pdf`]) {
+    for (const { canonical: url } of PAGES) {
+      expect(xml, `sitemap missing ${url}`).toContain(`<loc>${url}</loc>`);
+    }
+    for (const url of [`${SITE}/Shreejit_Verma_Resume.pdf`]) {
       expect(xml, `sitemap missing ${url}`).toContain(`<loc>${url}</loc>`);
     }
   });

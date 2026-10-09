@@ -39,8 +39,8 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 .dark {
@@ -76,4 +76,96 @@ body {
 /* Smooth transitions for theme changes */
 * {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+}
+
+/* Long-form article typography for /writing and /work case studies. Layered so
+   Tailwind utilities on individual elements still win. */
+@layer components {
+  .prose-article {
+    color: var(--muted-foreground);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+  .prose-article > * + * {
+    margin-top: 1.25rem;
+  }
+  .prose-article h2 {
+    color: var(--foreground);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 3rem;
+    scroll-margin-top: 6rem;
+  }
+  .prose-article h3 {
+    color: var(--foreground);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-top: 2rem;
+  }
+  .prose-article strong {
+    color: var(--foreground);
+  }
+  .prose-article a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .prose-article ul,
+  .prose-article ol {
+    padding-left: 1.25rem;
+  }
+  .prose-article ul {
+    list-style: disc;
+  }
+  .prose-article ol {
+    list-style: decimal;
+  }
+  .prose-article li + li {
+    margin-top: 0.5rem;
+  }
+  .prose-article code {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.9em;
+    color: var(--foreground);
+    background: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    padding: 0.05rem 0.3rem;
+  }
+  .prose-article pre {
+    overflow-x: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+  .prose-article pre code {
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+  .prose-article blockquote {
+    border-left: 3px solid var(--primary);
+    padding-left: 1rem;
+    color: var(--foreground);
+  }
+  .prose-article table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .prose-article th,
+  .prose-article td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 0.75rem 0.5rem 0;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose-article th {
+    color: var(--foreground);
+    font-weight: 600;
+  }
 }

@@ -11,9 +11,12 @@ Education: M.S. Financial Engineering (Stevens Institute of Technology, GPA 3.97
 
 ## Pages
 
-- [Home](https://www.shreejitverma.com/): profile, experience, skills, research, and projects
-- [Resume (HTML)](https://www.shreejitverma.com/resume): full resume as a web page
+- [Home](https://www.shreejitverma.com/): profile, experience, selected work, skills, education, and writing
+- [Resume (HTML)](https://www.shreejitverma.com/resume): full resume as a web page, including certifications
 - [Resume (PDF)](https://www.shreejitverma.com/Shreejit_Verma_Resume.pdf): downloadable resume
+- [Trishul case study](https://www.shreejitverma.com/work/trishul): AI-integrated FPGA market-making system (MS thesis)
+- [Writing](https://www.shreejitverma.com/writing): technical articles on low-latency systems and market risk
+- [FRTB for Engineers](https://www.shreejitverma.com/writing/frtb-for-engineers): what a market risk capital engine computes
 - [Value Intelligence Platform](https://www.shreejitverma.com/value-investing): quantitative research platform
 - [Reading List](https://www.shreejitverma.com/books): curated finance and engineering library
 

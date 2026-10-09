@@ -17,9 +17,9 @@ test.describe('Resume page', () => {
   test('offers the PDF download and contact links', async ({ page }) => {
     const pdfLink = page.locator('a[href="/Shreejit_Verma_Resume.pdf"]').first();
     await expect(pdfLink).toBeVisible();
-    await expect(page.locator('a[href^="mailto:shreejitverma@gmail.com"]').first()).toBeVisible();
-    await expect(page.locator('a[href*="linkedin.com/in/shreejitverma"]').first()).toBeVisible();
-    await expect(page.locator('a[href*="github.com/shreejitverma"]').first()).toBeVisible();
+    await expect(page.locator('main a[href^="mailto:shreejitverma@gmail.com"]').first()).toBeVisible();
+    await expect(page.locator('main a[href*="linkedin.com/in/shreejitverma"]').first()).toBeVisible();
+    await expect(page.locator('main a[href*="github.com/shreejitverma"]').first()).toBeVisible();
   });
 
   test('renders every resume section', async ({ page }) => {
@@ -38,6 +38,14 @@ test.describe('Resume page', () => {
     expect(texts[3]).toContain('Versor');
     expect(texts[4]).toContain('Bank of America');
     expect(texts[5]).toContain('Bank of America');
+  });
+
+  test('certifications render finance and CS credentials with links', async ({ page }) => {
+    const section = page.locator('section[aria-labelledby="resume-achievements"]');
+    await expect(section.locator('#resume-certifications')).toHaveCount(1);
+    await expect(section).toContainText('CFA Level 1');
+    await expect(section).toContainText('Deep Learning Specialization');
+    expect(await section.locator('a[href^="http"]').count()).toBeGreaterThanOrEqual(15);
   });
 
   test('contains headline quantitative achievements', async ({ page }) => {
