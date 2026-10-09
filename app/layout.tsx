@@ -3,12 +3,14 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { clsx } from 'clsx';
 import Script from 'next/script';
+import { SITE_URL } from '@/app/lib/profile';
+import { SITE_NAME, TWITTER_HANDLE } from '@/app/lib/seo';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jetbrains-mono' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.shreejitverma.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Shreejit Verma | Senior Quantitative Developer & Quantitative Researcher | Low-Latency C++',
     template: '%s | Shreejit Verma',
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
     'FRTB', 'Basel IV', 'Market Risk', 'Expected Shortfall', 'P&L Attribution',
     'Stochastic Calculus', 'Derivatives Pricing', 'Portfolio Optimization', 'kdb+/q', 'Python', 'New York',
   ],
-  authors: [{ name: 'Shreejit Verma', url: 'https://www.shreejitverma.com' }],
+  authors: [{ name: 'Shreejit Verma', url: SITE_URL }],
   creator: 'Shreejit Verma',
   publisher: 'Shreejit Verma',
   category: 'technology',
@@ -36,15 +38,15 @@ export const metadata: Metadata = {
     gender: 'male',
     title: 'Shreejit Verma | Senior Quantitative Developer & Quantitative Researcher',
     description: 'Senior Quantitative Developer at Barclays (FRTB market risk), previously C++ automated market making at BNP Paribas. FPGA and kernel-bypass market making, statistical arbitrage, and ML-driven alpha research. New York.',
-    siteName: 'Shreejit Verma Portfolio',
+    siteName: SITE_NAME,
     locale: 'en_US',
-    url: 'https://www.shreejitverma.com',
+    url: SITE_URL,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Shreejit Verma | Senior Quantitative Developer & Quantitative Researcher',
     description: 'Senior Quantitative Developer at Barclays. Low-latency C++ trading and risk systems, FPGA and kernel-bypass market making, statistical arbitrage.',
-    creator: '@shreejitverma',
+    creator: TWITTER_HANDLE,
   },
   robots: {
     index: true,
@@ -74,10 +76,10 @@ export default function RootLayout({
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'https://www.shreejitverma.com/#person',
+        '@id': `${SITE_URL}/#person`,
         name: 'Shreejit Verma',
-        url: 'https://www.shreejitverma.com',
-        image: 'https://www.shreejitverma.com/Shreejit_Verma_profile_pic.jpg',
+        url: SITE_URL,
+        image: `${SITE_URL}/Shreejit_Verma_profile_pic.jpg`,
         email: 'mailto:shreejitverma@gmail.com',
         jobTitle: [
           'Senior Quantitative Developer',
@@ -165,19 +167,19 @@ export default function RootLayout({
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://www.shreejitverma.com/#website',
-        url: 'https://www.shreejitverma.com',
+        '@id': `${SITE_URL}/#website`,
+        url: SITE_URL,
         name: 'Shreejit Verma | Quantitative Developer & Quantitative Researcher',
-        publisher: { '@id': 'https://www.shreejitverma.com/#person' },
+        publisher: { '@id': `${SITE_URL}/#person` },
         inLanguage: 'en-US',
       },
       {
         '@type': 'ProfilePage',
-        '@id': 'https://www.shreejitverma.com/#profilepage',
-        url: 'https://www.shreejitverma.com',
+        '@id': `${SITE_URL}/#profilepage`,
+        url: SITE_URL,
         name: 'Shreejit Verma | Quantitative Developer, Quantitative Researcher, Quantitative Trading Engineer',
-        isPartOf: { '@id': 'https://www.shreejitverma.com/#website' },
-        mainEntity: { '@id': 'https://www.shreejitverma.com/#person' },
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        mainEntity: { '@id': `${SITE_URL}/#person` },
         inLanguage: 'en-US',
       },
     ],

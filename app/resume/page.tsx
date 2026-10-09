@@ -4,21 +4,19 @@ import { Download, Mail, Github, Linkedin, Globe } from 'lucide-react';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
 import { AWARDS, CERTIFICATIONS, CONTACT, EDUCATION, EXPERIENCE, HEADLINE, PROJECTS, SKILLS } from '../lib/profile';
+import { socialMetadata } from '../lib/seo';
 
 export const metadata: Metadata = {
   title: 'Resume | Quantitative Developer, Quantitative Researcher & Quantitative Trading Engineer',
   description:
     'Resume of Shreejit Verma - Senior Quantitative Developer at Barclays (FRTB market risk), Quantitative Researcher, and Quantitative Trading Engineer in New York. C++ automated market making at BNP Paribas, FPGA/DPDK sub-10us trading systems, statistical arbitrage, merger arbitrage, and ML-driven alpha research.',
-  alternates: {
-    canonical: 'https://www.shreejitverma.com/resume',
-  },
-  openGraph: {
+  ...socialMetadata({
+    path: '/resume',
     title: 'Shreejit Verma | Resume - Quantitative Developer & Quantitative Researcher',
     description:
       'FRTB and Basel IV market risk engines at Barclays, C++ low-latency market making, FPGA/DPDK trading systems, statistical arbitrage, and ML-driven alpha research. Full resume with experience, education, projects, and certifications.',
-    url: 'https://www.shreejitverma.com/resume',
     type: 'profile',
-  },
+  }),
 };
 
 const sectionHeading = 'text-2xl font-bold text-foreground';
@@ -31,7 +29,7 @@ export default function ResumePage() {
         <header className='mb-12'>
           <h1 className='text-4xl md:text-5xl font-bold text-foreground mb-3'>{HEADLINE.name}</h1>
           <p className='text-lg text-foreground font-medium mb-2'>{HEADLINE.roles}</p>
-          <p className='text-sm mb-6'>{HEADLINE.current} · New York, NY, USA</p>
+          <p className='text-sm mb-6'>{HEADLINE.current} · {HEADLINE.location}</p>
           <div className='flex flex-wrap gap-4 text-sm'>
             <a
               href={CONTACT.resumePdf}

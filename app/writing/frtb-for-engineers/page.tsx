@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ArticleLayout from '@/app/components/ArticleLayout';
+import { socialMetadata } from '@/app/lib/seo';
 import { ARTICLES, articleUrl } from '@/app/lib/writing';
 
 const article = ARTICLES.find((a) => a.slug === 'frtb-for-engineers')!;
@@ -9,15 +10,7 @@ export const metadata: Metadata = {
   title: article.title,
   description: article.description,
   keywords: article.tags,
-  alternates: { canonical: `https://www.shreejitverma.com${path}` },
-  openGraph: {
-    type: 'article',
-    title: article.title,
-    description: article.description,
-    url: `https://www.shreejitverma.com${path}`,
-    publishedTime: article.published,
-    authors: ['Shreejit Verma'],
-  },
+  ...socialMetadata({ path, title: article.title, description: article.description, published: article.published }),
 };
 
 export default function FrtbForEngineers() {

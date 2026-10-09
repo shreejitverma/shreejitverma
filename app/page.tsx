@@ -5,12 +5,12 @@ import { ArrowRight, ArrowUpRight, Award, Briefcase, Calendar, Code2, Cpu, Downl
 import Section from './components/Section';
 import SiteNav from './components/SiteNav';
 import SiteFooter from './components/SiteFooter';
-import { AWARDS, CONTACT, EDUCATION, EXPERIENCE, INTERESTS, LANGUAGES, PROJECTS, PROOF_METRICS, SKILLS } from './lib/profile';
+import { AWARDS, CONTACT, EDUCATION, EXPERIENCE, HEADLINE, INTERESTS, LANGUAGES, PROJECTS, PROOF_METRICS, SITE_URL, SKILLS } from './lib/profile';
 import { ARTICLES, articleUrl } from './lib/writing';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://www.shreejitverma.com',
+    canonical: SITE_URL,
   },
 };
 
@@ -30,7 +30,7 @@ export default function Home() {
             <div className='max-w-3xl flex-1 text-center md:text-left'>
               <p className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono mb-6 border border-primary/20'>
                 <span className='w-1.5 h-1.5 rounded-full bg-primary' aria-hidden='true' />
-                Senior Quantitative Developer at Barclays · New York
+                {HEADLINE.current} · {HEADLINE.location}
               </p>
               <h1 className='text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight'>
                 Shreejit Verma
@@ -117,7 +117,13 @@ export default function Home() {
               <div>
                 <p className='text-xs font-mono text-primary mb-2'>Featured case study</p>
                 <h3 className='text-2xl font-bold text-foreground'>
-                  <Link href={featured.caseStudy ?? featured.repo ?? '#'} className='hover:text-primary transition-colors'>{featured.name}</Link>
+                  {featured.caseStudy ? (
+                    <Link href={featured.caseStudy} className='hover:text-primary transition-colors'>{featured.name}</Link>
+                  ) : featured.repo ? (
+                    <a href={featured.repo} target='_blank' rel='noopener noreferrer' className='hover:text-primary transition-colors'>{featured.name}</a>
+                  ) : (
+                    featured.name
+                  )}
                 </h3>
                 <p className='text-sm font-medium text-muted-foreground mt-1'>{featured.context}</p>
               </div>

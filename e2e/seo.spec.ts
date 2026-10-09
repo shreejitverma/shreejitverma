@@ -3,7 +3,7 @@ import { PAGES, SITE } from './helpers';
 
 test.describe('SEO metadata', () => {
   for (const { path, canonical } of PAGES) {
-    test(`${path} has title, description, canonical, and is indexable`, async ({ page }) => {
+    test(`${path} has title, description, canonical, page-specific social cards, and is indexable`, async ({ page }) => {
       await page.goto(path);
 
       const title = await page.title();
@@ -18,6 +18,16 @@ test.describe('SEO metadata', () => {
       await expect(canonicalLink).toHaveCount(1);
       const href = ((await canonicalLink.getAttribute('href')) ?? '').replace(/\/$/, '');
       expect(href).toBe(canonical.replace(/\/$/, ''));
+
+      // Link previews must describe this page, not the inherited home card.
+      const ogUrl = (await page.locator('head meta[property="og:url"]').first().getAttribute('content')) ?? '';
+      expect(ogUrl.replace(/\/$/, ''), 'og:url must equal the canonical URL').toBe(canonical.replace(/\/$/, ''));
+      const ogTitle = (await page.locator('head meta[property="og:title"]').first().getAttribute('content')) ?? '';
+      const twitterTitle = (await page.locator('head meta[name="twitter:title"]').first().getAttribute('content')) ?? '';
+      expect(ogTitle, 'og:title missing').not.toBe('');
+      const ogImage = (await page.locator('head meta[property="og:image"]').first().getAttribute('content')) ?? '';
+      expect(ogImage, 'og:image missing').toContain('/opengraph-image');
+      expect(twitterTitle, 'twitter:title must match og:title').toBe(ogTitle);
 
       const robotsMeta = page.locator('head meta[name="robots"]').first();
       if ((await robotsMeta.count()) > 0) {

@@ -3,13 +3,17 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
+import { socialMetadata } from '../lib/seo';
 import { ARTICLES, articleUrl } from '../lib/writing';
 
+const title = 'Writing | Low-Latency Systems, Market Risk, and Quantitative Engineering';
+const description =
+  'Technical writing by Shreejit Verma on low-latency C++ trading systems, FRTB market risk engines, market microstructure, and quantitative engineering.';
+
 export const metadata: Metadata = {
-  title: 'Writing | Low-Latency Systems, Market Risk, and Quantitative Engineering',
-  description:
-    'Technical writing by Shreejit Verma on low-latency C++ trading systems, FRTB market risk engines, market microstructure, and quantitative engineering.',
-  alternates: { canonical: 'https://www.shreejitverma.com/writing' },
+  title,
+  description,
+  ...socialMetadata({ path: '/writing', title: `${title} | Shreejit Verma`, description }),
 };
 
 const formatDate = (iso: string) =>

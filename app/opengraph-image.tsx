@@ -1,12 +1,15 @@
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { ImageResponse } from 'next/og';
+import { HEADLINE } from './lib/profile';
+import { OG_IMAGE } from './lib/seo';
 
 // Link-preview card for LinkedIn, Slack, email, and X shares. Rendered at
-// build time and inherited by every route that does not define its own.
+// build time; routes that set their own openGraph reference it through
+// socialMetadata in app/lib/seo.ts.
 
-export const alt = 'Shreejit Verma - Senior Quantitative Developer & Quantitative Researcher, New York';
-export const size = { width: 1200, height: 630 };
+export const alt = OG_IMAGE.alt;
+export const size = { width: OG_IMAGE.width, height: OG_IMAGE.height };
 export const contentType = 'image/png';
 
 const HIGHLIGHTS = ['Low-latency C++', 'FPGA & kernel bypass', 'Market making', 'FRTB market risk'];
@@ -32,9 +35,9 @@ export default async function OpenGraphImage() {
       >
         <div style={{ display: 'flex', flexDirection: 'column', maxWidth: 760 }}>
           <div style={{ display: 'flex', fontSize: 26, color: '#22d3ee', marginBottom: 20 }}>
-            Senior Quantitative Developer at Barclays · New York
+            {HEADLINE.current} · {HEADLINE.location}
           </div>
-          <div style={{ display: 'flex', fontSize: 84, fontWeight: 700, letterSpacing: -2, lineHeight: 1 }}>Shreejit Verma</div>
+          <div style={{ display: 'flex', fontSize: 84, fontWeight: 700, letterSpacing: -2, lineHeight: 1 }}>{HEADLINE.name}</div>
           <div style={{ display: 'flex', fontSize: 40, color: '#a1a1aa', marginTop: 18 }}>
             Quantitative Developer &amp; Researcher
           </div>

@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import { Mail } from 'lucide-react';
-import { CONTACT } from '@/app/lib/profile';
+import { CONTACT, HEADLINE } from '@/app/lib/profile';
 
 export default function SiteFooter() {
   return (
     <footer className='relative z-10 py-12 border-t border-border bg-background/80 backdrop-blur-sm'>
       <div className='max-w-7xl mx-auto px-6 grid gap-8 md:grid-cols-[1fr_auto_auto] md:items-start'>
         <div className='text-sm text-muted-foreground space-y-2'>
-          <p className='text-foreground font-semibold'>Shreejit Verma</p>
-          <p>Senior Quantitative Developer, New York.</p>
-          <p>© {new Date().getFullYear()} Shreejit Verma.</p>
+          <p className='text-foreground font-semibold'>{HEADLINE.name}</p>
+          <p>{HEADLINE.current} · {HEADLINE.location}</p>
+          <p>© {new Date().getFullYear()} {HEADLINE.name}.</p>
         </div>
         <div className='text-sm space-y-2'>
           <p className='text-xs font-bold uppercase tracking-wider text-muted-foreground'>Contact</p>

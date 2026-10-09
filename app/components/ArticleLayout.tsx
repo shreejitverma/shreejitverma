@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import SiteNav from './SiteNav';
 import SiteFooter from './SiteFooter';
-import { CONTACT, SITE_URL } from '@/app/lib/profile';
+import { CONTACT, HEADLINE, SITE_URL } from '@/app/lib/profile';
 
 interface ArticleLayoutProps {
   eyebrow: string;
@@ -64,7 +64,7 @@ export default function ArticleLayout({ eyebrow, title, description, path, publi
         <aside className='mt-16 p-6 rounded-2xl bg-card/40 dark:bg-card border border-border text-sm'>
           <p className='text-foreground font-semibold mb-1'>Shreejit Verma</p>
           <p className='text-muted-foreground mb-4'>
-            Senior Quantitative Developer in New York, building low-latency C++ trading and market risk systems.
+            {HEADLINE.current} in {HEADLINE.location}, building low-latency C++ trading and market risk systems.
           </p>
           <div className='flex flex-wrap gap-4 font-semibold'>
             <Link href='/resume' className='text-primary hover:underline underline-offset-4'>Resume</Link>

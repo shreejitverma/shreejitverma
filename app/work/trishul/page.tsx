@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ArrowDown, Github } from 'lucide-react';
 import ArticleLayout from '@/app/components/ArticleLayout';
+import { socialMetadata } from '@/app/lib/seo';
 
 const path = '/work/trishul';
 const title = 'Trishul: An AI-Integrated FPGA Market-Making System';
@@ -11,8 +12,7 @@ const REPO = 'https://github.com/shreejitverma/trishul-ultra-hft-project';
 export const metadata: Metadata = {
   title: 'Trishul Case Study | FPGA Market Making, Low-Latency C++20, Kernel Bypass',
   description,
-  alternates: { canonical: `https://www.shreejitverma.com${path}` },
-  openGraph: { type: 'article', title, description, url: `https://www.shreejitverma.com${path}` },
+  ...socialMetadata({ path, title, description, type: 'article' }),
 };
 
 const FPGA_STAGES = [
