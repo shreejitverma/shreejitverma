@@ -185,6 +185,7 @@ CI runs lint, typecheck, and the full suite on every pull request (`.github/work
 Adding a title to that skip list also clears a vault cover it already received, so `enrich_books.py` fetches a hotlinked one on its next run.
 Vault covers take precedence over the hotlinked covers from `enrich_books.py`, which never overwrites an existing cover; rerun the import after adding books or covers to the vault (`python3 scripts/import_vault_covers.py --dry-run` previews the changes).
 `scripts/make_icons.py` renders the "SV" monogram site icons (`app/favicon.ico`, `app/icon.png`, `app/apple-icon.png`); rerun it with `uv run --with pillow python3 scripts/make_icons.py` after changing the theme's primary color.
+`.github/workflows/metrics.yml` refreshes the GitHub Impact cards daily and publishes them to the `output` branch: `scripts/github_stats.py` writes `github-stats.json` (rendered natively on the home page), `scripts/github_cards.py` draws the README's stats and language cards from it, and `python3 -m unittest discover -s scripts/tests` tests both.
 `scripts/categorize_books.py` assigns book categories through hand-curated overrides (`scripts/category_overrides.json`), title-family regex rules, and ordered keyword rules, keeping the `General` shelf a small miscellany bucket.
 `scripts/` also holds standalone personal data tooling unrelated to the site, such as `scripts/amazon_ir_scraper.py`, which downloads Amazon investor-relations PDFs (annual reports, proxy statements, shareholder letters) into `~/Downloads/Amazon_IR_Documents`.
 `backlog.md` is the workspace task backlog managed by `tasks-axi`.
@@ -193,30 +194,32 @@ Vault covers take precedence over the hotlinked covers from `enrich_books.py`, w
 
 ## GitHub Impact
 
-Refreshed daily by `.github/workflows/metrics.yml`; counts include private-repository contributions.
+Refreshed daily by `.github/workflows/metrics.yml` from the GitHub API, including private-repository activity.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/card.stats.dark.svg" />
+    <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/card.stats.light.svg" alt="GitHub activity in the last 12 months: contributions, commits, pull requests, streaks, repositories, and stars" width="49%" valign="top" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/card.languages.dark.svg" />
+    <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/card.languages.light.svg" alt="Languages by share of commits in the last 12 months" width="49%" valign="top" />
+  </picture>
+</p>
 
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/contrib3d.night-green.svg" />
     <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/contrib3d.green-animate.svg" alt="3D contribution calendar for the last year" width="100%" />
   </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/streak.dark.svg" />
-    <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/streak.light.svg" alt="Contribution streak" width="80%" />
-  </picture>
 </div>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.overview.svg" alt="GitHub overview: activity, repositories, and lines of code changed" width="49%" valign="top" />
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.languages.svg" alt="Most used programming languages" width="49%" valign="top" />
-</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.calendar.svg" alt="Contribution calendar and pull request status" width="49%" valign="top" />
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.habits.svg" alt="Coding habits: commits by hour and day" width="49%" valign="top" />
-</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.repositories.svg" alt="Featured repositories" width="49%" valign="top" />
-  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.achievements.svg" alt="GitHub achievements" width="49%" valign="top" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/streak.dark.svg" />
+    <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/streak.light.svg" alt="Contribution streak: total contributions, current streak, and longest streak" width="49%" valign="top" />
+  </picture>
+  <img src="https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/metrics.calendar.svg" alt="Contribution calendar, commit streaks, and pull request status" width="49%" valign="top" />
 </p>
 
 <div align="center">

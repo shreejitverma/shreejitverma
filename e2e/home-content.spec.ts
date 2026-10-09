@@ -168,8 +168,7 @@ test.describe('Home page content', () => {
     // server-rendered markup rather than third-party availability.
     const html = await (await request.get('/')).text();
     for (const file of [
-      'contrib3d.green-animate.svg', 'contrib3d.night-green.svg', 'metrics.overview.svg', 'metrics.languages.svg',
-      'metrics.calendar.svg', 'metrics.habits.svg', 'metrics.repositories.svg', 'metrics.achievements.svg',
+      'contrib3d.green-animate.svg', 'contrib3d.night-green.svg', 'metrics.calendar.svg',
       'streak.light.svg', 'streak.dark.svg', 'snake.light.svg', 'snake.dark.svg',
     ]) {
       expect(html, file).toContain(`https://raw.githubusercontent.com/shreejitverma/shreejitverma/output/${file}`);

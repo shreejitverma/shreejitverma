@@ -1,8 +1,8 @@
 // GitHub activity shown in the home page "GitHub Impact" section and in
-// README.md. Both are rendered by .github/workflows/metrics.yml and published
-// to the `output` branch: SVG cards from lowlighter/metrics, the 3D calendar,
-// the snake, and the streak card, plus github-stats.json written by
-// scripts/github_stats.py.
+// README.md. .github/workflows/metrics.yml publishes it to the `output`
+// branch: github-stats.json from scripts/github_stats.py (rendered natively
+// here, and as SVG cards for the README by scripts/github_cards.py), plus the
+// contribution calendar, 3D calendar, snake, and streak cards.
 
 export const GITHUB_LOGIN = 'shreejitverma';
 
@@ -21,6 +21,7 @@ export interface GitHubStats {
     pullRequests: number;
     reviews: number;
     issues: number;
+    repositoriesContributedTo: number;
     // GitHub's restrictedContributionsCount: contributions the API token cannot
     // access, already included in `contributions`.
     restrictedContributions: number;
@@ -29,6 +30,14 @@ export interface GitHubStats {
   pullRequests: { merged: number; open: number; closed: number };
   repositories: { public: number; stars: number; forks: number };
   followers: number;
+  // Share of last-year commits per programming language, largest first.
+  languages: LanguageShare[];
+}
+
+export interface LanguageShare {
+  name: string;
+  color: string | null;
+  share: number;
 }
 
 const isCount = (value: unknown): value is number =>
@@ -45,6 +54,24 @@ function counts<K extends string>(value: unknown, keys: readonly K[]): Record<K,
   return out;
 }
 
+const HEX_COLOR = /^#[0-9a-f]{6}$/i;
+
+function languageShares(value: unknown): LanguageShare[] | null {
+  if (!Array.isArray(value) || value.length === 0) return null;
+  const shares: LanguageShare[] = [];
+  for (const item of value) {
+    if (typeof item !== 'object' || item === null) return null;
+    const { name, color, share } = item as Record<string, unknown>;
+    if (typeof name !== 'string' || !name.trim()) return null;
+    if (color !== null && !(typeof color === 'string' && HEX_COLOR.test(color))) return null;
+    if (typeof share !== 'number' || !(share >= 0 && share <= 1)) return null;
+    shares.push({ name, color, share });
+  }
+  const total = shares.reduce((sum, item) => sum + item.share, 0);
+  // Shares are rounded to four decimals, so allow a small tolerance.
+  return Math.abs(total - 1) <= 0.01 ? shares : null;
+}
+
 // Validates the published JSON, so a malformed or partial file renders the
 // section without stat tiles instead of showing wrong numbers.
 export function parseGitHubStats(raw: unknown): GitHubStats | null {
@@ -53,11 +80,12 @@ export function parseGitHubStats(raw: unknown): GitHubStats | null {
   if (typeof data.generatedAt !== 'string' || Number.isNaN(Date.parse(data.generatedAt))) return null;
   if (!isCount(data.memberSince) || !isCount(data.followers)) return null;
 
-  const lastYear = counts(data.lastYear, ['contributions', 'commits', 'pullRequests', 'reviews', 'issues', 'restrictedContributions'] as const);
+  const lastYear = counts(data.lastYear, ['contributions', 'commits', 'pullRequests', 'reviews', 'issues', 'repositoriesContributedTo', 'restrictedContributions'] as const);
   const streak = counts(data.streak, ['current', 'longest'] as const);
   const pullRequests = counts(data.pullRequests, ['merged', 'open', 'closed'] as const);
   const repositories = counts(data.repositories, ['public', 'stars', 'forks'] as const);
-  if (!lastYear || !streak || !pullRequests || !repositories) return null;
+  const languages = languageShares(data.languages);
+  if (!lastYear || !streak || !pullRequests || !repositories || !languages) return null;
 
   return {
     generatedAt: data.generatedAt,
@@ -67,6 +95,7 @@ export function parseGitHubStats(raw: unknown): GitHubStats | null {
     pullRequests,
     repositories,
     followers: data.followers,
+    languages,
   };
 }
 
@@ -106,35 +135,10 @@ export const METRIC_CARDS = {
     light: outputUrl('contrib3d.green-animate.svg'),
     dark: outputUrl('contrib3d.night-green.svg'),
   },
-  overview: {
-    label: 'GitHub overview',
-    alt: 'GitHub overview: activity, repositories, and lines of code changed',
-    light: outputUrl('metrics.overview.svg'),
-  },
-  languages: {
-    label: 'Languages',
-    alt: 'Most used programming languages',
-    light: outputUrl('metrics.languages.svg'),
-  },
   calendar: {
     label: 'Contribution calendar',
-    alt: 'Contribution calendar and pull request status',
+    alt: 'Contribution calendar, commit streaks, and pull request status',
     light: outputUrl('metrics.calendar.svg'),
-  },
-  habits: {
-    label: 'Coding habits',
-    alt: 'Coding habits: commits by hour and day',
-    light: outputUrl('metrics.habits.svg'),
-  },
-  achievements: {
-    label: 'Achievements',
-    alt: 'GitHub achievements',
-    light: outputUrl('metrics.achievements.svg'),
-  },
-  repositories: {
-    label: 'Featured repositories',
-    alt: 'Featured repositories',
-    light: outputUrl('metrics.repositories.svg'),
   },
   streak: {
     label: 'Contribution streak',

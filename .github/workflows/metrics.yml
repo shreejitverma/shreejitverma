@@ -15,9 +15,9 @@ on:
         default: false
   push:
     branches: [main]
-    paths: [.github/workflows/metrics.yml, scripts/github_stats.py]
+    paths: [.github/workflows/metrics.yml, scripts/github_stats.py, scripts/github_cards.py, scripts/tests/**]
   pull_request:
-    paths: [.github/workflows/metrics.yml, scripts/github_stats.py]
+    paths: [.github/workflows/metrics.yml, scripts/github_stats.py, scripts/github_cards.py, scripts/tests/**]
 
 concurrency:
   group: metrics-${{ github.ref }}
@@ -27,6 +27,12 @@ env:
   USER_LOGIN: shreejitverma
   DIST: ${{ github.workspace }}/dist
   PUBLISH: ${{ github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || inputs.publish == true) }}
+  # Every file the output branch serves; README.md and app/lib/github.ts
+  # reference these names.
+  CARDS: >-
+    card.stats.light card.stats.dark card.languages.light card.languages.dark
+    metrics.calendar contrib3d.green-animate contrib3d.night-green
+    snake.light snake.dark streak.light streak.dark
 
 jobs:
   render:
@@ -40,39 +46,36 @@ jobs:
       - name: Prepare output directory
         run: mkdir -p "$DIST"
 
-      - name: "Stats: github-stats.json for the website"
+      - name: Test the stats and card scripts
+        run: python3 -m unittest discover -s scripts/tests -v
+
+      - name: "Stats: github-stats.json"
         id: stats
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: python3 scripts/github_stats.py "$USER_LOGIN" "$DIST/github-stats.json"
 
+      # The stats and language cards are drawn from github-stats.json rather
+      # than by lowlighter/metrics, whose v3.34 (its latest release, 2023)
+      # reports zero stars and line counts, crashes on the languages
+      # recently-used section, and renders "Unexpected error" for habits and
+      # achievements against today's GitHub API.
+      - name: "Cards: stats and languages"
+        id: cards
+        continue-on-error: true
+        if: steps.stats.outcome == 'success'
+        run: python3 scripts/github_cards.py "$DIST/github-stats.json" "$DIST"
+
       # lowlighter/metrics decides whether it is the official action from
       # github.action, which is the step id. After stripping "metrics..." and
       # underscores that id must equal "lowlighter"; otherwise the action
       # treats itself as a fork and rebuilds its Docker image from source,
-      # which fails, instead of pulling the published ghcr.io image. So every
-      # lowlighter step id is lowlighter_metrics_<card> (underscores only).
+      # which fails, instead of pulling the published ghcr.io image.
       #
       # Every card step uses continue-on-error so one flaky renderer cannot
       # block the others from publishing; the final step still fails the run
       # if any card failed, so a broken card never goes unnoticed.
-
-      - name: "Card: overview"
-        id: lowlighter_metrics_overview
-        continue-on-error: true
-        uses: lowlighter/metrics@v3.34
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ${{ env.USER_LOGIN }}
-          template: classic
-          filename: metrics.overview.svg
-          output_action: none
-          config_timezone: America/New_York
-          base: header, activity, repositories, metadata
-          plugin_lines: yes
-          plugin_lines_sections: base
-
       - name: "Card: contribution calendar and pull requests"
         id: lowlighter_metrics_calendar
         continue-on-error: true
@@ -92,86 +95,7 @@ jobs:
           plugin_followup: yes
           plugin_followup_sections: user
 
-      # Byte counts are dominated by notebook outputs and markup, so only
-      # programming languages are counted. The recently-used section is left
-      # out: its analyzer reads commit lists from push events, which GitHub's
-      # Events API no longer includes, so v3.34 crashes on it.
-      - name: "Card: languages"
-        id: lowlighter_metrics_languages
-        continue-on-error: true
-        uses: lowlighter/metrics@v3.34
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ${{ env.USER_LOGIN }}
-          template: classic
-          filename: metrics.languages.svg
-          output_action: none
-          config_timezone: America/New_York
-          base: ""
-          plugin_languages: yes
-          plugin_languages_sections: most-used
-          plugin_languages_categories: programming
-          plugin_languages_details: percentage
-          plugin_languages_limit: 8
-
-      - name: "Card: coding habits"
-        id: lowlighter_metrics_habits
-        continue-on-error: true
-        uses: lowlighter/metrics@v3.34
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ${{ env.USER_LOGIN }}
-          template: classic
-          filename: metrics.habits.svg
-          output_action: none
-          config_timezone: America/New_York
-          base: ""
-          plugin_habits: yes
-          plugin_habits_days: 30
-          plugin_habits_facts: no
-          plugin_habits_charts: yes
-          plugin_habits_charts_type: classic
-
-      - name: "Card: achievements"
-        id: lowlighter_metrics_achievements
-        continue-on-error: true
-        uses: lowlighter/metrics@v3.34
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ${{ env.USER_LOGIN }}
-          template: classic
-          filename: metrics.achievements.svg
-          output_action: none
-          config_timezone: America/New_York
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_threshold: B
-          plugin_achievements_secrets: no
-          plugin_achievements_limit: 8
-
-      - name: "Card: featured repositories"
-        id: lowlighter_metrics_repositories
-        continue-on-error: true
-        uses: lowlighter/metrics@v3.34
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          user: ${{ env.USER_LOGIN }}
-          template: classic
-          filename: metrics.repositories.svg
-          output_action: none
-          config_timezone: America/New_York
-          base: ""
-          plugin_repositories: yes
-          plugin_repositories_featured: >-
-            trishul-ultra-hft-project,
-            Adaptive-Volatility-Regime-Based-Execution-and-Risk-Framework,
-            Statistical-Arbitrage-Reversal-and-Momentum-Strategies,
-            Dynamic-Portfolio-Optimization,
-            wc2026-quant-prediction-system,
-            The-Quant-Prep
-
-      - name: Collect lowlighter renders
+      - name: Collect lowlighter render
         if: always()
         run: |
           # lowlighter's container writes its renders as root.
@@ -231,10 +155,7 @@ jobs:
         if: always()
         run: |
           status=0
-          for f in metrics.overview metrics.calendar metrics.languages metrics.habits \
-                   metrics.achievements metrics.repositories \
-                   contrib3d.green-animate contrib3d.night-green \
-                   snake.light snake.dark streak.light streak.dark; do
+          for f in $CARDS; do
             path="$DIST/$f.svg"
             if [ ! -s "$path" ]; then
               echo "::error::missing card $f.svg"; status=1; continue
@@ -242,8 +163,9 @@ jobs:
             if ! head -c 2048 "$path" | grep -q '<svg'; then
               echo "::error::$f.svg is not an SVG"; rm -f "$path"; status=1; continue
             fi
-            if grep -q 'Reached maximum execution time\|An error occurred' "$path"; then
-              echo "::warning::$f.svg rendered with partial or errored data"
+            # Renderers report failures inside the image; never publish those.
+            if grep -q 'Unexpected error\|An error occurred\|Reached maximum execution time' "$path"; then
+              echo "::error::$f.svg rendered an error"; rm -f "$path"; status=1; continue
             fi
             printf '%-28s %8d bytes\n' "$f.svg" "$(wc -c < "$path")"
           done
@@ -260,20 +182,27 @@ jobs:
           path: dist/
           retention-days: 14
 
-      # Publishes whatever rendered successfully on top of the previous
-      # cards, as one orphan commit, so a card that failed today keeps its
-      # last good version and the branch never accumulates history.
+      # Publishes the current set of cards as one orphan commit, so the
+      # branch never accumulates history. A card that failed today keeps its
+      # last good version; files no longer in $CARDS are dropped.
       - name: Publish to output branch
         if: always() && env.PUBLISH == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          previous="$(mktemp -d)"
           work="$(mktemp -d)"
           if git fetch --depth=1 origin output; then
-            git --work-tree="$work" checkout FETCH_HEAD -- .
+            git --work-tree="$previous" checkout FETCH_HEAD -- .
           fi
-          cp "$DIST"/*.svg "$work/"
-          [ -f "$DIST/github-stats.json" ] && cp "$DIST/github-stats.json" "$work/"
+          for name in $CARDS; do
+            if [ -f "$DIST/$name.svg" ]; then cp "$DIST/$name.svg" "$work/"
+            elif [ -f "$previous/$name.svg" ]; then cp "$previous/$name.svg" "$work/"
+            fi
+          done
+          if [ -f "$DIST/github-stats.json" ]; then cp "$DIST/github-stats.json" "$work/"
+          elif [ -f "$previous/github-stats.json" ]; then cp "$previous/github-stats.json" "$work/"
+          fi
           # The output branch only holds images; keep Vercel from deploying it.
           printf '{\n  "git": { "deploymentEnabled": false }\n}\n' > "$work/vercel.json"
           cd "$work"
@@ -287,17 +216,13 @@ jobs:
         if: always()
         run: |
           failed=""
-          [ "${{ steps.stats.outcome }}" = success ]                           || failed="$failed stats"
-          [ "${{ steps.lowlighter_metrics_overview.outcome }}" = success ]     || failed="$failed overview"
-          [ "${{ steps.lowlighter_metrics_calendar.outcome }}" = success ]     || failed="$failed calendar"
-          [ "${{ steps.lowlighter_metrics_languages.outcome }}" = success ]    || failed="$failed languages"
-          [ "${{ steps.lowlighter_metrics_habits.outcome }}" = success ]       || failed="$failed habits"
-          [ "${{ steps.lowlighter_metrics_achievements.outcome }}" = success ] || failed="$failed achievements"
-          [ "${{ steps.lowlighter_metrics_repositories.outcome }}" = success ] || failed="$failed repositories"
-          [ "${{ steps.contrib3d.outcome }}" = success ]                       || failed="$failed contrib3d"
-          [ "${{ steps.snake.outcome }}" = success ]                           || failed="$failed snake"
-          [ "${{ steps.streak.outcome }}" = success ]                          || failed="$failed streak"
-          [ "${{ steps.validate.outputs.ok }}" = true ]                        || failed="$failed validation"
+          [ "${{ steps.stats.outcome }}" = success ]                       || failed="$failed stats"
+          [ "${{ steps.cards.outcome }}" = success ]                       || failed="$failed cards"
+          [ "${{ steps.lowlighter_metrics_calendar.outcome }}" = success ] || failed="$failed calendar"
+          [ "${{ steps.contrib3d.outcome }}" = success ]                   || failed="$failed contrib3d"
+          [ "${{ steps.snake.outcome }}" = success ]                       || failed="$failed snake"
+          [ "${{ steps.streak.outcome }}" = success ]                      || failed="$failed streak"
+          [ "${{ steps.validate.outputs.ok }}" = true ]                    || failed="$failed validation"
           if [ -n "$failed" ]; then
             echo "::error::failed cards:$failed"; exit 1
           fi

@@ -1,8 +1,10 @@
-"""Write the GitHub activity summary the website renders as stat tiles.
+"""Write the GitHub activity summary rendered on the website and in the README.
 
 Run by .github/workflows/metrics.yml and published to the `output` branch as
-github-stats.json; app/lib/github.ts validates and renders it. Counts include
-private contributions when the token can see them (the README cards do too).
+github-stats.json. app/lib/github.ts validates it and renders the stat tiles
+and language bar on the website; scripts/github_cards.py turns it into the
+README's stats and language cards. With an owner token that can read private
+repositories, private work is counted in the totals.
 
     GITHUB_TOKEN=... python3 scripts/github_stats.py <login> <out.json>
 """
@@ -13,6 +15,7 @@ import json
 import os
 import sys
 import urllib.request
+from collections import defaultdict
 from datetime import datetime, timezone
 
 GRAPHQL_URL = "https://api.github.com/graphql"
@@ -27,10 +30,19 @@ query($login: String!) {
       totalPullRequestContributions
       totalPullRequestReviewContributions
       totalIssueContributions
+      totalRepositoriesWithContributedCommits
       restrictedContributionsCount
       contributionCalendar {
         totalContributions
         weeks { contributionDays { date contributionCount } }
+      }
+      commitContributionsByRepository(maxRepositories: 100) {
+        contributions { totalCount }
+        repository {
+          languages(first: 20, orderBy: {field: SIZE, direction: DESC}) {
+            edges { size node { name color } }
+          }
+        }
       }
     }
     merged: pullRequests(states: MERGED) { totalCount }
@@ -51,6 +63,30 @@ query($login: String!, $cursor: String) {
   }
 }
 """
+
+# Linguist languages that are markup, data, or prose rather than code. Their
+# byte counts (rendered HTML, LaTeX, docs) would otherwise drown out the code.
+NON_PROGRAMMING = {
+    "CSS",
+    "HTML",
+    "Less",
+    "Markdown",
+    "MDX",
+    "PostScript",
+    "Rich Text Format",
+    "Roff",
+    "SCSS",
+    "Sass",
+    "TeX",
+    "reStructuredText",
+}
+
+# Notebook bytes are mostly embedded outputs, but the code in them is Python.
+ALIASES = {"Jupyter Notebook": "Python"}
+# Linguist colors for alias targets, used when only the alias was seen.
+ALIAS_COLORS = {"Python": "#3572A5"}
+
+LANGUAGE_LIMIT = 8
 
 
 def graphql(token: str, query: str, variables: dict) -> dict:
@@ -91,6 +127,49 @@ def streaks(daily_counts: list[int]) -> tuple[int, int]:
     return current, longest
 
 
+def language_shares(by_repository: list[dict]) -> list[dict]:
+    """Share of last-year commit activity per programming language.
+
+    Each repository's commits are split across its languages in proportion to
+    their byte sizes, so a language's share reflects where the commits went
+    rather than how much code a repository happens to hold.
+    """
+    weights: dict[str, float] = defaultdict(float)
+    colors: dict[str, str | None] = {}
+    for entry in by_repository:
+        commits = entry["contributions"]["totalCount"]
+        sizes: dict[str, int] = defaultdict(int)
+        for edge in entry["repository"]["languages"]["edges"]:
+            name = ALIASES.get(edge["node"]["name"], edge["node"]["name"])
+            if name in NON_PROGRAMMING:
+                continue
+            sizes[name] += edge["size"]
+            if edge["node"]["name"] == name:
+                colors[name] = edge["node"]["color"]
+            else:
+                colors.setdefault(name, ALIAS_COLORS.get(name))
+        total = sum(sizes.values())
+        if commits <= 0 or total <= 0:
+            continue
+        for name, size in sizes.items():
+            weights[name] += commits * size / total
+
+    grand_total = sum(weights.values())
+    if grand_total <= 0:
+        return []
+    ranked = sorted(weights.items(), key=lambda item: (-item[1], item[0]))
+    shares = [
+        {"name": name, "color": colors.get(name), "share": weight / grand_total}
+        for name, weight in ranked[:LANGUAGE_LIMIT]
+    ]
+    rest = sum(weight for _, weight in ranked[LANGUAGE_LIMIT:])
+    if rest > 0:
+        shares.append({"name": "Other", "color": None, "share": rest / grand_total})
+    for item in shares:
+        item["share"] = round(item["share"], 4)
+    return shares
+
+
 def collect(token: str, login: str) -> dict:
     user = graphql(token, PROFILE_QUERY, {"login": login})
     contributions = user["contributionsCollection"]
@@ -123,7 +202,11 @@ def collect(token: str, login: str) -> dict:
             "pullRequests": contributions["totalPullRequestContributions"],
             "reviews": contributions["totalPullRequestReviewContributions"],
             "issues": contributions["totalIssueContributions"],
-            # Contributions the API token cannot access, already included in the total.
+            "repositoriesContributedTo": contributions[
+                "totalRepositoriesWithContributedCommits"
+            ],
+            # GitHub's restrictedContributionsCount: contributions the token
+            # cannot access. They are already included in `contributions`.
             "restrictedContributions": contributions["restrictedContributionsCount"],
         },
         "streak": {"current": current, "longest": longest},
@@ -134,6 +217,7 @@ def collect(token: str, login: str) -> dict:
         },
         "repositories": {"public": public, "stars": stars, "forks": forks},
         "followers": user["followers"]["totalCount"],
+        "languages": language_shares(contributions["commitContributionsByRepository"]),
     }
 
 
