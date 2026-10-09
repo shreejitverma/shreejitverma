@@ -281,18 +281,18 @@ export const PROJECTS: Project[] = [
   {
     name: 'Blockchain in Retail',
     kind: 'project',
+    dates: 'Jan 2018 - Mar 2018',
     detail:
       'Decentralized e-commerce platform securing and streamlining retail transactions with smart contracts, currency conversion, custom hashing, and matching algorithms.',
     tags: ['Blockchain', 'Smart Contracts', 'Solidity'],
-    homeOnly: true,
   },
   {
     name: 'QS Rank Predictor',
     kind: 'project',
+    dates: 'Jun 2017 - Jul 2017',
     detail:
       'Ensemble of deep neural networks predicting QS World University Rankings, with suggestions on the areas each institution should improve.',
     tags: ['Deep Learning', 'Neural Networks', 'Predictive Modeling'],
-    homeOnly: true,
   },
 ];
 

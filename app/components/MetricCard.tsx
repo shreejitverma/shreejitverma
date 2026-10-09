@@ -31,6 +31,11 @@ export default function MetricCard({ card, className = '' }: MetricCardProps) {
   }
 
   const onError = () => setFailed(true);
+  const detectEarlyError = (img: HTMLImageElement | null) => {
+    if (img && img.complete && img.naturalWidth === 0 && getComputedStyle(img).display !== 'none') {
+      setFailed(true);
+    }
+  };
   return (
     <figure className={frame}>
       {/* eslint-disable-next-line @next/next/no-img-element -- workflow-rendered SVG cards; next/image does not optimize SVG */}
@@ -39,6 +44,7 @@ export default function MetricCard({ card, className = '' }: MetricCardProps) {
         alt={card.alt}
         loading='lazy'
         decoding='async'
+        ref={detectEarlyError}
         onError={onError}
         className={`max-w-full h-auto ${card.dark ? 'dark:hidden' : ''}`}
       />
@@ -49,6 +55,7 @@ export default function MetricCard({ card, className = '' }: MetricCardProps) {
           alt={card.alt}
           loading='lazy'
           decoding='async'
+          ref={detectEarlyError}
           onError={onError}
           className='max-w-full h-auto hidden dark:block'
         />

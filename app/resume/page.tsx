@@ -133,7 +133,7 @@ export default function ResumePage() {
                   </h3>
                   <span className='text-xs font-mono text-primary whitespace-nowrap'>{proj.dates}</span>
                 </div>
-                <p className='text-xs font-mono mb-1'>{proj.context}</p>
+                {proj.context && <p className='text-xs font-mono mb-1'>{proj.context}</p>}
                 <p className='text-sm'>{proj.detail}</p>
                 {proj.caseStudy && (
                   <Link href={proj.caseStudy} className='text-sm text-primary underline underline-offset-2'>Read the case study</Link>
