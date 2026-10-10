@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="284" viewBox="0 0 495 284" role="img" aria-label="GitHub activity: 2,720 contributions and 2,459 commits in the last 12 months">
+<title>GitHub activity: 2,720 contributions and 2,459 commits in the last 12 months</title>
+<rect x="0.5" y="0.5" width="494" height="283" rx="6" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<text x="24" y="38" font-size="17" font-weight="600" fill="#1f2328">GitHub activity</text>
+<text x="24" y="60" font-size="12" fill="#656d76">Last 12 months, public and private repositories</text>
+<text x="24" y="90" font-size="12" fill="#656d76">Contributions</text>
+<text x="24" y="109" font-size="16" font-weight="600" fill="#1f2328">2,720</text>
+<text x="24" y="134" font-size="12" fill="#656d76">Commits</text>
+<text x="24" y="153" font-size="16" font-weight="600" fill="#1f2328">2,459</text>
+<text x="24" y="178" font-size="12" fill="#656d76">Pull requests and issues opened</text>
+<text x="24" y="197" font-size="16" font-weight="600" fill="#1f2328">194 / 7</text>
+<text x="24" y="222" font-size="12" fill="#656d76">Repositories committed to</text>
+<text x="24" y="241" font-size="16" font-weight="600" fill="#1f2328">29</text>
+<text x="260" y="90" font-size="12" fill="#656d76">Pull requests merged, all time</text>
+<text x="260" y="109" font-size="16" font-weight="600" fill="#1f2328">189</text>
+<text x="260" y="134" font-size="12" fill="#656d76">Current / longest streak</text>
+<text x="260" y="153" font-size="16" font-weight="600" fill="#1f2328">4 / 9 days</text>
+<text x="260" y="178" font-size="12" fill="#656d76">Public repositories</text>
+<text x="260" y="197" font-size="16" font-weight="600" fill="#1f2328">66</text>
+<text x="260" y="222" font-size="12" fill="#656d76">Stars and forks earned</text>
+<text x="260" y="241" font-size="16" font-weight="600" fill="#1f2328">189 / 89</text>
+<text x="24" y="268" font-size="11" fill="#656d76">Updated Oct 10, 2026 from the GitHub API</text>
+</g>
+</svg>
