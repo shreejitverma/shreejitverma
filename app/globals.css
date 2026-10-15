@@ -126,6 +126,9 @@ body {
   }
   .prose-article code {
     font-family: var(--font-mono), ui-monospace, monospace;
+    /* Show code as typed: ligatures render Verilog's `<=` (also non-blocking
+       assignment) as a less-or-equal glyph, and `!=` as a single symbol. */
+    font-variant-ligatures: none;
     font-size: 0.9em;
     color: var(--foreground);
     background: var(--muted);

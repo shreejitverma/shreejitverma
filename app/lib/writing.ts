@@ -12,6 +12,15 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
+    slug: 'fpga-pre-trade-risk-gate',
+    title: 'A Pre-Trade Risk Gate in One FPGA Clock Cycle, and What I Would Fix Before Production',
+    description:
+      'How the SEC 15c3-5 credit, fat-finger, and duplicate-order checks in my FPGA market-making thesis run in parallel in a single 3.1 ns cycle, and a candid review of the design: overflow, state that never resets, timing, and hardware and software limits that may disagree by 100x.',
+    published: '2026-10-15',
+    readingMinutes: 7,
+    tags: ['FPGA', 'Pre-Trade Risk', 'SEC 15c3-5', 'Low Latency', 'Market Making', 'Verilog'],
+  },
+  {
     slug: 'frtb-for-engineers',
     title: 'FRTB for Engineers: What a Market Risk Capital Engine Actually Computes',
     description:

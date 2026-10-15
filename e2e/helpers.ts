@@ -8,6 +8,7 @@ export const PAGES: { path: string; canonical: string }[] = [
   { path: '/work/trishul', canonical: `${SITE}/work/trishul` },
   { path: '/writing', canonical: `${SITE}/writing` },
   { path: '/writing/frtb-for-engineers', canonical: `${SITE}/writing/frtb-for-engineers` },
+  { path: '/writing/fpga-pre-trade-risk-gate', canonical: `${SITE}/writing/fpga-pre-trade-risk-gate` },
   { path: '/books', canonical: `${SITE}/books` },
   { path: '/value-investing', canonical: `${SITE}/value-investing` },
 ];
