@@ -1,0 +1,31 @@
+name: IndexNow
+
+# Tells IndexNow search engines (Bing, Yandex, Seznam, Naver, Yep) to recrawl
+# every sitemap URL once a production deployment is live. Vercel reports
+# deployments to GitHub, so this runs after the new pages are actually served,
+# never before. Bing's index also backs ChatGPT search and Microsoft Copilot.
+on:
+  deployment_status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: python3 -m unittest discover -s scripts/tests -p 'test_indexnow.py'
+      - run: python3 scripts/indexnow.py

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Download, Mail, Github, Linkedin, Globe } from 'lucide-react';
+import { profilePageGraph } from '../lib/structured-data';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
 import { AWARDS, CERTIFICATIONS, CONTACT, EDUCATION, EXPERIENCE, HEADLINE, PROJECTS, SKILLS } from '../lib/profile';
@@ -26,6 +27,7 @@ export default function ResumePage() {
     <>
       <SiteNav />
       <main className='relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-20 text-muted-foreground'>
+        <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageGraph('/resume', `${HEADLINE.name} | Resume`)) }} />
         <header className='mb-12'>
           <h1 className='text-4xl md:text-5xl font-bold text-foreground mb-3'>{HEADLINE.name}</h1>
           <p className='text-lg text-foreground font-medium mb-2'>{HEADLINE.roles}</p>
