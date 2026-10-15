@@ -65,6 +65,11 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import BackgroundCanvas from '@/app/components/BackgroundCanvas';
 import { ThemeProvider } from '@/app/components/ThemeProvider';
+import { AGENT_PATHS } from '@/app/lib/agent/constants';
+import { SITE_PAGES } from '@/app/lib/agent/pages';
+import { webMcpScript } from '@/app/lib/agent/webmcp';
+
+const WEBMCP_SCRIPT = webMcpScript(SITE_PAGES.map(({ path, title, summary }) => ({ path, title, summary })));
 
 export default function RootLayout({
   children,
@@ -193,6 +198,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Agent discovery; also sent as Link response headers (next.config.ts). */}
+        <link rel='ai-catalog' href={AGENT_PATHS.aiCatalog} type='application/ai-catalog+json' />
+        <link rel='api-catalog' href={AGENT_PATHS.apiCatalog} type='application/linkset+json' />
+        <link rel='help' href={AGENT_PATHS.llms} type='text/plain' title='llms.txt' />
+        <script id='webmcp-tools' dangerouslySetInnerHTML={{ __html: WEBMCP_SCRIPT }} />
       </head>
       <body className={clsx('bg-background text-foreground antialiased selection:bg-primary/30 selection:text-cyan-900 dark:selection:text-cyan-100 font-sans')}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>

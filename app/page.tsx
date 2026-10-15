@@ -39,19 +39,17 @@ import {
   LANGUAGES,
   PROJECTS,
   PROOF_METRICS,
-  SITE_URL,
   SKILLS,
   type Certification,
   type Project,
 } from './lib/profile';
 import { ARTICLES, articleUrl } from './lib/writing';
+import { markdownAlternates } from './lib/seo';
 import { GITHUB_LOGIN, METRIC_CARDS, formatCount, getGitHubStats, statTiles, type GitHubStats } from './lib/github';
 import { FEATURED_BOOKS, getLibraryStats } from './lib/reading';
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: SITE_URL,
-  },
+  alternates: markdownAlternates('/'),
 };
 
 const card = 'rounded-2xl bg-card/40 dark:bg-card border border-border';
@@ -143,12 +141,12 @@ export default async function Home() {
             <div className='max-w-3xl flex-1 text-center md:text-left'>
               <p className='inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl sm:rounded-full bg-primary/10 text-primary text-xs font-mono mb-6 border border-primary/20'>
                 <Terminal className='w-3 h-3 shrink-0' aria-hidden='true' />
-                <span className='hidden sm:inline'>SYSTEM_READY</span>
+                <span className='hidden sm:inline' aria-hidden='true'>SYSTEM_READY</span>
                 <span className='hidden sm:inline text-primary/50' aria-hidden='true'>|</span>
                 <span>{HEADLINE.current} · {HEADLINE.location}</span>
               </p>
               <h1 className='text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight'>
-                {HEADLINE.name}
+                {HEADLINE.name}{' '}
                 <span className='block mt-2 text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-500'>
                   Quantitative Developer &amp; Researcher
                 </span>

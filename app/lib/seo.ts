@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { markdownPath } from './agent/pages';
 import { HEADLINE, SITE_URL } from './profile';
 
 export const SITE_NAME = 'Shreejit Verma Portfolio';
@@ -11,6 +12,15 @@ export const OG_IMAGE = {
   height: 630,
   alt: `${HEADLINE.name} - ${HEADLINE.current}, ${HEADLINE.location}`,
 };
+
+// Canonical URL plus the page's Markdown twin, advertised to agents with
+// <link rel="alternate" type="text/markdown">.
+export function markdownAlternates(path: string): NonNullable<Metadata['alternates']> {
+  return {
+    canonical: `${SITE_URL}${path === '/' ? '' : path}`,
+    types: { 'text/markdown': `${SITE_URL}${markdownPath(path)}` },
+  };
+}
 
 interface SocialMetadataInput {
   path: string;
@@ -28,7 +38,7 @@ export function socialMetadata({ path, title, description, type = 'website', pub
   const url = `${SITE_URL}${path}`;
   const openGraph = { url, title, description, siteName: SITE_NAME, locale: 'en_US', images: [OG_IMAGE] };
   return {
-    alternates: { canonical: url },
+    alternates: markdownAlternates(path),
     openGraph: published
       ? { ...openGraph, type: 'article', publishedTime: published, authors: [HEADLINE.name] }
       : { ...openGraph, type },

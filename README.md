@@ -190,6 +190,27 @@ Vault covers take precedence over the hotlinked covers from `enrich_books.py`, w
 `scripts/` also holds standalone personal data tooling unrelated to the site, such as `scripts/amazon_ir_scraper.py`, which downloads Amazon investor-relations PDFs (annual reports, proxy statements, shareholder letters) into `~/Downloads/Amazon_IR_Documents`.
 `backlog.md` is the workspace task backlog managed by `tasks-axi`.
 
+### Agent access
+
+The site is built to be read and used by AI agents, and scores Level 5 ("Agent-Native") on Cloudflare's [Agent Readiness scanner](https://isitagentready.com).
+Everything is public, read-only, and unauthenticated, and every surface answers from the same data as the pages (`app/lib/profile.ts`, `app/lib/writing.ts`, `app/lib/agent/pages.ts`).
+The code lives in `app/lib/agent/`; `e2e/agent-ready.spec.ts` covers each endpoint.
+
+| Surface | Where | Notes |
+| --- | --- | --- |
+| Markdown for agents | any page with `Accept: text/markdown`, or `/index.md`, `/resume.md`, ... | Converted from the page's own rendered `<main>`, so it never drifts from the HTML; sends `x-markdown-tokens` and `Content-Signal` |
+| `llms.txt`, `llms-full.txt` | `/llms.txt`, `/llms-full.txt` | Generated from the profile and page list |
+| Crawler policy | `/robots.txt` | Content Signals `search=yes, ai-input=yes, ai-train=yes` plus explicit AI search, user-triggered, and training crawler groups (`CONTENT_SIGNAL` in `app/lib/agent/constants.ts`) |
+| MCP server | `/mcp` (streamable HTTP, stateless) | Nine read-only tools: profile, experience, projects, education, skills, search, JSON Resume, page list, page as Markdown; Server Card at `/mcp/server-card` |
+| A2A agent | `/a2a` (JSON-RPC, protocol 1.0 and 0.3) | Deterministic retrieval, no LLM; Agent Card at `/.well-known/agent-card.json` |
+| WebMCP | inline `<head>` script | Registers five in-browser tools before `load` |
+| REST | `/resume.json` (JSON Resume), `/api/search?q=` | Described by `/openapi.json` |
+| Discovery | `/.well-known/api-catalog` (RFC 9727), `/.well-known/ai-catalog.json`, `/.well-known/agent-skills/index.json`, `/.well-known/did.json`, `/.well-known/poppy.json`, `Link` response headers | Catalogs point at each other and at every endpoint above |
+
+Markdown is fetched from this same deployment and converted per request (`app/lib/agent/markdown.ts`), so a Markdown response is marked `private`: the same URL serves HTML to browsers.
+If the Cloudflare proxy is enabled, the Vercel function's self-fetch of the canonical origin must be exempted from bot protection (for example with a WAF skip rule), otherwise the Markdown endpoints return 502.
+Adding a page to `SITE_PAGES` in `app/lib/agent/pages.ts` adds it to the sitemap, `llms.txt`, the Markdown rewrites, and the agent tools at once.
+
 ---
 
 ## GitHub Impact
