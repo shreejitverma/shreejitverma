@@ -20,6 +20,14 @@ export const HEADLINE = {
   location: 'New York, NY',
 } as const;
 
+// Plain-text profile summary for machine readers: llms.txt, the JSON Resume,
+// and the MCP and A2A agent endpoints.
+export const SUMMARY =
+  'Quantitative Developer, Quantitative Researcher, and Quantitative Trading Engineer based in New York, NY. ' +
+  'Specializes in FRTB and Basel IV market risk engines, C++ low-latency automated market making, FPGA/DPDK ' +
+  'sub-10 microsecond trading systems, statistical arbitrage, merger arbitrage, and machine-learning-driven alpha ' +
+  'research for hedge funds, proprietary trading firms, and high frequency trading firms.';
+
 // Headline numbers for the hero proof strip. Each one is a resume fact with
 // its context, so a reader can trace where it comes from.
 export interface ProofMetric {
