@@ -115,8 +115,12 @@ function tokenize(text: string): string[] {
 const MAX_QUERY_CHARS = 200;
 const MAX_QUERY_TERMS = 32;
 
+export function boundQuery(query: string): string {
+  return query.trim().slice(0, MAX_QUERY_CHARS);
+}
+
 function queryTerms(query: string): string[] {
-  return [...new Set(tokenize(query.slice(0, MAX_QUERY_CHARS)).filter((t) => !STOPWORDS.has(t)))].slice(0, MAX_QUERY_TERMS);
+  return [...new Set(tokenize(boundQuery(query)).filter((t) => !STOPWORDS.has(t)))].slice(0, MAX_QUERY_TERMS);
 }
 
 function buildCorpus(): SearchDoc[] {

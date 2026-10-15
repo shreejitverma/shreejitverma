@@ -250,8 +250,10 @@ test.describe('Agent APIs', () => {
       data: { jsonrpc: '2.0', id: 3, method: 'SendMessage', params: { message: { messageId: 'e2e-3', role: 'ROLE_USER', parts: [{ text: `FPGA market making ${filler}` }] } } },
     });
     expect(Date.now() - started).toBeLessThan(5_000);
+    expect((await response.body()).length).toBeLessThan(50_000);
     const body = await response.json();
     expect(body.result.message.parts[0].text).toContain('Trishul');
+    expect(body.result.message.parts[1].data.query.length).toBeLessThanOrEqual(200);
   });
 
   test('A2A rejects a JSON body that is not a request object', async ({ request }) => {

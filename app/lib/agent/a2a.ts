@@ -14,7 +14,7 @@ import {
 } from '@a2a-js/sdk/server';
 import { LegacyJsonRpcTransportHandler } from '@a2a-js/sdk/compat/v0_3/server';
 import { a2aAgentCard } from './discovery';
-import { absoluteUrl, getProfile, searchProfile } from './knowledge';
+import { absoluteUrl, boundQuery, getProfile, searchProfile } from './knowledge';
 import { AGENT_PATHS } from './constants';
 
 const OVERVIEW_QUERY = /^(|overview|summary|hi|hello|who is (he|shreejit( verma)?)\??|tell me about (him|shreejit( verma)?))$/i;
@@ -28,7 +28,7 @@ function dataPart(value: unknown): Part {
 }
 
 export function answer(rawQuestion: string): { markdown: string; data: unknown } {
-  const question = rawQuestion.trim();
+  const question = boundQuery(rawQuestion);
   if (OVERVIEW_QUERY.test(question)) {
     const profile = getProfile();
     const markdown = [
