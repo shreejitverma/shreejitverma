@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import ArticleLayout from '@/app/components/ArticleLayout';
 import { socialMetadata } from '@/app/lib/seo';
 import { ARTICLES, articleUrl } from '@/app/lib/writing';
@@ -27,10 +28,10 @@ export default function FpgaPreTradeRiskGate() {
       back={{ href: '/writing', label: 'All writing' }}
     >
       <p>
-        In <a href='/work/trishul'>Trishul</a>, my market-making thesis system, the pre-trade risk check is not a function
-        the strategy calls. It is a hardware stage wired in series between the decision logic and the order encoder, so
-        an order that fails a check never reaches the wire. All three checks run in parallel and the verdict is
-        registered in one clock cycle, about 3.1 ns.
+        In <Link href='/work/trishul'>Trishul</Link>, my market-making thesis system, the pre-trade risk check is not a
+        function the strategy calls. It is a hardware stage wired in series between the decision logic and the order
+        encoder, so an order that fails a check never reaches the wire. All three checks run in parallel and the verdict
+        is registered in one clock cycle, about 3.1 ns.
       </p>
       <p>
         Fitting the checks into one cycle turned out to be the easy part. Rereading the module months later, the hard
@@ -105,8 +106,9 @@ wire check_duplicate  = (in_order_hash != last_order_hash) ||
       </ul>
       <p>
         A clocked block ANDs the three results. On a pass it registers the order to the output and updates the exposure,
-        hash, and window counter. On a fail it drops the order and sets one alarm flag per failed check. Because the three
-        checks are independent, adding a fourth costs logic area, not latency.
+        hash, and window counter. On a fail it drops the order, sets the alarm flag for each failed check, and clears
+        the flags of checks that passed. Because the three checks are independent, adding a fourth costs logic area,
+        not latency.
       </p>
       <p>
         The C++ control plane carries a software twin, <code>PretradeChecker</code>, for the backtest and simulation
@@ -120,7 +122,7 @@ wire check_duplicate  = (in_order_hash != last_order_hash) ||
         repository, so you can check it against <a href={`${REPO}/blob/main/fpga/rtl/risk/risk_gate.v`} {...external}>the RTL</a>.
       </p>
 
-      <h3>1. The hardware and software limits disagree by 100x</h3>
+      <h3>1. The hardware and software limits can disagree by 100x</h3>
       <p>
         The RTL default is <code>LIMIT_NOTIONAL = 64&apos;d1000000000</code>, commented as $10 million. The C++ side
         stores prices with <code>PRICE_SCALE = 10000</code>. If the FPGA uses the same scale, as it would for prices to
@@ -146,10 +148,11 @@ wire check_duplicate  = (in_order_hash != last_order_hash) ||
 
       <h3>3. Exposure only ever goes up</h3>
       <p>
-        <code>total_exposure</code> increases on every accepted order and never decreases. There is no input for fills,
-        cancels, or a session reset. That makes it a session ceiling on gross notional sent, not a credit control. The
-        software twin has the matching gap: its execution callback is a stub, and its position counter is never updated,
-        so the position limit only ever compares a single order against zero.
+        <code>total_exposure</code> increases on every accepted order and never decreases. There is no input for fills
+        or cancels, and no way to reset exposure short of a full module reset (<code>rst_n</code>). That makes it a
+        session ceiling on gross notional sent, not a credit control. The software twin has the matching gap: its
+        execution callback is a stub, and its position counter is never updated, so the position limit only ever
+        compares a single order against zero.
       </p>
       <p>
         <strong>Fix:</strong> feed cancel and fill reports back into both implementations, and track open exposure and
@@ -168,9 +171,9 @@ wire check_duplicate  = (in_order_hash != last_order_hash) ||
       <h3>5. Smaller items</h3>
       <ul>
         <li>
-          <strong>Sticky alarms.</strong> A passing order does not clear the violation flags, so an alarm reports that
-          something failed at some point, not that the last order failed. A per-order reject code in the telemetry stream
-          would be clearer.
+          <strong>Sticky alarms.</strong> A passing order does not clear the violation flags, and each rejection rewrites
+          all three, so they describe the most recent rejected order, which may be long past, not the last order. A
+          per-order reject code in the telemetry stream would be clearer.
         </li>
         <li>
           <strong>One-entry duplicate memory.</strong> The check remembers only the last accepted hash, so it misses
@@ -212,7 +215,7 @@ wire check_duplicate  = (in_order_hash != last_order_hash) ||
           <code>src/risk/pretrade_checker.cpp</code>.
         </li>
         <li>
-          <a href='/work/trishul'>Trishul case study</a>: the full architecture and simulation results.
+          <Link href='/work/trishul'>Trishul case study</Link>: the full architecture and simulation results.
         </li>
       </ul>
     </ArticleLayout>
