@@ -11,15 +11,16 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: indexnow
-  cancel-in-progress: true
-
 jobs:
   submit:
     if: >-
       github.event_name == 'workflow_dispatch' ||
       (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
+    # Job-level, so skipped runs for Preview deployments never cancel a
+    # production submission in progress.
+    concurrency:
+      group: indexnow
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:

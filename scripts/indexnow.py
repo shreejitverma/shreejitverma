@@ -45,9 +45,8 @@ def sitemap_urls(xml_text: str, host: str) -> list[str]:
     return list(seen)[:MAX_URLS]
 
 
-def payload(urls: list[str], site: str = SITE, key: str = KEY) -> dict:
-    host = urlsplit(site).hostname
-    return {"host": host, "key": key, "keyLocation": f"{site}/{key}.txt", "urlList": urls}
+def payload(urls: list[str]) -> dict:
+    return {"host": urlsplit(SITE).hostname, "key": KEY, "keyLocation": f"{SITE}/{KEY}.txt", "urlList": urls}
 
 
 def fetch(url: str) -> str:
@@ -74,16 +73,15 @@ def submit(body: dict) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    parser.add_argument("--site", default=SITE)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
 
-    key_body = fetch(f"{args.site}/{KEY}.txt").strip()
+    key_body = fetch(f"{SITE}/{KEY}.txt").strip()
     if key_body != KEY:
-        raise SystemExit(f"{args.site}/{KEY}.txt does not serve the IndexNow key; refusing to submit")
+        raise SystemExit(f"{SITE}/{KEY}.txt does not serve the IndexNow key; refusing to submit")
 
-    urls = sitemap_urls(fetch(f"{args.site}/sitemap.xml"), urlsplit(args.site).hostname)
-    body = payload(urls, args.site)
+    urls = sitemap_urls(fetch(f"{SITE}/sitemap.xml"), urlsplit(SITE).hostname)
+    body = payload(urls)
     if args.dry_run:
         print(json.dumps(body, indent=2))
         return 0

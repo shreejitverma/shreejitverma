@@ -9,6 +9,8 @@ const LEGACY: [string, string][] = [
   ['/index.html', '/'],
   ['/resume.html', '/resume'],
   ['/some-old-page.html', '/'],
+  ['/old.html', '/'],
+  ['/google.html', '/'],
   ['/static/Resume.pdf', '/Shreejit_Verma_Resume.pdf'],
   ['/Resume.pdf', '/Shreejit_Verma_Resume.pdf'],
   ['/static/profile.png', '/Shreejit_Verma_profile_pic.jpg'],
@@ -20,6 +22,15 @@ test.describe('Legacy URLs', () => {
       const response = await request.get(from, { maxRedirects: 0 });
       expect(response.status()).toBe(308);
       expect(response.headers()['location']).toBe(to);
+    });
+  }
+
+  // Google and Yandex verify site ownership with an HTML file at the root;
+  // redirecting it to / would fail verification.
+  for (const path of ['/google0123456789abcdef.html', '/yandex_0123456789abcdef.html']) {
+    test(`search-engine verification file ${path} is not redirected`, async ({ request }) => {
+      const response = await request.get(path, { maxRedirects: 0 });
+      expect(response.status()).toBe(404);
     });
   }
 

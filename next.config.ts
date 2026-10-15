@@ -46,7 +46,9 @@ const nextConfig: NextConfig = {
     return [
       ...LEGACY_REDIRECTS.map(([source, destination]) => ({ source, destination, permanent: true })),
       // Any other page of the old static site: the closest current page is home.
-      { source: '/:page([^/]+)\\.html', destination: '/', permanent: true },
+      // Search-engine ownership files (Google, Yandex) are exempt so HTML-file
+      // verification can serve them from public/.
+      { source: '/:page((?!(?:google[0-9a-f]+|yandex_[0-9a-f]+)\\.html$)[^/]+)\\.html', destination: '/', permanent: true },
     ];
   },
   async rewrites() {

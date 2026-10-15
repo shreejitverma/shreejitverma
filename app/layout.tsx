@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { clsx } from 'clsx';
-import Script from 'next/script';
 import { SITE_URL } from '@/app/lib/profile';
 import { SITE_NAME, TWITTER_HANDLE } from '@/app/lib/seo';
 
@@ -80,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang='en' className={clsx(inter.variable, jetbrainsMono.variable, 'scroll-smooth')} suppressHydrationWarning>
       <head>
-        <Script
+        <script
           id="json-ld-profile"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph()) }}

@@ -53,7 +53,7 @@ export function personNode() {
       ...completedOrCurrent.map((s) => ({
         '@type': 'EducationalOccupationalCredential',
         credentialCategory: 'degree',
-        name: `${s.degree}, ${schoolName(s.school)}${/expected/i.test(s.dates) ? ` (in progress, ${s.dates.split(' - ')[1].toLowerCase()})` : ''}${s.gpa ? ` (${s.gpa})` : ''}`,
+        name: `${s.degree}, ${schoolName(s.school)}${/expected/i.test(s.dates) ? ` (in progress, ${s.dates.split(' - ')[1].replace(/^Expected/, 'expected')})` : ''}${s.gpa ? ` (${s.gpa})` : ''}`,
       })),
       ...CERTIFICATIONS.finance.filter((c) => c.name === 'CFA Level 1').map((c) => ({
         '@type': 'EducationalOccupationalCredential', credentialCategory: 'certification', name: c.name, url: c.url,
