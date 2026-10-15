@@ -16,7 +16,41 @@ const DISCOVERY_LINKS = [
   '</llms.txt>; rel="describedby"; type="text/plain"',
 ];
 
+// URLs from earlier versions of the site that search engines and old links
+// still point at. A permanent redirect hands their ranking signals to the
+// current page instead of discarding them as 404s.
+const LEGACY_REDIRECTS: [source: string, destination: string][] = [
+  ['/index.html', '/'],
+  ['/experience.html', '/#experience'],
+  ['/education.html', '/#education'],
+  ['/projects.html', '/#projects'],
+  ['/skills.html', '/#skills'],
+  ['/achievements.html', '/#awards'],
+  ['/awards.html', '/#awards'],
+  ['/certifications.html', '/#certifications'],
+  ['/resume.html', '/resume'],
+  ['/blog.html', '/writing'],
+  ['/books.html', '/books'],
+  // Sources match the percent-encoded path, so spaces are written as %20.
+  ['/Resources%20-%20Books.html', '/books'],
+  ['/resources.html', '/books'],
+  // Earlier resume PDFs: always serve the current one, never a stale copy.
+  ['/Resume.pdf', '/Shreejit_Verma_Resume.pdf'],
+  ['/resume.pdf', '/Shreejit_Verma_Resume.pdf'],
+  ['/static/Resume.pdf', '/Shreejit_Verma_Resume.pdf'],
+  ['/static/profile.png', '/Shreejit_Verma_profile_pic.jpg'],
+];
+
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      ...LEGACY_REDIRECTS.map(([source, destination]) => ({ source, destination, permanent: true })),
+      // Any other page of the old static site: the closest current page is home.
+      // Search-engine ownership files (Google, Yandex) are exempt so HTML-file
+      // verification can serve them from public/.
+      { source: '/:page((?!(?:google[0-9a-f]+|yandex_[0-9a-f]+)\\.html$)[^/]+)\\.html', destination: '/', permanent: true },
+    ];
+  },
   async rewrites() {
     return {
       beforeFiles: SITE_PAGES.flatMap((page) => [

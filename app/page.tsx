@@ -45,6 +45,7 @@ import {
 } from './lib/profile';
 import { ARTICLES, articleUrl } from './lib/writing';
 import { markdownAlternates } from './lib/seo';
+import { profilePageGraph } from './lib/structured-data';
 import { GITHUB_LOGIN, METRIC_CARDS, formatCount, getGitHubStats, statTiles, type GitHubStats } from './lib/github';
 import { FEATURED_BOOKS, getLibraryStats } from './lib/reading';
 
@@ -135,6 +136,7 @@ export default async function Home() {
       <SiteNav onHome />
 
       <main className='relative z-10'>
+        <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageGraph('/', `${HEADLINE.name} | Quantitative Developer, Quantitative Researcher, Quantitative Trading Engineer`)) }} />
         {/* Hero */}
         <section className='pt-36 pb-16 px-6 max-w-7xl mx-auto'>
           <div className='flex flex-col md:flex-row items-center gap-12'>

@@ -74,6 +74,21 @@ test.describe('SEO metadata', () => {
     expect(nodes.some((n: { '@type'?: string }) => n['@type'] === 'ProfilePage'), 'ProfilePage node missing').toBe(true);
   });
 
+  // Most AI crawlers do not run JavaScript, so the Person node must be in the
+  // server response itself, not injected after hydration.
+  test('home page Person JSON-LD is in the server-rendered HTML', async ({ request }) => {
+    const html = await (await request.get('/')).text();
+    const nodes = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]
+      .map((m) => JSON.parse(m[1]))
+      .flatMap((d) => d['@graph'] ?? [d]);
+    const person = nodes.find((n) => n['@type'] === 'Person');
+    expect(person, 'Person node missing from server HTML').toBeTruthy();
+    expect(person['@id']).toBe(`${SITE}/#person`);
+    expect(person.worksFor?.name).toBe('Barclays');
+    const names: string[] = person.hasCredential.map((c: { name: string }) => c.name);
+    expect(names.find((n) => n.includes('Georgia Institute of Technology'))).toContain('(in progress, expected Dec 2026)');
+  });
+
   // Crawlers index the server response; a client-only mount gate would ship
   // an empty document even though the hydrated page looks fine in a browser.
   for (const { path } of PAGES) {

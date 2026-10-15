@@ -211,6 +211,12 @@ Markdown is fetched from this same deployment and converted per request (`app/li
 If the Cloudflare proxy is enabled, the Vercel function's self-fetch of the canonical origin must be exempted from bot protection (for example with a WAF skip rule), otherwise the Markdown endpoints return 502.
 Adding a page to `SITE_PAGES` in `app/lib/agent/pages.ts` adds it to the sitemap, `llms.txt`, the Markdown rewrites, and the agent tools at once.
 
+### Search visibility
+
+- Structured data (`app/lib/structured-data.ts`) is derived from `app/lib/profile.ts`, so search engines and AI assistants see the same employer, titles, and degrees as readers; `ProfilePage` is declared only on `/` and `/resume`.
+- `.github/workflows/indexnow.yml` submits every sitemap URL to IndexNow (Bing, which also backs ChatGPT search and Copilot, plus Yandex, Seznam, Naver, and Yep) after each successful production deployment; `python3 scripts/indexnow.py --dry-run` previews the payload.
+- URLs from earlier versions of the site, including old resume PDF paths, permanently redirect to their current pages (`LEGACY_REDIRECTS` in `next.config.ts`), so their ranking signals carry over instead of ending in a 404.
+
 ---
 
 ## GitHub Impact

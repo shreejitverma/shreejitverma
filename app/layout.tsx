@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { clsx } from 'clsx';
-import Script from 'next/script';
 import { SITE_URL } from '@/app/lib/profile';
 import { SITE_NAME, TWITTER_HANDLE } from '@/app/lib/seo';
 
@@ -68,6 +67,7 @@ import { ThemeProvider } from '@/app/components/ThemeProvider';
 import { AGENT_PATHS } from '@/app/lib/agent/constants';
 import { SITE_PAGES } from '@/app/lib/agent/pages';
 import { webMcpScript } from '@/app/lib/agent/webmcp';
+import { siteGraph } from '@/app/lib/structured-data';
 
 const WEBMCP_SCRIPT = webMcpScript(SITE_PAGES.map(({ path, title, summary }) => ({ path, title, summary })));
 
@@ -76,127 +76,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Person',
-        '@id': `${SITE_URL}/#person`,
-        name: 'Shreejit Verma',
-        url: SITE_URL,
-        image: `${SITE_URL}/Shreejit_Verma_profile_pic.jpg`,
-        email: 'mailto:shreejitverma@gmail.com',
-        jobTitle: [
-          'Senior Quantitative Developer',
-          'Quantitative Developer',
-          'Quantitative Researcher',
-          'Quantitative Trading Engineer',
-        ],
-        description:
-          'Senior Quantitative Developer at Barclays building FRTB and Basel IV market risk engines, specializing in C++ low-latency automated market making, FPGA/DPDK sub-10 microsecond trading systems, statistical arbitrage, and machine-learning-driven alpha research for hedge funds, proprietary trading, and high frequency trading firms.',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'New York',
-          addressRegion: 'NY',
-          addressCountry: 'US',
-        },
-        nationality: { '@type': 'Country', name: 'India' },
-        worksFor: { '@type': 'Organization', name: 'Barclays', url: 'https://www.ib.barclays/' },
-        hasOccupation: {
-          '@type': 'Occupation',
-          name: 'Senior Quantitative Developer',
-          occupationLocation: { '@type': 'City', name: 'New York' },
-          skills:
-            'C++, Python, KDB+/q, FRTB, Basel IV market risk, Expected Shortfall, FPGA, DPDK, kernel bypass, lock-free data structures, limit order books, market microstructure, stochastic calculus, statistical arbitrage, machine learning, portfolio optimization, risk management',
-        },
-        alumniOf: [
-          { '@type': 'CollegeOrUniversity', name: 'Georgia Institute of Technology' },
-          { '@type': 'CollegeOrUniversity', name: 'Stevens Institute of Technology' },
-          { '@type': 'CollegeOrUniversity', name: 'WorldQuant University' },
-          { '@type': 'CollegeOrUniversity', name: 'Carnegie Mellon University' },
-          { '@type': 'CollegeOrUniversity', name: 'Vellore Institute of Technology' },
-        ],
-        hasCredential: [
-          {
-            '@type': 'EducationalOccupationalCredential',
-            credentialCategory: 'degree',
-            name: 'M.S. in Computer Science (Computing Systems), Georgia Institute of Technology (in progress, expected Dec 2026)',
-          },
-          {
-            '@type': 'EducationalOccupationalCredential',
-            credentialCategory: 'degree',
-            name: 'M.S. in Financial Engineering, Stevens Institute of Technology (GPA 3.974/4.0)',
-          },
-          {
-            '@type': 'EducationalOccupationalCredential',
-            credentialCategory: 'degree',
-            name: 'M.S. in Financial Engineering, WorldQuant University',
-          },
-          {
-            '@type': 'EducationalOccupationalCredential',
-            credentialCategory: 'certification',
-            name: 'CFA Level 1',
-          },
-        ],
-        knowsAbout: [
-          'Quantitative Finance',
-          'High Frequency Trading',
-          'Automated Market Making',
-          'Market Microstructure',
-          'FRTB',
-          'Basel IV Market Risk',
-          'Expected Shortfall',
-          'Low Latency C++',
-          'FPGA Market Data Handlers',
-          'Kernel Bypass (DPDK)',
-          'Limit Order Books',
-          'Lock-Free Data Structures',
-          'Statistical Arbitrage',
-          'Merger Arbitrage',
-          'Execution Algorithms',
-          'Stochastic Calculus',
-          'Derivatives Pricing',
-          'Portfolio Optimization',
-          'Risk Management',
-          'Time Series Analysis',
-          'Machine Learning',
-          'Python',
-          'KDB+/q',
-        ],
-        sameAs: [
-          'https://www.linkedin.com/in/shreejitverma/',
-          'https://github.com/shreejitverma',
-          'https://scholar.google.com/citations?hl=en&user=qMzU8iAAAAAJ',
-          'https://twitter.com/shreejitverma',
-        ],
-      },
-      {
-        '@type': 'WebSite',
-        '@id': `${SITE_URL}/#website`,
-        url: SITE_URL,
-        name: 'Shreejit Verma | Quantitative Developer & Quantitative Researcher',
-        publisher: { '@id': `${SITE_URL}/#person` },
-        inLanguage: 'en-US',
-      },
-      {
-        '@type': 'ProfilePage',
-        '@id': `${SITE_URL}/#profilepage`,
-        url: SITE_URL,
-        name: 'Shreejit Verma | Quantitative Developer, Quantitative Researcher, Quantitative Trading Engineer',
-        isPartOf: { '@id': `${SITE_URL}/#website` },
-        mainEntity: { '@id': `${SITE_URL}/#person` },
-        inLanguage: 'en-US',
-      },
-    ],
-  };
-
   return (
     <html lang='en' className={clsx(inter.variable, jetbrainsMono.variable, 'scroll-smooth')} suppressHydrationWarning>
       <head>
-        <Script
+        <script
           id="json-ld-profile"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph()) }}
         />
         {/* Agent discovery; also sent as Link response headers (next.config.ts). */}
         <link rel='ai-catalog' href={AGENT_PATHS.aiCatalog} type='application/ai-catalog+json' />
