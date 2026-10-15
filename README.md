@@ -208,6 +208,7 @@ The code lives in `app/lib/agent/`; `e2e/agent-ready.spec.ts` covers each endpoi
 | Discovery | `/.well-known/api-catalog` (RFC 9727), `/.well-known/ai-catalog.json`, `/.well-known/agent-skills/index.json`, `/.well-known/did.json`, `/.well-known/poppy.json`, `Link` response headers | Catalogs point at each other and at every endpoint above |
 
 Markdown is fetched from this same deployment and converted per request (`app/lib/agent/markdown.ts`), so a Markdown response is marked `private`: the same URL serves HTML to browsers.
+If the Cloudflare proxy is enabled, the Vercel function's self-fetch of the canonical origin must be exempted from bot protection (for example with a WAF skip rule), otherwise the Markdown endpoints return 502.
 Adding a page to `SITE_PAGES` in `app/lib/agent/pages.ts` adds it to the sitemap, `llms.txt`, the Markdown rewrites, and the agent tools at once.
 
 ---

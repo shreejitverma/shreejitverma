@@ -112,8 +112,11 @@ function tokenize(text: string): string[] {
     .filter((t) => t.length > 1 || t === 'c' || t === 'r');
 }
 
+const MAX_QUERY_CHARS = 200;
+const MAX_QUERY_TERMS = 32;
+
 function queryTerms(query: string): string[] {
-  return [...new Set(tokenize(query).filter((t) => !STOPWORDS.has(t)))];
+  return [...new Set(tokenize(query.slice(0, MAX_QUERY_CHARS)).filter((t) => !STOPWORDS.has(t)))].slice(0, MAX_QUERY_TERMS);
 }
 
 function buildCorpus(): SearchDoc[] {
@@ -170,7 +173,7 @@ function buildCorpus(): SearchDoc[] {
 }
 
 const CORPUS = buildCorpus();
-const DOC_TOKENS = CORPUS.map((doc) => new Set(tokenize([doc.title, ...doc.lines].join(' '))));
+const DOC_TOKENS = CORPUS.map((doc) => [...new Set(tokenize([doc.title, ...doc.lines].join(' ')))]);
 const IDF = (() => {
   const df = new Map<string, number>();
   for (const tokens of DOC_TOKENS) for (const t of tokens) df.set(t, (df.get(t) ?? 0) + 1);
@@ -189,13 +192,16 @@ export function searchProfile(query: string, limit = 5): SearchHit[] {
     const titleTokens = tokenize(doc.title);
     let score = 0;
     for (const term of terms) {
-      const inDoc = [...DOC_TOKENS[i]].some((t) => termMatches(t, term));
+      const inDoc = DOC_TOKENS[i].some((t) => termMatches(t, term));
       if (!inDoc) continue;
       score += IDF(term) * (titleTokens.some((t) => termMatches(t, term)) ? 2 : 1);
     }
     if (score === 0) return;
     const snippet = doc.lines
-      .map((line) => ({ line, n: terms.filter((term) => tokenize(line).some((t) => termMatches(t, term))).length }))
+      .map((line) => {
+        const lineTokens = tokenize(line);
+        return { line, n: terms.filter((term) => lineTokens.some((t) => termMatches(t, term))).length };
+      })
       .sort((a, b) => b.n - a.n)[0].line;
     hits.push({ kind: doc.kind, title: doc.title, snippet, url: doc.url, score: Math.round(score * 100) / 100 });
   });

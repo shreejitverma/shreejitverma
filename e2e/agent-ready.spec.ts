@@ -114,6 +114,7 @@ test.describe('Crawler policy and llms.txt', () => {
     expect(full.status()).toBe(200);
     const text = await full.text();
     for (const { canonical } of PAGES) expect(text, canonical).toContain(`url: "${canonical}"`);
+    expect(full.headers()['cache-control']).toContain('s-maxage=');
   });
 });
 
@@ -171,6 +172,12 @@ test.describe('Discovery documents', () => {
       expect(file.status()).toBe(200);
       const digest = `sha256:${createHash('sha256').update(await file.body()).digest('hex')}`;
       expect(skill.digest, skill.name).toBe(digest);
+    }
+  });
+
+  test('Agent Skills only serve listed skills, not inherited object keys', async ({ request }) => {
+    for (const name of ['constructor', 'toString', 'unknown-skill']) {
+      expect((await request.get(`/.well-known/agent-skills/${name}/SKILL.md`)).status(), name).toBe(404);
     }
   });
 
@@ -233,6 +240,24 @@ test.describe('Agent APIs', () => {
     })).json();
     expect(legacy.result.kind).toBe('message');
     expect(legacy.result.parts[0].text).toContain('Barclays');
+  });
+
+  test('A2A agent answers a very long message quickly from its leading terms', async ({ request }) => {
+    const filler = Array.from({ length: 200_000 }, (_, i) => `zq${i.toString(36)}`).join(' ');
+    const started = Date.now();
+    const response = await request.post('/a2a', {
+      headers: { 'Content-Type': 'application/json', 'A2A-Version': '1.0' },
+      data: { jsonrpc: '2.0', id: 3, method: 'SendMessage', params: { message: { messageId: 'e2e-3', role: 'ROLE_USER', parts: [{ text: `FPGA market making ${filler}` }] } } },
+    });
+    expect(Date.now() - started).toBeLessThan(5_000);
+    const body = await response.json();
+    expect(body.result.message.parts[0].text).toContain('Trishul');
+  });
+
+  test('A2A rejects a JSON body that is not a request object', async ({ request }) => {
+    const response = await request.post('/a2a', { headers: { 'Content-Type': 'application/json' }, data: 'null' });
+    expect(response.status()).toBe(200);
+    expect(await response.json()).toEqual({ jsonrpc: '2.0', id: null, error: { code: -32600, message: expect.any(String) } });
   });
 });
 

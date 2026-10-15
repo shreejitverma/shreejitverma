@@ -17,7 +17,7 @@ import { a2aAgentCard } from './discovery';
 import { absoluteUrl, getProfile, searchProfile } from './knowledge';
 import { AGENT_PATHS } from './constants';
 
-const OVERVIEW_QUERY = /^\s*(|overview|summary|hi|hello|who is (he|shreejit( verma)?)\??|tell me about (him|shreejit( verma)?))\s*$/i;
+const OVERVIEW_QUERY = /^(|overview|summary|hi|hello|who is (he|shreejit( verma)?)\??|tell me about (him|shreejit( verma)?))$/i;
 
 function textPart(value: string, mediaType = 'text/markdown'): Part {
   return { content: { $case: 'text', value }, metadata: undefined, filename: '', mediaType };
@@ -27,7 +27,8 @@ function dataPart(value: unknown): Part {
   return { content: { $case: 'data', value }, metadata: undefined, filename: '', mediaType: 'application/json' };
 }
 
-export function answer(question: string): { markdown: string; data: unknown } {
+export function answer(rawQuestion: string): { markdown: string; data: unknown } {
+  const question = rawQuestion.trim();
   if (OVERVIEW_QUERY.test(question)) {
     const profile = getProfile();
     const markdown = [
@@ -47,13 +48,13 @@ export function answer(question: string): { markdown: string; data: unknown } {
   if (hits.length === 0) {
     return {
       markdown:
-        `No profile facts matched "${question.trim()}". Try specific terms such as a company, technology, or topic ` +
+        `No profile facts matched "${question}". Try specific terms such as a company, technology, or topic ` +
         `(for example "C++ market making" or "FRTB"), or read the full resume at ${absoluteUrl(AGENT_PATHS.resumeJson)}.`,
       data: { query: question, hits: [] },
     };
   }
   const markdown = [
-    `Best-matching facts from shreejitverma.com for "${question.trim()}":`,
+    `Best-matching facts from shreejitverma.com for "${question}":`,
     '',
     ...hits.map((hit, i) => `${i + 1}. **${hit.title}** (${hit.kind})\n   ${hit.snippet}\n   Source: ${hit.url}`),
     '',
@@ -107,6 +108,9 @@ export async function handleA2aRequest(request: Request): Promise<Response> {
   } catch {
     return rpcError(null, -32700, 'Parse error: request body must be JSON-RPC 2.0');
   }
+  if (typeof body !== 'object' || body === null || Array.isArray(body)) {
+    return rpcError(null, -32600, 'Invalid Request: body must be a JSON-RPC 2.0 request object');
+  }
 
   const requestedVersion = request.headers.get('A2A-Version') || undefined;
   const useLegacy = (requestedVersion ?? '0.3') === '0.3';
@@ -124,7 +128,7 @@ export async function handleA2aRequest(request: Request): Promise<Response> {
           try {
             for await (const event of result as AsyncIterable<unknown>) controller.enqueue(encoder.encode(`data: ${JSON.stringify(event)}\n\n`));
           } catch (error) {
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ jsonrpc: '2.0', id: body.id ?? null, error: mapError(error) })}\n\n`));
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ jsonrpc: '2.0', id: body?.id ?? null, error: mapError(error) })}\n\n`));
           } finally {
             controller.close();
           }
@@ -134,6 +138,6 @@ export async function handleA2aRequest(request: Request): Promise<Response> {
     }
     return Response.json(result, { headers: JSON_HEADERS });
   } catch (error) {
-    return Response.json({ jsonrpc: '2.0', id: body.id ?? null, error: mapError(error) }, { headers: JSON_HEADERS });
+    return Response.json({ jsonrpc: '2.0', id: body?.id ?? null, error: mapError(error) }, { headers: JSON_HEADERS });
   }
 }

@@ -5,9 +5,9 @@ import { corsPreflight, textResponse } from '@/app/lib/agent/http';
 // SHA-256 digest, computed from the same markdown() function served here.
 
 export async function GET(_request: Request, { params }: { params: Promise<{ name: string }> }) {
-  const skill = AGENT_SKILLS[(await params).name];
-  if (!skill) return textResponse('Unknown skill. See /.well-known/agent-skills/index.json\n', 'text/plain', { status: 404, cacheControl: 'no-store' });
-  return textResponse(skill.markdown(), 'text/markdown');
+  const { name } = await params;
+  if (!Object.hasOwn(AGENT_SKILLS, name)) return textResponse('Unknown skill. See /.well-known/agent-skills/index.json\n', 'text/plain', { status: 404, cacheControl: 'no-store' });
+  return textResponse(AGENT_SKILLS[name].markdown(), 'text/markdown');
 }
 
 export const OPTIONS = corsPreflight;
