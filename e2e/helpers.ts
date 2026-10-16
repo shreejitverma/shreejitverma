@@ -2,13 +2,17 @@ import type { ConsoleMessage } from '@playwright/test';
 
 export const SITE = 'https://www.shreejitverma.com';
 
+export const ARTICLES: { path: string; published: string }[] = [
+  { path: '/writing/frtb-for-engineers', published: '2026-10-09' },
+  { path: '/writing/fpga-pre-trade-risk-gate', published: '2026-10-15' },
+];
+
 export const PAGES: { path: string; canonical: string }[] = [
   { path: '/', canonical: SITE },
   { path: '/resume', canonical: `${SITE}/resume` },
   { path: '/work/trishul', canonical: `${SITE}/work/trishul` },
   { path: '/writing', canonical: `${SITE}/writing` },
-  { path: '/writing/frtb-for-engineers', canonical: `${SITE}/writing/frtb-for-engineers` },
-  { path: '/writing/fpga-pre-trade-risk-gate', canonical: `${SITE}/writing/fpga-pre-trade-risk-gate` },
+  ...ARTICLES.map(({ path }) => ({ path, canonical: `${SITE}${path}` })),
   { path: '/books', canonical: `${SITE}/books` },
   { path: '/value-investing', canonical: `${SITE}/value-investing` },
 ];

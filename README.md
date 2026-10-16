@@ -215,6 +215,9 @@ Adding a page to `SITE_PAGES` in `app/lib/agent/pages.ts` adds it to the sitemap
 
 - Structured data (`app/lib/structured-data.ts`) is derived from `app/lib/profile.ts`, so search engines and AI assistants see the same employer, titles, and degrees as readers; `ProfilePage` is declared only on `/` and `/resume`.
 - `.github/workflows/indexnow.yml` submits every sitemap URL to IndexNow (Bing, which also backs ChatGPT search and Copilot, plus Yandex, Seznam, Naver, and Yep) after each successful production deployment; `python3 scripts/indexnow.py --dry-run` previews the payload.
+- The sitemap sets `lastmod` only from real dates (article publication), never the build time, so search engines can trust it.
+- Agent and discovery endpoints send a strong `ETag` and answer a matching `If-None-Match` with `304 Not Modified`, so revalidating crawlers transfer nothing.
+- `/feed.xml` is an Atom feed of the articles, linked from every page and from `llms.txt`.
 - URLs from earlier versions of the site, including old resume PDF paths, permanently redirect to their current pages (`LEGACY_REDIRECTS` in `next.config.ts`), so their ranking signals carry over instead of ending in a 404.
 
 ---
