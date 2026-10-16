@@ -424,5 +424,15 @@ test.describe('Web Bot Auth', () => {
     expect(verified.tag).toBe('web-bot-auth');
     // A tampered request fails.
     await expect(verify(new Request('https://evil.example/resume', { headers }), { resolver: () => verifier })).rejects.toThrow();
+
+    // RFC 9421 signing is optional for the Markdown fetch. A key can load
+    // successfully while the platform signing operation still fails.
+    const originalSign = webcrypto.subtle.sign;
+    try {
+      webcrypto.subtle.sign = async () => { throw new Error('sign unavailable'); };
+      expect(await signedBotHeaders(target)).toEqual({});
+    } finally {
+      webcrypto.subtle.sign = originalSign;
+    }
   });
 });

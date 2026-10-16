@@ -230,13 +230,14 @@ Claiming an auth.md registration or revoking a grant takes effect immediately, b
 Each submission becomes an issue in the private repo `shreejitverma/opportunities`, with all submitted text fenced so it cannot inject Markdown or mentions; each approval may send 3 per day, and all agents together 30.
 
 Configuration (Vercel, all environments).
-On Vercel a missing value fails closed: auth endpoints answer 503 and the Markdown fetcher sends unsigned requests.
+On Vercel a missing or unusable key fails closed: auth endpoints answer 503, while the Markdown fetcher logs signing failures and sends unsigned requests.
+PKCS#8 values are normalized when pasted from environment variable UIs, including quoted values, escaped or flattened newlines, and a shell prompt line; values without usable key material return 503.
 Off Vercel the keys are generated per process and state lives in memory, so local runs and the e2e suite need nothing.
 
 | Variable | Value |
 | --- | --- |
 | `AUTH_SIGNING_KEY` | Ed25519 private key, PKCS#8 PEM (`openssl genpkey -algorithm ed25519`); signs tokens |
-| `WEB_BOT_AUTH_KEY` | A second, separate Ed25519 key in the same format; signs outbound bot requests |
+| `WEB_BOT_AUTH_KEY` | A second, separate Ed25519 key in the same format; signs outbound bot requests, with unsigned fallback on signing failure |
 | `KV_REST_API_URL`, `KV_REST_API_TOKEN` | Upstash Redis from the Vercel Marketplace (set automatically when connected) |
 | `GITHUB_OPPORTUNITIES_TOKEN` | Fine-grained token with Issues read and write on `shreejitverma/opportunities` only |
 

@@ -26,6 +26,10 @@ ENDPOINT = "https://api.indexnow.org/indexnow"
 SITEMAP_NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 # IndexNow accepts up to 10,000 URLs per request.
 MAX_URLS = 10_000
+# Identifies this job to the site and to IndexNow. Python's default
+# "Python-urllib" agent is blocked by Cloudflare's bot rules in front of the
+# site, which fails the job with HTTP 403.
+USER_AGENT = f"shreejitverma-indexnow/1.0 (+{SITE})"
 
 
 def sitemap_urls(xml_text: str, host: str) -> list[str]:
@@ -50,7 +54,8 @@ def payload(urls: list[str]) -> dict:
 
 
 def fetch(url: str) -> str:
-    with urllib.request.urlopen(url, timeout=30) as response:
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(request, timeout=30) as response:
         return response.read().decode("utf-8")
 
 
@@ -58,7 +63,7 @@ def submit(body: dict) -> int:
     request = urllib.request.Request(
         ENDPOINT,
         data=json.dumps(body).encode("utf-8"),
-        headers={"Content-Type": "application/json; charset=utf-8"},
+        headers={"Content-Type": "application/json; charset=utf-8", "User-Agent": USER_AGENT},
         method="POST",
     )
     try:

@@ -9,7 +9,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from indexnow import KEY, payload, sitemap_urls
+import indexnow
+from indexnow import KEY, USER_AGENT, payload, sitemap_urls
 
 # Shape from the Sitemaps protocol (https://www.sitemaps.org/protocol.html),
 # the format Next.js emits for app/sitemap.ts.
@@ -57,6 +58,39 @@ class PayloadTest(unittest.TestCase):
                 "urlList": ["https://www.shreejitverma.com/resume"],
             },
         )
+
+
+class UserAgentTest(unittest.TestCase):
+    # Cloudflare in front of the site blocks Python's default "Python-urllib"
+    # agent (HTTP 403), so every request must carry the job's own agent.
+    def test_fetch_and_submit_send_the_job_user_agent(self):
+        sent = []
+
+        class Response:
+            status = 200
+
+            def read(self):
+                return b"ok"
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *exc):
+                return False
+
+        def fake_urlopen(request, timeout):
+            sent.append(request.get_header("User-agent"))
+            return Response()
+
+        original = indexnow.urllib.request.urlopen
+        indexnow.urllib.request.urlopen = fake_urlopen
+        try:
+            indexnow.fetch("https://www.shreejitverma.com/sitemap.xml")
+            indexnow.submit(payload(["https://www.shreejitverma.com"]))
+        finally:
+            indexnow.urllib.request.urlopen = original
+        self.assertEqual(sent, [USER_AGENT, USER_AGENT])
+        self.assertNotIn("Python-urllib", USER_AGENT)
 
 
 if __name__ == "__main__":
