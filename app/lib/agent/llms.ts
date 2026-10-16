@@ -36,6 +36,7 @@ ${SITE_PAGES.map((page) => `- [${page.title}](${url(markdownPath(page.path))}): 
 - [AI Catalog](${url(AGENT_PATHS.aiCatalog)}) and [API Catalog](${url(AGENT_PATHS.apiCatalog)}): discovery manifests
 - [Full content](${url(AGENT_PATHS.llmsFull)}): every page in one Markdown file
 - [Atom feed](${url('/feed.xml')}): new articles as they are published
+- [auth.md](${url('/auth.md')}): how a recruiter's agent gets approved to send Shreejit an opportunity (OAuth 2.1 and agentic registration)
 
 ## Profiles
 
