@@ -20,19 +20,40 @@ export interface SigningKey {
   kid: string; // RFC 7638 SHA-256 JWK thumbprint
 }
 
-// Ed25519 private key as PKCS#8 PEM in `envName` (`\n` escapes allowed, as
-// env var UIs often flatten newlines).
+const PEM_BLOCK = /-----BEGIN PRIVATE KEY-----([\s\S]*?)-----END PRIVATE KEY-----/;
+
+// A PKCS#8 PEM rebuilt from however the value was pasted into an env var UI:
+// surrounding quotes or whitespace, `\n` escapes, flattened or CRLF line
+// breaks, a stray shell prompt line, or the base64 body alone. The first
+// PEM block wins. Returns null when there is no key material at all.
+export function normalizePkcs8(raw: string): string | null {
+  const text = raw.replace(/\\n/g, '\n');
+  const block = PEM_BLOCK.exec(text);
+  const body = (block ? block[1] : text).replace(/[^A-Za-z0-9+/=]/g, '');
+  if (!body) return null;
+  return `-----BEGIN PRIVATE KEY-----\n${body.match(/.{1,64}/g)!.join('\n')}\n-----END PRIVATE KEY-----\n`;
+}
+
+// Ed25519 private key as PKCS#8 PEM in `envName`. An unusable value is a
+// configuration error (503 with the reason logged), never a bare 500.
 async function loadEd25519(envName: string): Promise<SigningKey> {
-  const pem = process.env[envName]?.replace(/\\n/g, '\n');
+  const raw = process.env[envName];
   let privateKey: CryptoKey;
-  if (pem) privateKey = await importPKCS8(pem, 'EdDSA', { extractable: true });
-  else if (ON_VERCEL) throw new AuthNotConfiguredError(`${envName} is not set`);
+  if (raw) {
+    const pem = normalizePkcs8(raw);
+    try {
+      if (!pem) throw new Error('no key material');
+      privateKey = await importPKCS8(pem, 'EdDSA', { extractable: true });
+    } catch (error) {
+      throw new AuthNotConfiguredError(`${envName} is not a valid Ed25519 private key in PKCS#8 PEM form (${error instanceof Error ? error.message : String(error)})`);
+    }
+  } else if (ON_VERCEL) throw new AuthNotConfiguredError(`${envName} is not set`);
   else ({ privateKey } = await generateKeyPair('EdDSA', { crv: 'Ed25519', extractable: true }));
 
   // Copy only the public members, so the private scalar `d` can never be
   // published by mistake.
   const full = await exportJWK(privateKey);
-  if (full.kty !== 'OKP' || full.crv !== 'Ed25519' || !full.x) throw new Error(`${envName} is not an Ed25519 key`);
+  if (full.kty !== 'OKP' || full.crv !== 'Ed25519' || !full.x) throw new AuthNotConfiguredError(`${envName} is not an Ed25519 key`);
   const base: JWK = { kty: full.kty, crv: full.crv, x: full.x };
   const kid = await calculateJwkThumbprint(base, 'sha256');
   const publicKey = (await importJWK({ ...base, alg: 'EdDSA' }, 'EdDSA')) as CryptoKey;

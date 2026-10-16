@@ -11,7 +11,7 @@
 
 import { randomBytes, webcrypto } from 'node:crypto';
 import { SITE_URL } from '../profile';
-import { AuthNotConfiguredError, botSigningKey } from '../auth/runtime';
+import { botSigningKey } from '../auth/runtime';
 
 export const DIRECTORY_PATH = '/.well-known/http-message-signatures-directory';
 export const DIRECTORY_URL = `${SITE_URL}${DIRECTORY_PATH}`;
@@ -32,8 +32,9 @@ export async function signedBotHeaders(target: URL): Promise<Record<string, stri
   try {
     ({ kid: keyid } = await botSigningKey());
   } catch (error) {
-    if (!(error instanceof AuthNotConfiguredError)) throw error;
-    console.warn('Web Bot Auth: WEB_BOT_AUTH_KEY is not set; sending unsigned');
+    // Signing is an enhancement: a missing or broken key must never break
+    // the feature the bot serves (the Markdown pages). Send unsigned, say why.
+    console.warn(`Web Bot Auth: sending unsigned (${error instanceof Error ? error.message : String(error)})`);
     return {};
   }
   const created = Math.floor(Date.now() / 1000);
