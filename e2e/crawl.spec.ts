@@ -52,9 +52,12 @@ test.describe('Revalidation', () => {
       expect(again.status()).toBe(304);
       expect((await again.body()).length).toBe(0);
       expect(again.headers()['etag']).toBe(etag);
+      expect(again.headers()['content-type']).toBeUndefined();
 
       // A weak form of the same tag from an intermediary still matches (RFC 9110 13.1.2).
       expect((await request.get(path, { headers: { 'If-None-Match': `W/${etag}` } })).status()).toBe(304);
+      expect((await request.get(path, { headers: { 'If-None-Match': `"stale", ${etag}` } })).status()).toBe(304);
+      expect((await request.get(path, { headers: { 'If-None-Match': '*' } })).status()).toBe(304);
       // A stale tag gets the full representation.
       expect((await request.get(path, { headers: { 'If-None-Match': '"stale"' } })).status()).toBe(200);
     });
@@ -85,7 +88,7 @@ test.describe('Atom feed', () => {
     expect(feed.ns).toBe('http://www.w3.org/2005/Atom');
     expect(feed.self).toBe(`${SITE}/feed.xml`);
     const expectedEntries = ARTICLES
-      .map(({ path, published }) => ({ id: `${SITE}${path}`, published }))
+      .map(({ path, published }) => ({ id: `${SITE}${path}`, published: `${published}T00:00:00Z` }))
       .sort((a, b) => b.published.localeCompare(a.published));
     expect(feed.entries).toEqual(expectedEntries);
   });
