@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { redirect } from 'next/navigation';
 import AuthCard, { fieldClass, labelClass, primaryButton, secondaryButton } from '@/app/components/AuthCard';
 import { AUTH_PATHS, SCOPE_DESCRIPTIONS } from '@/app/lib/auth/config';
 import { AuthNotConfiguredError } from '@/app/lib/auth/runtime';
@@ -23,7 +22,6 @@ export default async function AuthorizePage({ searchParams }: { searchParams: Pr
     outcome = { kind: 'error' as const, message: 'Agent sign-in is not available on this deployment yet.' };
   }
 
-  if (outcome.kind === 'redirect') redirect(outcome.location);
   if (outcome.kind === 'error') {
     return (
       <AuthCard title='This connection request is not valid'>

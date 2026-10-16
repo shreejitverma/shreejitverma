@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import AuthCard, { fieldClass, labelClass, primaryButton } from '@/app/components/AuthCard';
 import { AUTH_PATHS, SCOPE_DESCRIPTIONS, SCOPES } from '@/app/lib/auth/config';
 import { AuthNotConfiguredError } from '@/app/lib/auth/runtime';
-import { describeClaimAttempt } from '@/app/lib/auth/server';
+import { CLAIM_ERRORS, describeClaimAttempt, type ClaimError } from '@/app/lib/auth/server';
 
 export const metadata: Metadata = {
   title: 'Approve your agent',
@@ -38,7 +38,9 @@ export default async function ClaimPage({ searchParams }: { searchParams: Promis
     );
   }
 
-  const error = one('error');
+  // Only known codes are shown, as fixed text; anything else in the URL is ignored.
+  const errorCode = one('error');
+  const error = errorCode && errorCode in CLAIM_ERRORS ? CLAIM_ERRORS[errorCode as ClaimError] : undefined;
   return (
     <AuthCard title='Approve your agent'>
       <p className='mb-4'>

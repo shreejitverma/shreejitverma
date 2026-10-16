@@ -114,7 +114,7 @@ export function signConsentRequest(request: ConsentRequest): Promise<string> {
   return sign(TYP.consent, { sub: request.clientId, aud: ISSUER, req: request }, TTL.consentRequest);
 }
 
-export async function verifyConsentRequest(token: string): Promise<ConsentRequest> {
+export async function verifyConsentRequest(token: string): Promise<{ request: ConsentRequest; jti: string }> {
   const payload = await verify(TYP.consent, token, ISSUER);
-  return payload.req as ConsentRequest;
+  return { request: payload.req as ConsentRequest, jti: payload.jti! };
 }

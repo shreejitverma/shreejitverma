@@ -2,6 +2,7 @@ import { createMcpHandler, McpServer, type CallToolResult } from '@modelcontextp
 import { AGENT_API_VERSION } from '@/app/lib/agent/constants';
 import { RESOURCES, SCOPES } from '@/app/lib/auth/config';
 import { authenticate, type Caller } from '@/app/lib/auth/resource';
+import { clientIp } from '@/app/lib/auth/http';
 import { opportunitySchema, submitOpportunity, SubmissionError } from '@/app/lib/opportunities';
 
 // Authenticated MCP server: lets an approved agent send opportunities to
@@ -11,7 +12,7 @@ import { opportunitySchema, submitOpportunity, SubmissionError } from '@/app/lib
 
 const text = (value: string, isError = false): CallToolResult => ({ content: [{ type: 'text', text: value }], ...(isError ? { isError } : {}) });
 
-function buildServer(caller: Caller): McpServer {
+function buildServer(caller: Caller, ip: string): McpServer {
   const server = new McpServer(
     { name: 'com.shreejitverma/recruiter', title: 'Shreejit Verma - recruiter access', version: AGENT_API_VERSION },
     { instructions: 'Send a job opportunity to Shreejit Verma on behalf of the person who approved this connection. Call whoami to see who that is.' },
@@ -26,7 +27,7 @@ function buildServer(caller: Caller): McpServer {
     },
     async (opportunity) => {
       try {
-        const { reference } = await submitOpportunity(opportunity, caller);
+        const { reference } = await submitOpportunity(opportunity, caller, ip);
         return text(`Delivered to Shreejit Verma. Reference: ${reference}.`);
       } catch (error) {
         if (error instanceof SubmissionError) return text(error.message, true);
@@ -56,7 +57,7 @@ const CORS = {
 async function handle(request: Request): Promise<Response> {
   const caller = await authenticate(request, RESOURCES.mcpRecruiter, SCOPES.opportunitiesWrite);
   // One handler per request: the server closes over this caller's identity.
-  const response = caller instanceof Response ? caller : await createMcpHandler(() => buildServer(caller)).fetch(request);
+  const response = caller instanceof Response ? caller : await createMcpHandler(() => buildServer(caller, clientIp(request))).fetch(request);
   const headers = new Headers(response.headers);
   for (const [key, value] of Object.entries(CORS)) headers.set(key, value);
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });

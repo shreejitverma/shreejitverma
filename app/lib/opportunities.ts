@@ -68,31 +68,56 @@ export function issueFor(opportunity: Opportunity, caller: Caller, reference: st
   };
 }
 
-export async function submitOpportunity(opportunity: Opportunity, caller: Caller): Promise<{ reference: string }> {
-  // Per-person and global daily caps keep a compromised or overeager agent
-  // from flooding the inbox.
+// Daily caps, narrowest first: per approval, per network, per client, then
+// global. Approvals cost nothing to script (there are no accounts), so the
+// per-IP and per-client caps are what stop one actor from using up the
+// global cap and locking out real recruiters.
+async function reserveQuota(caller: Caller, ip: string): Promise<string[]> {
   const day = new Date().toISOString().slice(0, 10);
   const store = authStore();
-  if ((await store.incr(`rl:submit:${caller.sub}:${day}`, 86_400)) > LIMITS.submissionsPerPrincipalPerDay) {
-    throw new SubmissionError(`At most ${LIMITS.submissionsPerPrincipalPerDay} opportunities per day per approval`, 429);
+  const caps: [key: string, max: number, message: string][] = [
+    [`rl:submit:sub:${caller.sub}:${day}`, LIMITS.submissionsPerPrincipalPerDay, `At most ${LIMITS.submissionsPerPrincipalPerDay} opportunities per day per approval`],
+    [`rl:submit:ip:${ip}:${day}`, LIMITS.submissionsPerIpPerDay, 'Too many opportunities from this network today; try again tomorrow'],
+    [`rl:submit:client:${caller.clientId}:${day}`, LIMITS.submissionsPerClientPerDay, 'This client has sent its daily maximum; try again tomorrow'],
+    [`rl:submit:all:${day}`, LIMITS.submissionsPerDay, 'The daily submission limit is reached; try again tomorrow'],
+  ];
+  const reserved: string[] = [];
+  for (const [key, max, message] of caps) {
+    reserved.push(key);
+    if ((await store.incr(key, 86_400)) > max) {
+      await release(reserved);
+      throw new SubmissionError(message, 429);
+    }
   }
-  if ((await store.incr(`rl:submit:all:${day}`, 86_400)) > LIMITS.submissionsPerDay) {
-    throw new SubmissionError('The daily submission limit is reached; try again tomorrow', 429);
-  }
+  return reserved;
+}
+
+// A submission that was refused or not delivered must not use up quota.
+async function release(keys: string[]) {
+  await Promise.all(keys.map((key) => authStore().decr(key)));
+}
+
+export async function submitOpportunity(opportunity: Opportunity, caller: Caller, ip: string): Promise<{ reference: string }> {
+  const reserved = await reserveQuota(caller, ip);
 
   const reference = `opp_${randomBytes(6).toString('hex')}`;
   const issue = issueFor(opportunity, caller, reference);
   const token = process.env.GITHUB_OPPORTUNITIES_TOKEN;
   const repo = process.env.GITHUB_OPPORTUNITIES_REPO ?? 'shreejitverma/opportunities';
   if (!token) {
+    if (process.env.VERCEL === '1') {
+      await release(reserved);
+      throw new AuthNotConfiguredError('GITHUB_OPPORTUNITIES_TOKEN is not set');
+    }
     // Off Vercel (local runs, the e2e suite) there is nowhere to deliver to;
     // the submission is accepted and logged so the whole flow can be tested.
-    if (process.env.VERCEL === '1') throw new AuthNotConfiguredError('GITHUB_OPPORTUNITIES_TOKEN is not set');
     console.info(`opportunity ${reference} (not delivered, no GITHUB_OPPORTUNITIES_TOKEN): ${issue.title}`);
     return { reference };
   }
 
-  const response = await fetch(`https://api.github.com/repos/${repo}/issues`, {
+  let response: Response;
+  try {
+    response = await fetch(`https://api.github.com/repos/${repo}/issues`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -103,9 +128,16 @@ export async function submitOpportunity(opportunity: Opportunity, caller: Caller
     },
     body: JSON.stringify(issue),
     signal: AbortSignal.timeout(10_000),
-  });
+    });
+  } catch (error) {
+    await release(reserved);
+    console.error('opportunity delivery failed', error);
+    throw new SubmissionError('The opportunity could not be delivered; try again later', 502);
+  }
   if (!response.ok) {
-    // The submission was not delivered; say so rather than report success.
+    // The submission was not delivered; say so rather than report success,
+    // and give the quota back.
+    await release(reserved);
     console.error('opportunity delivery failed', response.status, (await response.text()).slice(0, 300));
     throw new SubmissionError('The opportunity could not be delivered; try again later', 502);
   }

@@ -1,11 +1,12 @@
 import { decideConsent, OAuthFailure } from '@/app/lib/auth/server';
 import { AuthNotConfiguredError } from '@/app/lib/auth/runtime';
 import { notConfigured } from '@/app/lib/auth/resource';
+import { clientIp } from '@/app/lib/auth/http';
 
 // The consent form posts here; the answer is a 303 back to the client.
 export async function POST(request: Request) {
   try {
-    const location = await decideConsent(await request.formData());
+    const location = await decideConsent(await request.formData(), clientIp(request));
     return new Response(null, { status: 303, headers: { Location: location, 'Cache-Control': 'no-store' } });
   } catch (error) {
     if (error instanceof AuthNotConfiguredError) return notConfigured(error);

@@ -1,5 +1,5 @@
 import { RESOURCES, SCOPES } from '@/app/lib/auth/config';
-import { oauthErrorResponse, oauthJson, oauthPreflight, readJson } from '@/app/lib/auth/http';
+import { clientIp, oauthErrorResponse, oauthJson, oauthPreflight, readJson } from '@/app/lib/auth/http';
 import { authenticate } from '@/app/lib/auth/resource';
 import { opportunitySchema, submitOpportunity, SubmissionError } from '@/app/lib/opportunities';
 
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       const issue = parsed.error.issues[0];
       return oauthJson({ error: 'invalid_request', error_description: `${issue?.path.join('.') || 'body'}: ${issue?.message}` }, 400);
     }
-    const { reference } = await submitOpportunity(parsed.data, caller);
+    const { reference } = await submitOpportunity(parsed.data, caller, clientIp(request));
     return oauthJson({ status: 'delivered', reference }, 201);
   } catch (error) {
     if (error instanceof SubmissionError) return oauthJson({ error: 'submission_failed', error_description: error.message }, error.status);

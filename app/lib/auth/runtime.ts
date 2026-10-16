@@ -76,8 +76,13 @@ export interface Store {
   // refresh tokens): two concurrent redemptions cannot both succeed.
   take<T>(key: string): Promise<T | null>;
   del(key: string): Promise<void>;
+  // Set only if the key does not exist; true when this call set it. Used to
+  // make one-time artifacts (consent requests) single use.
+  setIfAbsent(key: string, value: unknown, ttlSeconds: number): Promise<boolean>;
   // Increment a fixed-window counter, starting its TTL on first use.
   incr(key: string, windowSeconds: number): Promise<number>;
+  // Undo one increment (a refund when the counted action did not happen).
+  decr(key: string): Promise<void>;
 }
 
 class RedisStore implements Store {
@@ -94,9 +99,15 @@ class RedisStore implements Store {
   async del(key: string) {
     await this.redis.del(key);
   }
+  async setIfAbsent(key: string, value: unknown, ttlSeconds: number) {
+    return (await this.redis.set(key, value, { ex: ttlSeconds, nx: true })) === 'OK';
+  }
   async incr(key: string, windowSeconds: number) {
     const [count] = await this.redis.pipeline().incr(key).expire(key, windowSeconds, 'NX').exec<[number, number]>();
     return count;
+  }
+  async decr(key: string) {
+    await this.redis.decr(key);
   }
 }
 
@@ -122,11 +133,20 @@ class MemoryStore implements Store {
   async del(key: string) {
     this.data.delete(key);
   }
+  async setIfAbsent(key: string, value: unknown, ttlSeconds: number) {
+    if (this.live(key)) return false;
+    await this.set(key, value, ttlSeconds);
+    return true;
+  }
   async incr(key: string, windowSeconds: number) {
     const entry = this.live(key);
     const count = (entry ? Number(JSON.parse(entry.value)) : 0) + 1;
     this.data.set(key, { value: JSON.stringify(count), expires: entry?.expires ?? Date.now() + windowSeconds * 1000 });
     return count;
+  }
+  async decr(key: string) {
+    const entry = this.live(key);
+    if (entry) this.data.set(key, { ...entry, value: JSON.stringify(Number(JSON.parse(entry.value)) - 1) });
   }
 }
 

@@ -211,6 +211,38 @@ Markdown is fetched from this same deployment and converted per request (`app/li
 If the Cloudflare proxy is enabled, the Vercel function's self-fetch of the canonical origin must be exempted from bot protection (for example with a WAF skip rule), otherwise the Markdown endpoints return 502.
 Adding a page to `SITE_PAGES` in `app/lib/agent/pages.ts` adds it to the sitemap, `llms.txt`, the Markdown rewrites, and the agent tools at once.
 
+### Agent authentication
+
+A recruiter's AI agent can send Shreejit a job opportunity, but only after a person approves it; everything else stays public.
+The code is in `app/lib/auth/`, `app/lib/opportunities.ts`, and `app/lib/agent/web-bot-auth.ts`; `e2e/agent-auth.spec.ts` drives every flow end to end.
+
+| Piece | Where | Standard |
+| --- | --- | --- |
+| Authorization server metadata | `/.well-known/oauth-authorization-server` | RFC 8414, plus the auth.md `agent_auth` block |
+| Protected resource metadata | `/.well-known/oauth-protected-resource[/mcp/recruiter, /api/opportunities]` | RFC 9728 |
+| Client registration, authorize, token, revoke, JWKS | `/oauth/register`, `/oauth/authorize`, `/oauth/token`, `/oauth/revoke`, `/oauth/jwks.json` | RFC 7591, OAuth 2.1 with mandatory S256 PKCE (RFC 7636), RFC 9207, RFC 7009, RFC 7517 |
+| Agentic registration and claim | `/agent/identity`, `/agent/identity/claim`, `/claim`, `/auth.md` | [auth.md](https://workos.com/auth-md) (anonymous identity only) |
+| Protected endpoints | `POST /api/opportunities`, MCP at `/mcp/recruiter` (`send_opportunity`, `whoami`) | Bearer tokens (RFC 6750), audience-bound (RFC 8707) |
+| Web Bot Auth | `/.well-known/http-message-signatures-directory`; the Markdown fetcher signs its requests | RFC 9421, Ed25519 |
+
+Access tokens are EdDSA JWTs (RFC 9068) that last 15 minutes; codes and refresh tokens are single use, enforced by an atomic read-and-delete.
+Claiming an auth.md registration or revoking a grant takes effect immediately, because the resource server checks the grant behind every token.
+Each submission becomes an issue in the private repo `shreejitverma/opportunities`, with all submitted text fenced so it cannot inject Markdown or mentions; each approval may send 3 per day, and all agents together 30.
+
+Configuration (Vercel, all environments).
+On Vercel a missing value fails closed: auth endpoints answer 503 and the Markdown fetcher sends unsigned requests.
+Off Vercel the keys are generated per process and state lives in memory, so local runs and the e2e suite need nothing.
+
+| Variable | Value |
+| --- | --- |
+| `AUTH_SIGNING_KEY` | Ed25519 private key, PKCS#8 PEM (`openssl genpkey -algorithm ed25519`); signs tokens |
+| `WEB_BOT_AUTH_KEY` | A second, separate Ed25519 key in the same format; signs outbound bot requests |
+| `KV_REST_API_URL`, `KV_REST_API_TOKEN` | Upstash Redis from the Vercel Marketplace (set automatically when connected) |
+| `GITHUB_OPPORTUNITIES_TOKEN` | Fine-grained token with Issues read and write on `shreejitverma/opportunities` only |
+
+To rotate a key, replace the variable and redeploy: outstanding access tokens and identity assertions stop verifying, and agents re-authenticate.
+Because state is in memory locally, `npm run test:e2e` needs a fresh server; reusing one across many runs eventually hits the 30-per-day submission cap by design.
+
 ### Search visibility
 
 - Structured data (`app/lib/structured-data.ts`) is derived from `app/lib/profile.ts`, so search engines and AI assistants see the same employer, titles, and degrees as readers; `ProfilePage` is declared only on `/` and `/resume`.

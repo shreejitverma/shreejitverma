@@ -45,11 +45,12 @@ interface ClientRecord {
 
 interface CodeRecord {
   clientId: string;
+  clientName?: string;
   redirectUri: string;
   codeChallenge: string;
   scope: string[];
   resource: string;
-  sub: string;
+  contact: Contact;
 }
 
 interface RefreshRecord {
@@ -81,7 +82,6 @@ interface ClaimAttempt {
   regId: string;
   codeHash: string;
   email: string;
-  attempts: number;
   completed: boolean;
 }
 
@@ -89,6 +89,10 @@ const KEY = {
   client: (id: string) => `client:${id}`,
   code: (code: string) => `code:${sha256(code)}`,
   refresh: (token: string) => `rt:${sha256(token)}`,
+  // A rotated refresh token, kept so a replay can be detected (RFC 9700 4.14.2).
+  spentRefresh: (token: string) => `rtspent:${sha256(token)}`,
+  consentUsed: (jti: string) => `consent:${jti}`,
+  claimTries: (hash: string) => `cattries:${hash}`,
   user: (sub: string) => `usr:${sub}`,
   registration: (id: string) => `reg:${id}`,
   claimToken: (token: string) => `clm:${sha256(token)}`,
@@ -135,7 +139,9 @@ function isAllowedRedirectUri(value: string): boolean {
   if (uri.hash || FORBIDDEN_SCHEMES.has(uri.protocol)) return false;
   if (uri.protocol === 'https:') return true;
   if (uri.protocol === 'http:') return LOOPBACK.has(uri.hostname);
-  return /^[a-z][a-z0-9+.-]*:$/.test(uri.protocol);
+  // Private-use schemes must be reverse-DNS (RFC 8252 section 7.1), which also
+  // keeps out OS protocol handlers such as ms-msdt: or search-ms:.
+  return /^[a-z][a-z0-9+-]*(\.[a-z0-9+-]+)+:$/.test(uri.protocol);
 }
 
 // Exact string match, except a loopback redirect may use any port
@@ -166,6 +172,15 @@ function parseResource(raw: string | null | undefined, fallback: string = RESOUR
     throw new OAuthFailure('invalid_target', `Unknown resource ${raw}. Known: ${KNOWN_RESOURCES.join(', ')}`);
   }
   return raw.replace(/\/$/, '');
+}
+
+// A token request may keep the approved audience or narrow a site-wide grant
+// to one endpoint, never widen it (RFC 8707).
+function narrowResource(requested: string | null, granted: string): string {
+  if (!requested) return granted;
+  const resource = parseResource(requested);
+  if (resource === granted || granted === RESOURCES.site) return resource;
+  throw new OAuthFailure('invalid_target', `The grant covers ${granted} only`);
 }
 
 // ---------------------------------------------------------------------------
@@ -225,12 +240,11 @@ async function loadClient(clientId: string | null | undefined): Promise<ClientRe
 // ---------------------------------------------------------------------------
 // Authorization endpoint
 
+// Errors before the person decides are shown on this site and never
+// redirected: registration is open, so a redirect URI is attacker-chosen
+// until a person has seen and acted on the consent page (RFC 9700 4.11.2).
 export type AuthorizeOutcome =
-  // The request cannot be trusted to redirect anywhere (unknown client or
-  // redirect URI): show the error on our own page.
   | { kind: 'error'; message: string }
-  // A protocol error that is safe to send back to the client.
-  | { kind: 'redirect'; location: string }
   | { kind: 'consent'; request: ConsentRequest; consentToken: string; clientName?: string };
 
 function redirectWith(redirectUri: string, params: Record<string, string | undefined>): string {
@@ -251,10 +265,7 @@ export async function validateAuthorizeRequest(params: URLSearchParams): Promise
   }
 
   const state = params.get('state') ?? undefined;
-  const fail = (error: string, description: string): AuthorizeOutcome => ({
-    kind: 'redirect',
-    location: redirectWith(redirectUri, { error, error_description: description, state }),
-  });
+  const fail = (error: string, description: string): AuthorizeOutcome => ({ kind: 'error', message: `${error}: ${description}` });
 
   if (params.get('response_type') !== 'code') return fail('unsupported_response_type', 'response_type must be "code"');
   const codeChallenge = params.get('code_challenge');
@@ -276,12 +287,18 @@ export async function validateAuthorizeRequest(params: URLSearchParams): Promise
 }
 
 // The consent page's form posts here. Returns the redirect location.
-export async function decideConsent(form: FormData): Promise<string> {
+export async function decideConsent(form: FormData, ip: string): Promise<string> {
+  await enforceLimit('approve', ip, LIMITS.approvalsPerIpPerHour, 3600);
   let request: ConsentRequest;
+  let jti: string;
   try {
-    request = await verifyConsentRequest(String(form.get('consent') ?? ''));
+    ({ request, jti } = await verifyConsentRequest(String(form.get('consent') ?? '')));
   } catch {
     throw new OAuthFailure('invalid_request', 'This approval page has expired. Start the connection again from your app.');
+  }
+  // One decision per consent page: a replayed form cannot mint more grants.
+  if (!(await authStore().setIfAbsent(KEY.consentUsed(jti), 1, TTL.consentRequest))) {
+    throw new OAuthFailure('invalid_request', 'This approval was already submitted. Start the connection again from your app.');
   }
   // The client or its redirect URIs could have changed since the page loaded.
   const client = await loadClient(request.clientId);
@@ -293,11 +310,11 @@ export async function decideConsent(form: FormData): Promise<string> {
   }
   const contact = parseContact({ name: form.get('name'), email: form.get('email'), company: form.get('company') ?? undefined });
 
-  const sub = randomId('usr');
-  const principal: UserPrincipal = { kind: 'user', contact, clientId: client.client_id, clientName: client.client_name };
-  await authStore().set(KEY.user(sub), principal, TTL.refreshToken);
   const code = randomToken('code');
-  const record: CodeRecord = { ...request, sub };
+  const record: CodeRecord = {
+    clientId: request.clientId, clientName: client.client_name, redirectUri: request.redirectUri,
+    codeChallenge: request.codeChallenge, scope: request.scope, resource: request.resource, contact,
+  };
   await authStore().set(KEY.code(code), record, TTL.authorizationCode);
   return redirectWith(request.redirectUri, { code, state: request.state });
 }
@@ -349,11 +366,16 @@ async function exchangeCode(form: URLSearchParams): Promise<TokenResponse> {
   const redirectUri = form.get('redirect_uri');
   if (redirectUri !== null && redirectUri !== record.redirectUri) throw new OAuthFailure('invalid_grant', 'redirect_uri does not match the authorization request');
   if (!pkceMatches(form.get('code_verifier') ?? '', record.codeChallenge)) throw new OAuthFailure('invalid_grant', 'PKCE verification failed');
-  const resource = parseResource(form.get('resource'), record.resource);
+  const resource = narrowResource(form.get('resource'), record.resource);
 
-  const response = await accessResponse(record.sub, record.clientId, record.scope, resource);
+  // The principal exists only once a code is actually redeemed.
+  const sub = randomId('usr');
+  const principal: UserPrincipal = { kind: 'user', contact: record.contact, clientId: record.clientId, clientName: record.clientName };
+  await authStore().set(KEY.user(sub), principal, TTL.refreshToken);
+
+  const response = await accessResponse(sub, record.clientId, record.scope, resource);
   const refreshToken = randomToken('rt');
-  const refreshRecord: RefreshRecord = { clientId: record.clientId, sub: record.sub, scope: record.scope, resource: record.resource };
+  const refreshRecord: RefreshRecord = { clientId: record.clientId, sub, scope: record.scope, resource: record.resource };
   await authStore().set(KEY.refresh(refreshToken), refreshRecord, TTL.refreshToken);
   return { ...response, refresh_token: refreshToken };
 }
@@ -363,11 +385,18 @@ async function refresh(form: URLSearchParams): Promise<TokenResponse> {
   if (!presented) throw new OAuthFailure('invalid_request', 'refresh_token is required');
   // Rotation: the presented token is consumed and a new one issued.
   const record = await authStore().take<RefreshRecord>(KEY.refresh(presented));
-  if (!record) throw new OAuthFailure('invalid_grant', 'Refresh token is invalid, expired, or already used');
+  if (!record) {
+    // A rotated token presented again means two parties hold it: revoke the
+    // whole grant so neither keeps access (RFC 9700 section 4.14.2).
+    const replayedSub = await authStore().get<string>(KEY.spentRefresh(presented));
+    if (replayedSub) await authStore().del(KEY.user(replayedSub));
+    throw new OAuthFailure('invalid_grant', 'Refresh token is invalid, expired, or already used');
+  }
+  await authStore().set(KEY.spentRefresh(presented), record.sub, TTL.refreshToken);
   if (form.get('client_id') !== record.clientId) throw new OAuthFailure('invalid_grant', 'Refresh token was issued to another client');
   if (!(await authStore().get<UserPrincipal>(KEY.user(record.sub)))) throw new OAuthFailure('invalid_grant', 'The grant was revoked');
   const scope = parseScopes(form.get('scope'), record.scope, record.scope); // may narrow, never widen
-  const resource = parseResource(form.get('resource'), record.resource);
+  const resource = narrowResource(form.get('resource'), record.resource);
 
   const response = await accessResponse(record.sub, record.clientId, scope, resource);
   const next = randomToken('rt');
@@ -487,7 +516,7 @@ export async function startClaim(body: unknown) {
   if (reg.attempt) await authStore().del(KEY.claimAttempt(reg.attempt));
   const code = userCode();
   const attemptToken = randomToken('cat');
-  const attempt: ClaimAttempt = { regId, codeHash: sha256(code), email, attempts: 0, completed: false };
+  const attempt: ClaimAttempt = { regId, codeHash: sha256(code), email, completed: false };
   const attemptHash = sha256(attemptToken);
   await authStore().set(KEY.claimAttempt(attemptHash), attempt, TTL.claimAttempt);
   await authStore().set(KEY.registration(regId), { ...reg, attempt: attemptHash }, Math.max(1, Math.ceil((reg.claimExpires - Date.now()) / 1000)));
@@ -514,31 +543,58 @@ export async function describeClaimAttempt(attemptToken: string): Promise<{ emai
   return attempt && !attempt.completed ? { email: attempt.email } : null;
 }
 
+// Claim page outcomes. Only these codes travel in the URL, and the page maps
+// them to fixed text, so a crafted link cannot put arbitrary words on it.
+export const CLAIM_ERRORS = {
+  expired: 'This approval link has expired. Ask your agent for a new code.',
+  wrong_code: 'That code is not correct. Check the code your agent showed you.',
+  too_many: 'Too many wrong codes. Ask your agent for a new code.',
+  invalid_name: 'Enter your name.',
+  rate_limited: 'Too many attempts from your network. Try again later.',
+} as const;
+export type ClaimError = keyof typeof CLAIM_ERRORS;
+
 // The person submits the 6-digit code the agent showed them.
-export async function completeClaim(form: FormData): Promise<void> {
+export async function completeClaim(form: FormData, ip: string): Promise<void> {
+  const fail = (code: ClaimError): never => {
+    throw new OAuthFailure(code, CLAIM_ERRORS[code]);
+  };
+  const count = await authStore().incr(KEY.limit('approve', ip), 3600);
+  if (count > LIMITS.approvalsPerIpPerHour) fail('rate_limited');
+
   const attemptHash = sha256(String(form.get('claim_attempt_token') ?? ''));
   const attempt = await authStore().get<ClaimAttempt>(KEY.claimAttempt(attemptHash));
-  if (!attempt || attempt.completed) throw new OAuthFailure('expired_token', 'This claim link has expired. Ask your agent for a new code.');
-  const contact = parseContact({ name: form.get('name'), email: attempt.email, company: form.get('company') ?? undefined });
-
-  const codeOk = constantTimeEqual(sha256(String(form.get('user_code') ?? '').trim()), attempt.codeHash);
-  if (!codeOk) {
-    const attempts = attempt.attempts + 1;
-    // After too many wrong codes the attempt is burned, so a 6-digit code
-    // cannot be brute forced; the agent must start a new attempt.
-    if (attempts >= MAX_USER_CODE_ATTEMPTS) await authStore().del(KEY.claimAttempt(attemptHash));
-    else await authStore().set(KEY.claimAttempt(attemptHash), { ...attempt, attempts }, TTL.claimAttempt);
-    throw new OAuthFailure('invalid_grant', attempts >= MAX_USER_CODE_ATTEMPTS
-      ? 'Too many wrong codes. Ask your agent for a new code.'
-      : 'That code is not correct. Check the code your agent showed you.');
+  if (!attempt || attempt.completed) fail('expired');
+  const claim = attempt!;
+  let contact: Contact;
+  try {
+    contact = parseContact({ name: form.get('name'), email: claim.email, company: form.get('company') ?? undefined });
+  } catch {
+    return fail('invalid_name');
   }
 
-  const reg = await liveRegistration(attempt.regId);
-  if (!reg) throw new OAuthFailure('expired_token', 'The registration has expired. Ask your agent to register again.');
-  await authStore().set(KEY.claimAttempt(attemptHash), { ...attempt, completed: true }, TTL.claimAttempt);
+  // Count the guess atomically before comparing, so parallel wrong guesses
+  // cannot all be checked against the same remaining budget.
+  const tries = await authStore().incr(KEY.claimTries(attemptHash), TTL.claimAttempt);
+  if (tries > MAX_USER_CODE_ATTEMPTS) {
+    await authStore().del(KEY.claimAttempt(attemptHash));
+    fail('too_many');
+  }
+  if (!constantTimeEqual(sha256(String(form.get('user_code') ?? '').trim()), claim.codeHash)) {
+    // The last allowed wrong guess burns the attempt; the agent must start a new one.
+    if (tries >= MAX_USER_CODE_ATTEMPTS) {
+      await authStore().del(KEY.claimAttempt(attemptHash));
+      fail('too_many');
+    }
+    fail('wrong_code');
+  }
+
+  const reg = await liveRegistration(claim.regId);
+  if (!reg) fail('expired');
+  await authStore().set(KEY.claimAttempt(attemptHash), { ...claim, completed: true }, TTL.claimAttempt);
   // Claimed registrations live as long as their post-claim assertion.
-  const claimed: Registration = { ...reg, status: 'claimed', ver: reg.ver + 1, contact, attempt: undefined };
-  await authStore().set(KEY.registration(attempt.regId), claimed, TTL.postClaimAssertion);
+  const claimed: Registration = { ...reg!, status: 'claimed', ver: reg!.ver + 1, contact, attempt: undefined };
+  await authStore().set(KEY.registration(claim.regId), claimed, TTL.postClaimAssertion);
 }
 
 // ---------------------------------------------------------------------------

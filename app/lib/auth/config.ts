@@ -83,6 +83,12 @@ export const MAX_USER_CODE_ATTEMPTS = 5;
 export const LIMITS = {
   registrationsPerIpPerHour: 20,
   identitiesPerIpPerHour: 20,
+  // Approving is a form any script can submit (there are no accounts), so the
+  // approval steps are rate limited per IP, and submissions are capped per IP
+  // and per client before the global cap; one actor cannot exhaust the day.
+  approvalsPerIpPerHour: 10,
   submissionsPerPrincipalPerDay: 3,
+  submissionsPerIpPerDay: 5,
+  submissionsPerClientPerDay: 10,
   submissionsPerDay: 30,
 } as const;

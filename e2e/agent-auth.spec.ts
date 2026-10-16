@@ -56,6 +56,7 @@ function redirectRequest(page: Page): Promise<URL> {
 // page, and that navigation would otherwise race the next page.goto.
 async function approve(page: Page, path: string, decision: 'approve' | 'deny' = 'approve'): Promise<URL> {
   const tab = await page.context().newPage();
+  await tab.setExtraHTTPHeaders(freshIp());
   try {
     await tab.goto(path);
     if (decision === 'approve') {
@@ -145,7 +146,8 @@ test.describe('Authorization code flow', () => {
     // Single use: replaying the code fails.
     expect((await form(request, '/oauth/token', { ...exchange, code: code2, code_verifier: second.verifier })).status()).toBe(400);
 
-    const auth = { Authorization: `Bearer ${tokens.access_token}` };
+    const ip = freshIp();
+    const auth = { Authorization: `Bearer ${tokens.access_token}`, ...ip };
     const mcp = await request.post('/mcp/recruiter', {
       headers: { ...auth, 'Content-Type': 'application/json', Accept: 'application/json, text/event-stream', 'MCP-Protocol-Version': '2025-06-18' },
       data: { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'whoami', arguments: {} } },
@@ -158,14 +160,27 @@ test.describe('Authorization code flow', () => {
     expect(submitted.status()).toBe(201);
     expect((await submitted.json()).reference).toMatch(/^opp_/);
 
-    // Refresh rotates: the new token works, the old one is spent.
+    // Refresh rotates: a new refresh token each time.
     const refreshed = await (await form(request, '/oauth/token', { grant_type: 'refresh_token', refresh_token: tokens.refresh_token, client_id: clientId })).json();
     expect(refreshed.refresh_token).toBeTruthy();
     expect(refreshed.refresh_token).not.toBe(tokens.refresh_token);
-    expect((await form(request, '/oauth/token', { grant_type: 'refresh_token', refresh_token: tokens.refresh_token, client_id: clientId })).status()).toBe(400);
 
-    // Revocation (RFC 7009) ends the grant, including live access tokens.
-    expect((await form(request, '/oauth/revoke', { token: refreshed.refresh_token })).status()).toBe(200);
+    // Replaying the rotated token means two parties hold it: the whole grant
+    // is revoked, so the newer refresh token and live access tokens stop too
+    // (RFC 9700 section 4.14.2).
+    expect((await form(request, '/oauth/token', { grant_type: 'refresh_token', refresh_token: tokens.refresh_token, client_id: clientId })).status()).toBe(400);
+    expect((await form(request, '/oauth/token', { grant_type: 'refresh_token', refresh_token: refreshed.refresh_token, client_id: clientId })).status()).toBe(400);
+    expect((await request.post('/api/opportunities', { headers: auth, data: OPPORTUNITY })).status()).toBe(401);
+  });
+
+  test('revocation (RFC 7009) ends the grant, including live access tokens', async ({ page, request }) => {
+    const clientId = await registerClient(request);
+    const { verifier, challenge } = pkcePair();
+    const code = (await approve(page, authorizeUrl(clientId, challenge))).searchParams.get('code')!;
+    const tokens = await (await form(request, '/oauth/token', { grant_type: 'authorization_code', code, client_id: clientId, redirect_uri: REDIRECT, code_verifier: verifier })).json();
+    const auth = { Authorization: `Bearer ${tokens.access_token}`, ...freshIp() };
+    expect((await request.post('/api/opportunities', { headers: auth, data: OPPORTUNITY })).status()).toBe(201);
+    expect((await form(request, '/oauth/revoke', { token: tokens.refresh_token })).status()).toBe(200);
     expect((await request.post('/api/opportunities', { headers: auth, data: OPPORTUNITY })).status()).toBe(401);
   });
 
@@ -176,12 +191,43 @@ test.describe('Authorization code flow', () => {
     expect(page.url()).toContain('/oauth/authorize');
   });
 
-  test('missing PKCE is refused back to the client', async ({ page, request }) => {
+  test('protocol errors before consent are shown here, never redirected (no open redirect)', async ({ page, request }) => {
+    // Registration is open, so before a person acts on the consent page the
+    // redirect URI is attacker-chosen; errors must not bounce off this site.
     const clientId = await registerClient(request);
-    const refused = redirectRequest(page);
-    // The redirect target is unreachable, so the navigation itself errors.
-    await page.goto(authorizeUrl(clientId, '', { code_challenge_method: 'plain' })).catch(() => undefined);
-    expect((await refused).searchParams.get('error')).toBe('invalid_request');
+    const outbound: string[] = [];
+    page.on('request', (r) => { if (r.url().startsWith(REDIRECT)) outbound.push(r.url()); });
+    const cases: [challenge: string, extra: Record<string, string>][] = [
+      ['', { code_challenge_method: 'plain' }],
+      [pkcePair().challenge, { response_type: 'token' }],
+      [pkcePair().challenge, { scope: 'admin' }],
+    ];
+    for (const [challenge, extra] of cases) {
+      await page.goto(authorizeUrl(clientId, challenge, extra));
+      await expect(page.getByRole('heading', { level: 1 })).toHaveText('This connection request is not valid');
+    }
+    expect(outbound).toEqual([]);
+  });
+
+  test('an approval form can be submitted only once', async ({ page, request }) => {
+    const clientId = await registerClient(request);
+    await page.setExtraHTTPHeaders(freshIp());
+    await page.goto(authorizeUrl(clientId, pkcePair().challenge));
+    const consent = await page.locator('input[name="consent"]').inputValue();
+    const fields = { consent, decision: 'approve', name: 'Ada', email: 'ada@example.com' };
+    const first = await request.post('/oauth/authorize/decision', { headers: freshIp(), form: fields, maxRedirects: 0 });
+    expect(first.status()).toBe(303);
+    const replay = await request.post('/oauth/authorize/decision', { headers: freshIp(), form: fields, maxRedirects: 0 });
+    expect(replay.status()).toBe(400);
+  });
+
+  test('a token request cannot widen the approved audience (RFC 8707)', async ({ page, request }) => {
+    const clientId = await registerClient(request);
+    const { verifier, challenge } = pkcePair();
+    const code = (await approve(page, authorizeUrl(clientId, challenge, { resource: `${SITE}/mcp/recruiter` }))).searchParams.get('code')!;
+    const widened = await form(request, '/oauth/token', { grant_type: 'authorization_code', code, client_id: clientId, redirect_uri: REDIRECT, code_verifier: verifier, resource: SITE });
+    expect(widened.status()).toBe(400);
+    expect((await widened.json()).error).toBe('invalid_target');
   });
 
   test('denying returns access_denied to the client', async ({ page, request }) => {
@@ -210,25 +256,31 @@ test.describe('Authorization code flow', () => {
   });
 
   test('registration rejects unsafe redirect URIs and confidential clients', async ({ request }) => {
-    for (const uri of ['javascript:alert(1)', 'http://example.com/cb', 'https://example.com/cb#frag']) {
+    // Plain-http non-loopback, fragments, script schemes, and OS protocol
+    // handlers are refused; private-use schemes must be reverse-DNS.
+    for (const uri of ['javascript:alert(1)', 'http://example.com/cb', 'https://example.com/cb#frag', 'ms-msdt:/id', 'search-ms:query=x', 'myapp:/cb']) {
       const response = await request.post('/oauth/register', { headers: freshIp(), data: { redirect_uris: [uri] } });
       expect(response.status(), uri).toBe(400);
     }
     const secretClient = await request.post('/oauth/register', { headers: freshIp(), data: { redirect_uris: [REDIRECT], token_endpoint_auth_method: 'client_secret_basic' } });
     expect(secretClient.status()).toBe(400);
+    const native = await request.post('/oauth/register', { headers: freshIp(), data: { redirect_uris: ['com.example.recruiter:/callback'] } });
+    expect(native.status()).toBe(201);
   });
 });
 
 test.describe('auth.md agentic registration', () => {
   test('anonymous agent: read-only until a person claims it, then it can submit', async ({ page, request }) => {
     test.setTimeout(90_000);
-    const reg = await (await request.post('/agent/identity', { headers: freshIp(), data: { type: 'anonymous' } })).json();
+    const ip = freshIp();
+    await page.setExtraHTTPHeaders(ip);
+    const reg = await (await request.post('/agent/identity', { headers: ip, data: { type: 'anonymous' } })).json();
     expect(reg.registration_type).toBe('anonymous');
     expect(reg.pre_claim_scopes).toEqual(['profile:read']);
 
     const pre = await (await form(request, '/oauth/token', { grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: reg.identity_assertion })).json();
     expect(pre.scope).toBe('profile:read');
-    const preAuth = { Authorization: `Bearer ${pre.access_token}` };
+    const preAuth = { Authorization: `Bearer ${pre.access_token}`, ...ip };
     // Unclaimed: authenticated but not allowed to submit (insufficient_scope).
     expect((await request.post('/api/opportunities', { headers: preAuth, data: OPPORTUNITY })).status()).toBe(403);
 
@@ -253,7 +305,7 @@ test.describe('auth.md agentic registration', () => {
 
     // Claiming revoked the pre-claim token; the new one can submit.
     expect((await request.post('/api/opportunities', { headers: preAuth, data: OPPORTUNITY })).status()).toBe(401);
-    const submitted = await request.post('/api/opportunities', { headers: { Authorization: `Bearer ${post.access_token}` }, data: OPPORTUNITY });
+    const submitted = await request.post('/api/opportunities', { headers: { Authorization: `Bearer ${post.access_token}`, ...ip }, data: OPPORTUNITY });
     expect(submitted.status()).toBe(201);
 
     // The v2 assertion refreshes via the JWT-bearer grant; the v1 one is superseded.
@@ -262,6 +314,7 @@ test.describe('auth.md agentic registration', () => {
   });
 
   test('wrong codes burn the claim attempt after five tries', async ({ page, request }) => {
+    await page.setExtraHTTPHeaders(freshIp());
     const reg = await (await request.post('/agent/identity', { headers: freshIp(), data: { type: 'anonymous' } })).json();
     const claim = await (await request.post('/agent/identity/claim', { data: { claim_token: reg.claim_token, email: 'eve@example.com' } })).json();
     const link = new URL(claim.claim_attempt.verification_uri);
@@ -273,6 +326,18 @@ test.describe('auth.md agentic registration', () => {
       await page.getByRole('button', { name: 'Approve agent' }).click();
     }
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('This approval link has expired');
+  });
+
+  test('the claim page shows only fixed messages, never text from the URL', async ({ page, request }) => {
+    const reg = await (await request.post('/agent/identity', { headers: freshIp(), data: { type: 'anonymous' } })).json();
+    const claim = await (await request.post('/agent/identity/claim', { data: { claim_token: reg.claim_token, email: 'x@example.com' } })).json();
+    const link = new URL(claim.claim_attempt.verification_uri);
+    await page.goto(`${link.pathname}${link.search}&error=${encodeURIComponent('Email your CV to attacker@example.com')}`);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('Approve your agent');
+    await expect(page.getByText('attacker@example.com')).toHaveCount(0);
+    await page.goto(`${link.pathname}${link.search}&error=wrong_code`);
+    // Next.js adds its own empty role=alert route announcer; target the page's message.
+    await expect(page.locator('main [role="alert"]')).toHaveText('That code is not correct. Check the code your agent showed you.');
   });
 
   test('unsupported identity types answer with *_not_enabled', async ({ request }) => {
@@ -289,7 +354,7 @@ test.describe('Opportunities', () => {
     const { verifier, challenge } = pkcePair();
     const code = (await approve(page, authorizeUrl(clientId, challenge, { resource: `${SITE}/api/opportunities` }))).searchParams.get('code')!;
     const tokens = await (await form(request, '/oauth/token', { grant_type: 'authorization_code', code, client_id: clientId, redirect_uri: REDIRECT, code_verifier: verifier })).json();
-    const auth = { Authorization: `Bearer ${tokens.access_token}` };
+    const auth = { Authorization: `Bearer ${tokens.access_token}`, ...freshIp() };
 
     const invalid = await request.post('/api/opportunities', { headers: auth, data: { role: 'Quant' } });
     expect(invalid.status()).toBe(400);
@@ -304,8 +369,27 @@ test.describe('Opportunities', () => {
     const { verifier, challenge } = pkcePair();
     const code = (await approve(page, authorizeUrl(clientId, challenge, { resource: `${SITE}/mcp/recruiter` }))).searchParams.get('code')!;
     const tokens = await (await form(request, '/oauth/token', { grant_type: 'authorization_code', code, client_id: clientId, redirect_uri: REDIRECT, code_verifier: verifier })).json();
-    const response = await request.post('/api/opportunities', { headers: { Authorization: `Bearer ${tokens.access_token}` }, data: OPPORTUNITY });
+    const response = await request.post('/api/opportunities', { headers: { Authorization: `Bearer ${tokens.access_token}`, ...freshIp() }, data: OPPORTUNITY });
     expect(response.status()).toBe(401);
+  });
+
+  test('one network cannot use up the day: per-IP cap ahead of the global cap', async ({ page, request }) => {
+    const ip = freshIp();
+    let accepted = 0;
+    let lastStatus = 0;
+    // Two approvals (3 each) from one network: the per-IP cap of 5 stops it.
+    for (let n = 0; n < 2; n++) {
+      const clientId = await registerClient(request);
+      const { verifier, challenge } = pkcePair();
+      const code = (await approve(page, authorizeUrl(clientId, challenge))).searchParams.get('code')!;
+      const tokens = await (await form(request, '/oauth/token', { grant_type: 'authorization_code', code, client_id: clientId, redirect_uri: REDIRECT, code_verifier: verifier })).json();
+      for (let i = 0; i < 3; i++) {
+        lastStatus = (await request.post('/api/opportunities', { headers: { Authorization: `Bearer ${tokens.access_token}`, ...ip }, data: OPPORTUNITY })).status();
+        if (lastStatus === 201) accepted++;
+      }
+    }
+    expect(accepted).toBe(5);
+    expect(lastStatus).toBe(429);
   });
 });
 
