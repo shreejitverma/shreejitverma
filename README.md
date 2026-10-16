@@ -238,7 +238,7 @@ Off Vercel the keys are generated per process and state lives in memory, so loca
 | --- | --- |
 | `AUTH_SIGNING_KEY` | Ed25519 private key, PKCS#8 PEM (`openssl genpkey -algorithm ed25519`); signs tokens |
 | `WEB_BOT_AUTH_KEY` | A second, separate Ed25519 key in the same format; signs outbound bot requests, with unsigned fallback on signing failure |
-| `KV_REST_API_URL`, `KV_REST_API_TOKEN` | Upstash Redis from the Vercel Marketplace (set automatically when connected) |
+| `REDIS_URL`, or `KV_REST_API_URL` and `KV_REST_API_TOKEN` | Redis from the Vercel Marketplace, set automatically when connected: `REDIS_URL` (TCP, e.g. the Redis integration) or Upstash's REST pair |
 | `GITHUB_OPPORTUNITIES_TOKEN` | Fine-grained token with Issues read and write on `shreejitverma/opportunities` only |
 
 To rotate a key, replace the variable and redeploy: outstanding access tokens and identity assertions stop verifying, and agents re-authenticate.

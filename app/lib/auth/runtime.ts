@@ -8,6 +8,7 @@
 
 import { calculateJwkThumbprint, exportJWK, generateKeyPair, importJWK, importPKCS8, type CryptoKey, type JWK } from 'jose';
 import { Redis } from '@upstash/redis';
+import { createClient } from '@redis/client';
 
 export class AuthNotConfiguredError extends Error {}
 
@@ -132,6 +133,58 @@ class RedisStore implements Store {
   }
 }
 
+// Redis over TCP (a `REDIS_URL` connection string, e.g. the Redis Cloud
+// Marketplace integration). One connection per process, opened lazily and
+// shared by every request the instance serves; Fluid compute reuses
+// instances, so the connection is reused too.
+const connectTcp = (url: string) => createClient({ url });
+type TcpClient = ReturnType<typeof connectTcp>;
+
+class TcpRedisStore implements Store {
+  private client: Promise<TcpClient> | undefined;
+  constructor(private readonly url: string) {}
+
+  private connection(): Promise<TcpClient> {
+    if (!this.client) {
+      const client = connectTcp(this.url);
+      // Without a listener a dropped connection is an unhandled 'error' event
+      // that crashes the process; the client reconnects on its own.
+      client.on('error', (error: Error) => console.error('redis connection error:', error.message));
+      this.client = client.connect().catch((error: unknown) => {
+        this.client = undefined; // retry on the next request
+        throw error;
+      });
+    }
+    return this.client;
+  }
+
+  async get<T>(key: string) {
+    const raw = await (await this.connection()).get(key);
+    return raw === null ? null : (JSON.parse(String(raw)) as T);
+  }
+  async set(key: string, value: unknown, ttlSeconds: number) {
+    await (await this.connection()).set(key, JSON.stringify(value), { expiration: { type: 'EX', value: ttlSeconds } });
+  }
+  async take<T>(key: string) {
+    const raw = await (await this.connection()).getDel(key);
+    return raw === null ? null : (JSON.parse(String(raw)) as T);
+  }
+  async del(key: string) {
+    await (await this.connection()).del(key);
+  }
+  async setIfAbsent(key: string, value: unknown, ttlSeconds: number) {
+    const reply = await (await this.connection()).set(key, JSON.stringify(value), { expiration: { type: 'EX', value: ttlSeconds }, condition: 'NX' });
+    return reply === 'OK';
+  }
+  async incr(key: string, windowSeconds: number) {
+    const [count] = await (await this.connection()).multi().incr(key).expire(key, windowSeconds, 'NX').exec();
+    return Number(count);
+  }
+  async decr(key: string) {
+    await (await this.connection()).decr(key);
+  }
+}
+
 class MemoryStore implements Store {
   private readonly data = new Map<string, { value: string; expires: number }>();
   private live(key: string) {
@@ -174,10 +227,13 @@ class MemoryStore implements Store {
 
 export function authStore(): Store {
   if (shared.__agentAuthStore) return shared.__agentAuthStore;
+  // Upstash's REST API, or any Redis over TCP; the Marketplace integrations
+  // set one or the other.
   const url = process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
   const token = process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
   if (url && token) shared.__agentAuthStore = new RedisStore(new Redis({ url, token }));
-  else if (ON_VERCEL) throw new AuthNotConfiguredError('Redis (KV_REST_API_URL / KV_REST_API_TOKEN) is not configured');
+  else if (process.env.REDIS_URL) shared.__agentAuthStore = new TcpRedisStore(process.env.REDIS_URL);
+  else if (ON_VERCEL) throw new AuthNotConfiguredError('Redis is not configured: set REDIS_URL, or KV_REST_API_URL and KV_REST_API_TOKEN');
   else shared.__agentAuthStore = new MemoryStore();
   return shared.__agentAuthStore;
 }
