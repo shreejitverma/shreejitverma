@@ -35,6 +35,7 @@ ${SITE_PAGES.map((page) => `- [${page.title}](${url(markdownPath(page.path))}): 
 - [Agent Skills](${url(AGENT_PATHS.agentSkills)}): how an agent should use these endpoints
 - [AI Catalog](${url(AGENT_PATHS.aiCatalog)}) and [API Catalog](${url(AGENT_PATHS.apiCatalog)}): discovery manifests
 - [Full content](${url(AGENT_PATHS.llmsFull)}): every page in one Markdown file
+- [Atom feed](${url('/feed.xml')}): new articles as they are published
 
 ## Profiles
 

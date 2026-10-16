@@ -88,6 +88,7 @@ export default function RootLayout({
         <link rel='ai-catalog' href={AGENT_PATHS.aiCatalog} type='application/ai-catalog+json' />
         <link rel='api-catalog' href={AGENT_PATHS.apiCatalog} type='application/linkset+json' />
         <link rel='help' href={AGENT_PATHS.llms} type='text/plain' title='llms.txt' />
+        <link rel='alternate' href='/feed.xml' type='application/atom+xml' title='Shreejit Verma - Writing' />
         <script id='webmcp-tools' dangerouslySetInnerHTML={{ __html: WEBMCP_SCRIPT }} />
       </head>
       <body className={clsx('bg-background text-foreground antialiased selection:bg-primary/30 selection:text-cyan-900 dark:selection:text-cyan-100 font-sans')}>

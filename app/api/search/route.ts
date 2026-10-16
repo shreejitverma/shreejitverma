@@ -11,7 +11,7 @@ export function GET(request: NextRequest) {
   const limitParam = Number(request.nextUrl.searchParams.get('limit') ?? 5);
   const limit = Number.isInteger(limitParam) ? Math.min(Math.max(limitParam, 1), 20) : 5;
   const results = searchProfile(query, limit);
-  return jsonResponse({ query, total: results.length, results }, 'application/json');
+  return jsonResponse({ query, total: results.length, results }, 'application/json', { request });
 }
 
 export const OPTIONS = corsPreflight;

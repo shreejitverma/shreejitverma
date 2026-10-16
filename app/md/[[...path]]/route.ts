@@ -26,6 +26,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ path
   try {
     const markdown = await renderPageMarkdown(page, selfFetchOrigin(request.url));
     return textResponse(markdown, 'text/markdown', {
+      request,
       cacheControl: CACHE_CONTROL,
       headers: {
         Vary: 'Accept',

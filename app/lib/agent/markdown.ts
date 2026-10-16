@@ -116,7 +116,13 @@ export function selfFetchOrigin(requestUrl: string): string {
 // selfFetchOrigin. On a protected Vercel preview the request carries the
 // automation bypass secret when the project has one configured.
 export async function renderPageMarkdown(page: SitePage, origin: string): Promise<string> {
-  const headers: Record<string, string> = { accept: 'text/html' };
+  // Identifies these requests in Cloudflare and Vercel analytics. They are not
+  // AI crawlers, so pay per crawl never charges them; deliberately no WAF rule
+  // keys on this value, since a User-Agent is trivially copied.
+  const headers: Record<string, string> = {
+    accept: 'text/html',
+    'user-agent': `shreejitverma-markdown/1.0 (+${SITE_URL})`,
+  };
   const bypass = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
   if (bypass && process.env.VERCEL_ENV !== 'production') headers['x-vercel-protection-bypass'] = bypass;
 
