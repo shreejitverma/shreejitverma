@@ -3,6 +3,9 @@
 
 import { HEADLINE, SITE_URL } from '../profile';
 import { AGENT_API_VERSION, AGENT_PATHS } from './constants';
+import { AUTH_PATHS, SCOPE_DESCRIPTIONS, url } from '../auth/config';
+import { opportunitySchema } from '../opportunities';
+import * as z from 'zod/v4';
 
 export function openApiDocument() {
   const hit = {
@@ -24,6 +27,22 @@ export function openApiDocument() {
       description: `Read-only, unauthenticated access to the professional profile of ${HEADLINE.name}. For tool-calling agents, the same data is available over MCP at ${SITE_URL}${AGENT_PATHS.mcp}.`,
     },
     servers: [{ url: SITE_URL }],
+    components: {
+      securitySchemes: {
+        agentAuth: {
+          type: 'oauth2',
+          description: `Agent access needs a person's approval. See ${url(AUTH_PATHS.authMd)} for authorization-code (MCP clients) and agentic-registration (autonomous agents) flows.`,
+          flows: {
+            authorizationCode: {
+              authorizationUrl: url(AUTH_PATHS.authorize),
+              tokenUrl: url(AUTH_PATHS.token),
+              refreshUrl: url(AUTH_PATHS.token),
+              scopes: SCOPE_DESCRIPTIONS,
+            },
+          },
+        },
+      },
+    },
     paths: {
       [AGENT_PATHS.search]: {
         get: {
@@ -48,6 +67,22 @@ export function openApiDocument() {
               },
             },
             '400': { description: 'Missing or invalid query' },
+          },
+        },
+      },
+      [AUTH_PATHS.opportunities]: {
+        post: {
+          operationId: 'sendOpportunity',
+          summary: 'Send a job opportunity to Shreejit Verma',
+          description: 'Delivered with the approving person\'s self-reported name and email so he can reply. Limited per approval per day.',
+          security: [{ agentAuth: ['opportunities:write'] }],
+          requestBody: { required: true, content: { 'application/json': { schema: z.toJSONSchema(opportunitySchema) } } },
+          responses: {
+            '201': { description: 'Delivered', content: { 'application/json': { schema: { type: 'object', properties: { status: { type: 'string' }, reference: { type: 'string' } } } } } },
+            '400': { description: 'Invalid opportunity' },
+            '401': { description: 'Missing or invalid token; WWW-Authenticate points to the protected resource metadata' },
+            '403': { description: 'Token lacks opportunities:write (an unclaimed agent registration)' },
+            '429': { description: 'Daily limit reached' },
           },
         },
       },

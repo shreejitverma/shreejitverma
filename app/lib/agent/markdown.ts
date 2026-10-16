@@ -10,6 +10,7 @@ import { NodeHtmlMarkdown } from 'node-html-markdown';
 import { parse, TextNode, type HTMLElement } from 'node-html-parser';
 import { SITE_URL } from '../profile';
 import type { SitePage } from './pages';
+import { signedBotHeaders } from './web-bot-auth';
 
 // Elements with no content for a reader of the Markdown. `aria-hidden` marks
 // decoration for screen readers, which is the same audience test.
@@ -116,19 +117,21 @@ export function selfFetchOrigin(requestUrl: string): string {
 // selfFetchOrigin. On a protected Vercel preview the request carries the
 // automation bypass secret when the project has one configured.
 export async function renderPageMarkdown(page: SitePage, origin: string): Promise<string> {
-  // Identifies these requests in Cloudflare and Vercel analytics. They are not
-  // AI crawlers, so pay per crawl never charges them; deliberately no WAF rule
-  // keys on this value, since a User-Agent is trivially copied.
+  // A named User-Agent for analytics, and a Web Bot Auth signature that
+  // proves the request comes from this site (unlike the User-Agent, it cannot
+  // be copied). Pay per crawl never charges this bot either way.
+  const target = new URL(page.path, origin);
   const headers: Record<string, string> = {
     accept: 'text/html',
     'user-agent': `shreejitverma-markdown/1.0 (+${SITE_URL})`,
+    ...(await signedBotHeaders(target)),
   };
   const bypass = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
   if (bypass && process.env.VERCEL_ENV !== 'production') headers['x-vercel-protection-bypass'] = bypass;
 
   let response: Response;
   try {
-    response = await fetch(new URL(page.path, origin), { headers, redirect: 'follow', signal: AbortSignal.timeout(10_000) });
+    response = await fetch(target, { headers, redirect: 'follow', signal: AbortSignal.timeout(10_000) });
   } catch (error) {
     // DNS, TLS, connection, and timeout failures reject instead of returning
     // a response; report them like an HTTP failure so callers answer 502.

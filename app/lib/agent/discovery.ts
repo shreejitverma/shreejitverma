@@ -106,6 +106,12 @@ export function apiCatalog() {
         'service-desc': [{ href: absoluteUrl(AGENT_PATHS.openapi), type: 'application/vnd.oai.openapi+json' }],
         'service-doc': llms,
       },
+      {
+        // Authenticated: agents learn how to obtain a token from auth.md.
+        anchor: absoluteUrl('/api/opportunities'),
+        'service-desc': [{ href: absoluteUrl(AGENT_PATHS.openapi), type: 'application/vnd.oai.openapi+json' }],
+        'service-doc': [{ href: absoluteUrl('/auth.md'), type: 'text/markdown' }],
+      },
     ],
   };
 }

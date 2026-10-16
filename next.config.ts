@@ -62,17 +62,26 @@ const nextConfig: NextConfig = {
     };
   },
   async headers() {
+    // The consent and claim pages can approve an agent, so they must never be
+    // framed (clickjacking), cached, or leak their one-time URL in a Referer.
+    const authPageHeaders = [
+      { key: 'Content-Security-Policy', value: "frame-ancestors 'none'" },
+      { key: 'X-Frame-Options', value: 'DENY' },
+      { key: 'Referrer-Policy', value: 'no-referrer' },
+      { key: 'Cache-Control', value: 'no-store' },
+    ];
+    const authPages = ['/oauth/authorize', '/claim'].map((source) => ({ source, headers: authPageHeaders }));
     // HTML responses only: the Markdown response sets its own Link
     // (rel="canonical" back to the page), which this would replace. No Vary
     // here: a config-level Vary replaces the Vary Next.js sets on RSC
     // responses (rsc, next-router-state-tree, ...).
-    return SITE_PAGES.map((page) => ({
+    return [...authPages, ...SITE_PAGES.map((page) => ({
       source: page.path,
       missing: ACCEPTS_MARKDOWN,
       headers: [
         { key: 'Link', value: [...DISCOVERY_LINKS, `<${markdownPath(page.path)}>; rel="alternate"; type="text/markdown"`].join(', ') },
       ],
-    }));
+    }))];
   },
   images: {
     remotePatterns: [
