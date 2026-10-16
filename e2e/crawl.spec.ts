@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import { SITE } from './helpers';
+import { ARTICLES, PAGES, SITE } from './helpers';
 
 // Crawl efficiency: honest sitemap dates, revalidation with 304s, and the
 // Atom feed. XML is parsed with the browser's DOMParser so assertions are
@@ -24,13 +24,19 @@ test.describe('Sitemap dates', () => {
         lastmod: u.getElementsByTagName('lastmod')[0]?.textContent ?? null,
       }));
     });
-    const byLoc = Object.fromEntries(entries.map((e) => [e.loc, e.lastmod]));
-    // Undated pages must not claim a change on every deploy.
-    for (const loc of [SITE, `${SITE}/resume`, `${SITE}/books`, `${SITE}/Shreejit_Verma_Resume.pdf`]) {
-      expect(byLoc[loc], loc).toBeNull();
+    const articleDates = new Map(ARTICLES.map(({ path, published }) => [`${SITE}${path}`, published]));
+    const expectedLocations = [...PAGES.map(({ canonical }) => canonical), `${SITE}/Shreejit_Verma_Resume.pdf`].sort();
+    expect(entries.map(({ loc }) => loc).sort()).toEqual(expectedLocations);
+    for (const { loc, lastmod } of entries) {
+      const published = articleDates.get(loc);
+      if (published) {
+        expect(lastmod, loc).not.toBeNull();
+        expect(new Date(lastmod!).toISOString().slice(0, 10), loc).toBe(published);
+      } else {
+        // Undated pages must not claim a change on every deploy.
+        expect(lastmod, loc).toBeNull();
+      }
     }
-    // Articles carry their publication date (see app/lib/writing.ts).
-    expect(byLoc[`${SITE}/writing/frtb-for-engineers`]).toMatch(/^2026-10-09/);
   });
 });
 
@@ -78,10 +84,10 @@ test.describe('Atom feed', () => {
     });
     expect(feed.ns).toBe('http://www.w3.org/2005/Atom');
     expect(feed.self).toBe(`${SITE}/feed.xml`);
-    const ids = feed.entries.map((e) => e.id);
-    expect(ids).toEqual(expect.arrayContaining([`${SITE}/writing/frtb-for-engineers`, `${SITE}/writing/fpga-pre-trade-risk-gate`]));
-    const dates = feed.entries.map((e) => e.published!);
-    expect(dates).toEqual([...dates].sort().reverse());
+    const expectedEntries = ARTICLES
+      .map(({ path, published }) => ({ id: `${SITE}${path}`, published }))
+      .sort((a, b) => b.published.localeCompare(a.published));
+    expect(feed.entries).toEqual(expectedEntries);
   });
 
   test('every page advertises the feed', async ({ page }) => {
