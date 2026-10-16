@@ -126,7 +126,8 @@ class MemoryStore implements Store {
     this.data.set(key, { value: JSON.stringify(value), expires: Date.now() + ttlSeconds * 1000 });
   }
   async take<T>(key: string) {
-    const value = await this.get<T>(key);
+    const entry = this.live(key);
+    const value = entry ? (JSON.parse(entry.value) as T) : null;
     this.data.delete(key);
     return value;
   }
@@ -135,7 +136,7 @@ class MemoryStore implements Store {
   }
   async setIfAbsent(key: string, value: unknown, ttlSeconds: number) {
     if (this.live(key)) return false;
-    await this.set(key, value, ttlSeconds);
+    this.data.set(key, { value: JSON.stringify(value), expires: Date.now() + ttlSeconds * 1000 });
     return true;
   }
   async incr(key: string, windowSeconds: number) {
