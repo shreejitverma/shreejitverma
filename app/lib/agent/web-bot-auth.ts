@@ -28,28 +28,27 @@ async function signBase(base: string): Promise<string> {
 // goes out unsigned) if no signing key is configured, so a missing key never
 // breaks the feature the bot serves.
 export async function signedBotHeaders(target: URL): Promise<Record<string, string>> {
-  let keyid: string;
   try {
-    ({ kid: keyid } = await botSigningKey());
+    const { kid: keyid } = await botSigningKey();
+    const created = Math.floor(Date.now() / 1000);
+    const agent = `"${DIRECTORY_URL}"`;
+    const params =
+      `("@authority" "signature-agent");created=${created};keyid="${keyid}";alg="ed25519";` +
+      `expires=${created + REQUEST_LIFETIME};nonce="${randomBytes(64).toString('base64')}";tag="web-bot-auth"`;
+    // RFC 9421 section 2.5 signature base: one line per covered component, then
+    // the signature parameters, joined by LF with no trailing newline.
+    const base = `"@authority": ${target.host.toLowerCase()}\n"signature-agent": ${agent}\n"@signature-params": ${params}`;
+    return {
+      'Signature-Agent': agent,
+      'Signature-Input': `sig1=${params}`,
+      Signature: `sig1=:${await signBase(base)}:`,
+    };
   } catch (error) {
-    // Signing is an enhancement: a missing or broken key must never break
-    // the feature the bot serves (the Markdown pages). Send unsigned, say why.
+    // Signing is an enhancement: a signing failure must never break the
+    // Markdown pages. Send unsigned, say why.
     console.warn(`Web Bot Auth: sending unsigned (${error instanceof Error ? error.message : String(error)})`);
     return {};
   }
-  const created = Math.floor(Date.now() / 1000);
-  const agent = `"${DIRECTORY_URL}"`;
-  const params =
-    `("@authority" "signature-agent");created=${created};keyid="${keyid}";alg="ed25519";` +
-    `expires=${created + REQUEST_LIFETIME};nonce="${randomBytes(64).toString('base64')}";tag="web-bot-auth"`;
-  // RFC 9421 section 2.5 signature base: one line per covered component, then
-  // the signature parameters, joined by LF with no trailing newline.
-  const base = `"@authority": ${target.host.toLowerCase()}\n"signature-agent": ${agent}\n"@signature-params": ${params}`;
-  return {
-    'Signature-Agent': agent,
-    'Signature-Input': `sig1=${params}`,
-    Signature: `sig1=:${await signBase(base)}:`,
-  };
 }
 
 // The key directory, signed once per key over the authority it was requested
