@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-11-07T10:56:35+00:00",
+  "memberSince": 2017,
+  "lastYear": {
+    "contributions": 4420,
+    "commits": 3985,
+    "pullRequests": 360,
+    "reviews": 0,
+    "issues": 8,
+    "repositoriesContributedTo": 36,
+    "restrictedContributions": 0
+  },
+  "streak": {
+    "current": 8,
+    "longest": 24
+  },
+  "pullRequests": {
+    "merged": 352,
+    "open": 2,
+    "closed": 7
+  },
+  "repositories": {
+    "public": 66,
+    "stars": 203,
+    "forks": 91
+  },
+  "followers": 91,
+  "languages": [
+    {
+      "name": "Python",
+      "color": "#3572A5",
+      "share": 0.7264
+    },
+    {
+      "name": "JavaScript",
+      "color": "#f1e05a",
+      "share": 0.0926
+    },
+    {
+      "name": "C++",
+      "color": "#f34b7d",
+      "share": 0.0779
+    },
+    {
+      "name": "TypeScript",
+      "color": "#3178c6",
+      "share": 0.0527
+    },
+    {
+      "name": "Shell",
+      "color": "#89e051",
+      "share": 0.0307
+    },
+    {
+      "name": "Java",
+      "color": "#b07219",
+      "share": 0.0069
+    },
+    {
+      "name": "C",
+      "color": "#555555",
+      "share": 0.0042
+    },
+    {
+      "name": "Verilog",
+      "color": "#b2b7f8",
+      "share": 0.0021
+    },
+    {
+      "name": "Other",
+      "color": null,
+      "share": 0.0065
+    }
+  ]
+}
