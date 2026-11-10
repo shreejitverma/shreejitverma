@@ -93,8 +93,10 @@ export function listPages() {
 // IDF-weighted term matches with a boost for title hits. The corpus is a few
 // dozen documents, so a linear scan per query is cheap.
 
+export const SEARCH_KINDS = ['experience', 'project', 'open-source', 'education', 'skills', 'article', 'page', 'award', 'certification'] as const;
+
 interface SearchDoc {
-  kind: 'experience' | 'project' | 'open-source' | 'education' | 'skills' | 'article' | 'page' | 'award' | 'certification';
+  kind: (typeof SEARCH_KINDS)[number];
   title: string;
   lines: string[];
   url: string;
@@ -204,7 +206,7 @@ function buildCorpus(): SearchDoc[] {
       lines: [article.description, `Tags: ${article.tags.join(', ')}`, `Published ${article.published}`],
       url: absoluteUrl(articleUrl(article.slug)),
     })),
-    ...SITE_PAGES.filter((page) => !page.published).map((page) => ({
+    ...SITE_PAGES.filter((page) => !page.published && !KNOWLEDGE_BASES.some((kb) => kbPath(kb) === page.path)).map((page) => ({
       kind: 'page' as const,
       title: page.title,
       lines: [page.summary],
