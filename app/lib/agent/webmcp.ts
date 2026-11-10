@@ -32,7 +32,7 @@ export function webMcpScript(pages: Pick<SitePage, 'path' | 'title' | 'summary'>
     {
       name: 'search_profile',
       title: 'Search the profile',
-      description: "Keyword search across Shreejit Verma's experience, projects, education, skills, awards, and articles. Returns ranked facts with source URLs.",
+      description: "Keyword search across Shreejit Verma's experience, projects, open-source knowledge bases, education, skills, awards, and articles. Returns ranked facts with source URLs.",
       inputSchema: {
         type: 'object',
         properties: {

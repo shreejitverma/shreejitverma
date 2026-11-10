@@ -65,6 +65,7 @@ test.describe('Navigation and interactions', () => {
   test('desktop nav links to the standalone pages', async ({ page, isMobile }) => {
     test.skip(isMobile, 'desktop nav is hidden on mobile');
     await page.goto('/');
+    await expect(page.locator('nav').getByRole('link', { name: 'Open Source', exact: true })).toHaveAttribute('href', '/open-source');
     await expect(page.locator('nav').getByRole('link', { name: 'Intelligence', exact: true })).toHaveAttribute('href', '/value-investing');
     await expect(page.locator('nav').getByRole('link', { name: 'Reading List', exact: true })).toHaveAttribute('href', '/books');
   });

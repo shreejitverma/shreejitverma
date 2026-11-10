@@ -5,6 +5,7 @@
 // what make AI assistants hedge instead of recommending someone.
 
 import { CERTIFICATIONS, CONTACT, EDUCATION, EXPERIENCE, HEADLINE, SITE_URL, SKILLS, SUMMARY } from './profile';
+import { KNOWLEDGE_BASES, OPEN_SOURCE_PATH, kbPath, repoUrl, type KnowledgeBase } from './open-source';
 
 export const PERSON_ID = `${SITE_URL}/#person`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -19,6 +20,8 @@ const KNOWS_ABOUT = [
   'Lock-Free Data Structures', 'Statistical Arbitrage', 'Merger Arbitrage', 'Execution Algorithms',
   'Stochastic Calculus', 'Derivatives Pricing', 'Portfolio Optimization', 'Risk Management',
   'Time Series Analysis', 'Machine Learning', 'Python', 'KDB+/q',
+  'Agentic AI', 'Multi-Agent Systems', 'Model Context Protocol', 'System Design', 'Distributed Systems',
+  'Quantitative Finance Interview Preparation',
 ];
 
 const schoolName = (school: string) => school.replace(/\s*\(Online\)$/, '').replace(/,\s*Tepper School of Business$/, '');
@@ -93,5 +96,86 @@ export function profilePageGraph(path: string, name: string) {
     isPartOf: { '@id': WEBSITE_ID },
     mainEntity: { '@id': PERSON_ID },
     inLanguage: 'en-US',
+  };
+}
+
+// The open-source knowledge bases as schema.org source code that is also a
+// learning resource, authored by the site's Person, so search engines and
+// assistants attribute the repositories to the same entity as the resume.
+const kbId = (kb: KnowledgeBase) => `${SITE_URL}${kbPath(kb)}#source`;
+
+export function knowledgeBaseNode(kb: KnowledgeBase) {
+  return {
+    '@type': ['SoftwareSourceCode', 'LearningResource'],
+    '@id': kbId(kb),
+    name: kb.name,
+    description: `${kb.tagline} ${kb.summary}`,
+    url: `${SITE_URL}${kbPath(kb)}`,
+    codeRepository: repoUrl(kb),
+    sameAs: repoUrl(kb),
+    programmingLanguage: kb.languages,
+    license: 'https://opensource.org/licenses/MIT',
+    isAccessibleForFree: true,
+    dateCreated: String(kb.since),
+    inLanguage: 'en',
+    learningResourceType: ['Curriculum', 'Study guide', 'Reference', 'Source code'],
+    educationalLevel: 'Intermediate to advanced',
+    audience: kb.audience.map((audienceType) => ({ '@type': 'Audience', audienceType })),
+    teaches: kb.topics,
+    keywords: kb.topics.join(', '),
+    author: { '@id': PERSON_ID },
+    creator: { '@id': PERSON_ID },
+    maintainer: { '@id': PERSON_ID },
+  };
+}
+
+function breadcrumbs(items: { name: string; path: string }[]) {
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.path === '/' ? '' : item.path}`,
+    })),
+  };
+}
+
+// /open-source: a collection page whose parts are the knowledge bases.
+export function openSourceGraph(name: string, description: string) {
+  const url = `${SITE_URL}${OPEN_SOURCE_PATH}`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${url}#page`,
+        url,
+        name,
+        description,
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': PERSON_ID },
+        author: { '@id': PERSON_ID },
+        hasPart: KNOWLEDGE_BASES.map((kb) => ({ '@id': kbId(kb) })),
+        inLanguage: 'en-US',
+      },
+      ...KNOWLEDGE_BASES.map(knowledgeBaseNode),
+      breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Open Source', path: OPEN_SOURCE_PATH }]),
+    ],
+  };
+}
+
+// /open-source/<slug>: one knowledge base and where it sits on the site.
+export function knowledgeBaseGraph(kb: KnowledgeBase) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      knowledgeBaseNode(kb),
+      breadcrumbs([
+        { name: 'Home', path: '/' },
+        { name: 'Open Source', path: OPEN_SOURCE_PATH },
+        { name: kb.name, path: kbPath(kb) },
+      ]),
+    ],
   };
 }

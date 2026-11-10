@@ -22,6 +22,7 @@ const SECTIONS = [
 
 // Standalone pages, listed after the sections.
 const PAGES = [
+  { name: 'Open Source', href: '/open-source' },
   { name: 'Intelligence', href: '/value-investing' },
   { name: 'Reading List', href: '/books' },
 ];
@@ -68,7 +69,7 @@ export default function SiteNav({ onHome = false }: SiteNavProps) {
           </span>
         </Link>
 
-        <div className='hidden xl:flex items-center gap-5 text-sm font-medium'>
+        <div className='hidden xl:flex items-center gap-4 2xl:gap-5 text-sm font-medium whitespace-nowrap'>
           {SECTIONS.map((section) => (
             <a key={section.id} href={hrefFor(section.id)} className='hover:text-primary transition-colors'>
               {section.name}
@@ -126,6 +127,9 @@ export default function SiteNav({ onHome = false }: SiteNavProps) {
             ))}
           </div>
           <div className='flex flex-col gap-4 pt-4 border-t border-border'>
+            <Link href='/open-source' className='text-lg font-medium hover:text-primary transition-colors' onClick={closeMenu}>
+              Open Source
+            </Link>
             <Link href='/value-investing' className='text-lg font-bold text-primary hover:opacity-80 transition-opacity' onClick={closeMenu}>
               Intelligence Platform
             </Link>

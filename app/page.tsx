@@ -16,6 +16,7 @@ import {
   FlaskConical,
   Github,
   GraduationCap,
+  HandHeart,
   Library,
   Mail,
   PenLine,
@@ -28,6 +29,7 @@ import ProfileImage from './components/ProfileImage';
 import EngineeringPhilosophy from './components/EngineeringPhilosophy';
 import MetricCard from './components/MetricCard';
 import LanguageBreakdown from './components/LanguageBreakdown';
+import KnowledgeBaseCard from './components/KnowledgeBaseCard';
 import {
   AWARDS,
   CERTIFICATIONS,
@@ -48,6 +50,7 @@ import { markdownAlternates } from './lib/seo';
 import { profilePageGraph } from './lib/structured-data';
 import { GITHUB_LOGIN, METRIC_CARDS, formatCount, getGitHubStats, statTiles, type GitHubStats } from './lib/github';
 import { FEATURED_BOOKS, getLibraryStats } from './lib/reading';
+import { KNOWLEDGE_BASES, OPEN_SOURCE_PATH, getAllRepoStats } from './lib/open-source';
 
 export const metadata: Metadata = {
   alternates: markdownAlternates('/'),
@@ -128,7 +131,7 @@ export default async function Home() {
   const research = PROJECTS.filter((p) => p.kind === 'research');
   const projects = PROJECTS.filter((p) => p.kind === 'project');
   const [featured, ...otherResearch] = research;
-  const githubStats = await getGitHubStats();
+  const [githubStats, repoStats] = await Promise.all([getGitHubStats(), getAllRepoStats()]);
   const library = getLibraryStats();
 
   return (
@@ -177,6 +180,9 @@ export default async function Home() {
                 </a>
                 <a href='#projects' className='inline-flex items-center gap-1.5 hover:text-primary transition-colors'>
                   Key Projects <ArrowRight className='w-3.5 h-3.5' />
+                </a>
+                <a href='#open-source' className='inline-flex items-center gap-1.5 hover:text-primary transition-colors'>
+                  Open-Source Knowledge Bases <ArrowRight className='w-3.5 h-3.5' />
                 </a>
                 <a href={`mailto:${CONTACT.email}`} className='inline-flex items-center gap-1.5 hover:text-primary transition-colors'>
                   <Mail className='w-3.5 h-3.5' /> {CONTACT.email}
@@ -307,6 +313,29 @@ export default async function Home() {
           <div className='grid md:grid-cols-2 gap-6'>
             {projects.map((project) => (
               <ProjectCard key={project.name} project={project} />
+            ))}
+          </div>
+        </Section>
+
+        {/* Open-source knowledge bases */}
+        <Section
+          id='open-source'
+          title='Open-Source Knowledge Bases'
+          icon={<HandHeart className='w-6 h-6' />}
+          description={
+            <>
+              Over a decade of learning and notes, given back to the community: two free, MIT-licensed knowledge bases
+              for quant finance, low-latency C++, system design, and agentic AI, maintained like production code.{' '}
+              <Link href={OPEN_SOURCE_PATH} className='text-primary underline underline-offset-2'>
+                See how they fit together
+              </Link>
+              .
+            </>
+          }
+        >
+          <div className='grid lg:grid-cols-2 gap-6'>
+            {KNOWLEDGE_BASES.map((kb) => (
+              <KnowledgeBaseCard key={kb.slug} kb={kb} stats={repoStats[kb.slug]} />
             ))}
           </div>
         </Section>

@@ -48,7 +48,7 @@ export function openApiDocument() {
         get: {
           operationId: 'searchProfile',
           summary: 'Keyword search across the profile',
-          description: 'Ranks experience, projects, education, skills, awards, certifications, and articles against the query.',
+          description: 'Ranks experience, projects, open-source knowledge bases, education, skills, awards, certifications, and articles against the query.',
           parameters: [
             { name: 'q', in: 'query', required: true, schema: { type: 'string', minLength: 1, maxLength: 200 }, example: 'market making C++' },
             { name: 'limit', in: 'query', required: false, schema: { type: 'integer', minimum: 1, maximum: 20, default: 5 } },

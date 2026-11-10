@@ -30,6 +30,7 @@ export default function SiteFooter() {
           <ul className='space-y-2'>
             <li><Link href='/resume' className='text-muted-foreground hover:text-primary transition-colors'>Resume</Link></li>
             <li><Link href='/work/trishul' className='text-muted-foreground hover:text-primary transition-colors'>Trishul case study</Link></li>
+            <li><Link href='/open-source' className='text-muted-foreground hover:text-primary transition-colors'>Open-source knowledge bases</Link></li>
             <li><Link href='/writing' className='text-muted-foreground hover:text-primary transition-colors'>Writing</Link></li>
             <li><Link href='/value-investing' className='text-muted-foreground hover:text-primary transition-colors'>Value Intelligence Platform</Link></li>
             <li><Link href='/books' className='text-muted-foreground hover:text-primary transition-colors'>Reading list</Link></li>
