@@ -28,20 +28,23 @@ interface SocialMetadataInput {
   description: string;
   type?: 'website' | 'article' | 'profile';
   published?: string; // ISO date; article pages only
+  // A route's own generated card (an opengraph-image.tsx beside the page);
+  // defaults to the site card.
+  image?: { url: string; width: number; height: number; alt: string };
 }
 
 // Next.js replaces a parent's openGraph and twitter objects wholesale instead
 // of merging them, so every route restates both or its link preview falls back
 // to the home page card. Restating openGraph also drops the inherited card
 // image, so it is listed again here.
-export function socialMetadata({ path, title, description, type = 'website', published }: SocialMetadataInput): Metadata {
+export function socialMetadata({ path, title, description, type = 'website', published, image = OG_IMAGE }: SocialMetadataInput): Metadata {
   const url = `${SITE_URL}${path}`;
-  const openGraph = { url, title, description, siteName: SITE_NAME, locale: 'en_US', images: [OG_IMAGE] };
+  const openGraph = { url, title, description, siteName: SITE_NAME, locale: 'en_US', images: [image] };
   return {
     alternates: markdownAlternates(path),
     openGraph: published
       ? { ...openGraph, type: 'article', publishedTime: published, authors: [HEADLINE.name] }
       : { ...openGraph, type },
-    twitter: { card: 'summary_large_image', title, description, creator: TWITTER_HANDLE, images: [OG_IMAGE] },
+    twitter: { card: 'summary_large_image', title, description, creator: TWITTER_HANDLE, images: [image] },
   };
 }

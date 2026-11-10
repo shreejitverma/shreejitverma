@@ -6,6 +6,7 @@ import {
   AWARDS, CERTIFICATIONS, CONTACT, EDUCATION, EXPERIENCE, HEADLINE, INTERESTS, LANGUAGES,
   PROJECTS, PROOF_METRICS, SITE_URL, SKILLS, SUMMARY,
 } from '../profile';
+import { KNOWLEDGE_BASES, kbPath, repoUrl } from '../open-source';
 import { ARTICLES, articleUrl } from '../writing';
 import { SITE_PAGES, markdownPath } from './pages';
 
@@ -58,6 +59,25 @@ export function getSkills() {
   return { skills: SKILLS, languages: LANGUAGES, certifications: CERTIFICATIONS, awards: AWARDS, interests: INTERESTS };
 }
 
+// The open-source knowledge bases, with their headline numbers, sections,
+// and reading routes by role.
+export function getOpenSource() {
+  return KNOWLEDGE_BASES.map((kb) => ({
+    name: kb.name,
+    tagline: kb.tagline,
+    summary: kb.summary,
+    since: kb.since,
+    license: kb.license,
+    audience: kb.audience,
+    stats: kb.stats.map((s) => `${s.value} ${s.label}`),
+    sections: kb.pillars.map((p) => ({ title: p.title, detail: p.detail })),
+    paths: kb.paths,
+    ...(kb.firms ? { firmGuides: kb.firms.map((f) => f.name) } : {}),
+    page: absoluteUrl(kbPath(kb)),
+    repository: repoUrl(kb),
+  }));
+}
+
 export function listPages() {
   return SITE_PAGES.map((page) => ({
     title: page.title,
@@ -73,8 +93,10 @@ export function listPages() {
 // IDF-weighted term matches with a boost for title hits. The corpus is a few
 // dozen documents, so a linear scan per query is cheap.
 
+export const SEARCH_KINDS = ['experience', 'project', 'open-source', 'education', 'skills', 'article', 'page', 'award', 'certification'] as const;
+
 interface SearchDoc {
-  kind: 'experience' | 'project' | 'education' | 'skills' | 'article' | 'page' | 'award' | 'certification';
+  kind: (typeof SEARCH_KINDS)[number];
   title: string;
   lines: string[];
   url: string;
@@ -137,6 +159,23 @@ function buildCorpus(): SearchDoc[] {
       lines: [project.detail, [project.context, project.dates].filter(Boolean).join(', '), `Tags: ${project.tags.join(', ')}`],
       url: project.caseStudy ? absoluteUrl(project.caseStudy) : project.repo ?? absoluteUrl(project.kind === 'research' ? '/#research' : '/#projects'),
     })),
+    ...KNOWLEDGE_BASES.map((kb) => ({
+      kind: 'open-source' as const,
+      title: `${kb.name} (open-source knowledge base)`,
+      lines: [
+        kb.tagline,
+        kb.summary,
+        `Headline numbers: ${kb.stats.map((s) => `${s.value} ${s.label}`).join('; ')}`,
+        // Section titles and topics only: the section details are long and
+        // would outrank the experience and projects on incidental words.
+        // get_open_source returns them in full.
+        `Sections: ${kb.pillars.map((p) => p.title).join('; ')}`,
+        `Topics: ${kb.topics.join(', ')}`,
+        ...(kb.firms ? [`Firm interview guides: ${kb.firms.map((f) => f.name).join(', ')}`] : []),
+        `Written for: ${kb.audience.join(', ')}. Repository: ${repoUrl(kb)}`,
+      ],
+      url: absoluteUrl(kbPath(kb)),
+    })),
     ...EDUCATION.map((school) => ({
       kind: 'education' as const,
       title: `${school.degree}, ${school.school}`,
@@ -167,7 +206,7 @@ function buildCorpus(): SearchDoc[] {
       lines: [article.description, `Tags: ${article.tags.join(', ')}`, `Published ${article.published}`],
       url: absoluteUrl(articleUrl(article.slug)),
     })),
-    ...SITE_PAGES.filter((page) => !page.published).map((page) => ({
+    ...SITE_PAGES.filter((page) => !page.published && !KNOWLEDGE_BASES.some((kb) => kbPath(kb) === page.path)).map((page) => ({
       kind: 'page' as const,
       title: page.title,
       lines: [page.summary],

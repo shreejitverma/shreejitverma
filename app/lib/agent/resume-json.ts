@@ -7,6 +7,7 @@ import {
   PROJECTS, SITE_URL, SKILLS, SUMMARY,
 } from '../profile';
 import { absoluteUrl } from './knowledge';
+import { KNOWLEDGE_BASES, repoUrl } from '../open-source';
 
 const MONTHS: Record<string, string> = {
   jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
@@ -66,14 +67,21 @@ export function buildJsonResume() {
       ...(school.gpa ? { score: school.gpa.replace(/^GPA\s+/, '') } : {}),
       courses: school.coursework.replace(/\.$/, '').split(/,\s+/),
     })),
-    projects: PROJECTS.filter((p) => !p.homeOnly).map((project) => ({
+    projects: [...PROJECTS.filter((p) => !p.homeOnly).map((project) => ({
       name: project.name,
       description: project.detail,
       ...dateRange(project.dates),
       keywords: project.tags,
       ...(project.context ? { entity: project.context } : {}),
       ...(project.repo || project.caseStudy ? { url: project.caseStudy ? absoluteUrl(project.caseStudy) : project.repo } : {}),
-    })),
+    })), ...KNOWLEDGE_BASES.map((kb) => ({
+      name: kb.name,
+      description: `${kb.tagline} ${kb.stats.map((s) => `${s.value} ${s.label}`).join('; ')}.`,
+      startDate: String(kb.since),
+      keywords: kb.topics,
+      entity: 'Open-source knowledge base (MIT)',
+      url: repoUrl(kb),
+    }))],
     awards: AWARDS.map((award) => ({ title: award.title, summary: award.detail })),
     certificates: [...CERTIFICATIONS.finance, ...CERTIFICATIONS.computerScience].map((cert) => ({ name: cert.name, url: cert.url })),
     skills: SKILLS.map((group) => ({ name: group.label, keywords: group.items })),

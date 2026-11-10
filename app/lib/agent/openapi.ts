@@ -3,6 +3,7 @@
 
 import { HEADLINE, SITE_URL } from '../profile';
 import { AGENT_API_VERSION, AGENT_PATHS } from './constants';
+import { SEARCH_KINDS } from './knowledge';
 import { AUTH_PATHS, SCOPE_DESCRIPTIONS, url } from '../auth/config';
 import { opportunitySchema } from '../opportunities';
 import * as z from 'zod/v4';
@@ -12,7 +13,7 @@ export function openApiDocument() {
     type: 'object',
     required: ['kind', 'title', 'snippet', 'url', 'score'],
     properties: {
-      kind: { type: 'string', enum: ['experience', 'project', 'education', 'skills', 'article', 'page', 'award', 'certification'] },
+      kind: { type: 'string', enum: [...SEARCH_KINDS] },
       title: { type: 'string' },
       snippet: { type: 'string', description: 'The line of the source that best matches the query' },
       url: { type: 'string', format: 'uri', description: 'Where the fact is published' },
@@ -48,7 +49,7 @@ export function openApiDocument() {
         get: {
           operationId: 'searchProfile',
           summary: 'Keyword search across the profile',
-          description: 'Ranks experience, projects, education, skills, awards, certifications, and articles against the query.',
+          description: 'Ranks experience, projects, open-source knowledge bases, education, skills, awards, certifications, and articles against the query.',
           parameters: [
             { name: 'q', in: 'query', required: true, schema: { type: 'string', minLength: 1, maxLength: 200 }, example: 'market making C++' },
             { name: 'limit', in: 'query', required: false, schema: { type: 'integer', minimum: 1, maximum: 20, default: 5 } },

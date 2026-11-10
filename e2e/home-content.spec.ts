@@ -14,7 +14,7 @@ test.describe('Home page content', () => {
   });
 
   test('all navigation section anchors exist', async ({ page }) => {
-    for (const id of ['experience', 'research', 'projects', 'skills', 'philosophy', 'education', 'impact', 'writing', 'awards', 'certifications', 'books']) {
+    for (const id of ['experience', 'research', 'projects', 'open-source', 'skills', 'philosophy', 'education', 'impact', 'writing', 'awards', 'certifications', 'books']) {
       await expect(page.locator(`#${id}`), `#${id} missing`).toHaveCount(1);
     }
   });

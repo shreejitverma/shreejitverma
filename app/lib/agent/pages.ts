@@ -3,6 +3,7 @@
 // added to this list becomes discoverable everywhere at once.
 
 import type { MetadataRoute } from 'next';
+import { KNOWLEDGE_BASES, OPEN_SOURCE_PATH, kbPath } from '../open-source';
 import { ARTICLES, articleUrl } from '../writing';
 
 export interface SitePage {
@@ -36,6 +37,20 @@ export const SITE_PAGES: SitePage[] = [
     changeFrequency: 'monthly',
     priority: 0.9,
   },
+  {
+    path: OPEN_SOURCE_PATH,
+    title: 'Open-source knowledge bases',
+    summary: 'The Quant Prep and The Distinguished Engineer: free, MIT-licensed knowledge bases for quant finance interviews, low-latency C++, system design, and agentic AI',
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  },
+  ...KNOWLEDGE_BASES.map((kb) => ({
+    path: kbPath(kb),
+    title: kb.name,
+    summary: `${kb.tagline} ${kb.stats.slice(0, 3).map((s) => `${s.value} ${s.label}`).join('; ')}`,
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  })),
   {
     path: '/writing',
     title: 'Writing',

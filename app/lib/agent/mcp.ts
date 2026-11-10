@@ -6,7 +6,7 @@ import { createMcpHandler, McpServer, type CallToolResult } from '@modelcontextp
 import * as z from 'zod/v4';
 import { AGENT_API_VERSION, MCP_SERVER_NAME } from './constants';
 import {
-  getEducation, getExperience, getProfile, getProjects, getSkills, listPages, searchProfile,
+  getEducation, getExperience, getOpenSource, getProfile, getProjects, getSkills, listPages, searchProfile,
 } from './knowledge';
 import { PageFetchError, renderPageMarkdown, selfFetchOrigin } from './markdown';
 import { findPage, SITE_PAGES } from './pages';
@@ -79,6 +79,13 @@ export const MCP_TOOLS: ToolSpec[] = [
     run: ({ kind, tag }) => json(getProjects(kind, tag)),
   }),
   defineTool({
+    name: 'get_open_source',
+    title: 'Open-source knowledge bases',
+    description: 'The open-source knowledge bases Shreejit Verma writes and maintains (The Quant Prep and The Distinguished Engineer): what each covers, headline numbers, sections, firm guides, reading routes by role, and repository links.',
+    inputSchema: NO_ARGS,
+    run: () => json(getOpenSource()),
+  }),
+  defineTool({
     name: 'get_education',
     title: 'Education',
     description: 'Degrees with school, dates, GPA where published, and coursework.',
@@ -95,7 +102,7 @@ export const MCP_TOOLS: ToolSpec[] = [
   defineTool({
     name: 'search_profile',
     title: 'Search the profile',
-    description: 'Keyword search across experience, projects, education, skills, awards, certifications, and articles. Returns ranked facts, each with a snippet and its source URL.',
+    description: 'Keyword search across experience, projects, open-source knowledge bases, education, skills, awards, certifications, and articles. Returns ranked facts, each with a snippet and its source URL.',
     inputSchema: z.object({
       query: z.string().min(1).max(200).describe('Keywords, e.g. "market making C++" or "FRTB expected shortfall"'),
       limit: z.number().int().min(1).max(20).optional().describe('Maximum results, default 5'),

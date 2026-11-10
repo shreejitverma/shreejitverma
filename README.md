@@ -21,6 +21,18 @@ Expertise spans the full stack of modern quantitative finance: **FPGA-accelerate
 
 ---
 
+## Open-Source Knowledge Bases
+
+Over a decade of learning and notes, given back to the community: two free, MIT-licensed knowledge bases, maintained like production code.
+Overview and reading routes by role: [shreejitverma.com/open-source](https://www.shreejitverma.com/open-source).
+
+| | Repository | What it is |
+| :--- | :--- | :--- |
+| [![Stars](https://img.shields.io/github/stars/shreejitverma/The-Quant-Prep?style=social)](https://github.com/shreejitverma/The-Quant-Prep) | **[The Quant Prep](https://github.com/shreejitverma/The-Quant-Prep)** ([overview](https://www.shreejitverma.com/open-source/the-quant-prep)) | A self-tracking preparation system for quant trader, researcher, developer, and risk interviews: **292 topics**, **6,264 question cards**, **18 firm guides** (Jane Street, Citadel, HRT, Optiver, Two Sigma, and more), a C++20 order book, ITCH 5.0 feed handler, and FRTB code, with CI-checked numbers and sanitizer-clean C++. |
+| [![Stars](https://img.shields.io/github/stars/shreejitverma/The-Distinguished-Engineer?style=social)](https://github.com/shreejitverma/The-Distinguished-Engineer) | **[The Distinguished Engineer](https://github.com/shreejitverma/The-Distinguished-Engineer)** ([overview](https://www.shreejitverma.com/open-source/the-distinguished-engineer)) | A runnable curriculum from junior to distinguished engineer: **6,800 solved DSA problems**, a **129-note low-latency trading systems** vault (kernel bypass, matching engines, FPGAs), **14 volumes on agentic AI** and MCP, **16 on cloud AI**, and system design. |
+
+---
+
 ## Education
 
 - **Georgia Institute of Technology (Online):** M.S. in Computer Science (Specialization in Computing Systems) | *Aug 2024 - Expected Dec 2026*
@@ -193,15 +205,15 @@ Vault covers take precedence over the hotlinked covers from `enrich_books.py`, w
 ### Agent access
 
 The site is built to be read and used by AI agents, and scores Level 5 ("Agent-Native") on Cloudflare's [Agent Readiness scanner](https://isitagentready.com).
-Everything is public, read-only, and unauthenticated, and every surface answers from the same data as the pages (`app/lib/profile.ts`, `app/lib/writing.ts`, `app/lib/agent/pages.ts`).
+Everything is public, read-only, and unauthenticated, and every surface answers from the same data as the pages (`app/lib/profile.ts`, `app/lib/open-source.ts`, `app/lib/writing.ts`, `app/lib/agent/pages.ts`).
 The code lives in `app/lib/agent/`; `e2e/agent-ready.spec.ts` covers each endpoint.
 
 | Surface | Where | Notes |
 | --- | --- | --- |
 | Markdown for agents | any page with `Accept: text/markdown`, or `/index.md`, `/resume.md`, ... | Converted from the page's own rendered `<main>`, so it never drifts from the HTML; sends `x-markdown-tokens` and `Content-Signal` |
-| `llms.txt`, `llms-full.txt` | `/llms.txt`, `/llms-full.txt` | Generated from the profile and page list |
+| `llms.txt`, `llms-full.txt` | `/llms.txt`, `/llms-full.txt` | Generated from the profile, open-source knowledge bases, and page list |
 | Crawler policy | `/robots.txt` | Content Signals `search=yes, ai-input=yes, ai-train=yes` plus explicit AI search, user-triggered, and training crawler groups (`CONTENT_SIGNAL` in `app/lib/agent/constants.ts`) |
-| MCP server | `/mcp` (streamable HTTP, stateless) | Nine read-only tools: profile, experience, projects, education, skills, search, JSON Resume, page list, page as Markdown; Server Card at `/mcp/server-card` |
+| MCP server | `/mcp` (streamable HTTP, stateless) | Ten read-only tools: profile, experience, projects, open-source knowledge bases, education, skills, search, JSON Resume, page list, page as Markdown; Server Card at `/mcp/server-card` |
 | A2A agent | `/a2a` (JSON-RPC, protocol 1.0 and 0.3) | Deterministic retrieval, no LLM; Agent Card at `/.well-known/agent-card.json` |
 | WebMCP | inline `<head>` script | Registers five in-browser tools before `load` |
 | REST | `/resume.json` (JSON Resume), `/api/search?q=` | Described by `/openapi.json` |
@@ -246,7 +258,7 @@ Because state is in memory locally, `npm run test:e2e` needs a fresh server; reu
 
 ### Search visibility
 
-- Structured data (`app/lib/structured-data.ts`) is derived from `app/lib/profile.ts`, so search engines and AI assistants see the same employer, titles, and degrees as readers; `ProfilePage` is declared only on `/` and `/resume`.
+- Structured data (`app/lib/structured-data.ts`) is derived from `app/lib/profile.ts` and `app/lib/open-source.ts`, so search engines and AI assistants see the same employer, titles, and degrees as readers; `ProfilePage` is declared only on `/` and `/resume`.
 - `.github/workflows/indexnow.yml` submits every sitemap URL to IndexNow (Bing, which also backs ChatGPT search and Copilot, plus Yandex, Seznam, Naver, and Yep) after each successful production deployment; `python3 scripts/indexnow.py --dry-run` previews the payload.
 - The sitemap sets `lastmod` only from real dates (article publication), never the build time, so search engines can trust it.
 - Agent and discovery endpoints send a strong `ETag` and answer a matching `If-None-Match` with `304 Not Modified`, so revalidating crawlers transfer nothing.

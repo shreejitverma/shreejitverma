@@ -6,6 +6,7 @@ import { AGENT_PATHS, CONTENT_SIGNAL } from './constants';
 import { absoluteUrl } from './knowledge';
 import { renderPageMarkdown } from './markdown';
 import { markdownPath, SITE_PAGES } from './pages';
+import { KNOWLEDGE_BASES, kbPath, repoUrl } from '../open-source';
 
 export function llmsTxt(): string {
   const [current, previous] = EXPERIENCE;
@@ -24,6 +25,10 @@ Every page below links to its Markdown version. Any page also returns Markdown w
 ## Pages
 
 ${SITE_PAGES.map((page) => `- [${page.title}](${url(markdownPath(page.path))}): ${page.summary}`).join('\n')}
+
+## Open source
+
+${KNOWLEDGE_BASES.map((kb) => `- [${kb.name}](${repoUrl(kb)}) (MIT, since ${kb.since}; [overview](${url(markdownPath(kbPath(kb)))})): ${kb.tagline} ${kb.stats.map((s) => `${s.value} ${s.label}`).join('; ')}.`).join('\n')}
 
 ## Machine-readable
 
