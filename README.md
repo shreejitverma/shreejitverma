@@ -211,7 +211,7 @@ The code lives in `app/lib/agent/`; `e2e/agent-ready.spec.ts` covers each endpoi
 | Surface | Where | Notes |
 | --- | --- | --- |
 | Markdown for agents | any page with `Accept: text/markdown`, or `/index.md`, `/resume.md`, ... | Converted from the page's own rendered `<main>`, so it never drifts from the HTML; sends `x-markdown-tokens` and `Content-Signal` |
-| `llms.txt`, `llms-full.txt` | `/llms.txt`, `/llms-full.txt` | Generated from the profile and page list |
+| `llms.txt`, `llms-full.txt` | `/llms.txt`, `/llms-full.txt` | Generated from the profile, open-source knowledge bases, and page list |
 | Crawler policy | `/robots.txt` | Content Signals `search=yes, ai-input=yes, ai-train=yes` plus explicit AI search, user-triggered, and training crawler groups (`CONTENT_SIGNAL` in `app/lib/agent/constants.ts`) |
 | MCP server | `/mcp` (streamable HTTP, stateless) | Ten read-only tools: profile, experience, projects, open-source knowledge bases, education, skills, search, JSON Resume, page list, page as Markdown; Server Card at `/mcp/server-card` |
 | A2A agent | `/a2a` (JSON-RPC, protocol 1.0 and 0.3) | Deterministic retrieval, no LLM; Agent Card at `/.well-known/agent-card.json` |
@@ -258,7 +258,7 @@ Because state is in memory locally, `npm run test:e2e` needs a fresh server; reu
 
 ### Search visibility
 
-- Structured data (`app/lib/structured-data.ts`) is derived from `app/lib/profile.ts`, so search engines and AI assistants see the same employer, titles, and degrees as readers; `ProfilePage` is declared only on `/` and `/resume`.
+- Structured data (`app/lib/structured-data.ts`) is derived from `app/lib/profile.ts` and `app/lib/open-source.ts`, so search engines and AI assistants see the same employer, titles, and degrees as readers; `ProfilePage` is declared only on `/` and `/resume`.
 - `.github/workflows/indexnow.yml` submits every sitemap URL to IndexNow (Bing, which also backs ChatGPT search and Copilot, plus Yandex, Seznam, Naver, and Yep) after each successful production deployment; `python3 scripts/indexnow.py --dry-run` previews the payload.
 - The sitemap sets `lastmod` only from real dates (article publication), never the build time, so search engines can trust it.
 - Agent and discovery endpoints send a strong `ETag` and answer a matching `If-None-Match` with `304 Not Modified`, so revalidating crawlers transfer nothing.
